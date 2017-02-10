@@ -1,0 +1,10 @@
+E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe.config
+E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe
+E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.pdb
+E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csprojResolveAssemblyReference.cache
+E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Form1.resources
+E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Properties.Resources.resources
+E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
+E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
+E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
+E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\bin\Debug\Bunifu_UI_v1.52.dll
