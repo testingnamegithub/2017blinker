@@ -7,42 +7,95 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace BlinkBlink_EyeJoah
 {
     public partial class Form1 : Form
     {
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         public Form1()
         {
+          
             InitializeComponent();
+            UserControl1 control1 = new UserControl1();
+            control1.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(control1);
+
         }
 
 
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
+            //프로그램 종료
             Application.Exit();
         }
 
+        //private void switchControl(Control removeControl, Control addControl)
+        //{
+        //    removeControl.Dock = DockStyle.Fill;
+        //    panelContainer.Controls.Remove(removeControl);
+        //    panelContainer.Controls.Add(addControl);
+        //}
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            homePanel.BringToFront();
-            homePanel.Show();
-            //homePanel.Visible = true;
-            //blinkPanel.Visible = false;
-          
-            //blinkPanel.SendToBack();
- 
+            menuLabel.Text = "Home";
+            UserControl1 control1 = new UserControl1();
+            control1.Dock = DockStyle.Fill;
+            panelContainer.Controls.RemoveAt(0);
+            panelContainer.Controls.Add(control1);
+
+
+
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            blinkPanel.BringToFront();
+            menuLabel.Text = "Blinking";
+            UserControl2 control2 = new UserControl2();
 
-            blinkPanel.Show();
-            //homePanel.Visible = false;
-            //blinkPanel.Visible = true;
-            //homePanel.SendToBack();
+            control2.Dock = DockStyle.Fill;
+            panelContainer.Controls.RemoveAt(0);
+            panelContainer.Controls.Add(control2);
         }
+
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            menuLabel.Text = "Work";
+            UserControl3 control3 = new UserControl3();
+
+            control3.Dock = DockStyle.Fill;
+            panelContainer.Controls.RemoveAt(0);
+            panelContainer.Controls.Add(control3);
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            menuLabel.Text = "Settings";
+            UserControl4 control4 = new UserControl4();
+
+            control4.Dock = DockStyle.Fill;
+            panelContainer.Controls.RemoveAt(0);
+            panelContainer.Controls.Add(control4);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+
     }
 }
