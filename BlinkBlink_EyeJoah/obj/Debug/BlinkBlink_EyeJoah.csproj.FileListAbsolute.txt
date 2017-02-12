@@ -22,3 +22,27 @@ E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserContro
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl2.resources
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl3.resources
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl4.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe.config
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.pdb
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.dll
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.pdb
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.xml
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Constatnt.ConstantChanges.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Form1.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.PieChart.PieChartExample.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Properties.Resources.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl1.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl2.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl3.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl4.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
