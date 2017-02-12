@@ -27,7 +27,10 @@ namespace BlinkBlink_EyeJoah
         {
           
             InitializeComponent();
-            eyeBlink = new EyeBlink(this);
+
+            /* Eye Blink Detection 감지하는 Class 생성 및 실행 */
+            eyeBlink = new EyeBlink(this.imageBoxCapturedFrame, this.leftEyeImageBox, this.rightEyeImageBox, this.thresholdValueText, this.eyeBlinkNumText);
+            eyeBlink.start_EyeBlink();
             
             UserControl1 control1 = new UserControl1();
             control1.Dock = DockStyle.Fill;
@@ -95,7 +98,7 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
-        /* MainForm UI _ getset 함수*/
+        /* MainForm UI  get_set 함수*/
         public Emgu.CV.UI.ImageBox get_set_imageBoxCapturedFrame
         {
             get { return this.imageBoxCapturedFrame; }
