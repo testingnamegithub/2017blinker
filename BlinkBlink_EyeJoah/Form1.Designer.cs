@@ -47,6 +47,12 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.imageBox1 = new Emgu.CV.UI.ImageBox();
+            this.imageBox3 = new Emgu.CV.UI.ImageBox();
+            this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.header = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -56,6 +62,9 @@
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBoxCapturedFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.header.SuspendLayout();
             this.topPanel.SuspendLayout();
@@ -316,7 +325,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(109, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 20);
+            this.label1.Size = new System.Drawing.Size(78, 14);
             this.label1.TabIndex = 1;
             this.label1.Text = "User Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -334,10 +343,77 @@
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
-            this.panelContainer.Location = new System.Drawing.Point(233, 84);
+            this.panelContainer.Location = new System.Drawing.Point(233, 496);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(620, 490);
+            this.panelContainer.Size = new System.Drawing.Size(620, 78);
             this.panelContainer.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(596, 269);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 18);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.Font = new System.Drawing.Font("넥슨 풋볼고딕 B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(676, 262);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 30);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Black;
+            this.label6.Font = new System.Drawing.Font("넥슨 풋볼고딕 B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(562, 221);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(169, 30);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "눈 깜빡임 횟수 ";
+            // 
+            // imageBox1
+            // 
+            this.imageBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageBox1.Location = new System.Drawing.Point(681, 383);
+            this.imageBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.imageBox1.Name = "imageBox1";
+            this.imageBox1.Size = new System.Drawing.Size(130, 95);
+            this.imageBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageBox1.TabIndex = 27;
+            this.imageBox1.TabStop = false;
+            // 
+            // imageBox3
+            // 
+            this.imageBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageBox3.Location = new System.Drawing.Point(681, 112);
+            this.imageBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.imageBox3.Name = "imageBox3";
+            this.imageBox3.Size = new System.Drawing.Size(130, 90);
+            this.imageBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageBox3.TabIndex = 26;
+            this.imageBox3.TabStop = false;
+            // 
+            // imageBoxCapturedFrame
+            // 
+            this.imageBoxCapturedFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageBoxCapturedFrame.Location = new System.Drawing.Point(307, 112);
+            this.imageBoxCapturedFrame.Name = "imageBoxCapturedFrame";
+            this.imageBoxCapturedFrame.Size = new System.Drawing.Size(504, 366);
+            this.imageBoxCapturedFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageBoxCapturedFrame.TabIndex = 3;
+            this.imageBoxCapturedFrame.TabStop = false;
             // 
             // bunifuImageButton1
             // 
@@ -370,7 +446,7 @@
             this.titleLabel.ForeColor = System.Drawing.Color.White;
             this.titleLabel.Location = new System.Drawing.Point(84, 21);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(128, 26);
+            this.titleLabel.Size = new System.Drawing.Size(81, 18);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Blink Blink";
             // 
@@ -398,7 +474,7 @@
             this.menuLabel.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuLabel.Location = new System.Drawing.Point(101, 21);
             this.menuLabel.Name = "menuLabel";
-            this.menuLabel.Size = new System.Drawing.Size(97, 34);
+            this.menuLabel.Size = new System.Drawing.Size(65, 23);
             this.menuLabel.TabIndex = 1;
             this.menuLabel.Text = "Home";
             // 
@@ -408,10 +484,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(853, 574);
+            this.Controls.Add(this.imageBox1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.header);
             this.Controls.Add(this.sidebar);
+            this.Controls.Add(this.imageBox3);
+            this.Controls.Add(this.imageBoxCapturedFrame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -420,12 +502,16 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBoxCapturedFrame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -454,6 +540,12 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Label menuLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private Emgu.CV.UI.ImageBox imageBox1;
+        private Emgu.CV.UI.ImageBox imageBox3;
+        private Emgu.CV.UI.ImageBox imageBoxCapturedFrame;
     }
 }
 

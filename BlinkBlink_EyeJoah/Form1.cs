@@ -31,8 +31,6 @@ namespace BlinkBlink_EyeJoah
 
         }
 
-
-
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             //프로그램 종료
@@ -52,9 +50,6 @@ namespace BlinkBlink_EyeJoah
             control1.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control1);
-
-
-
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
