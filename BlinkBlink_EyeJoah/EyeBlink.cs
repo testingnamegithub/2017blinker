@@ -126,7 +126,7 @@ namespace BlinkBlink_EyeJoah
 
                     // 실행하기전 눈 깜빡임을 판단하는 catchBlackPixel 값 false로 초기화
                     EyeBlink.catchBlackPixel = false;
-                    //thresholdEffect(thresholdValue);
+                    thresholdEffect(thresholdValue);
                 }
                 catch (ArgumentException expt) { }
             }
@@ -202,5 +202,112 @@ namespace BlinkBlink_EyeJoah
             }
             return newImage;
         }
+
+
+        #region 눈 검출 방법 : 눈 떳을 때, 눈 감았을 때의 threshold 값의 변화에 따라 눈 깜빡임 인식
+        public void thresholdEffect(int catchThreshold)
+        {
+            // Black 픽셀이 잡힌 경우 재귀 함수 빠져나가기
+            if (EyeBlink.catchBlackPixel.Equals(true))
+            {
+                return;
+            }
+
+            // 눈 깜빡임을 검출할 눈 영역 Median Blur 필터 적용
+            Thimage = (Bitmap)rightEyeImageBox.Image.Bitmap;
+            Median filter = new Median();
+            filter.ApplyInPlace(Thimage);
+
+            // 눈 깜빡임을 검출할 눈 영역 Threshold 필터 적용 - (catchThreshold 값으로)
+            IFilter threshold = new Threshold(catchThreshold);
+            Thimage = Grayscale.CommonAlgorithms.RMY.Apply(Thimage);
+            Thimage = threshold.Apply(Thimage);
+
+            // 눈 검출할 영역의 가로 길이가 50mm가 넘는다면 40x30 size로 변환
+            // (카메라 가까이에 얼굴이 있으면 눈 영역도 커지기 때문에 계산량 일정하게 만들기) 
+            if (Thimage.Width > 50)
+                Thimage = ResizeImage(Thimage, new Size(40, 30));
+
+            // 필터링 된 이미지 blur 처리 후 한 픽셀이라도 검은 Pixel이 존재한 다면 
+            // catchBlackPixel = true로 변경.
+            for (int x = blurAmount + 5; x <= Thimage.Width - blurAmount; x++)
+            {
+                for (int y = blurAmount + 5; y <= Thimage.Height - blurAmount; y++)
+                {
+                    try
+                    {
+                        Color prevX = Thimage.GetPixel(x - blurAmount, y);
+                        Color nextX = Thimage.GetPixel(x + blurAmount, y);
+                        Color prevY = Thimage.GetPixel(x, y - blurAmount);
+                        Color nextY = Thimage.GetPixel(x, y + blurAmount);
+
+                        int avgR = (int)((prevX.R + nextX.R + prevY.R + nextY.R) / 4);
+                        if (avgR < 150)
+                        {
+                            EyeBlink.catchBlackPixel = true;
+                            break;
+                        }
+                    }
+                    catch (Exception) { }
+                }
+            }
+
+            // 검은 Pixel 존재 할 경우
+            if (EyeBlink.catchBlackPixel.Equals(true))
+            {
+                // Tresholdvalue =  Label에 투영시킬 변수 
+                TV = catchThreshold;
+
+                // 이 동작을 3번 ㅇ
+                if (averageThresholdValue.Count > 3)
+                {
+                    averageThresholdValue.Add((averageThresholdValue[1] + averageThresholdValue[2]) / 2);
+                    Double doubleValue = averageThresholdValue.Average() - averageThresholdValue.Average() % 10;
+                    int a = (int)doubleValue;
+                    thresholdValue = a-5;
+                }
+                else
+                {
+                    averageThresholdValue.Add(catchThreshold);
+                }
+
+                // catchThreshold와 평균 Threshold값을 비교하여 눈 깜빡임 detect
+                // 만약 직전에도 이 값일 경우엔 Pass 
+                if (catchThreshold > averageThresholdValue.Average() + 8 &&
+                    catchThreshold < averageThresholdValue.Average() + 25)
+                {
+                    if (!catchBlink)
+                    {
+                        blinkNum++;
+                        catchBlink = true;
+                        eyeBlinkNumText.Text = blinkNum.ToString();
+                    }
+                    else
+                    {
+                        catchBlink = true;
+                    }
+
+                }
+                else
+                {
+                    catchBlink = false;
+                }
+
+                //label2.Text = ((double)prevThresholdValue / (double)catchThreshold).ToString();
+                return;
+            }
+            // 만약 해당 이미지에 검은 픽셀이 존재하지 않을경우 
+            // catchThreshold값을 1 증가시켜 재귀 함수를 통해 다시 계산시키기
+            else
+            {
+                if (catchThreshold < 120)
+                {
+                    catchThreshold += 1;
+                    prevThresholdValue = catchThreshold;
+                    thresholdEffect(catchThreshold);
+                }
+            }
+        }
+        #endregion
     }
 }

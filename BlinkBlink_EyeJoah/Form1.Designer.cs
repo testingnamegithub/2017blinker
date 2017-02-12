@@ -352,6 +352,7 @@
             // 
             this.thresholdValueText.AutoSize = true;
             this.thresholdValueText.BackColor = System.Drawing.Color.Black;
+            this.thresholdValueText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.thresholdValueText.Location = new System.Drawing.Point(596, 269);
             this.thresholdValueText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.thresholdValueText.Name = "thresholdValueText";
