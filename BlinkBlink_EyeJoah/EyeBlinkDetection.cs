@@ -21,7 +21,7 @@ using AForge.Imaging.Filters;
 
 namespace BlinkBlink_EyeJoah
 {
-    class EyeBlink
+    class EyeBlinkDetection
     {
         /* Form1 UI 함수 */
         private Form1 mainForm;
@@ -49,7 +49,7 @@ namespace BlinkBlink_EyeJoah
         public static Boolean catchBlink = false;      
 
         // constructor(생성자)
-        public EyeBlink(Emgu.CV.UI.ImageBox imageBoxCapturedFrame, 
+        public EyeBlinkDetection(Emgu.CV.UI.ImageBox imageBoxCapturedFrame, 
                         Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox, 
                         Label thresholdValue, Label eyeBlinkNum)
         {
@@ -68,7 +68,7 @@ namespace BlinkBlink_EyeJoah
                 try
                 {
                     _capture = new Capture();
-                    _faces = new HaarCascade("haarcascade_frontalface_alt_tree.xml");
+                    _faces = new HaarCascade("haarcascade_frontalface_default.xml");
 
                     // 평균 Threadhold값 저장하는 list 생성
                     averageThresholdValue = new List<int>();
@@ -123,7 +123,7 @@ namespace BlinkBlink_EyeJoah
                     leftEyeImageBox.Image = frame.Copy(possibleROI_leftEye).Convert<Bgr, byte>();
 
                     // 실행하기전 눈 깜빡임을 판단하는 catchBlackPixel 값 false로 초기화
-                    EyeBlink.catchBlackPixel = false;
+                    EyeBlinkDetection.catchBlackPixel = false;
                     thresholdEffect(thresholdValue);
                 }
                 catch (ArgumentException expt) { }
@@ -196,7 +196,7 @@ namespace BlinkBlink_EyeJoah
         public void thresholdEffect(int catchThreshold)
         {
             // Black 픽셀이 잡힌 경우 재귀 함수 빠져나가기
-            if (EyeBlink.catchBlackPixel.Equals(true))
+            if (EyeBlinkDetection.catchBlackPixel.Equals(true))
             {
                 return;
             }
@@ -232,7 +232,7 @@ namespace BlinkBlink_EyeJoah
                         int avgR = (int)((prevX.R + nextX.R + prevY.R + nextY.R) / 4);
                         if (avgR < 150)
                         {
-                            EyeBlink.catchBlackPixel = true;
+                            EyeBlinkDetection.catchBlackPixel = true;
                             break;
                         }
                     }
@@ -241,7 +241,7 @@ namespace BlinkBlink_EyeJoah
             }
 
             // 검은 Pixel 존재 할 경우
-            if (EyeBlink.catchBlackPixel.Equals(true))
+            if (EyeBlinkDetection.catchBlackPixel.Equals(true))
             {
                 // Tresholdvalue =  Label에 투영시킬 변수 
                 TV = catchThreshold;
