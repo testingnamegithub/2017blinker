@@ -16,6 +16,8 @@ namespace BlinkBlink_EyeJoah
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
+        private EyeBlink eyeBlink;
+
         [DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
@@ -25,6 +27,8 @@ namespace BlinkBlink_EyeJoah
         {
           
             InitializeComponent();
+            eyeBlink = new EyeBlink(this);
+            
             UserControl1 control1 = new UserControl1();
             control1.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(control1);
@@ -81,7 +85,7 @@ namespace BlinkBlink_EyeJoah
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control4);
         }
-
+       
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -91,6 +95,32 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
+        /* MainForm UI _ getset 함수*/
+        public Emgu.CV.UI.ImageBox get_set_imageBoxCapturedFrame
+        {
+            get { return this.imageBoxCapturedFrame; }
+            set { this.imageBoxCapturedFrame = value; }
+        }
+        public Emgu.CV.UI.ImageBox get_set_leftEyeImageBox
+        {
+            get { return this.leftEyeImageBox; }
+            set { this.leftEyeImageBox = value; }
+        }
+        public Emgu.CV.UI.ImageBox get_set_rightEyeImageBox
+        {
+            get { return this.rightEyeImageBox; }
+            set { this.rightEyeImageBox = value; }
+        }
+        public Label get_set_ThresholdValue
+        {
+            get { return this.thresholdValueText; }
+            set { this.thresholdValueText = value; }
+        }
+        public Label get_set_EyeBlinkNum
+        {
+            get { return this.eyeBlinkNumText; }
+            set { this.eyeBlinkNumText = value; }
+        }
 
     }
 }

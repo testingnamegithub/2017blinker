@@ -47,11 +47,11 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.imageBox1 = new Emgu.CV.UI.ImageBox();
-            this.imageBox3 = new Emgu.CV.UI.ImageBox();
+            this.thresholdValueText = new System.Windows.Forms.Label();
+            this.eyeBlinkNumText = new System.Windows.Forms.Label();
+            this.eyeBlinkText = new System.Windows.Forms.Label();
+            this.rightEyeImageBox = new Emgu.CV.UI.ImageBox();
+            this.leftEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.header = new System.Windows.Forms.Panel();
@@ -62,8 +62,8 @@
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftEyeImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxCapturedFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.header.SuspendLayout();
@@ -343,67 +343,67 @@
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
-            this.panelContainer.Location = new System.Drawing.Point(233, 333);
+            this.panelContainer.Location = new System.Drawing.Point(233, 496);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(620, 241);
+            this.panelContainer.Size = new System.Drawing.Size(620, 78);
             this.panelContainer.TabIndex = 2;
             // 
-            // label4
+            // thresholdValueText
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(596, 269);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 18);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "label4";
+            this.thresholdValueText.AutoSize = true;
+            this.thresholdValueText.BackColor = System.Drawing.Color.Black;
+            this.thresholdValueText.Location = new System.Drawing.Point(596, 269);
+            this.thresholdValueText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.thresholdValueText.Name = "thresholdValueText";
+            this.thresholdValueText.Size = new System.Drawing.Size(54, 18);
+            this.thresholdValueText.TabIndex = 31;
+            this.thresholdValueText.Text = "label4";
             // 
-            // label5
+            // eyeBlinkNumText
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Black;
-            this.label5.Font = new System.Drawing.Font("넥슨 풋볼고딕 B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(676, 262);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 30);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "0";
+            this.eyeBlinkNumText.AutoSize = true;
+            this.eyeBlinkNumText.BackColor = System.Drawing.Color.Black;
+            this.eyeBlinkNumText.Font = new System.Drawing.Font("넥슨 풋볼고딕 B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.eyeBlinkNumText.ForeColor = System.Drawing.Color.Red;
+            this.eyeBlinkNumText.Location = new System.Drawing.Point(676, 262);
+            this.eyeBlinkNumText.Name = "eyeBlinkNumText";
+            this.eyeBlinkNumText.Size = new System.Drawing.Size(28, 30);
+            this.eyeBlinkNumText.TabIndex = 30;
+            this.eyeBlinkNumText.Text = "0";
             // 
-            // label6
+            // eyeBlinkText
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.Font = new System.Drawing.Font("넥슨 풋볼고딕 B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(562, 221);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(169, 30);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "눈 깜빡임 횟수 ";
+            this.eyeBlinkText.AutoSize = true;
+            this.eyeBlinkText.BackColor = System.Drawing.Color.Black;
+            this.eyeBlinkText.Font = new System.Drawing.Font("넥슨 풋볼고딕 B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.eyeBlinkText.ForeColor = System.Drawing.Color.Red;
+            this.eyeBlinkText.Location = new System.Drawing.Point(562, 221);
+            this.eyeBlinkText.Name = "eyeBlinkText";
+            this.eyeBlinkText.Size = new System.Drawing.Size(169, 30);
+            this.eyeBlinkText.TabIndex = 29;
+            this.eyeBlinkText.Text = "눈 깜빡임 횟수 ";
             // 
-            // imageBox1
+            // rightEyeImageBox
             // 
-            this.imageBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBox1.Location = new System.Drawing.Point(681, 383);
-            this.imageBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(130, 95);
-            this.imageBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageBox1.TabIndex = 27;
-            this.imageBox1.TabStop = false;
+            this.rightEyeImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rightEyeImageBox.Location = new System.Drawing.Point(681, 383);
+            this.rightEyeImageBox.Margin = new System.Windows.Forms.Padding(4);
+            this.rightEyeImageBox.Name = "rightEyeImageBox";
+            this.rightEyeImageBox.Size = new System.Drawing.Size(130, 95);
+            this.rightEyeImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rightEyeImageBox.TabIndex = 27;
+            this.rightEyeImageBox.TabStop = false;
             // 
-            // imageBox3
+            // leftEyeImageBox
             // 
-            this.imageBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBox3.Location = new System.Drawing.Point(681, 112);
-            this.imageBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.imageBox3.Name = "imageBox3";
-            this.imageBox3.Size = new System.Drawing.Size(130, 90);
-            this.imageBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageBox3.TabIndex = 26;
-            this.imageBox3.TabStop = false;
+            this.leftEyeImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.leftEyeImageBox.Location = new System.Drawing.Point(681, 112);
+            this.leftEyeImageBox.Margin = new System.Windows.Forms.Padding(4);
+            this.leftEyeImageBox.Name = "leftEyeImageBox";
+            this.leftEyeImageBox.Size = new System.Drawing.Size(130, 90);
+            this.leftEyeImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.leftEyeImageBox.TabIndex = 26;
+            this.leftEyeImageBox.TabStop = false;
             // 
             // imageBoxCapturedFrame
             // 
@@ -484,15 +484,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(853, 574);
-            this.Controls.Add(this.imageBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.rightEyeImageBox);
+            this.Controls.Add(this.eyeBlinkNumText);
+            this.Controls.Add(this.thresholdValueText);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.topPanel);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.eyeBlinkText);
             this.Controls.Add(this.header);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.imageBox3);
+            this.Controls.Add(this.leftEyeImageBox);
             this.Controls.Add(this.imageBoxCapturedFrame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -502,8 +502,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftEyeImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxCapturedFrame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.header.ResumeLayout(false);
@@ -540,11 +540,11 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Label menuLabel;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private Emgu.CV.UI.ImageBox imageBox1;
-        private Emgu.CV.UI.ImageBox imageBox3;
+        private System.Windows.Forms.Label thresholdValueText;
+        private System.Windows.Forms.Label eyeBlinkNumText;
+        private System.Windows.Forms.Label eyeBlinkText;
+        private Emgu.CV.UI.ImageBox rightEyeImageBox;
+        private Emgu.CV.UI.ImageBox leftEyeImageBox;
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame;
     }
 }
