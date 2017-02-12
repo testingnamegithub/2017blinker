@@ -343,9 +343,9 @@
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
-            this.panelContainer.Location = new System.Drawing.Point(233, 496);
+            this.panelContainer.Location = new System.Drawing.Point(233, 333);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(620, 78);
+            this.panelContainer.Size = new System.Drawing.Size(620, 241);
             this.panelContainer.TabIndex = 2;
             // 
             // label4
