@@ -36,8 +36,6 @@ namespace BlinkBlink_EyeJoah
 
         private MCvAvgComp face;
         private Rectangle possibleROI_rightEye, possibleROI_leftEye;
-        private LineSegment2D a, b, c;
-        private Bgr d;
 
         private Bitmap Thimage;
 
@@ -48,7 +46,7 @@ namespace BlinkBlink_EyeJoah
 
         private List<int> averageThresholdValue;
         public static Boolean catchBlackPixel = false;
-        public static Boolean catchBlink = false;
+        public static Boolean catchBlink = false;      
 
         // constructor(생성자)
         public EyeBlink(Emgu.CV.UI.ImageBox imageBoxCapturedFrame, 
@@ -159,17 +157,7 @@ namespace BlinkBlink_EyeJoah
                 Rectangle rightEyeArea = new Rectangle(new System.Drawing.Point(startingLeftEyePointOptimized.X + 5, startingLeftEyePointOptimized.Y + 10),
                                                      new Size(eyeAreaSize.Width - 33, eyeAreaSize.Height - 20));
                 #endregion
-
-                //#region 눈 영역 그리기
-                //a = new LineSegment2D(startingPointSearchEyes, endingPointSearchEyes);
-                //b = new LineSegment2D(new System.Drawing.Point(lowerEyesPointOptimized.X, lowerEyesPointOptimized.Y),
-                //                      new System.Drawing.Point((lowerEyesPointOptimized.X + face.rect.Width), (yCoordStartSearchEyes + searchEyesAreaSize.Height)));
-                //d = new Bgr(Color.Chocolate);
-
-                ////그리기
-                //frame.Draw(a, d, 3);
-                //frame.Draw(b, d, 3);
-                //#endregion
+                
 
                 #region 눈 영역 검출한 Rectangle의 크기가 양수일 경우에만 눈 영역 적출하기
                 if (leftEyeArea.Width > 0 && leftEyeArea.Height > 0 && rightEyeArea.Width > 0 && rightEyeArea.Height > 0)

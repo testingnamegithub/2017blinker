@@ -343,9 +343,9 @@
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
-            this.panelContainer.Location = new System.Drawing.Point(233, 496);
+            this.panelContainer.Location = new System.Drawing.Point(233, 135);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(620, 78);
+            this.panelContainer.Size = new System.Drawing.Size(620, 439);
             this.panelContainer.TabIndex = 2;
             // 
             // thresholdValueText
@@ -366,7 +366,7 @@
             this.eyeBlinkNumText.BackColor = System.Drawing.Color.Black;
             this.eyeBlinkNumText.Font = new System.Drawing.Font("넥슨 풋볼고딕 B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.eyeBlinkNumText.ForeColor = System.Drawing.Color.Red;
-            this.eyeBlinkNumText.Location = new System.Drawing.Point(676, 262);
+            this.eyeBlinkNumText.Location = new System.Drawing.Point(415, 35);
             this.eyeBlinkNumText.Name = "eyeBlinkNumText";
             this.eyeBlinkNumText.Size = new System.Drawing.Size(28, 30);
             this.eyeBlinkNumText.TabIndex = 30;
@@ -461,6 +461,7 @@
             // topPanel
             // 
             this.topPanel.Controls.Add(this.menuLabel);
+            this.topPanel.Controls.Add(this.eyeBlinkNumText);
             this.topPanel.Controls.Add(this.bunifuImageButton1);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(233, 0);
@@ -486,7 +487,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(853, 574);
             this.Controls.Add(this.rightEyeImageBox);
-            this.Controls.Add(this.eyeBlinkNumText);
             this.Controls.Add(this.thresholdValueText);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.topPanel);

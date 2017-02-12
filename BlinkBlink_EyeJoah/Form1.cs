@@ -27,6 +27,7 @@ namespace BlinkBlink_EyeJoah
         {
           
             InitializeComponent();
+            this.panelContainer.BringToFront();
 
             /* Eye Blink Detection 감지하는 Class 생성 및 실행 */
             eyeBlink = new EyeBlink(this.imageBoxCapturedFrame, this.leftEyeImageBox, this.rightEyeImageBox, this.thresholdValueText, this.eyeBlinkNumText);
