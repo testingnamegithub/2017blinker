@@ -22,3 +22,6 @@ E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserContro
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl2.resources
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl3.resources
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl4.resources
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe.config
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
