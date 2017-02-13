@@ -153,3 +153,6 @@ C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJo
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl3.resources
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl4.resources
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Events_Chart.EventsExample.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Funnel_chart.FunnelExample.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Gant_chart.GantchartExample.resources

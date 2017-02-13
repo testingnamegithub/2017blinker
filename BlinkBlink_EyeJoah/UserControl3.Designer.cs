@@ -47,16 +47,18 @@
             this.panel2.Location = new System.Drawing.Point(233, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(199, 225);
+            this.panel2.Size = new System.Drawing.Size(199, 227);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(2, 233);
+            this.panel3.AutoScroll = true;
+            this.panel3.AutoSize = true;
+            this.panel3.Location = new System.Drawing.Point(2, 213);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(227, 92);
+            this.panel3.Size = new System.Drawing.Size(335, 112);
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -73,6 +75,7 @@
             this.Size = new System.Drawing.Size(434, 326);
             this.Load += new System.EventHandler(this.UserControl3_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
