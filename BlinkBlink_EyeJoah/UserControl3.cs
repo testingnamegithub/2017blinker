@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BlinkBlink_EyeJoah.PieChart;
 using BlinkBlink_EyeJoah.Constatnt;
-using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
-//using System.nullReferenceException;
+using BlinkBlink_EyeJoah.Chart.PieChart;
+using BlinkBlink_EyeJoah.Chart.Section;
+using BlinkBlink_EyeJoah.Chart.Uie;
 
 namespace BlinkBlink_EyeJoah
 {
@@ -26,25 +26,32 @@ namespace BlinkBlink_EyeJoah
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            panel1.Controls.Clear();
-            ConstantChanges con = new ConstantChanges();
-            con.TopLevel = false;
-            con.AutoScroll = true;
-            panel1.Controls.Add(con);
-            con.Show();
+            
+            
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            panel2.Controls.Clear();
+           panel2.Controls.Clear();
             PieChartExample pie = new PieChartExample();
-            pie.TopLevel = false;
-            pie.AutoScroll = true;
-            panel2.Controls.Add(pie);
+           pie.TopLevel = false;
+           pie.AutoScroll = true;
+          panel2.Controls.Add(pie);
             pie.Show();
+            panel1.Controls.Clear();
+            UielementsExample sec = new UielementsExample();
+            sec.TopLevel = false;
+            sec.AutoScroll = true;
+            panel1.Controls.Add(sec);
+            sec.Show();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UserControl3_Load(object sender, EventArgs e)
         {
 
         }

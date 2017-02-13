@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using BlinkBlink_EyeJoah.Constatnt;
+using BlinkBlink_EyeJoah.Chart.Section;
 
 namespace BlinkBlink_EyeJoah
 {
@@ -75,6 +77,8 @@ namespace BlinkBlink_EyeJoah
             control3.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control3);
+           // new SectionExample().ShowDialog();
+            
         }
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)

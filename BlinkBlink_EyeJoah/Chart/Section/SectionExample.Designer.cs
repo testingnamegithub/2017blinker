@@ -1,6 +1,6 @@
-﻿namespace BlinkBlink_EyeJoah.PieChart
+﻿namespace BlinkBlink_EyeJoah.Chart.Section
 {
-    partial class PieChartExample
+    partial class SectionExample
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.SuspendLayout();
             // 
-            // pieChart1
+            // cartesianChart1
             // 
-            this.pieChart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pieChart1.Location = new System.Drawing.Point(0, 0);
-            this.pieChart1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(934, 760);
-            this.pieChart1.TabIndex = 1;
-            this.pieChart1.Text = "pieChart1";
+            this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cartesianChart1.Location = new System.Drawing.Point(0, 0);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(674, 317);
+            this.cartesianChart1.TabIndex = 4;
+            this.cartesianChart1.Text = "cartesianChart1";
+            this.cartesianChart1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.cartesianChart1_ChildChanged);
             // 
-            // PieChartExample
+            // SectionExample
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(934, 760);
-            this.Controls.Add(this.pieChart1);
+            this.ClientSize = new System.Drawing.Size(674, 317);
+            this.Controls.Add(this.cartesianChart1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PieChartExample";
-            this.Text = "PieChartExample";
+            this.Name = "SectionExample";
+            this.Text = "SectionExample";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        public LiveCharts.WinForms.PieChart pieChart1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }

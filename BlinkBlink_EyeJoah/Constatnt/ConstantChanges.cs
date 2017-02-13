@@ -18,7 +18,7 @@ namespace BlinkBlink_EyeJoah.Constatnt
     {
         public ConstantChanges()
         {
-            if (cartesianChart1 != null) { 
+            //if (cartesianChart1 != null) { 
             //To handle live data easily, in this case we built a specialized type
             //the MeasureModel class, it only contains 2 properties
             //DateTime and Value
@@ -68,7 +68,7 @@ namespace BlinkBlink_EyeJoah.Constatnt
             Timer.Tick += TimerOnTick;
             R = new Random();
             Timer.Start();
-        }
+        //}
         }
 
         public ChartValues<MeasureModel> ChartValues { get; set; }

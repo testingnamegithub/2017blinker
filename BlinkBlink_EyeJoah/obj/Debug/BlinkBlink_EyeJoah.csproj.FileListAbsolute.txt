@@ -46,3 +46,110 @@ C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\Bl
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe.config
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.pdb
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.dll
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.pdb
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.xml
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Constatnt.ConstantChanges.resources
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Form1.resources
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Properties.Resources.resources
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl1.resources
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl2.resources
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl3.resources
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl4.resources
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.PieChart.PieChartExample.resources
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Section.SectionExample.resources
+C:\Users\pc\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csprojResolveAssemblyReference.cache
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe.config
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.pdb
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.dll
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.pdb
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.xml
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csprojResolveAssemblyReference.cache
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.PieChart.PieChartExample.resources
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Section.SectionExample.resources
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Constatnt.ConstantChanges.resources
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Form1.resources
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Properties.Resources.resources
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl1.resources
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl2.resources
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl3.resources
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl4.resources
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
+C:\Users\pc\Desktop\ImagineCup_2017\BlinkBlink project\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Uie.UielementsExample.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe.config
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.pdb
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.dll
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.pdb
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.xml
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csprojResolveAssemblyReference.cache
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.PieChart.PieChartExample.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Section.SectionExample.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Uie.UielementsExample.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Constatnt.ConstantChanges.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Form1.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Properties.Resources.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl1.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl2.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl3.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl4.resources
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\Yun Myeong Sik\Documents\카카오톡 받은 파일\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe.config
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.pdb
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.dll
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.pdb
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.xml
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csprojResolveAssemblyReference.cache
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.PieChart.PieChartExample.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Section.SectionExample.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Uie.UielementsExample.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Constatnt.ConstantChanges.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Form1.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Properties.Resources.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl1.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl2.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl3.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl4.resources
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
