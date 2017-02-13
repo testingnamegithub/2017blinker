@@ -57,7 +57,7 @@
             this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cartesianChart1.Location = new System.Drawing.Point(0, 0);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(228, 206);
+            this.cartesianChart1.Size = new System.Drawing.Size(325, 206);
             this.cartesianChart1.TabIndex = 6;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 206);
+            this.ClientSize = new System.Drawing.Size(325, 206);
             this.Controls.Add(this.Y);
             this.Controls.Add(this.X);
             this.Controls.Add(this.cartesianChart1);

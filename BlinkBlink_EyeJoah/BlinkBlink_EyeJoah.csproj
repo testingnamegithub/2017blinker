@@ -103,13 +103,6 @@
     <Compile Include="Chart\Uie\UielementsExample.Designer.cs">
       <DependentUpon>UielementsExample.cs</DependentUpon>
     </Compile>
-    <Compile Include="Constatnt\ConstantChanges.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Constatnt\ConstantChanges.Designer.cs">
-      <DependentUpon>ConstantChanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Constatnt\MeasureModel.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,9 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\Uie\UielementsExample.resx">
       <DependentUpon>UielementsExample.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Constatnt\ConstantChanges.resx">
-      <DependentUpon>ConstantChanges.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

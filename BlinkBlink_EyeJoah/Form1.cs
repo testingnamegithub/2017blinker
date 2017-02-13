@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using BlinkBlink_EyeJoah.Constatnt;
 using BlinkBlink_EyeJoah.Chart.Section;
 
 namespace BlinkBlink_EyeJoah
