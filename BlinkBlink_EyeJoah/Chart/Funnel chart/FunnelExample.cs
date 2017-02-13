@@ -127,7 +127,7 @@ namespace BlinkBlink_EyeJoah.Chart.Funnel_chart
                     Children =
                     {
                         new Image {Source = new BitmapImage(userUri)},
-                        new TextBlock { Text = "LOADED THE AD", FontSize = 16, Foreground = Brushes.White}
+                        new TextBlock { Text = "PC 권장량", FontSize = 12, Foreground = Brushes.White}
                     }
                 }
             };
@@ -137,7 +137,7 @@ namespace BlinkBlink_EyeJoah.Chart.Funnel_chart
                 Y = 0,
                 VerticalAlignment = VerticalAlignment.Center,
                 HorizontalAlignment = HorizontalAlignment.Center,
-                UIElement = new TextBlock { Text = "100 %", FontSize = 40, Foreground = Brushes.White }
+                UIElement = new TextBlock { Text = "100 %", FontSize = 12, Foreground = Brushes.White }
             };
 
             var ve3 = new VisualElement
@@ -151,7 +151,7 @@ namespace BlinkBlink_EyeJoah.Chart.Funnel_chart
                     Children =
                     {
                         new Image {Source = new BitmapImage(viewUri)},
-                        new TextBlock { Text = "SAW THE AD", FontSize = 16, Foreground = Brushes.White}
+                        new TextBlock { Text = "휴식시간", FontSize = 16, Foreground = Brushes.White}
                     }
                 }
             };
@@ -162,7 +162,7 @@ namespace BlinkBlink_EyeJoah.Chart.Funnel_chart
                 Y = 0,
                 VerticalAlignment = VerticalAlignment.Center,
                 HorizontalAlignment = HorizontalAlignment.Center,
-                UIElement = new TextBlock { Text = "50 %", FontSize = 40, Foreground = Brushes.White }
+                UIElement = new TextBlock { Text = "50 %", FontSize = 12, Foreground = Brushes.White }
             };
 
             var ve5 = new VisualElement
@@ -176,7 +176,7 @@ namespace BlinkBlink_EyeJoah.Chart.Funnel_chart
                     Children =
                     {
                         new Image {Source = new BitmapImage(fingerUri)},
-                        new TextBlock { Text = "INTERACTED", FontSize = 16, Foreground = Brushes.White}
+                        new TextBlock { Text = "사용시간", FontSize = 12, Foreground = Brushes.White}
                     }
                 }
             };
@@ -186,7 +186,7 @@ namespace BlinkBlink_EyeJoah.Chart.Funnel_chart
                 Y = 0,
                 VerticalAlignment = VerticalAlignment.Center,
                 HorizontalAlignment = HorizontalAlignment.Center,
-                UIElement = new TextBlock { Text = "100 %", FontSize = 40, Foreground = Brushes.White }
+                UIElement = new TextBlock { Text = "100 %", FontSize = 12, Foreground = Brushes.White }
             };
 
             cartesianChart1.VisualElements.AddRange(new[]

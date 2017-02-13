@@ -33,7 +33,7 @@ namespace BlinkBlink_EyeJoah
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-           panel2.Controls.Clear();
+           /*panel2.Controls.Clear();
            PieChartExample pie = new PieChartExample();
            pie.TopLevel = false;
            pie.AutoScroll = true;
@@ -45,7 +45,7 @@ namespace BlinkBlink_EyeJoah
             sec.TopLevel = false;
             sec.AutoScroll = true;
             panel1.Controls.Add(sec);
-            sec.Show();
+            sec.Show();*/
 
             panel3.Controls.Clear();
             FunnelExample fun = new FunnelExample();

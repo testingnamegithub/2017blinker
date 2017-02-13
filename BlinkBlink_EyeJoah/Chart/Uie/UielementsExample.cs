@@ -22,13 +22,13 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             {
                 Values = new ChartValues<double> { 12, 10, 13, 9, 12, 13, 14, 15 },
                 Fill = Brushes.Transparent,
-                StrokeThickness = 2,
+                StrokeThickness = 5,
                 PointGeometry = null
             };
             var barSeries = new ColumnSeries
             {
                 Values = new ChartValues<double> { 12, 10, 13, 9, 12, 13, 14, 15 },
-                StrokeThickness = 0.2,
+                StrokeThickness = 11,
                 PointGeometry = null
             };
 
@@ -73,8 +73,8 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     {
                         Value = 12,
                         Stroke = Brushes.YellowGreen,
-                        StrokeThickness = 3,
-                        StrokeDashArray = new DoubleCollection(new [] {10d})
+                        StrokeThickness = 5,
+                       // StrokeDashArray = new DoubleCollection(new [] {10d})
                     }
                 }
             });
@@ -85,6 +85,11 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
 
             Panel.SetZIndex(barSeries, 0);
             Panel.SetZIndex(lineSeries, 1);
+        }
+
+        private void X_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
