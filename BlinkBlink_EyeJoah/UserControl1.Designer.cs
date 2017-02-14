@@ -41,7 +41,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label1);
             this.Name = "UserControl1";
             this.ResumeLayout(false);

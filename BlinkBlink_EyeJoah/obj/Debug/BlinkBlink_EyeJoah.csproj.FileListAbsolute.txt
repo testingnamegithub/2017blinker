@@ -155,3 +155,18 @@ C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJo
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Events_Chart.EventsExample.resources
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Funnel_chart.FunnelExample.resources
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Gant_chart.GantchartExample.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.dll
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.dll
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.dll
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.pdb
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.xml
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.pdb
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.xml
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.pdb
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.xml
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Events_Chart.EventsExample.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Funnel_chart.FunnelExample.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Gant_chart.GantchartExample.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.PieChart.PieChartExample.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Section.SectionExample.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Uie.UielementsExample.resources

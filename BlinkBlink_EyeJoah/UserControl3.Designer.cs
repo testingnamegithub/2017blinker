@@ -35,22 +35,20 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.AutoSize = true;
-            this.panel3.Location = new System.Drawing.Point(2, 54);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(3, 81);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(430, 187);
+            this.panel3.Size = new System.Drawing.Size(614, 280);
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // UserControl3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl3";
-            this.Size = new System.Drawing.Size(434, 326);
+            this.Size = new System.Drawing.Size(761, 617);
             this.Load += new System.EventHandler(this.UserControl3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

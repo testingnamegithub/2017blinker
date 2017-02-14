@@ -22,10 +22,24 @@ namespace BlinkBlink_EyeJoah
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect, // x-coordinate of upper-left corner
+            int nTopRect, // y-coordinate of upper-left corner
+            int nRightRect, // x-coordinate of lower-right corner
+            int nBottomRect, // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+         );
+
         public Form1()
         {
           
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+
             UserControl1 control1 = new UserControl1();
             control1.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(control1);
@@ -36,8 +50,7 @@ namespace BlinkBlink_EyeJoah
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            //프로그램 종료
-            Application.Exit();
+           
         }
 
         //private void switchControl(Control removeControl, Control addControl)
@@ -50,7 +63,7 @@ namespace BlinkBlink_EyeJoah
         {
             menuLabel.Text = "Home";
             UserControl1 control1 = new UserControl1();
-            control1.Dock = DockStyle.Fill;
+            //control1.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control1);
 
@@ -63,7 +76,7 @@ namespace BlinkBlink_EyeJoah
             menuLabel.Text = "Blinking";
             UserControl2 control2 = new UserControl2();
 
-            control2.Dock = DockStyle.Fill;
+            //control2.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control2);
         }
@@ -73,7 +86,7 @@ namespace BlinkBlink_EyeJoah
             menuLabel.Text = "Work";
             UserControl3 control3 = new UserControl3();
 
-            control3.Dock = DockStyle.Fill;
+            //control3.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control3);
            // new SectionExample().ShowDialog();
@@ -85,7 +98,7 @@ namespace BlinkBlink_EyeJoah
             menuLabel.Text = "Settings";
             UserControl4 control4 = new UserControl4();
 
-            control4.Dock = DockStyle.Fill;
+            //control4.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control4);
         }
@@ -99,6 +112,16 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //프로그램 종료
+            Application.Exit();
+        }
 
+        //프로그램 최소화
+        private void minimizeBtn_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

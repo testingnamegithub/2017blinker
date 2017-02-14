@@ -34,31 +34,29 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(233, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(3, 470);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(199, 227);
+            this.panel2.Size = new System.Drawing.Size(720, 374);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(2, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(3, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 227);
+            this.panel1.Size = new System.Drawing.Size(720, 437);
             this.panel1.TabIndex = 4;
             // 
             // UserControl2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl2";
-            this.Size = new System.Drawing.Size(434, 327);
+            this.Size = new System.Drawing.Size(761, 617);
             this.ResumeLayout(false);
 
         }

@@ -44,10 +44,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label1);
             this.Name = "UserControl4";
-            this.Size = new System.Drawing.Size(620, 490);
+            this.Size = new System.Drawing.Size(761, 617);
             this.ResumeLayout(false);
             this.PerformLayout();
 
