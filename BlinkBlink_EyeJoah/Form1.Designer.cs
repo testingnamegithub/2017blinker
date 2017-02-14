@@ -315,6 +315,7 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(761, 617);
             this.panelContainer.TabIndex = 2;
+            this.panelContainer.AutoScroll = true;
             // 
             // header
             // 

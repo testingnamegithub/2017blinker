@@ -19,21 +19,25 @@ namespace BlinkBlink_EyeJoah
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void chartPanel1_Paint(object sender, PaintEventArgs e)
         {
-            panel2.Controls.Clear();
-            PieChartExample pie = new PieChartExample();
-            pie.TopLevel = false;
-            pie.AutoScroll = true;
-            panel2.Controls.Add(pie);
-            pie.Show();
-
-            panel1.Controls.Clear();
+            chartPanel1.Controls.Clear();
             UielementsExample sec = new UielementsExample();
             sec.TopLevel = false;
             sec.AutoScroll = true;
-            panel1.Controls.Add(sec);
+            chartPanel1.Controls.Add(sec);
             sec.Show();
         }
+        private void chartPanel2_Paint(object sender, PaintEventArgs e)
+        {
+            chartPanel2.Controls.Clear();
+            PieChartExample pie = new PieChartExample();
+            pie.TopLevel = false;
+            pie.AutoScroll = true;
+            chartPanel2.Controls.Add(pie);
+            pie.Show();
+        }
+
+     
     }
 }

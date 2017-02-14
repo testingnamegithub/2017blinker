@@ -35,18 +35,20 @@
             // 
             this.pieChart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pieChart1.Location = new System.Drawing.Point(0, 0);
+            this.pieChart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(216, 210);
+            this.pieChart1.Size = new System.Drawing.Size(558, 410);
             this.pieChart1.TabIndex = 3;
             this.pieChart1.Text = "pieChart1";
             // 
             // PieChartExample
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(216, 210);
+            this.ClientSize = new System.Drawing.Size(558, 410);
             this.Controls.Add(this.pieChart1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PieChartExample";
             this.Text = "PieChartExample";
             this.ResumeLayout(false);
