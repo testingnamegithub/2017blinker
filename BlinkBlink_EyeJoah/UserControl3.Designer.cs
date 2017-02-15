@@ -28,28 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.chartPanel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panel3
+            // chartPanel1
             // 
-            this.panel3.AutoScroll = true;
-            this.panel3.AutoSize = true;
-            this.panel3.Location = new System.Drawing.Point(3, 81);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(614, 280);
-            this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.chartPanel1.AutoScroll = true;
+            this.chartPanel1.AutoSize = true;
+            this.chartPanel1.Location = new System.Drawing.Point(63, 42);
+            this.chartPanel1.Name = "chartPanel1";
+            this.chartPanel1.Size = new System.Drawing.Size(614, 280);
+            this.chartPanel1.TabIndex = 3;
+            this.chartPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.chartPanel1_Paint);
             // 
             // UserControl3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl3";
             this.Size = new System.Drawing.Size(761, 617);
-            this.Load += new System.EventHandler(this.UserControl3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -57,6 +56,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel chartPanel1;
     }
 }

@@ -8,20 +8,6 @@ E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.c
 E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
 E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
 E:\visual studio 2015\Projects\BlinkBlink_EyeJoah\bin\Debug\Bunifu_UI_v1.52.dll
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe.config
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.pdb
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\Bunifu_UI_v1.52.dll
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csprojResolveAssemblyReference.cache
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Form1.resources
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Properties.Resources.resources
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl1.resources
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl2.resources
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl3.resources
-E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl4.resources
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe.config
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.pdb
@@ -155,6 +141,10 @@ C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJo
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Events_Chart.EventsExample.resources
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Funnel_chart.FunnelExample.resources
 C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Gant_chart.GantchartExample.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe.config
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.exe
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\BlinkBlink_EyeJoah.pdb
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\Bunifu_UI_v1.52.dll
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.dll
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.WinForms.dll
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\bin\Debug\LiveCharts.Wpf.dll
@@ -170,3 +160,13 @@ E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Gant
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.PieChart.PieChartExample.resources
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Section.SectionExample.resources
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.Uie.UielementsExample.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Form1.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Properties.Resources.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl1.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl2.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl3.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.UserControl4.resources
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
+E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csprojResolveAssemblyReference.cache

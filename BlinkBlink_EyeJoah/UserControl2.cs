@@ -17,9 +17,11 @@ namespace BlinkBlink_EyeJoah
         public UserControl2()
         {
             InitializeComponent();
+            makeChart1();
+            makeChart2();
         }
 
-        private void chartPanel1_Paint(object sender, PaintEventArgs e)
+        private void makeChart1()
         {
             chartPanel1.Controls.Clear();
             UielementsExample sec = new UielementsExample();
@@ -27,17 +29,40 @@ namespace BlinkBlink_EyeJoah
             sec.AutoScroll = true;
             chartPanel1.Controls.Add(sec);
             sec.Show();
+
+
+
         }
-        private void chartPanel2_Paint(object sender, PaintEventArgs e)
-        {
-            chartPanel2.Controls.Clear();
+
+        private void makeChart2() {
             PieChartExample pie = new PieChartExample();
             pie.TopLevel = false;
             pie.AutoScroll = true;
             chartPanel2.Controls.Add(pie);
             pie.Show();
+
         }
 
-     
+        //private void chartPanel1_Paint(object sender, PaintEventArgs e)
+        //{
+        //    chartPanel1.Controls.Clear();
+        //    UielementsExample sec = new UielementsExample();
+        //    sec.TopLevel = false;
+        //    sec.AutoScroll = true;
+        //    chartPanel1.Controls.Add(sec);
+        //    sec.Show();
+
+        //    PieChartExample pie = new PieChartExample();
+        //    pie.TopLevel = false;
+        //    pie.AutoScroll = true;
+        //    chartPanel1.Controls.Add(pie);
+        //    pie.Show();
+        //}
+        //private void chartPanel2_Paint(object sender, PaintEventArgs e)
+        //{
+
+        //}
+
+
     }
 }

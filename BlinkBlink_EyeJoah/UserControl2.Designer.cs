@@ -34,19 +34,17 @@
             // 
             // chartPanel1
             // 
-            this.chartPanel1.Location = new System.Drawing.Point(56, 509);
+            this.chartPanel1.Location = new System.Drawing.Point(56, 29);
             this.chartPanel1.Name = "chartPanel1";
-            this.chartPanel1.Size = new System.Drawing.Size(616, 367);
+            this.chartPanel1.Size = new System.Drawing.Size(616, 644);
             this.chartPanel1.TabIndex = 4;
-            this.chartPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.chartPanel1_Paint);
             // 
             // chartPanel2
             // 
-            this.chartPanel2.Location = new System.Drawing.Point(56, 54);
+            this.chartPanel2.Location = new System.Drawing.Point(56, 705);
             this.chartPanel2.Name = "chartPanel2";
-            this.chartPanel2.Size = new System.Drawing.Size(616, 414);
-            this.chartPanel2.TabIndex = 5;
-            this.chartPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.chartPanel2_Paint);
+            this.chartPanel2.Size = new System.Drawing.Size(616, 593);
+            this.chartPanel2.TabIndex = 0;
             // 
             // UserControl2
             // 
@@ -57,13 +55,13 @@
             this.Controls.Add(this.chartPanel2);
             this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl2";
-            this.Size = new System.Drawing.Size(725, 910);
+            this.Size = new System.Drawing.Size(699, 1169);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel chartPanel2;
         private System.Windows.Forms.Panel chartPanel1;
+        private System.Windows.Forms.Panel chartPanel2;
     }
 }
