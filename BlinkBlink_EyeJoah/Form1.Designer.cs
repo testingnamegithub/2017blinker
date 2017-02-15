@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.sidebar = new System.Windows.Forms.Panel();
             this.teamLabel = new System.Windows.Forms.Label();
-            this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -52,6 +51,7 @@
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.menuLabel = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.selectCamera = new System.Windows.Forms.ComboBox();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).BeginInit();
@@ -65,8 +65,8 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(179)))), ((int)(((byte)(158)))));
+            this.sidebar.Controls.Add(this.selectCamera);
             this.sidebar.Controls.Add(this.teamLabel);
-            this.sidebar.Controls.Add(this.bunifuFlatButton5);
             this.sidebar.Controls.Add(this.bunifuFlatButton4);
             this.sidebar.Controls.Add(this.bunifuFlatButton3);
             this.sidebar.Controls.Add(this.bunifuFlatButton2);
@@ -88,42 +88,6 @@
             this.teamLabel.Size = new System.Drawing.Size(120, 20);
             this.teamLabel.TabIndex = 0;
             this.teamLabel.Text = "(T) Eye Joah";
-            // 
-            // bunifuFlatButton5
-            // 
-            this.bunifuFlatButton5.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(234)))), ((int)(((byte)(228)))));
-            this.bunifuFlatButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
-            this.bunifuFlatButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton5.BorderRadius = 2;
-            this.bunifuFlatButton5.ButtonText = "Update Profile";
-            this.bunifuFlatButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton5.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(234)))), ((int)(((byte)(228)))));
-            this.bunifuFlatButton5.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton5.Iconimage = null;
-            this.bunifuFlatButton5.Iconimage_right = null;
-            this.bunifuFlatButton5.Iconimage_right_Selected = null;
-            this.bunifuFlatButton5.Iconimage_Selected = null;
-            this.bunifuFlatButton5.IconMarginLeft = 20;
-            this.bunifuFlatButton5.IconMarginRight = 0;
-            this.bunifuFlatButton5.IconRightVisible = true;
-            this.bunifuFlatButton5.IconRightZoom = 0D;
-            this.bunifuFlatButton5.IconVisible = true;
-            this.bunifuFlatButton5.IconZoom = 45D;
-            this.bunifuFlatButton5.IsTab = true;
-            this.bunifuFlatButton5.Location = new System.Drawing.Point(43, 214);
-            this.bunifuFlatButton5.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuFlatButton5.Name = "bunifuFlatButton5";
-            this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
-            this.bunifuFlatButton5.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(234)))), ((int)(((byte)(228)))));
-            this.bunifuFlatButton5.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuFlatButton5.selected = false;
-            this.bunifuFlatButton5.Size = new System.Drawing.Size(212, 49);
-            this.bunifuFlatButton5.TabIndex = 4;
-            this.bunifuFlatButton5.Text = "Update Profile";
-            this.bunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton5.Textcolor = System.Drawing.Color.Black;
-            this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Verdana", 9F);
             // 
             // bunifuFlatButton4
             // 
@@ -310,12 +274,12 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.AutoScroll = true;
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
             this.panelContainer.Location = new System.Drawing.Point(284, 100);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(761, 617);
             this.panelContainer.TabIndex = 2;
-            this.panelContainer.AutoScroll = true;
             // 
             // header
             // 
@@ -407,6 +371,21 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // selectCamera
+            // 
+            this.selectCamera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectCamera.Font = new System.Drawing.Font("굴림", 11F);
+            this.selectCamera.FormattingEnabled = true;
+            this.selectCamera.Items.AddRange(new object[] {
+            "노트북 내장 카메라",
+            "외장 카메라",
+            "휴대폰 카메라"});
+            this.selectCamera.SelectedIndex = 0;
+            this.selectCamera.Location = new System.Drawing.Point(31, 231);
+            this.selectCamera.Name = "selectCamera";
+            this.selectCamera.Size = new System.Drawing.Size(231, 30);
+            this.selectCamera.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -452,7 +431,6 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Label menuLabel;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox tempProfile;
@@ -461,6 +439,7 @@
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.PictureBox minimizeBtn;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ComboBox selectCamera;
     }
 }
 
