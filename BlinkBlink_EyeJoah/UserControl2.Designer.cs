@@ -55,7 +55,7 @@
             this.Controls.Add(this.chartPanel2);
             this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl2";
-            this.Size = new System.Drawing.Size(699, 1169);
+            this.Size = new System.Drawing.Size(737, 1169);
             this.ResumeLayout(false);
 
         }
