@@ -74,6 +74,13 @@
     <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chart\ConstantChange\ConstantChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart\ConstantChange\ConstantChange.Designer.cs">
+      <DependentUpon>ConstantChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\ConstantChange\MeasureModel.cs" />
     <Compile Include="Chart\Events Chart\EventsExample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +149,9 @@
     <Compile Include="UserControl4.Designer.cs">
       <DependentUpon>UserControl4.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Chart\ConstantChange\ConstantChange.resx">
+      <DependentUpon>ConstantChange.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chart\Events Chart\EventsExample.resx">
       <DependentUpon>EventsExample.cs</DependentUpon>
     </EmbeddedResource>
