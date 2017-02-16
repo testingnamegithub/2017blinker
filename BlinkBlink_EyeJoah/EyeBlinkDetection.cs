@@ -18,6 +18,7 @@ using System.Threading;
 using AForge;
 using AForge.Imaging;
 using AForge.Imaging.Filters;
+using BlinkBlink_EyeJoah.Chart.ConstantChange;
 
 
 namespace BlinkBlink_EyeJoah
@@ -49,11 +50,16 @@ namespace BlinkBlink_EyeJoah
         public static Boolean catchBlackPixel = false;
         public static Boolean catchBlink = false;
 
-        // constructor(생성자)
-        public EyeBlinkDetection(Emgu.CV.UI.ImageBox imageBoxCapturedFrame,
+        /* ContantChange 그래프에 관련된 변수 */
+        private UserControl1 control1;
+        private ConstantChange con;
+
+        /* constructor(생성자) */
+        public EyeBlinkDetection(UserControl1 control1, Emgu.CV.UI.ImageBox imageBoxCapturedFrame,
                         Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox,
                         Label thresholdValue, Label eyeBlinkNum)
         {
+            this.control1 = control1;
             this.imageBoxCapturedFrame = imageBoxCapturedFrame;
             this.leftEyeImageBox = leftEyeImageBox;
             this.rightEyeImageBox = rightEyeImageBox;
@@ -63,6 +69,8 @@ namespace BlinkBlink_EyeJoah
 
         public void start_EyeBlink()
         {
+            con = control1.getConstantChange;
+
             // capture 생성
             if (_capture == null)
             {
@@ -179,6 +187,7 @@ namespace BlinkBlink_EyeJoah
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             thresholdValueText.Text = TV.ToString();
+            con.ShowThresholdValue(TV);
         }
 
         private static Bitmap ResizeImage(Bitmap image, Size newSize)

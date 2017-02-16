@@ -38,7 +38,7 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
                 new LineSeries
                 {
                     Values = ChartValues,
-                    PointGeometrySize = 18,
+                    PointGeometrySize = 2,
                     StrokeThickness = 4
                 }
             };
@@ -55,13 +55,13 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
             SetAxisLimits(System.DateTime.Now);
 
             //The next code simulates data changes every 500 ms
-            Timer = new Timer
-            {
-                Interval = 500
-            };
-            Timer.Tick += TimerOnTick;
-            R = new Random();
-            Timer.Start();
+            //Timer = new Timer
+            //{
+            //    Interval = 500
+            //};
+            //Timer.Tick += TimerOnTick;
+            //R = new Random();
+            //Timer.Start();
         }
 
         public ChartValues<MeasureModel> ChartValues { get; set; }
@@ -71,8 +71,23 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
 
         private void SetAxisLimits(System.DateTime now)
         {
-            cartesianChart1.AxisX[0].MaxValue = now.Ticks + TimeSpan.FromSeconds(1).Ticks; // lets force the axis to be 100ms ahead
-            cartesianChart1.AxisX[0].MinValue = now.Ticks - TimeSpan.FromSeconds(8).Ticks; //we only care about the last 8 seconds
+            cartesianChart1.AxisX[0].MaxValue = now.Ticks + TimeSpan.FromSeconds(0.1).Ticks; // lets force the axis to be 100ms ahead
+            cartesianChart1.AxisX[0].MinValue = now.Ticks - TimeSpan.FromSeconds(10).Ticks; //we only care about the last 8 seconds
+        }
+
+        public void ShowThresholdValue(int value)
+        {
+            var now = System.DateTime.Now;
+            ChartValues.Add(new MeasureModel
+            {
+                DateTime = now,
+                Value = value
+            });
+            SetAxisLimits(now);
+
+            //Form1.lb.Text = value.ToString();
+            //lets only use the last 30 values
+            if (ChartValues.Count > 60) ChartValues.RemoveAt(0);
         }
 
         private void TimerOnTick(object sender, EventArgs eventArgs)
@@ -84,7 +99,6 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
                 DateTime = now,
                 Value = R.Next(0, 10)
             });
-
             SetAxisLimits(now);
 
             //lets only use the last 30 values

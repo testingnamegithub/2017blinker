@@ -58,9 +58,11 @@
             this.leftEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.eyeBlinkNumText = new System.Windows.Forms.Label();
             this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).BeginInit();
+            this.panelContainer.SuspendLayout();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).BeginInit();
             this.topPanel.SuspendLayout();
@@ -305,10 +307,11 @@
             // 
             this.panelContainer.AutoScroll = true;
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
-            this.panelContainer.Location = new System.Drawing.Point(199, 417);
+            this.panelContainer.Controls.Add(this.label2);
+            this.panelContainer.Location = new System.Drawing.Point(199, 154);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(533, 61);
+            this.panelContainer.Size = new System.Drawing.Size(533, 324);
             this.panelContainer.TabIndex = 2;
             // 
             // header
@@ -423,7 +426,7 @@
             this.thresholdValueText.AutoSize = true;
             this.thresholdValueText.BackColor = System.Drawing.Color.Black;
             this.thresholdValueText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.thresholdValueText.Location = new System.Drawing.Point(499, 243);
+            this.thresholdValueText.Location = new System.Drawing.Point(478, 105);
             this.thresholdValueText.Name = "thresholdValueText";
             this.thresholdValueText.Size = new System.Drawing.Size(38, 12);
             this.thresholdValueText.TabIndex = 48;
@@ -476,6 +479,17 @@
             this.imageBoxCapturedFrame.TabIndex = 43;
             this.imageBoxCapturedFrame.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(482, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 12);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "label4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -502,6 +516,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).EndInit();
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).EndInit();
@@ -547,6 +563,7 @@
         private Emgu.CV.UI.ImageBox leftEyeImageBox;
         private System.Windows.Forms.Label eyeBlinkNumText;
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame;
+        private System.Windows.Forms.Label label2;
     }
 }
 
