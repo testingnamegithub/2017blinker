@@ -234,3 +234,13 @@ C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\opencvDl
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\opencvDll\opencv_superres2410.dll
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\opencvDll\opencv_video2410.dll
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\opencvDll\opencv_videostab2410.dll
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.dll
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Imaging.dll
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Math.dll
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Video.dll
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.xml
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Imaging.xml
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Math.xml
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Video.xml
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Video.DirectShow.xml

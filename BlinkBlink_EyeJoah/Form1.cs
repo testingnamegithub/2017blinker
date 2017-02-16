@@ -17,6 +17,8 @@ namespace BlinkBlink_EyeJoah
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
+        private EyeBlinkDetection eyeBlink;
+
         [DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
@@ -39,6 +41,10 @@ namespace BlinkBlink_EyeJoah
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+
+            /* Eye Blink Detection 감지하는 Class 생성 및 실행 */
+            eyeBlink = new EyeBlinkDetection(this.imageBoxCapturedFrame, this.leftEyeImageBox, this.rightEyeImageBox, this.thresholdValueText, this.eyeBlinkNumText);
+            eyeBlink.start_EyeBlink();
 
             UserControl1 control1 = new UserControl1();
             control1.Dock = DockStyle.Fill;
