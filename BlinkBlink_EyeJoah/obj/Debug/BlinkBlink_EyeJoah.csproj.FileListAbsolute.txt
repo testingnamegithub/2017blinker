@@ -214,7 +214,6 @@ C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBli
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.GenerateResource.Cache
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
-C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\MjpegProcessor.dll
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\opencvDll\cvextern.dll
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\opencvDll\opencv_calib3d2410.dll
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\opencvDll\opencv_contrib2410.dll
@@ -244,3 +243,4 @@ C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.I
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Math.xml
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Video.xml
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.FaceTraining.resources
