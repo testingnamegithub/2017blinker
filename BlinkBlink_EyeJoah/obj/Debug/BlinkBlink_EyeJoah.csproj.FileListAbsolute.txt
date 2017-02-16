@@ -170,3 +170,4 @@ E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csproj.Gen
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.exe
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.pdb
 E:\Git_2017BlinkBlink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.csprojResolveAssemblyReference.cache
+C:\Users\Yun Myeong Sik\Documents\2017blinkblink\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.Chart.ConstantChange.ConstantChange.resources
