@@ -21,8 +21,9 @@ namespace BlinkBlink_EyeJoah
 {
     public partial class FaceTraining : Form
     {
+        /* Training Data가 들어있는 Class */
         TrainingData trainingData;
-
+        
         Image<Bgr, Byte> currentFrame;
         Capture grabber;
         HaarCascade face;
@@ -35,6 +36,9 @@ namespace BlinkBlink_EyeJoah
         /* Training Image 및 이름에 관한 변수 */
         List<Image<Gray, byte>> trainingImages;
         List<string> trainedNamesList;
+
+        /* shoot 버튼을 눌렀는지 확인하는 변수 */
+        private Boolean clickedShootBtn = false;
 
         #region 마우스로 Form 이동에 관한 변수
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -50,8 +54,6 @@ namespace BlinkBlink_EyeJoah
         private VideoCaptureDevice FinalVideo;
         #endregion
 
-        private Boolean clickedShootBtn = false;  // shoot 버튼을 눌렀는지 확인하는 변수
-        private String userName = null;
 
         public FaceTraining()
         {
@@ -86,7 +88,6 @@ namespace BlinkBlink_EyeJoah
 
             //Face Detect
             MCvAvgComp[][] facesDetected = gray.DetectHaarCascade(face, 1.2, 10, Emgu.CV.CvEnum.HAAR_DETECTION_TYPE.DO_CANNY_PRUNING, new Size(20, 20));
-
             //Detect한 얼굴들(elements) 작업
             foreach (MCvAvgComp face in facesDetected[0])
             {
@@ -119,15 +120,18 @@ namespace BlinkBlink_EyeJoah
 
         private void takePictureBtn_Click(object sender, EventArgs e)
         {
+            // Shoot 버튼을 누른 상태일 경우 ( Next버튼으로 변한 상태 ) 
             if (clickedShootBtn.Equals(true))
             {
+                // 현재 Form을 숨기고 Timer 기능 Stop 
                 this.Hide();
                 timer1.Stop();
-
+                // MainForm 띄우기 
                 Form1 mainForm = new Form1();
                 mainForm.Show();
                 mainForm.Activate();
             }
+            // Shoot 버튼을 한번도 안 눌렀을 경우
             else
             {
                 if (nameTxtbox.Text.Equals("Insert name") ||
@@ -136,9 +140,10 @@ namespace BlinkBlink_EyeJoah
                     MessageBox.Show("Please input your name");
                     return;
                 }
-                // user 등록하기
-                takePic_NextBtn.Image = Properties.Resources._checked;
+                // user 등록하기 
                 add_User_To_TrainingImage();
+                // 버튼을 Next 사진으로 변경 후 Click 했음을 나타내는 clickedShootBtn = true로 변경 
+                takePic_NextBtn.Image = Properties.Resources._checked;
                 clickedShootBtn = true;
             }
         }
@@ -168,7 +173,7 @@ namespace BlinkBlink_EyeJoah
             // trainingData 객체 참조
             trainingData = TrainingData.Instance;
 
-            // trainingImage에 관한 Data Load하기
+            // trainingImage에 관한 Data Load하기 + load된 Data들 참조
             trainingData.loadTrainingData();
             trainingImages = trainingData.getset_TrainingImages;
             trainedNamesList = trainingData.getset_trainedNamesList;
@@ -219,7 +224,6 @@ namespace BlinkBlink_EyeJoah
 
         private void makePictureBoxToRound()
         {
-
             Rectangle r = new Rectangle(0, 0, imageBoxFrameGrabber.Width, imageBoxFrameGrabber.Height);
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             int d = 50;
@@ -228,9 +232,9 @@ namespace BlinkBlink_EyeJoah
             gp.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
             gp.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
             imageBoxFrameGrabber.Region = new Region(gp);
-
         }
 
+        // Capture된 사진 Size 조절하는 Method
         private static Bitmap ResizeImage(Bitmap image, Size newSize)
         {
             Bitmap newImage = new Bitmap(newSize.Width, newSize.Height);

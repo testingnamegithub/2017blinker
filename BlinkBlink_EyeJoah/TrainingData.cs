@@ -17,6 +17,7 @@ namespace BlinkBlink_EyeJoah
 {
     class TrainingData
     {
+        /* 싱글톤 적용 변수 */
         private static TrainingData instance = null;
 
         /* training에 관한 변수들 */

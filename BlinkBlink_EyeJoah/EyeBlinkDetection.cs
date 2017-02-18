@@ -30,25 +30,26 @@ namespace BlinkBlink_EyeJoah
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame, leftEyeImageBox, rightEyeImageBox;
         private Label thresholdValueText, eyeBlinkNumText;
 
-        private Capture _capture;
-        private HaarCascade _faces;
-        private Image<Bgr, Byte> frame;
-        private BackgroundWorker worker;
+        private TrainingData trainingData;
+
+        private Capture _capture;                                     // WebCam 작동 시키는 변수 + (Frame 뿌려주기)
+        private Image<Bgr, Byte> frame;                               // 현재 Frame 담는 변수
+        private HaarCascade _faces;                                
+        private MCvAvgComp face;                                      // Face 검출한 결과를 담고 있는 변수
+        private Bitmap Thimage;                                       // Face 검출된 이미지를 저장한 Bitmap변수 - Threshold 적용을 위한 사진(Bitmap)
+        private Rectangle possibleROI_rightEye, possibleROI_leftEye;  // 눈 영역을 담고 있는 Rect
+
+        private BackgroundWorker worker;        // 얼굴 검출 및 눈 깜빡임 기능을 하는 Thread 변수
         public static int TV = 0;               // TV = Label에 현재 Threshold값 띄어주기 위해 저장하는 변수
-
-        private MCvAvgComp face;
-        private Rectangle possibleROI_rightEye, possibleROI_leftEye;
-
-        private Bitmap Thimage;
-
-        private int blurAmount = 1;
-        private int thresholdValue = 30;
-        private int prevThresholdValue = 0;
-        private int blinkNum = 0;
+        
+        private int blurAmount = 1;             // 블러값 = 1
+        private int thresholdValue = 30;        // Threshold 초기값 = 30
+        private int prevThresholdValue = 0;     
+        private int blinkNum = 0;               // 눈 깜빡임 횟수담는 변수
 
         private List<int> averageThresholdValue;
-        public static Boolean catchBlackPixel = false;
-        public static Boolean catchBlink = false;
+        public static Boolean catchBlackPixel = false;  // Black Pixel을 발견했다 안했다를 알려주는 변수
+        public static Boolean catchBlink = false;       // Blink 감지를 위한 변수
 
         /* ContantChange 그래프에 관련된 변수 */
         private UserControl1 control1;
@@ -69,7 +70,12 @@ namespace BlinkBlink_EyeJoah
 
         public void start_EyeBlink()
         {
+            // constantChange Graph 참조하기
             con = control1.getConstantChange;
+            // TrainingData 참조하기
+            trainingData = TrainingData.Instance;
+            // trainingImage에 관한 Data Load하기
+            trainingData.loadTrainingData();
 
             // capture 생성
             if (_capture == null)
@@ -96,6 +102,7 @@ namespace BlinkBlink_EyeJoah
             // capture가 생성 됐다면 EventHandler 추가 및 실행
             if (_capture != null)
             {
+                // 일종의 EventHandler ( 일정시간 마다 FrameGrabber 실행시키기 )
                 Application.Idle += FrameGrabber;
             }
         }
@@ -148,6 +155,7 @@ namespace BlinkBlink_EyeJoah
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
             Image<Gray, Byte> grayFrame = (Image<Gray, Byte>)e.Argument;
+
             // 머신러닝을 이용한 얼굴 인식 Haaracascade 돌리기
             MCvAvgComp[][] facesDetected = grayFrame.DetectHaarCascade(_faces, 1.1, 0, Emgu.CV.CvEnum.HAAR_DETECTION_TYPE.FIND_BIGGEST_OBJECT, new Size(20, 20));
             if (facesDetected[0].Length != 0)
@@ -188,7 +196,9 @@ namespace BlinkBlink_EyeJoah
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             thresholdValueText.Text = TV.ToString();
-            con.ShowThresholdValue(TV);
+
+            // constantGraph에 현재 Threshold값 넘겨주기
+            con.ShowThresholdValue(TV);    
         }
 
         private static Bitmap ResizeImage(Bitmap image, Size newSize)
