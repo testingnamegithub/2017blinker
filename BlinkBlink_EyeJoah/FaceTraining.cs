@@ -21,7 +21,8 @@ namespace BlinkBlink_EyeJoah
 {
     public partial class FaceTraining : Form
     {
-        #region Declararation of all variables, vectors and haarcascades
+        TrainingData trainingData;
+
         Image<Bgr, Byte> currentFrame;
         Capture grabber;
         HaarCascade face;
@@ -31,12 +32,9 @@ namespace BlinkBlink_EyeJoah
         Image<Gray, byte> gray = null;
         Bitmap captureBitmap;
 
-        /* training에 관한 변수들 */
-        List<Image<Gray, byte>> trainingImages = new List<Image<Gray, byte>>();
-        List<string> trainedNamesList = new List<string>();
-        int CountTrain = 0;
-
-        #endregion
+        /* Training Image 및 이름에 관한 변수 */
+        List<Image<Gray, byte>> trainingImages;
+        List<string> trainedNamesList;
 
         #region 마우스로 Form 이동에 관한 변수
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -103,7 +101,7 @@ namespace BlinkBlink_EyeJoah
                 if (trainingImages.ToArray().Length != 0)
                 {
                     //TermCriteria for face recognition with numbers of trained images like maxIteration
-                    MCvTermCriteria termCrit = new MCvTermCriteria(CountTrain, 0.001);
+                    MCvTermCriteria termCrit = new MCvTermCriteria(trainingData.getset_CountTrain, 0.001);
 
                     //Eigen face recognizer
                     EigenObjectRecognizer recognizer = new EigenObjectRecognizer(trainingImages.ToArray(), trainedNamesList.ToArray(), 3000, ref termCrit);
@@ -155,29 +153,6 @@ namespace BlinkBlink_EyeJoah
             nameTxtbox.ForeColor = Color.Black;
         }
 
-        private void loadTrainingImage()
-        {
-            try
-            {
-                //파일에 있는 Training Image 및 label load.
-                string Labelsinfo = File.ReadAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt");
-                string[] trainedNames = Labelsinfo.Split('%');
-                CountTrain = Convert.ToInt16(trainedNames[0]);
-
-                // 파일에 있는 TrainingImage List에 저장
-                string LoadFaces;
-                for (int tf = 1; tf < CountTrain + 1; tf++)
-                {
-                    LoadFaces = "face" + tf + ".bmp";
-                    trainingImages.Add(new Image<Gray, byte>(Application.StartupPath + "/TrainedFaces/" + LoadFaces));
-                    trainedNamesList.Add(trainedNames[tf]);
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Nothing in binary database, please add at least a face(Simply train the prototype with the Add Face Button).", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
         private void loadWebCamDevice()
         {
             //VideoCaptureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -188,38 +163,36 @@ namespace BlinkBlink_EyeJoah
             //comboBox1.Items.Add("Smart Phone");
             //comboBox1.SelectedIndex = 0;
         }
+        private void loadTrainingImage()
+        {
+            // trainingData 객체 참조
+            trainingData = TrainingData.Instance;
+
+            // trainingImage에 관한 Data Load하기
+            trainingData.loadTrainingData();
+            trainingImages = trainingData.getset_TrainingImages;
+            trainedNamesList = trainingData.getset_trainedNamesList;
+        }
+
         private void add_User_To_TrainingImage()
         {
             try
             {
-                //카운터 증가
-                CountTrain = CountTrain + 1;
-
-                //현재 CaptureFrame 320X240 사이즈로 저장
-                gray = grabber.QueryGrayFrame().Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-
-                //얼굴 검출 시작
-                MCvAvgComp[][] facesDetected = gray.DetectHaarCascade(face, 1.1, 0, Emgu.CV.CvEnum.HAAR_DETECTION_TYPE.FIND_BIGGEST_OBJECT, new Size(20, 20));
-
-                //검출한 이미지 100X100으로 사이즈 재조정 및 TrainingImage List에 저장
+                // Training Image 카운트 증가
+                trainingData.getset_CountTrain = trainingData.getset_CountTrain + 1;
+                
+                // 검출한 얼굴 이미지 100X100으로 사이즈 재조정 및 TrainingImage List에 저장
                 trainedFace = result.Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-                trainingImages.Add(trainedFace);
-                trainedNamesList.Add(nameTxtbox.Text);
+                trainingData.getset_TrainingImages.Add(trainedFace);
+                trainingData.getset_trainedNamesList.Add(nameTxtbox.Text);
+                
+                // 파일에 위 Data 저장하기
+                trainingData.saveTrainingData();
 
-                //등록한 얼굴을 100X100형태로 imageBox1에 투영
+                // 등록한 얼굴을 100X100형태로 imageBox1에 투영
                 captureBitmap = ResizeImage(captureBitmap, new Size(100, 100));
                 pictureBox1.Image = captureBitmap;
-
-                //등록한 얼굴 수 TrainedLabels.txt에 저장 --> WriteAllText를 통해 File 존재시 덮어씀
-                File.WriteAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", trainingImages.ToArray().Length.ToString() + "%");
-
-                //등록한 얼굴 bmp 파일로 저장 및 이름 TrainedLabels.txt에 저장
-                for (int i = 1; i < trainingImages.ToArray().Length + 1; i++)
-                {
-                    trainingImages.ToArray()[i - 1].Save(Application.StartupPath + "/TrainedFaces/face" + i + ".bmp");
-                    File.AppendAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", trainedNamesList.ToArray()[i - 1] + "%");
-                }
-
+                
                 reTryBtn.Visible = true;
                 MessageBox.Show(nameTxtbox.Text + "´s face detected and added :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -269,17 +242,5 @@ namespace BlinkBlink_EyeJoah
             return newImage;
         }
 
-        public List<Image<Gray, byte>> getTrainingImages
-        {
-            get { return trainingImages; }
-        }
-        public String getUserName
-        {
-            get { return userName; }
-        }
-        public int getCountTrain
-        {
-            get { return CountTrain; }
-        }
     }
 }
