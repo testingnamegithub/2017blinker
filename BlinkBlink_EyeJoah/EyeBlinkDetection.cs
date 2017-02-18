@@ -89,7 +89,6 @@ namespace BlinkBlink_EyeJoah
                     worker.DoWork += new DoWorkEventHandler(worker_DoWork);
                     worker.ProgressChanged += new ProgressChangedEventHandler(worker_ProgressChanged);
                     worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
-
                 }
                 catch (NullReferenceException excpt) { }
             }
@@ -115,8 +114,13 @@ namespace BlinkBlink_EyeJoah
             // EventHandler 주기마다 Detect한 얼굴 사각형으로 그리기
             if (!face.Equals(null))
             {
-                frame.Draw(face.rect, new Bgr(Color.Violet), 2);
+                frame.Draw(face.rect, new Bgr(Color.Red), 2);
+                if (face.rect.Width > 300)
+                {
+                    MessageBox.Show("모니터와 사이가 넓습니다 거리를 유지시켜주세요");
+                }
             }
+
             // worker 쓰레드 실행
             if (!worker.IsBusy)
                 worker.RunWorkerAsync(grayFrame);
@@ -166,8 +170,6 @@ namespace BlinkBlink_EyeJoah
                 Rectangle rightEyeArea = new Rectangle(new System.Drawing.Point(startingLeftEyePointOptimized.X + 5, startingLeftEyePointOptimized.Y + 10),
                                                      new Size(eyeAreaSize.Width - 33, eyeAreaSize.Height - 20));
                 #endregion
-
-
                 #region 눈 영역 검출한 Rectangle의 크기가 양수일 경우에만 눈 영역 적출하기
                 if (leftEyeArea.Width > 0 && leftEyeArea.Height > 0 && rightEyeArea.Width > 0 && rightEyeArea.Height > 0)
                 {

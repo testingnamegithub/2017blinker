@@ -268,9 +268,11 @@
     <None Include="ETC\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\checked.bmp" />
     <None Include="bin\Debug\OpenCamera1.png" />
     <None Include="bin\Debug\system-restart-panel.png" />
     <None Include="bin\Debug\avatar.png" />
+    <None Include="bin\Debug\checked.png" />
     <Content Include="opencvDll\cvextern.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

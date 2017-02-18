@@ -10,6 +10,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 using AForge;
 using AForge.Video;
@@ -37,7 +38,6 @@ namespace BlinkBlink_EyeJoah
         string name, names = null;
         #endregion
 
-        private Boolean clickedShootBtn = false;  // shoot 버튼을 눌렀는지 확인하는 변수
         #region 마우스로 Form 이동에 관한 변수
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -51,10 +51,15 @@ namespace BlinkBlink_EyeJoah
         private FilterInfoCollection VideoCaptureDevices;
         private VideoCaptureDevice FinalVideo;
         #endregion
+
+        private Boolean clickedShootBtn = false;  // shoot 버튼을 눌렀는지 확인하는 변수
+        private String userName = null;
+
         public FaceTraining()
         {
             InitializeComponent();
 
+            takePic_NextBtn.Image = Properties.Resources.OpenCamera1;
             //얼굴 검출을 위한 Haarcascade Load
             face = new HaarCascade("haarcascade_frontalface_default.xml");
 
@@ -67,13 +72,14 @@ namespace BlinkBlink_EyeJoah
 
             //Capture Device 초기화
             grabber = new Capture();
-            //the FrameGraber event 실행
-            Application.Idle += new EventHandler(FrameGrabber);
-        }
 
+            //Idle 대신 Timer로 FrameGraber event 실행
+            timer1.Tick += new EventHandler(FrameGrabber);
+            timer1.Start();
+        }
+        
         private void FrameGrabber(object sender, EventArgs e)
         {
-
             NamePersons.Add("");
 
             //현재 Frame을 Capture Device를 통해 얻기       
@@ -110,7 +116,6 @@ namespace BlinkBlink_EyeJoah
 
                     //Draw the label for each face detected and recognized
                     currentFrame.Draw(name, ref font, new System.Drawing.Point(f.rect.X - 2, f.rect.Y - 2), new Bgr(Color.LightGreen));
-
                 }
 
                 NamePersons[t - 1] = name;
@@ -129,18 +134,18 @@ namespace BlinkBlink_EyeJoah
             names = "";
             //Clear the list(vector) of names
             NamePersons.Clear();
-
         }
 
-        private void takePictureBtn_Click(object sender, MouseEventArgs e)
+        private void takePictureBtn_Click(object sender, EventArgs e)
         {
             if (clickedShootBtn.Equals(true))
             {
-                Form1 frm = new Form1();
-                frm.Show();
-                frm.Activate();
                 this.Hide();
+                timer1.Stop();
 
+                Form1 mainForm = new Form1();
+                mainForm.Show();
+                mainForm.Activate();
             }
             else
             {
@@ -151,6 +156,7 @@ namespace BlinkBlink_EyeJoah
                     return;
                 }
                 // user 등록하기
+                takePic_NextBtn.Image = Properties.Resources._checked;
                 add_User_To_TrainingImage();
                 clickedShootBtn = true;
             }
@@ -163,6 +169,7 @@ namespace BlinkBlink_EyeJoah
         private void nameTxtbox_MouseClick(object sender, MouseEventArgs e)
         {
             nameTxtbox.Clear();
+            nameTxtbox.ForeColor = Color.Black;
         }
 
         private void loadTrainingImage()
@@ -245,7 +252,6 @@ namespace BlinkBlink_EyeJoah
 
         }
 
-
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -283,6 +289,19 @@ namespace BlinkBlink_EyeJoah
                 g.DrawImage(image, 0, 0, newSize.Width, newSize.Height);
             }
             return newImage;
+        }
+
+        public List<Image<Gray, byte>> getTrainingImages
+        {
+            get { return trainingImages; }
+        }
+        public String getUserName
+        {
+            get { return userName; }
+        }
+        public int getContTrain
+        {
+            get { return ContTrain; }
         }
     }
 }

@@ -38,12 +38,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.nameTxtbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
             this.minimizeBtn = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.reTryBtn = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.takePic_NextBtn = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -52,7 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reTryBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.takePic_NextBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -100,8 +101,8 @@
             // groupBox1
             // 
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.takePic_NextBtn);
             this.groupBox1.Controls.Add(this.reTryBtn);
-            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.nameTxtbox);
             this.groupBox1.Controls.Add(this.label1);
@@ -144,6 +145,10 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Name: ";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 40;
+            // 
             // imageBoxFrameGrabber
             // 
             this.imageBoxFrameGrabber.Location = new System.Drawing.Point(13, 5);
@@ -180,7 +185,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.avatar;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(7, 319);
@@ -191,7 +195,7 @@
             // 
             // reTryBtn
             // 
-            this.reTryBtn.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.system_restart_panel;
+            this.reTryBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reTryBtn.BackgroundImage")));
             this.reTryBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.reTryBtn.Location = new System.Drawing.Point(211, 54);
             this.reTryBtn.Name = "reTryBtn";
@@ -201,16 +205,15 @@
             this.reTryBtn.Visible = false;
             this.reTryBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.reTryBtn_Click);
             // 
-            // pictureBox2
+            // takePic_NextBtn
             // 
-            this.pictureBox2.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.OpenCamera1;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(257, 54);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.takePictureBtn_Click);
+            this.takePic_NextBtn.Location = new System.Drawing.Point(257, 54);
+            this.takePic_NextBtn.Name = "takePic_NextBtn";
+            this.takePic_NextBtn.Size = new System.Drawing.Size(40, 40);
+            this.takePic_NextBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.takePic_NextBtn.TabIndex = 19;
+            this.takePic_NextBtn.TabStop = false;
+            this.takePic_NextBtn.Click += new System.EventHandler(this.takePictureBtn_Click);
             // 
             // FaceTraining
             // 
@@ -234,7 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reTryBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.takePic_NextBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,9 +254,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox reTryBtn;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox nameTxtbox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox takePic_NextBtn;
     }
 }
