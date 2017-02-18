@@ -100,7 +100,6 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
-
         void FrameGrabber(object sender, EventArgs e)
         {
             //새로운 Frame 얻은 후 ImageBox에 투영하기
@@ -202,7 +201,6 @@ namespace BlinkBlink_EyeJoah
             }
             return newImage;
         }
-
 
         #region 눈 검출 방법 : 눈 떳을 때, 눈 감았을 때의 threshold 값의 변화에 따라 눈 깜빡임 인식
         public void thresholdEffect(int catchThreshold)

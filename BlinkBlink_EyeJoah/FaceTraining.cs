@@ -27,15 +27,15 @@ namespace BlinkBlink_EyeJoah
         HaarCascade face;
 
         MCvFont font = new MCvFont(FONT.CV_FONT_HERSHEY_TRIPLEX, 0.5d, 0.5d);
-        Image<Gray, byte> result, TrainedFace = null;
+        Image<Gray, byte> result, trainedFace = null;
         Image<Gray, byte> gray = null;
-
         Bitmap captureBitmap;
+
+        /* training에 관한 변수들 */
         List<Image<Gray, byte>> trainingImages = new List<Image<Gray, byte>>();
-        List<string> labels = new List<string>();
-        List<string> NamePersons = new List<string>();
-        int ContTrain, t = 0;
-        string name, names = null;
+        List<string> trainedNamesList = new List<string>();
+        int CountTrain = 0;
+        string name = null;
         #endregion
 
         #region 마우스로 Form 이동에 관한 변수
@@ -80,8 +80,6 @@ namespace BlinkBlink_EyeJoah
         
         private void FrameGrabber(object sender, EventArgs e)
         {
-            NamePersons.Add("");
-
             //현재 Frame을 Capture Device를 통해 얻기       
             currentFrame = grabber.QueryFrame().Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
 
@@ -92,48 +90,33 @@ namespace BlinkBlink_EyeJoah
             MCvAvgComp[][] facesDetected = gray.DetectHaarCascade(face, 1.2, 10, Emgu.CV.CvEnum.HAAR_DETECTION_TYPE.DO_CANNY_PRUNING, new Size(20, 20));
 
             //Detect한 얼굴들(elements) 작업
-            foreach (MCvAvgComp f in facesDetected[0])
+            foreach (MCvAvgComp face in facesDetected[0])
             {
-                //검출할 때마다 t값 증가 ( t= 사람 수 )
-                t = t + 1;
                 //result 변수에 현재 잡힌 얼굴 저장.( 얼굴 training 등록할 때 쓰임 )
-                result = currentFrame.Copy(f.rect).Convert<Gray, byte>().Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                result = currentFrame.Copy(face.rect).Convert<Gray, byte>().Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
                 //잡힌 얼굴 사각형으로 그리기
-                currentFrame.Draw(f.rect, new Bgr(Color.CadetBlue), 3);
+                currentFrame.Draw(face.rect, new Bgr(Color.CadetBlue), 3);
                 //잡힌 얼굴 cature시 띄어줄 사진 Bitmap으로 변환
-                captureBitmap = currentFrame.Copy(f.rect).Bitmap;
+                captureBitmap = currentFrame.Copy(face.rect).Bitmap;
 
                 //잡힌 얼굴 비교하기 ( Training안에 있는 이미지를 통해 )
                 if (trainingImages.ToArray().Length != 0)
                 {
                     //TermCriteria for face recognition with numbers of trained images like maxIteration
-                    MCvTermCriteria termCrit = new MCvTermCriteria(ContTrain, 0.001);
+                    MCvTermCriteria termCrit = new MCvTermCriteria(CountTrain, 0.001);
 
                     //Eigen face recognizer
-                    EigenObjectRecognizer recognizer = new EigenObjectRecognizer(trainingImages.ToArray(), labels.ToArray(), 3000, ref termCrit);
-
+                    EigenObjectRecognizer recognizer = new EigenObjectRecognizer(trainingImages.ToArray(), trainedNamesList.ToArray(), 3000, ref termCrit);
+                    //해당 검출한 Face의 이름 찾기
                     name = recognizer.Recognize(result);
 
                     //Draw the label for each face detected and recognized
-                    currentFrame.Draw(name, ref font, new System.Drawing.Point(f.rect.X - 2, f.rect.Y - 2), new Bgr(Color.LightGreen));
+                    currentFrame.Draw(name, ref font, new System.Drawing.Point(face.rect.X - 2, face.rect.Y - 2), new Bgr(Color.LightGreen));
                 }
-
-                NamePersons[t - 1] = name;
-                NamePersons.Add("");
-
             }
-            t = 0;
-
-            //Names concatenation of persons recognized
-            for (int nnn = 0; nnn < facesDetected[0].Length; nnn++)
-            {
-                names = names + NamePersons[nnn] + ", ";
-            }
+            
             //Show the faces procesed and recognized
             imageBoxFrameGrabber.Image = currentFrame;
-            names = "";
-            //Clear the list(vector) of names
-            NamePersons.Clear();
         }
 
         private void takePictureBtn_Click(object sender, EventArgs e)
@@ -178,23 +161,20 @@ namespace BlinkBlink_EyeJoah
             {
                 //파일에 있는 Training Image 및 label load.
                 string Labelsinfo = File.ReadAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt");
-                string[] Labels = Labelsinfo.Split('%');
-                ContTrain = Convert.ToInt16(Labels[0]);
-
-                string LoadFaces;
+                string[] trainedNames = Labelsinfo.Split('%');
+                CountTrain = Convert.ToInt16(trainedNames[0]);
 
                 // 파일에 있는 TrainingImage List에 저장
-                for (int tf = 1; tf < ContTrain + 1; tf++)
+                string LoadFaces;
+                for (int tf = 1; tf < CountTrain + 1; tf++)
                 {
                     LoadFaces = "face" + tf + ".bmp";
                     trainingImages.Add(new Image<Gray, byte>(Application.StartupPath + "/TrainedFaces/" + LoadFaces));
-                    labels.Add(Labels[tf]);
+                    trainedNamesList.Add(trainedNames[tf]);
                 }
-
             }
             catch (Exception e)
             {
-                //MessageBox.Show(e.ToString());
                 MessageBox.Show("Nothing in binary database, please add at least a face(Simply train the prototype with the Add Face Button).", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
@@ -213,7 +193,7 @@ namespace BlinkBlink_EyeJoah
             try
             {
                 //카운터 증가
-                ContTrain = ContTrain + 1;
+                CountTrain = CountTrain + 1;
 
                 //현재 CaptureFrame 320X240 사이즈로 저장
                 gray = grabber.QueryGrayFrame().Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
@@ -222,9 +202,9 @@ namespace BlinkBlink_EyeJoah
                 MCvAvgComp[][] facesDetected = gray.DetectHaarCascade(face, 1.1, 0, Emgu.CV.CvEnum.HAAR_DETECTION_TYPE.FIND_BIGGEST_OBJECT, new Size(20, 20));
 
                 //검출한 이미지 100X100으로 사이즈 재조정 및 TrainingImage List에 저장
-                TrainedFace = result.Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-                trainingImages.Add(TrainedFace);
-                labels.Add(nameTxtbox.Text);
+                trainedFace = result.Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                trainingImages.Add(trainedFace);
+                trainedNamesList.Add(nameTxtbox.Text);
 
                 //등록한 얼굴을 100X100형태로 imageBox1에 투영
                 captureBitmap = ResizeImage(captureBitmap, new Size(100, 100));
@@ -237,11 +217,10 @@ namespace BlinkBlink_EyeJoah
                 for (int i = 1; i < trainingImages.ToArray().Length + 1; i++)
                 {
                     trainingImages.ToArray()[i - 1].Save(Application.StartupPath + "/TrainedFaces/face" + i + ".bmp");
-                    File.AppendAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", labels.ToArray()[i - 1] + "%");
+                    File.AppendAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", trainedNamesList.ToArray()[i - 1] + "%");
                 }
 
                 reTryBtn.Visible = true;
-                //shootBtn.Text = "Start";
                 MessageBox.Show(nameTxtbox.Text + "´s face detected and added :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
@@ -249,7 +228,6 @@ namespace BlinkBlink_EyeJoah
             {
                 MessageBox.Show("Enable the face detection first", "Training Fail", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -299,9 +277,9 @@ namespace BlinkBlink_EyeJoah
         {
             get { return userName; }
         }
-        public int getContTrain
+        public int getCountTrain
         {
-            get { return ContTrain; }
+            get { return CountTrain; }
         }
     }
 }
