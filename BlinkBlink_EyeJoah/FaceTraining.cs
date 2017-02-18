@@ -22,20 +22,20 @@ namespace BlinkBlink_EyeJoah
     public partial class FaceTraining : Form
     {
         /* Training Data가 들어있는 Class */
-        TrainingData trainingData;
-        
-        Image<Bgr, Byte> currentFrame;
-        Capture grabber;
-        HaarCascade face;
+        private TrainingData trainingData;
 
-        MCvFont font = new MCvFont(FONT.CV_FONT_HERSHEY_TRIPLEX, 0.5d, 0.5d);
-        Image<Gray, byte> result, trainedFace = null;
-        Image<Gray, byte> gray = null;
-        Bitmap captureBitmap;
+        private Image<Bgr, Byte> currentFrame;
+        private Capture grabber;
+        private HaarCascade face;
+
+        private Image<Gray, byte> result, trainedFace = null;
+        private Image<Gray, byte> gray = null;
+        private Bitmap captureBitmap;
+        public static MCvFont font = new MCvFont(FONT.CV_FONT_HERSHEY_TRIPLEX, 1d, 1d);
 
         /* Training Image 및 이름에 관한 변수 */
-        List<Image<Gray, byte>> trainingImages;
-        List<string> trainedNamesList;
+        private List<Image<Gray, byte>> trainingImages;
+        private List<string> trainedNamesList;
 
         /* shoot 버튼을 눌렀는지 확인하는 변수 */
         private Boolean clickedShootBtn = false;

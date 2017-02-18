@@ -161,6 +161,24 @@ namespace BlinkBlink_EyeJoah
             if (facesDetected[0].Length != 0)
             {
                 face = facesDetected[0][0];
+                //result 변수에 현재 잡힌 얼굴 저장.( 얼굴 training 등록할 때 쓰임 )
+                Image<Gray, byte> result = frame.Copy(face.rect).Convert<Gray, byte>().Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+
+                //잡힌 얼굴 비교하기 ( Training안에 있는 이미지를 통해 )
+                if (trainingData.getset_TrainingImages.ToArray().Length != 0)
+                {
+                    //TermCriteria for face recognition with numbers of trained images like maxIteration
+                    MCvTermCriteria termCrit = new MCvTermCriteria(trainingData.getset_CountTrain, 0.001);
+
+                    //Eigen face recognizer
+                    EigenObjectRecognizer recognizer = new EigenObjectRecognizer(trainingData.getset_TrainingImages.ToArray(),
+                                                                                 trainingData.getset_trainedNamesList.ToArray(), 3000, ref termCrit);
+                    //해당 검출한 Face의 이름 찾기
+                    String name = recognizer.Recognize(result);
+
+                    //Draw the label for each face detected and recognized
+                    frame.Draw(name, ref FaceTraining.font, new System.Drawing.Point(face.rect.X - 2, face.rect.Y - 2), new Bgr(Color.LightGreen));
+                }
 
                 #region 얼굴 인식한것을 토대로 눈 찾기
                 Int32 yCoordStartSearchEyes = face.rect.Top + (face.rect.Height * 3 / 11);
@@ -281,7 +299,7 @@ namespace BlinkBlink_EyeJoah
 
                 // catchThreshold와 평균 Threshold값을 비교하여 눈 깜빡임 detect
                 // 만약 직전에도 이 값일 경우엔 Pass 
-                if (catchThreshold > averageThresholdValue.Average() + 8 &&
+                if (catchThreshold > averageThresholdValue.Average() + 9 &&
                     catchThreshold < averageThresholdValue.Average() + 25)
                 {
                     if (!catchBlink)

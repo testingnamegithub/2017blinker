@@ -43,6 +43,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.header = new System.Windows.Forms.Panel();
             this.tempLogo = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.leftEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.eyeBlinkNumText = new System.Windows.Forms.Label();
             this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).BeginInit();
@@ -85,7 +85,7 @@
             this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(2);
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(199, 478);
             this.sidebar.TabIndex = 0;
@@ -100,7 +100,7 @@
             "외장 카메라",
             "휴대폰 카메라"});
             this.selectCamera.Location = new System.Drawing.Point(22, 154);
-            this.selectCamera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.selectCamera.Margin = new System.Windows.Forms.Padding(2);
             this.selectCamera.Name = "selectCamera";
             this.selectCamera.Size = new System.Drawing.Size(163, 23);
             this.selectCamera.TabIndex = 4;
@@ -140,7 +140,7 @@
             this.bunifuFlatButton4.IconZoom = 45D;
             this.bunifuFlatButton4.IsTab = true;
             this.bunifuFlatButton4.Location = new System.Drawing.Point(2, 372);
-            this.bunifuFlatButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuFlatButton4.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuFlatButton4.Name = "bunifuFlatButton4";
             this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(234)))), ((int)(((byte)(228)))));
@@ -216,7 +216,7 @@
             this.bunifuFlatButton2.IconZoom = 45D;
             this.bunifuFlatButton2.IsTab = true;
             this.bunifuFlatButton2.Location = new System.Drawing.Point(2, 251);
-            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(234)))), ((int)(((byte)(228)))));
@@ -253,7 +253,7 @@
             this.bunifuFlatButton1.IconZoom = 45D;
             this.bunifuFlatButton1.IsTab = true;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(2, 191);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(234)))), ((int)(((byte)(228)))));
@@ -274,7 +274,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.tempProfile);
             this.panel1.Location = new System.Drawing.Point(0, 82);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(199, 55);
             this.panel1.TabIndex = 0;
@@ -296,7 +296,7 @@
             // 
             this.tempProfile.Image = ((System.Drawing.Image)(resources.GetObject("tempProfile.Image")));
             this.tempProfile.Location = new System.Drawing.Point(18, 2);
-            this.tempProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tempProfile.Margin = new System.Windows.Forms.Padding(2);
             this.tempProfile.Name = "tempProfile";
             this.tempProfile.Size = new System.Drawing.Size(54, 50);
             this.tempProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -308,11 +308,22 @@
             this.panelContainer.AutoScroll = true;
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
             this.panelContainer.Controls.Add(this.label2);
-            this.panelContainer.Location = new System.Drawing.Point(199, 154);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelContainer.Location = new System.Drawing.Point(199, 404);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(533, 324);
+            this.panelContainer.Size = new System.Drawing.Size(533, 74);
             this.panelContainer.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(482, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 12);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "label4";
             // 
             // header
             // 
@@ -320,7 +331,7 @@
             this.header.Controls.Add(this.tempLogo);
             this.header.Controls.Add(this.titleLabel);
             this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.header.Margin = new System.Windows.Forms.Padding(2);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(199, 71);
             this.header.TabIndex = 1;
@@ -330,7 +341,7 @@
             // 
             this.tempLogo.Image = ((System.Drawing.Image)(resources.GetObject("tempLogo.Image")));
             this.tempLogo.Location = new System.Drawing.Point(22, 23);
-            this.tempLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tempLogo.Margin = new System.Windows.Forms.Padding(2);
             this.tempLogo.Name = "tempLogo";
             this.tempLogo.Size = new System.Drawing.Size(28, 27);
             this.tempLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -364,7 +375,7 @@
             this.topPanel.Controls.Add(this.menuLabel);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(199, 0);
-            this.topPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.topPanel.Margin = new System.Windows.Forms.Padding(2);
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(532, 71);
             this.topPanel.TabIndex = 3;
@@ -374,7 +385,7 @@
             // 
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
             this.minimizeBtn.Location = new System.Drawing.Point(459, 8);
-            this.minimizeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.minimizeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(24, 23);
             this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -386,7 +397,7 @@
             // 
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.Location = new System.Drawing.Point(500, 8);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(2);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(24, 23);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -479,17 +490,6 @@
             this.imageBoxCapturedFrame.TabIndex = 43;
             this.imageBoxCapturedFrame.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(482, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 12);
-            this.label2.TabIndex = 49;
-            this.label2.Text = "label4";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -507,7 +507,7 @@
             this.Controls.Add(this.header);
             this.Controls.Add(this.sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "                                     Blink Blink";
