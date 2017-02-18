@@ -172,6 +172,7 @@
     <Compile Include="FaceTraining.Designer.cs">
       <DependentUpon>FaceTraining.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrainingData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

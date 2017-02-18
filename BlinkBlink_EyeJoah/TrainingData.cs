@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlinkBlink_EyeJoah
 {
-    class FaceTrainingData
+    class TrainingData
     {
     }
 }

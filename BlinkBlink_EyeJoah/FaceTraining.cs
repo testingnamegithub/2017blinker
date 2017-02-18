@@ -35,7 +35,7 @@ namespace BlinkBlink_EyeJoah
         List<Image<Gray, byte>> trainingImages = new List<Image<Gray, byte>>();
         List<string> trainedNamesList = new List<string>();
         int CountTrain = 0;
-        string name = null;
+
         #endregion
 
         #region 마우스로 Form 이동에 관한 변수
@@ -108,7 +108,7 @@ namespace BlinkBlink_EyeJoah
                     //Eigen face recognizer
                     EigenObjectRecognizer recognizer = new EigenObjectRecognizer(trainingImages.ToArray(), trainedNamesList.ToArray(), 3000, ref termCrit);
                     //해당 검출한 Face의 이름 찾기
-                    name = recognizer.Recognize(result);
+                    String name = recognizer.Recognize(result);
 
                     //Draw the label for each face detected and recognized
                     currentFrame.Draw(name, ref font, new System.Drawing.Point(face.rect.X - 2, face.rect.Y - 2), new Bgr(Color.LightGreen));
