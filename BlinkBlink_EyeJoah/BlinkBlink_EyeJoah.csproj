@@ -269,6 +269,9 @@
     <None Include="ETC\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\Icon.png" />
+    <None Include="Resources\KakaoTalk_20170218_235344884.png" />
     <None Include="Resources\checked.bmp" />
     <None Include="bin\Debug\OpenCamera1.png" />
     <None Include="bin\Debug\system-restart-panel.png" />
