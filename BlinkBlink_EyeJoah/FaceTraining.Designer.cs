@@ -170,7 +170,7 @@
             // 
             // takePic_NextBtn
             // 
-            this.takePic_NextBtn.Location = new System.Drawing.Point(365, 362);
+            this.takePic_NextBtn.Location = new System.Drawing.Point(363, 366);
             this.takePic_NextBtn.Name = "takePic_NextBtn";
             this.takePic_NextBtn.Size = new System.Drawing.Size(40, 40);
             this.takePic_NextBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -182,7 +182,7 @@
             // 
             this.reTryBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reTryBtn.BackgroundImage")));
             this.reTryBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.reTryBtn.Location = new System.Drawing.Point(319, 362);
+            this.reTryBtn.Location = new System.Drawing.Point(317, 366);
             this.reTryBtn.Name = "reTryBtn";
             this.reTryBtn.Size = new System.Drawing.Size(40, 40);
             this.reTryBtn.TabIndex = 23;
@@ -194,7 +194,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(119, 340);
+            this.label5.Location = new System.Drawing.Point(123, 342);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(281, 14);
             this.label5.TabIndex = 22;
@@ -204,9 +204,9 @@
             // 
             this.nameTxtbox.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nameTxtbox.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.nameTxtbox.Location = new System.Drawing.Point(168, 381);
+            this.nameTxtbox.Location = new System.Drawing.Point(168, 377);
             this.nameTxtbox.Name = "nameTxtbox";
-            this.nameTxtbox.Size = new System.Drawing.Size(110, 21);
+            this.nameTxtbox.Size = new System.Drawing.Size(143, 21);
             this.nameTxtbox.TabIndex = 20;
             this.nameTxtbox.Text = "Insert name";
             this.nameTxtbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.nameTxtbox_MouseClick);
@@ -215,7 +215,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(123, 383);
+            this.label1.Location = new System.Drawing.Point(123, 379);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 14);
             this.label1.TabIndex = 21;

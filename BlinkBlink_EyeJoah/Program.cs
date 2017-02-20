@@ -21,9 +21,9 @@ namespace BlinkBlink_EyeJoah
             // User 파일이 존재하면 Form1 실행
             // 처음 들어온 경우면 FaceTraining 실행
             //if (File.Exists(Application.StartupPath + "/TrainedFaces/UserName.txt"))
-                Application.Run(new Form1());
+            //    Application.Run(new Form1());
             //else
-            //    Application.Run(new FaceTraining());
+                Application.Run(new FaceTraining());
 
         }
     }
