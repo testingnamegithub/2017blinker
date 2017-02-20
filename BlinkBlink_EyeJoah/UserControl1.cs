@@ -13,18 +13,26 @@ namespace BlinkBlink_EyeJoah
 {
     public partial class UserControl1 : UserControl
     {
+        ConstantChange con;
         public UserControl1()
         {
             InitializeComponent();
+
+            con = new ConstantChange();
+            con.TopLevel = false;
+            con.AutoScroll = true;
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
-            ConstantChange con = new ConstantChange();
-            con.TopLevel = false;
-            con.AutoScroll = true;
             panel4.Controls.Add(con);
             con.Show();
+        }
+
+        public ConstantChange getConstantChange
+        {
+            get { return con; }
+            set { con = value; }
         }
     }
 }
