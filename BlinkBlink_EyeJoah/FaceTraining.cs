@@ -30,9 +30,9 @@ namespace BlinkBlink_EyeJoah
 
         private Image<Gray, byte> result, trainedFace = null;
         private Image<Gray, byte> gray = null;
-        private Bitmap captureBitmap;
-        public static MCvFont font = new MCvFont(FONT.CV_FONT_HERSHEY_TRIPLEX, 1d, 1d);
-
+        private Bitmap captureBitmap;                                                         // Capture된 Face
+        private MCvAvgComp f;                                                                 // 얼굴 검출된 face
+        public static MCvFont font = new MCvFont(FONT.CV_FONT_HERSHEY_TRIPLEX, 0.5d, 0.5d);   // Font
         /* Training Image 및 이름에 관한 변수 */
         private List<Image<Gray, byte>> trainingImages;
         private List<string> trainedNamesList;
@@ -58,7 +58,6 @@ namespace BlinkBlink_EyeJoah
         public FaceTraining()
         {
             InitializeComponent();
-
             takePic_NextBtn.Image = Properties.Resources.OpenCamera1;
             //얼굴 검출을 위한 Haarcascade Load
             face = new HaarCascade("haarcascade_frontalface_default.xml");
@@ -77,7 +76,7 @@ namespace BlinkBlink_EyeJoah
             timer1.Tick += new EventHandler(FrameGrabber);
             timer1.Start();
         }
-        
+
         private void FrameGrabber(object sender, EventArgs e)
         {
             //현재 Frame을 Capture Device를 통해 얻기       
@@ -94,7 +93,7 @@ namespace BlinkBlink_EyeJoah
                 //result 변수에 현재 잡힌 얼굴 저장.( 얼굴 training 등록할 때 쓰임 )
                 result = currentFrame.Copy(face.rect).Convert<Gray, byte>().Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
                 //잡힌 얼굴 사각형으로 그리기
-                currentFrame.Draw(face.rect, new Bgr(Color.CadetBlue), 3);
+                f = face;
                 //잡힌 얼굴 cature시 띄어줄 사진 Bitmap으로 변환
                 captureBitmap = currentFrame.Copy(face.rect).Bitmap;
 
@@ -113,8 +112,9 @@ namespace BlinkBlink_EyeJoah
                     currentFrame.Draw(name, ref font, new System.Drawing.Point(face.rect.X - 2, face.rect.Y - 2), new Bgr(Color.LightGreen));
                 }
             }
-            
+
             //Show the faces procesed and recognized
+            currentFrame.Draw(f.rect, new Bgr(Color.CadetBlue), 3);
             imageBoxFrameGrabber.Image = currentFrame;
         }
 
@@ -123,13 +123,10 @@ namespace BlinkBlink_EyeJoah
             // Shoot 버튼을 누른 상태일 경우 ( Next버튼으로 변한 상태 ) 
             if (clickedShootBtn.Equals(true))
             {
-                // 현재 Form을 숨기고 Timer 기능 Stop 
-                this.Hide();
-                timer1.Stop();
-                // MainForm 띄우기 
-                Form1 mainForm = new Form1();
-                mainForm.Show();
-                mainForm.Activate();
+                // userName을 Text파일에 저장하기( 덮어쓰기 )
+                File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
+                // MainForm 띄우기
+                showMainForm();
             }
             // Shoot 버튼을 한번도 안 눌렀을 경우
             else
@@ -185,19 +182,19 @@ namespace BlinkBlink_EyeJoah
             {
                 // Training Image 카운트 증가
                 trainingData.getset_CountTrain = trainingData.getset_CountTrain + 1;
-                
+
                 // 검출한 얼굴 이미지 100X100으로 사이즈 재조정 및 TrainingImage List에 저장
                 trainedFace = result.Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
                 trainingData.getset_TrainingImages.Add(trainedFace);
                 trainingData.getset_trainedNamesList.Add(nameTxtbox.Text);
-                
+
                 // 파일에 위 Data 저장하기
                 trainingData.saveTrainingData();
 
                 // 등록한 얼굴을 100X100형태로 imageBox1에 투영
                 captureBitmap = ResizeImage(captureBitmap, new Size(100, 100));
                 pictureBox1.Image = captureBitmap;
-                
+
                 reTryBtn.Visible = true;
                 MessageBox.Show(nameTxtbox.Text + "´s face detected and added :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -222,6 +219,16 @@ namespace BlinkBlink_EyeJoah
             Application.Exit();
         }
 
+        private void showMainForm()
+        {
+            // 현재 Form을 숨기고 Timer 기능 Stop 
+            this.Hide();
+            timer1.Stop();
+            // MainForm 띄우기 
+            Form1 mainForm = new Form1();
+            mainForm.Show();
+            mainForm.Activate();
+        }
         private void makePictureBoxToRound()
         {
             Rectangle r = new Rectangle(0, 0, imageBoxFrameGrabber.Width, imageBoxFrameGrabber.Height);
