@@ -59,6 +59,7 @@ namespace BlinkBlink_EyeJoah
         {
             InitializeComponent();
             takePic_NextBtn.Image = Properties.Resources.OpenCamera1;
+            
             //얼굴 검출을 위한 Haarcascade Load
             face = new HaarCascade("haarcascade_frontalface_default.xml");
 
@@ -118,7 +119,7 @@ namespace BlinkBlink_EyeJoah
             imageBoxFrameGrabber.Image = currentFrame;
         }
 
-        private void takePictureBtn_Click(object sender, EventArgs e)
+        private void takePictureBtn_Click(object sender, MouseEventArgs e)
         {
             // Shoot 버튼을 누른 상태일 경우 ( Next버튼으로 변한 상태 ) 
             if (clickedShootBtn.Equals(true))
@@ -143,7 +144,9 @@ namespace BlinkBlink_EyeJoah
                 takePic_NextBtn.Image = Properties.Resources._checked;
                 clickedShootBtn = true;
             }
+
         }
+        
         private void reTryBtn_Click(object sender, MouseEventArgs e)
         {
             reTryBtn.Visible = false;
@@ -240,6 +243,7 @@ namespace BlinkBlink_EyeJoah
             gp.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
             imageBoxFrameGrabber.Region = new Region(gp);
         }
+
 
         // Capture된 사진 Size 조절하는 Method
         private static Bitmap ResizeImage(Bitmap image, Size newSize)
