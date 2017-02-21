@@ -244,3 +244,10 @@ C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.M
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Video.xml
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\AForge.Video.DirectShow.xml
 C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\obj\Debug\BlinkBlink_EyeJoah.FaceTraining.resources
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Resources\OpenCamera1.png
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Resources\_checked.png
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Resources\avatar.png
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Resources\almond-eyed.png
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Resources\house-outline.png
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Resources\logo.png
+C:\Users\BlackMan\Documents\2017blinkblink\BlinkBlink_EyeJoah\bin\Debug\Resources\screen.png

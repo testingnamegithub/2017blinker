@@ -61,7 +61,6 @@ namespace BlinkBlink_EyeJoah
             }
             catch (Exception e)
             {
-                MessageBox.Show("Nothing in binary database, please add at least a face(Simply train the prototype with the Add Face Button).", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }

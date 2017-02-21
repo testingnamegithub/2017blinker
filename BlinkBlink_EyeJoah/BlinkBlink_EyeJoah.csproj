@@ -172,6 +172,7 @@
     <Compile Include="FaceTraining.Designer.cs">
       <DependentUpon>FaceTraining.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResizeImage.cs" />
     <Compile Include="TrainingData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -269,14 +270,33 @@
     <None Include="ETC\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.png" />
-    <None Include="Resources\Icon.png" />
-    <None Include="Resources\KakaoTalk_20170218_235344884.png" />
-    <None Include="Resources\checked.bmp" />
+    <Content Include="Resources\OpenCamera1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\settings.png" />
+    <Content Include="Resources\_checked.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\avatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\almond-eyed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\house-outline.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="bin\Debug\OpenCamera1.png" />
     <None Include="bin\Debug\system-restart-panel.png" />
     <None Include="bin\Debug\avatar.png" />
     <None Include="bin\Debug\checked.png" />
+    <None Include="bin\Debug\house-outline.png" />
     <Content Include="opencvDll\cvextern.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

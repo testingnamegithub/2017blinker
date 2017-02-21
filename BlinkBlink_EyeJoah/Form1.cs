@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.IO;
+using System.Drawing;
 
 namespace BlinkBlink_EyeJoah
 {
@@ -24,11 +25,9 @@ namespace BlinkBlink_EyeJoah
         public Form1()
         {
             InitializeComponent();
-            this.label1.Text = File.ReadAllText(Application.StartupPath + "/TrainedFaces/UserName.txt");
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.panelContainer.BringToFront();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
 
+            init_UI();
+            
             /* Main화면 띄우기 */
             control1 = new UserControl1();
             control1.Dock = DockStyle.Fill;
@@ -51,7 +50,34 @@ namespace BlinkBlink_EyeJoah
             int nHeightEllipse // width of ellipse
          );
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void init_UI()
+        {
+            Bitmap homeImage = Properties.Resources.house_outline;
+            homeImage = ResizeImage.adjust(homeImage, new Size(28, 25));
+            picturebox_Home.Image = homeImage;
+            picturebox_Home.SizeMode = PictureBoxSizeMode.CenterImage;
+
+            picturebox_BlinkStaticis.Image = Properties.Resources.almond_eyed;
+            picturebox_BlinkStaticis.SizeMode = PictureBoxSizeMode.CenterImage;
+
+            Bitmap screenImage = Properties.Resources.screen;
+            screenImage = ResizeImage.adjust(screenImage, new Size(26, 25));
+            picturebox_Work.Image = screenImage;
+            picturebox_Work.SizeMode = PictureBoxSizeMode.CenterImage;
+
+            Bitmap settingImage = Properties.Resources.settings;
+            settingImage = ResizeImage.adjust(settingImage, new Size(27, 27));
+            picturebox_Setting.Image = settingImage;
+            picturebox_Setting.SizeMode = PictureBoxSizeMode.CenterImage;
+
+
+            this.label1.Text = File.ReadAllText(Application.StartupPath + "/TrainedFaces/UserName.txt");
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.panelContainer.BringToFront();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+        }
+
+        private void bunifuFlatButton1_Click(object sender, MouseEventArgs e)
         {
             menuLabel.Text = "Home";
             control1.Dock = DockStyle.Fill;
@@ -59,7 +85,7 @@ namespace BlinkBlink_EyeJoah
             panelContainer.Controls.Add(control1);
         }
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        private void bunifuFlatButton2_Click(object sender, MouseEventArgs e)
         {
             menuLabel.Text = "Blinking";
             UserControl2 control2 = new UserControl2();
@@ -69,7 +95,7 @@ namespace BlinkBlink_EyeJoah
             panelContainer.Controls.Add(control2);
         }
 
-        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        private void bunifuFlatButton3_Click(object sender, MouseEventArgs e)
         {
             menuLabel.Text = "Work";
             UserControl3 control3 = new UserControl3();
@@ -80,7 +106,8 @@ namespace BlinkBlink_EyeJoah
             //new SectionExample().ShowDialog();
         }
 
-        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+
+        private void bunifuFlatButton4_Click(object sender, MouseEventArgs e)
         {
             menuLabel.Text = "Settings";
             UserControl4 control4 = new UserControl4();
@@ -89,7 +116,7 @@ namespace BlinkBlink_EyeJoah
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control4);
         }
-
+        
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -118,11 +145,51 @@ namespace BlinkBlink_EyeJoah
             set{ thresholdValue = value; }
         }
 
-        //private void switchControl(Control removeControl, Control addControl)
-        //{
-        //    removeControl.Dock = DockStyle.Fill;
-        //    panelContainer.Controls.Remove(removeControl);
-        //    panelContainer.Controls.Add(addControl);
-        //}
+
+        // 왼쪽 메뉴바 panel, label, picturebox 위에 마우스가 올라갔을 시 해당 Panel 색상 변경 
+        private void MouseHover(object sender, EventArgs e)
+        {
+            switch (sender.GetType().Name)
+            {
+                case "Panel":
+                    Panel panelName = (Panel)sender;
+                    switch (panelName.Name)
+                    {
+                        case "panel2": panel2.BackColor = Color.FromArgb(29, 188, 170); break;
+                        case "panel3": panel3.BackColor = Color.FromArgb(29, 188, 170); break;
+                        case "panel4": panel4.BackColor = Color.FromArgb(29, 188, 170); break;
+                        case "panel5": panel5.BackColor = Color.FromArgb(29, 188, 170); break;
+                    }
+                    break;
+                case "PictureBox":
+                    PictureBox pictureboxName = (PictureBox)sender;
+                    switch (pictureboxName.Name)
+                    {
+                        case "picturebox_Home": panel2.BackColor = Color.FromArgb(29, 188, 170); break;
+                        case "picturebox_BlinkStaticis": panel3.BackColor = Color.FromArgb(29, 188, 170); break;
+                        case "picturebox_Work": panel4.BackColor = Color.FromArgb(29, 188, 170); break;
+                        case "picturebox_Setting": panel5.BackColor = Color.FromArgb(29, 188, 170); break;
+                    }
+                    break;
+                case "Label":
+                    Label labelName = (Label)sender;
+                    switch (labelName.Name)
+                    {
+                        case "label2": panel2.BackColor = Color.FromArgb(29, 188, 170); break;
+                        case "label3": panel3.BackColor = Color.FromArgb(29, 188, 170); break;
+                        case "label4": panel4.BackColor = Color.FromArgb(29, 188, 170); break;
+                        case "label5": panel5.BackColor = Color.FromArgb(29, 188, 170); break;
+                    }
+                    break;
+            }
+        }
+
+        private void MouseLeave(object sender, EventArgs e)
+        {
+            panel2.BackColor = Color.FromArgb(39, 168, 150); 
+            panel3.BackColor = Color.FromArgb(39, 168, 150); 
+            panel4.BackColor = Color.FromArgb(39, 168, 150); 
+            panel5.BackColor = Color.FromArgb(39, 168, 150); 
+        }
     }
 }

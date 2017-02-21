@@ -195,7 +195,7 @@ namespace BlinkBlink_EyeJoah
                 trainingData.saveTrainingData();
 
                 // 등록한 얼굴을 100X100형태로 imageBox1에 투영
-                captureBitmap = ResizeImage(captureBitmap, new Size(100, 100));
+                captureBitmap = ResizeImage.adjust(captureBitmap, new Size(100, 100));
                 pictureBox1.Image = captureBitmap;
 
                 reTryBtn.Visible = true;
@@ -242,19 +242,6 @@ namespace BlinkBlink_EyeJoah
             gp.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
             gp.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
             imageBoxFrameGrabber.Region = new Region(gp);
-        }
-
-
-        // Capture된 사진 Size 조절하는 Method
-        private static Bitmap ResizeImage(Bitmap image, Size newSize)
-        {
-            Bitmap newImage = new Bitmap(newSize.Width, newSize.Height);
-            using (Graphics g = Graphics.FromImage((System.Drawing.Image)newImage))
-            {
-                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-                g.DrawImage(image, 0, 0, newSize.Width, newSize.Height);
-            }
-            return newImage;
         }
 
     }

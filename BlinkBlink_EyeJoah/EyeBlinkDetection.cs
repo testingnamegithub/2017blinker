@@ -237,17 +237,6 @@ namespace BlinkBlink_EyeJoah
             con.ShowThresholdValue(TV);
         }
 
-        private static Bitmap ResizeImage(Bitmap image, Size newSize)
-        {
-            Bitmap newImage = new Bitmap(newSize.Width, newSize.Height);
-            using (Graphics g = Graphics.FromImage((System.Drawing.Image)newImage))
-            {
-                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-                g.DrawImage(image, 0, 0, newSize.Width, newSize.Height);
-            }
-            return newImage;
-        }
-
         #region 눈 검출 방법 : 눈 떳을 때, 눈 감았을 때의 threshold 값의 변화에 따라 눈 깜빡임 인식
         public void thresholdEffect(int catchThreshold)
         {
@@ -270,7 +259,7 @@ namespace BlinkBlink_EyeJoah
             // 눈 검출할 영역의 가로 길이가 50mm가 넘는다면 40x30 size로 변환
             // (카메라 가까이에 얼굴이 있으면 눈 영역도 커지기 때문에 계산량 일정하게 만들기) 
             if (Thimage.Width > 50)
-                Thimage = ResizeImage(Thimage, new Size(40, 30));
+                Thimage = ResizeImage.adjust(Thimage, new Size(40, 30));
 
             // 필터링 된 이미지 blur 처리 후 한 픽셀이라도 검은 Pixel이 존재한 다면 
             // catchBlackPixel = true로 변경.
