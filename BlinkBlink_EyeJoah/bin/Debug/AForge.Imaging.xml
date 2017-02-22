@@ -13080,7 +13080,7 @@
             
             <remarks><para>The unsupported image format exception is thrown in the case when
             user passes an image of certain format to an image processing routine, which does
-            not support the format. Check documentation of image the image processing routine
+            not support the format. Check documentation of the image processing routine
             to discover which formats are supported by the routine.</para>
             </remarks>
             
@@ -14469,6 +14469,18 @@
              <para>Default value is set to <b>10</b>. Minimum value is 1. Maximum value is 1000.</para></remarks>
             
         </member>
+        <member name="P:AForge.Imaging.Filters.HorizontalRunLengthSmoothing.ProcessGapsWithImageBorders">
+            <summary>
+            Process gaps between objects and image borders or not.
+            </summary>
+            
+            <remarks><para>The property sets if gaps between image borders and objects must be treated as
+            gaps between objects and also filled.</para>
+            
+            <para>Default value is set to <see langword="false"/>.</para>
+            </remarks>
+            
+        </member>
         <member name="P:AForge.Imaging.Filters.HorizontalRunLengthSmoothing.FormatTranslations">
             <summary>
             Format translations dictionary.
@@ -15206,7 +15218,7 @@
         </member>
         <member name="P:AForge.Imaging.Filters.BilateralSmoothing.SpatialFactor">
             <summary>
-            Determines smoothing power within a color domain (neighbor pixels of similar color).
+            Determines smoothing power within a color domain (neighbor pixels of similar color), >= 1.
             </summary>
             
             <remarks>
@@ -15216,7 +15228,7 @@
         </member>
         <member name="P:AForge.Imaging.Filters.BilateralSmoothing.SpatialPower">
             <summary>
-            Exponent power, used in Spatial function calculation.
+            Exponent power, used in Spatial function calculation, >= 1.
             </summary>
             
             <remarks>
@@ -15226,7 +15238,7 @@
         </member>
         <member name="P:AForge.Imaging.Filters.BilateralSmoothing.ColorFactor">
             <summary>
-            Determines the variance of color for a color domain .
+            Determines the variance of color for a color domain, >= 1.
             </summary>
             
             <remarks>
@@ -15236,7 +15248,7 @@
         </member>
         <member name="P:AForge.Imaging.Filters.BilateralSmoothing.ColorPower">
             <summary>
-            Exponent power, used in Color function calculation.
+            Exponent power, used in Color function calculation, >= 1.
             </summary>
             
             <remarks>
@@ -16269,6 +16281,18 @@
              </para>
              
              <para>Default value is set to <b>10</b>. Minimum value is 1. Maximum value is 1000.</para></remarks>
+            
+        </member>
+        <member name="P:AForge.Imaging.Filters.VerticalRunLengthSmoothing.ProcessGapsWithImageBorders">
+            <summary>
+            Process gaps between objects and image borders or not.
+            </summary>
+            
+            <remarks><para>The property sets if gaps between image borders and objects must be treated as
+            gaps between objects and also filled.</para>
+            
+            <para>Default value is set to <see langword="false"/>.</para>
+            </remarks>
             
         </member>
         <member name="P:AForge.Imaging.Filters.VerticalRunLengthSmoothing.FormatTranslations">

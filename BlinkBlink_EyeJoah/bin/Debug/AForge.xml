@@ -101,6 +101,17 @@
             <paramref name="anotherPoint"/> points.</returns>
             
         </member>
+        <member name="M:AForge.IntPoint.SquaredDistanceTo(AForge.Point)">
+            <summary>
+            Calculate squared Euclidean distance between two points.
+            </summary>
+            
+            <param name="anotherPoint">Point to calculate distance to.</param>
+            
+            <returns>Returns squared Euclidean distance between this point and
+            <paramref name="anotherPoint"/> points.</returns>
+            
+        </member>
         <member name="M:AForge.IntPoint.op_Addition(AForge.IntPoint,AForge.IntPoint)">
             <summary>
             Addition operator - adds values of two points.
@@ -598,6 +609,17 @@
             <param name="anotherPoint">Point to calculate distance to.</param>
             
             <returns>Returns Euclidean distance between this point and
+            <paramref name="anotherPoint"/> points.</returns>
+            
+        </member>
+        <member name="M:AForge.Point.SquaredDistanceTo(AForge.Point)">
+            <summary>
+            Calculate squared Euclidean distance between two points.
+            </summary>
+            
+            <param name="anotherPoint">Point to calculate distance to.</param>
+            
+            <returns>Returns squared Euclidean distance between this point and
             <paramref name="anotherPoint"/> points.</returns>
             
         </member>
@@ -1519,6 +1541,17 @@
             <param name="anotherPoint">Point to calculate distance to.</param>
             
             <returns>Returns Euclidean distance between this point and
+            <paramref name="anotherPoint"/> points.</returns>
+            
+        </member>
+        <member name="M:AForge.DoublePoint.SquaredDistanceTo(AForge.DoublePoint)">
+            <summary>
+            Calculate squared Euclidean distance between two points.
+            </summary>
+            
+            <param name="anotherPoint">Point to calculate distance to.</param>
+            
+            <returns>Returns squared Euclidean distance between this point and
             <paramref name="anotherPoint"/> points.</returns>
             
         </member>

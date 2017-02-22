@@ -428,6 +428,52 @@
             <param name="pClassID"></param>
             <returns></returns>
         </member>
+        <member name="T:AForge.Video.DirectShow.Internals.IAMCameraControl">
+            <summary>
+            The IAMCameraControl interface controls camera settings such as zoom, pan, aperture adjustment,
+            or shutter speed. To obtain this interface, query the filter that controls the camera.
+            </summary>
+        </member>
+        <member name="M:AForge.Video.DirectShow.Internals.IAMCameraControl.GetRange(AForge.Video.DirectShow.CameraControlProperty,System.Int32@,System.Int32@,System.Int32@,System.Int32@,AForge.Video.DirectShow.CameraControlFlags@)">
+            <summary>
+            Gets the range and default value of a specified camera property.
+            </summary>
+            
+            <param name="Property">Specifies the property to query.</param>
+            <param name="pMin">Receives the minimum value of the property.</param>
+            <param name="pMax">Receives the maximum value of the property.</param>
+            <param name="pSteppingDelta">Receives the step size for the property.</param>
+            <param name="pDefault">Receives the default value of the property. </param>
+            <param name="pCapsFlags">Receives a member of the CameraControlFlags enumeration, indicating whether the property is controlled automatically or manually.</param>
+            
+            <returns>Return's <b>HRESULT</b> error code.</returns>
+            
+        </member>
+        <member name="M:AForge.Video.DirectShow.Internals.IAMCameraControl.Set(AForge.Video.DirectShow.CameraControlProperty,System.Int32,AForge.Video.DirectShow.CameraControlFlags)">
+            <summary>
+            Sets a specified property on the camera.
+            </summary>
+            
+            <param name="Property">Specifies the property to set.</param>
+            <param name="lValue">Specifies the new value of the property.</param>
+            <param name="Flags">Specifies the desired control setting, as a member of the CameraControlFlags enumeration.</param>
+            
+            <returns>Return's <b>HRESULT</b> error code.</returns>
+            
+        </member>
+        <member name="M:AForge.Video.DirectShow.Internals.IAMCameraControl.Get(AForge.Video.DirectShow.CameraControlProperty,System.Int32@,AForge.Video.DirectShow.CameraControlFlags@)">
+            <summary>
+            Gets the current setting of a camera property.
+            </summary>
+            
+            <param name="Property">Specifies the property to retrieve.</param>
+            <param name="lValue">Receives the value of the property.</param>
+            <param name="Flags">Receives a member of the CameraControlFlags enumeration.
+            The returned value indicates whether the setting is controlled manually or automatically.</param>
+            
+            <returns>Return's <b>HRESULT</b> error code.</returns>
+            
+        </member>
         <member name="T:AForge.Video.DirectShow.VideoCapabilities">
             <summary>
             Capabilities of video device such as frame size and frame rate.
@@ -438,10 +484,77 @@
             Frame size supported by video device.
             </summary>
         </member>
-        <member name="F:AForge.Video.DirectShow.VideoCapabilities.FrameRate">
+        <member name="F:AForge.Video.DirectShow.VideoCapabilities.AverageFrameRate">
+            <summary>
+            Average frame rate of video device for corresponding <see cref="F:AForge.Video.DirectShow.VideoCapabilities.FrameSize">frame size</see>.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.VideoCapabilities.MaximumFrameRate">
+            <summary>
+            Maximum frame rate of video device for corresponding <see cref="F:AForge.Video.DirectShow.VideoCapabilities.FrameSize">frame size</see>.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.VideoCapabilities.BitCount">
+            <summary>
+            Number of bits per pixel provided by the camera.
+            </summary>
+        </member>
+        <member name="M:AForge.Video.DirectShow.VideoCapabilities.Equals(System.Object)">
+            <summary>
+            Check if the video capability equals to the specified object.
+            </summary>
+            
+            <param name="obj">Object to compare with.</param>
+            
+            <returns>Returns true if both are equal are equal or false otherwise.</returns>
+            
+        </member>
+        <member name="M:AForge.Video.DirectShow.VideoCapabilities.Equals(AForge.Video.DirectShow.VideoCapabilities)">
+            <summary>
+            Check if two video capabilities are equal.
+            </summary>
+            
+            <param name="vc2">Second video capability to compare with.</param>
+            
+            <returns>Returns true if both video capabilities are equal or false otherwise.</returns>
+            
+        </member>
+        <member name="M:AForge.Video.DirectShow.VideoCapabilities.GetHashCode">
+            <summary>
+            Get hash code of the object.
+            </summary>
+            
+            <returns>Returns hash code ot the object </returns>
+        </member>
+        <member name="M:AForge.Video.DirectShow.VideoCapabilities.op_Equality(AForge.Video.DirectShow.VideoCapabilities,AForge.Video.DirectShow.VideoCapabilities)">
+            <summary>
+            Equality operator.
+            </summary>
+            
+            <param name="a">First object to check.</param>
+            <param name="b">Seconds object to check.</param>
+            
+            <returns>Return true if both objects are equal or false otherwise.</returns>
+        </member>
+        <member name="M:AForge.Video.DirectShow.VideoCapabilities.op_Inequality(AForge.Video.DirectShow.VideoCapabilities,AForge.Video.DirectShow.VideoCapabilities)">
+            <summary>
+            Inequality operator.
+            </summary>
+            
+            <param name="a">First object to check.</param>
+            <param name="b">Seconds object to check.</param>
+            
+            <returns>Return true if both objects are not equal or false otherwise.</returns>
+        </member>
+        <member name="P:AForge.Video.DirectShow.VideoCapabilities.FrameRate">
             <summary>
             Frame rate supported by video device for corresponding <see cref="F:AForge.Video.DirectShow.VideoCapabilities.FrameSize">frame size</see>.
             </summary>
+            
+            <remarks><para><note>This field is depricated - should not be used.
+            Its value equals to <see cref="F:AForge.Video.DirectShow.VideoCapabilities.AverageFrameRate"/>.</note></para>
+            </remarks>
+            
         </member>
         <member name="T:AForge.Video.DirectShow.PhysicalConnectorType">
             <summary>
@@ -729,6 +842,72 @@
             </summary>
         </member>
         <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader.BmiHeader">
+            <summary>
+            <see cref="T:AForge.Video.DirectShow.Internals.BitmapInfoHeader"/> structure that contains color and dimension information for the video image bitmap.
+            </summary>
+        </member>
+        <member name="T:AForge.Video.DirectShow.Internals.VideoInfoHeader2">
+            <summary>
+            The structure describes the bitmap and color information for a video image (v2).
+            </summary>
+            
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.SrcRect">
+            <summary>
+            <see cref="T:AForge.Video.DirectShow.Internals.RECT"/> structure that specifies the source video window.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.TargetRect">
+            <summary>
+            <see cref="T:AForge.Video.DirectShow.Internals.RECT"/> structure that specifies the destination video window.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.BitRate">
+            <summary>
+            Approximate data rate of the video stream, in bits per second.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.BitErrorRate">
+            <summary>
+            Data error rate, in bit errors per second.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.AverageTimePerFrame">
+            <summary>
+            The desired average display time of the video frames, in 100-nanosecond units.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.InterlaceFlags">
+            <summary>
+            Flags that specify how the video is interlaced.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.CopyProtectFlags">
+            <summary>
+            Flag set to indicate that the duplication of the stream should be restricted.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.PictAspectRatioX">
+            <summary>
+            The X dimension of picture aspect ratio.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.PictAspectRatioY">
+            <summary>
+            The Y dimension of picture aspect ratio.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.Reserved1">
+            <summary>
+            Reserved for future use.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.Reserved2">
+            <summary>
+            Reserved for future use. 
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.VideoInfoHeader2.BmiHeader">
             <summary>
             <see cref="T:AForge.Video.DirectShow.Internals.BitmapInfoHeader"/> structure that contains color and dimension information for the video image bitmap.
             </summary>
@@ -1734,6 +1913,57 @@
             </remarks>
             
         </member>
+        <member name="M:AForge.Video.DirectShow.VideoCaptureDevice.SetCameraProperty(AForge.Video.DirectShow.CameraControlProperty,System.Int32,AForge.Video.DirectShow.CameraControlFlags)">
+            <summary>
+            Sets a specified property on the camera.
+            </summary>
+            
+            <param name="property">Specifies the property to set.</param>
+            <param name="value">Specifies the new value of the property.</param>
+            <param name="controlFlags">Specifies the desired control setting.</param>
+            
+            <returns>Returns true on sucee or false otherwise.</returns>
+            
+            <exception cref="T:System.ArgumentException">Video source is not specified - device moniker is not set.</exception>
+            <exception cref="T:System.ApplicationException">Failed creating device object for moniker.</exception>
+            <exception cref="T:System.NotSupportedException">The video source does not support camera control.</exception>
+            
+        </member>
+        <member name="M:AForge.Video.DirectShow.VideoCaptureDevice.GetCameraProperty(AForge.Video.DirectShow.CameraControlProperty,System.Int32@,AForge.Video.DirectShow.CameraControlFlags@)">
+            <summary>
+            Gets the current setting of a camera property.
+            </summary>
+            
+            <param name="property">Specifies the property to retrieve.</param>
+            <param name="value">Receives the value of the property.</param>
+            <param name="controlFlags">Receives the value indicating whether the setting is controlled manually or automatically</param>
+            
+            <returns>Returns true on sucee or false otherwise.</returns>
+            
+            <exception cref="T:System.ArgumentException">Video source is not specified - device moniker is not set.</exception>
+            <exception cref="T:System.ApplicationException">Failed creating device object for moniker.</exception>
+            <exception cref="T:System.NotSupportedException">The video source does not support camera control.</exception>
+            
+        </member>
+        <member name="M:AForge.Video.DirectShow.VideoCaptureDevice.GetCameraPropertyRange(AForge.Video.DirectShow.CameraControlProperty,System.Int32@,System.Int32@,System.Int32@,System.Int32@,AForge.Video.DirectShow.CameraControlFlags@)">
+            <summary>
+            Gets the range and default value of a specified camera property.
+            </summary>
+            
+            <param name="property">Specifies the property to query.</param>
+            <param name="minValue">Receives the minimum value of the property.</param>
+            <param name="maxValue">Receives the maximum value of the property.</param>
+            <param name="stepSize">Receives the step size for the property.</param>
+            <param name="defaultValue">Receives the default value of the property.</param>
+            <param name="controlFlags">Receives a member of the <see cref="T:AForge.Video.DirectShow.CameraControlFlags"/> enumeration, indicating whether the property is controlled automatically or manually.</param>
+            
+            <returns>Returns true on sucee or false otherwise.</returns>
+            
+            <exception cref="T:System.ArgumentException">Video source is not specified - device moniker is not set.</exception>
+            <exception cref="T:System.ApplicationException">Failed creating device object for moniker.</exception>
+            <exception cref="T:System.NotSupportedException">The video source does not support camera control.</exception>
+            
+        </member>
         <member name="M:AForge.Video.DirectShow.VideoCaptureDevice.WorkerThread">
             <summary>
             Worker thread.
@@ -1808,7 +2038,7 @@
              event.</para>
              
              <para>Check supported sizes of snapshots using <see cref="P:AForge.Video.DirectShow.VideoCaptureDevice.SnapshotCapabilities"/> property and set the
-             desired size using <see cref="P:AForge.Video.DirectShow.VideoCaptureDevice.DesiredSnapshotSize"/> property.</para>
+             desired size using <see cref="P:AForge.Video.DirectShow.VideoCaptureDevice.SnapshotResolution"/> property.</para>
              
              <para><note>The property must be set before running the video source to take effect.</note></para>
              
@@ -1903,60 +2133,58 @@
         </member>
         <member name="P:AForge.Video.DirectShow.VideoCaptureDevice.DesiredFrameSize">
             <summary>
-            Desired size of captured video frames.
+            Obsolete - no longer in use
             </summary>
             
-            <remarks><para>The property sets desired video frame size. However capture
-            device may not always provide video frames of configured size due to the fact
-            that the size is not supported by it.</para>
-            
-            <para>If the property is set to size (0, 0), then capture device uses its own
-            default video frame size configuration.</para>
-            
-            <para>Default value of the property is set to (0, 0).</para>
-            
-            <para><note>The property should be configured before video source is started
-            to take effect.</note></para></remarks>
+            <remarks><para>The property is obsolete. Use <see cref="P:AForge.Video.DirectShow.VideoCaptureDevice.VideoResolution"/> property instead.
+            Setting this property does not have any effect.</para></remarks>
             
         </member>
         <member name="P:AForge.Video.DirectShow.VideoCaptureDevice.DesiredSnapshotSize">
             <summary>
-            Desired size of captured snapshot frames.
+            Obsolete - no longer in use
             </summary>
             
-            <remarks><para>The property sets desired snapshot size. However capture
-            device may not always provide snapshots of configured size due to the fact
-            that the size is not supported by it.</para>
-            
-            <para>If the property is set to size (0, 0), then capture device uses its own
-            default snapshot size configuration.</para>
-            
-            <para>See documentation to <see cref="P:AForge.Video.DirectShow.VideoCaptureDevice.ProvideSnapshots"/> for additional information.</para>
-            
-            <para>Default value of the property is set to (0, 0).</para>
-            
-            <para><note>The property should be configured before video source is started
-            to take effect.</note></para></remarks>
-            
-            <seealso cref="P:AForge.Video.DirectShow.VideoCaptureDevice.ProvideSnapshots"/>
+            <remarks><para>The property is obsolete. Use <see cref="P:AForge.Video.DirectShow.VideoCaptureDevice.SnapshotResolution"/> property instead.
+            Setting this property does not have any effect.</para></remarks>
             
         </member>
         <member name="P:AForge.Video.DirectShow.VideoCaptureDevice.DesiredFrameRate">
             <summary>
-            Desired capture frame rate.
+            Obsolete - no longer in use.
             </summary>
             
-            <remarks><para>The property sets desired capture frame rate. However capture
-            device may not always provide the exact configured frame rate due to its
-            capabilities, system performance, etc.</para>
+            <remarks><para>The property is obsolete. Setting this property does not have any effect.</para></remarks>
             
-            <para>If the property is set to 0, then capture device uses its own default
-            frame rate.</para>
+        </member>
+        <member name="P:AForge.Video.DirectShow.VideoCaptureDevice.VideoResolution">
+            <summary>
+            Video resolution to set.
+            </summary>
             
-            <para>Default value of the property is set to 0.</para>
+            <remarks><para>The property allows to set one of the video resolutions supported by the camera.
+            Use <see cref="P:AForge.Video.DirectShow.VideoCaptureDevice.VideoCapabilities"/> property to get the list of supported video resolutions.</para>
             
-            <para><note>The property should be configured before video source is started
-            to take effect.</note></para></remarks>
+            <para><note>The property must be set before camera is started to make any effect.</note></para>
+            
+            <para>Default value of the property is set to <see langword="null"/>, which means default video
+            resolution is used.</para>
+            </remarks>
+            
+        </member>
+        <member name="P:AForge.Video.DirectShow.VideoCaptureDevice.SnapshotResolution">
+            <summary>
+            Snapshot resolution to set.
+            </summary>
+            
+            <remarks><para>The property allows to set one of the snapshot resolutions supported by the camera.
+            Use <see cref="P:AForge.Video.DirectShow.VideoCaptureDevice.SnapshotCapabilities"/> property to get the list of supported snapshot resolutions.</para>
+            
+            <para><note>The property must be set before camera is started to make any effect.</note></para>
+            
+            <para>Default value of the property is set to <see langword="null"/>, which means default snapshot
+            resolution is used.</para>
+            </remarks>
             
         </member>
         <member name="P:AForge.Video.DirectShow.VideoCaptureDevice.VideoCapabilities">
@@ -2932,6 +3160,66 @@
             <returns>Returns <b>S_OK</b> on success.</returns>
             
         </member>
+        <member name="T:AForge.Video.DirectShow.CameraControlProperty">
+            <summary>
+            The enumeration specifies a setting on a camera.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.CameraControlProperty.Pan">
+            <summary>
+            Pan control.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.CameraControlProperty.Tilt">
+            <summary>
+            Tilt control.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.CameraControlProperty.Roll">
+            <summary>
+            Roll control.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.CameraControlProperty.Zoom">
+            <summary>
+            Zoom control.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.CameraControlProperty.Exposure">
+            <summary>
+            Exposure control.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.CameraControlProperty.Iris">
+            <summary>
+            Iris control.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.CameraControlProperty.Focus">
+            <summary>
+            Focus control.
+            </summary>
+        </member>
+        <member name="T:AForge.Video.DirectShow.CameraControlFlags">
+            <summary>
+            The enumeration defines whether a camera setting is controlled manually or automatically.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.CameraControlFlags.None">
+            <summary>
+            No control flag.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.CameraControlFlags.Auto">
+            <summary>
+            Auto control Flag.
+            </summary>
+        </member>
+        <member name="F:AForge.Video.DirectShow.CameraControlFlags.Manual">
+            <summary>
+            Manual control Flag.
+            </summary>
+        </member>
         <member name="T:AForge.Video.DirectShow.VideoInput">
             <summary>
             Video input of a capture board.
@@ -2960,17 +3248,6 @@
         <member name="T:AForge.Video.DirectShow.FilterInfo">
             <summary>
             DirectShow filter information.
-            </summary>
-            
-        </member>
-        <member name="F:AForge.Video.DirectShow.FilterInfo.Name">
-            <summary>
-            Filter name.
-            </summary>
-        </member>
-        <member name="F:AForge.Video.DirectShow.FilterInfo.MonikerString">
-            <summary>
-            Filters's moniker string.
             </summary>
             
         </member>
@@ -3010,6 +3287,17 @@
             <returns>Returns filter's object, which implements <b>IBaseFilter</b> interface.</returns>
             
             <remarks>The returned filter's object should be released using <b>Marshal.ReleaseComObject()</b>.</remarks>
+            
+        </member>
+        <member name="P:AForge.Video.DirectShow.FilterInfo.Name">
+            <summary>
+            Filter name.
+            </summary>
+        </member>
+        <member name="P:AForge.Video.DirectShow.FilterInfo.MonikerString">
+            <summary>
+            Filters's moniker string.
+            </summary>
             
         </member>
         <member name="T:AForge.Video.DirectShow.Internals.Clsid">
@@ -3057,9 +3345,31 @@
             <remarks>Equals to CLSID_AsyncReader.</remarks>
             
         </member>
+        <member name="T:AForge.Video.DirectShow.Internals.FormatType">
+            <summary>
+            DirectShow format types.
+            </summary>
+            
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.FormatType.VideoInfo">
+            <summary>
+            VideoInfo.
+            </summary>
+            
+            <remarks>Equals to FORMAT_VideoInfo.</remarks>
+            
+        </member>
+        <member name="F:AForge.Video.DirectShow.Internals.FormatType.VideoInfo2">
+            <summary>
+            VideoInfo2.
+            </summary>
+            
+            <remarks>Equals to FORMAT_VideoInfo2.</remarks>
+            
+        </member>
         <member name="T:AForge.Video.DirectShow.Internals.MediaType">
             <summary>
-            DirectShow media typesю
+            DirectShow media types.
             </summary>
             
         </member>
