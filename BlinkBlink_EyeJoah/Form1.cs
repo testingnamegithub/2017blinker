@@ -37,6 +37,10 @@ namespace BlinkBlink_EyeJoah
             eyeBlink = new EyeBlinkDetection(this.control1, this.imageBoxCapturedFrame, this.leftEyeImageBox, 
                                              this.rightEyeImageBox, this.thresholdValueText, this.eyeBlinkNumText);
             eyeBlink.start_EyeBlink();
+
+            homePanel.BackColor = Color.FromArgb(50, 208, 186);
+            back_home.BackColor = Color.FromArgb(39, 168, 150);
+            homeLabel.ForeColor = Color.White;
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -52,23 +56,23 @@ namespace BlinkBlink_EyeJoah
 
         private void init_UI()
         {
-            Bitmap homeImage = Properties.Resources.house_outline;
-            homeImage = ResizeImage.adjust(homeImage, new Size(28, 25));
-            picturebox_Home.Image = homeImage;
-            picturebox_Home.SizeMode = PictureBoxSizeMode.CenterImage;
+            //Bitmap homeImage = Properties.Resources.house_outline;
+            //homeImage = ResizeImage.adjust(homeImage, new Size(28, 25));
+            //picturebox_Home.Image = homeImage;
+            //picturebox_Home.SizeMode = PictureBoxSizeMode.CenterImage;
 
-            picturebox_BlinkStaticis.Image = Properties.Resources.almond_eyed;
-            picturebox_BlinkStaticis.SizeMode = PictureBoxSizeMode.CenterImage;
+            //picturebox_BlinkStaticis.Image = Properties.Resources.almond_eyed;
+            //picturebox_BlinkStaticis.SizeMode = PictureBoxSizeMode.CenterImage;
 
-            Bitmap screenImage = Properties.Resources.screen;
-            screenImage = ResizeImage.adjust(screenImage, new Size(26, 25));
-            picturebox_Work.Image = screenImage;
-            picturebox_Work.SizeMode = PictureBoxSizeMode.CenterImage;
+            //Bitmap screenImage = Properties.Resources.screen;
+            //screenImage = ResizeImage.adjust(screenImage, new Size(26, 25));
+            //picturebox_Work.Image = screenImage;
+            //picturebox_Work.SizeMode = PictureBoxSizeMode.CenterImage;
 
-            Bitmap settingImage = Properties.Resources.settings;
-            settingImage = ResizeImage.adjust(settingImage, new Size(27, 27));
-            picturebox_Setting.Image = settingImage;
-            picturebox_Setting.SizeMode = PictureBoxSizeMode.CenterImage;
+            //Bitmap settingImage = Properties.Resources.settings;
+            //settingImage = ResizeImage.adjust(settingImage, new Size(27, 27));
+            //picturebox_Setting.Image = settingImage;
+            //picturebox_Setting.SizeMode = PictureBoxSizeMode.CenterImage;
 
 
             this.label1.Text = File.ReadAllText(Application.StartupPath + "/TrainedFaces/UserName.txt");
@@ -83,6 +87,19 @@ namespace BlinkBlink_EyeJoah
             control1.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control1);
+
+            homePanel.BackColor = Color.FromArgb(50, 208, 186); 
+            blinkPanel.BackColor = Color.FromArgb(218, 253, 247);
+            workPanel.BackColor = Color.FromArgb(218, 253, 247);
+            settingsPanel.BackColor = Color.FromArgb(218, 253, 247);
+            homeLabel.ForeColor = Color.White;
+            blinkLabel.ForeColor = Color.Black;
+            workLabel.ForeColor = Color.Black;
+            settingsLabel.ForeColor = Color.Black;
+            back_home.BackColor = Color.FromArgb(39, 168, 150);
+            back_settings.BackColor = Color.FromArgb(46, 200, 178);
+            back_work.BackColor = Color.FromArgb(46, 200, 178);
+            back_blink.BackColor = Color.FromArgb(46, 200, 178);
         }
 
         private void bunifuFlatButton2_Click(object sender, MouseEventArgs e)
@@ -93,6 +110,18 @@ namespace BlinkBlink_EyeJoah
             //control2.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control2);
+            blinkPanel.BackColor = Color.FromArgb(50, 208, 186);
+            homePanel.BackColor = Color.FromArgb(218, 253, 247);
+            workPanel.BackColor = Color.FromArgb(218, 253, 247);
+            settingsPanel.BackColor = Color.FromArgb(218, 253, 247);
+            blinkLabel.ForeColor = Color.White;
+            settingsLabel.ForeColor = Color.Black;
+            workLabel.ForeColor = Color.Black;
+            homeLabel.ForeColor = Color.Black;
+            back_blink.BackColor = Color.FromArgb(39, 168, 150);
+            back_home.BackColor = Color.FromArgb(46, 200, 178);
+            back_settings.BackColor = Color.FromArgb(46, 200, 178);
+            back_work.BackColor = Color.FromArgb(46, 200, 178);
         }
 
         private void bunifuFlatButton3_Click(object sender, MouseEventArgs e)
@@ -104,6 +133,19 @@ namespace BlinkBlink_EyeJoah
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control3);
             //new SectionExample().ShowDialog();
+
+            blinkPanel.BackColor = Color.FromArgb(218, 253, 247);
+            homePanel.BackColor = Color.FromArgb(218, 253, 247);
+            workPanel.BackColor = Color.FromArgb(50, 208, 186);
+            settingsPanel.BackColor = Color.FromArgb(218, 253, 247);
+            workLabel.ForeColor = Color.White;
+            blinkLabel.ForeColor = Color.Black;
+            homeLabel.ForeColor = Color.Black;
+            settingsLabel.ForeColor = Color.Black;
+            back_work.BackColor = Color.FromArgb(39, 168, 150);
+            back_blink.BackColor = Color.FromArgb(46, 200, 178);
+            back_home.BackColor = Color.FromArgb(46, 200, 178);
+            back_settings.BackColor = Color.FromArgb(46, 200, 178);
         }
 
 
@@ -115,6 +157,19 @@ namespace BlinkBlink_EyeJoah
             //control4.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control4);
+
+            blinkPanel.BackColor = Color.FromArgb(218, 253, 247);
+            homePanel.BackColor = Color.FromArgb(218, 253, 247);
+            workPanel.BackColor = Color.FromArgb(218, 253, 247);
+            settingsPanel.BackColor = Color.FromArgb(50, 208, 186);
+            settingsLabel.ForeColor = Color.White;
+            blinkLabel.ForeColor = Color.Black;
+            workLabel.ForeColor = Color.Black;
+            homeLabel.ForeColor = Color.Black;
+            back_settings.BackColor = Color.FromArgb(39, 168, 150);
+            back_blink.BackColor = Color.FromArgb(46, 200, 178);
+            back_work.BackColor = Color.FromArgb(46, 200, 178);
+            back_home.BackColor = Color.FromArgb(46, 200, 178);
         }
         
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -146,50 +201,56 @@ namespace BlinkBlink_EyeJoah
         }
 
 
-        // 왼쪽 메뉴바 panel, label, picturebox 위에 마우스가 올라갔을 시 해당 Panel 색상 변경 
-        private void MouseHover(object sender, EventArgs e)
-        {
-            switch (sender.GetType().Name)
-            {
-                case "Panel":
-                    Panel panelName = (Panel)sender;
-                    switch (panelName.Name)
-                    {
-                        case "panel2": panel2.BackColor = Color.FromArgb(29, 188, 170); break;
-                        case "panel3": panel3.BackColor = Color.FromArgb(29, 188, 170); break;
-                        case "panel4": panel4.BackColor = Color.FromArgb(29, 188, 170); break;
-                        case "panel5": panel5.BackColor = Color.FromArgb(29, 188, 170); break;
-                    }
-                    break;
-                case "PictureBox":
-                    PictureBox pictureboxName = (PictureBox)sender;
-                    switch (pictureboxName.Name)
-                    {
-                        case "picturebox_Home": panel2.BackColor = Color.FromArgb(29, 188, 170); break;
-                        case "picturebox_BlinkStaticis": panel3.BackColor = Color.FromArgb(29, 188, 170); break;
-                        case "picturebox_Work": panel4.BackColor = Color.FromArgb(29, 188, 170); break;
-                        case "picturebox_Setting": panel5.BackColor = Color.FromArgb(29, 188, 170); break;
-                    }
-                    break;
-                case "Label":
-                    Label labelName = (Label)sender;
-                    switch (labelName.Name)
-                    {
-                        case "label2": panel2.BackColor = Color.FromArgb(29, 188, 170); break;
-                        case "label3": panel3.BackColor = Color.FromArgb(29, 188, 170); break;
-                        case "label4": panel4.BackColor = Color.FromArgb(29, 188, 170); break;
-                        case "label5": panel5.BackColor = Color.FromArgb(29, 188, 170); break;
-                    }
-                    break;
-            }
-        }
 
-        private void MouseLeave(object sender, EventArgs e)
-        {
-            panel2.BackColor = Color.FromArgb(39, 168, 150); 
-            panel3.BackColor = Color.FromArgb(39, 168, 150); 
-            panel4.BackColor = Color.FromArgb(39, 168, 150); 
-            panel5.BackColor = Color.FromArgb(39, 168, 150); 
-        }
+
+
+
+        // 왼쪽 메뉴바 panel, label, picturebox 위에 마우스가 올라갔을 시 해당 Panel 색상 변경 
+        //private void MouseHover(object sender, EventArgs e)
+        //{
+        //    switch (sender.GetType().Name)
+        //    {
+        //        case "Panel":
+        //            Panel panelName = (Panel)sender;
+        //            switch (panelName.Name)
+        //            {
+        //                case "panel2": homePanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //                case "panel3": blinkPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //                case "panel4": workPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //                case "panel5": settingsPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //            }
+        //            break;
+        //        case "PictureBox":
+        //            PictureBox pictureboxName = (PictureBox)sender;
+        //            switch (pictureboxName.Name)
+        //            {
+        //                case "picturebox_Home": homePanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //                case "picturebox_BlinkStaticis": blinkPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //                case "picturebox_Work": workPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //                case "picturebox_Setting": settingsPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //            }
+        //            break;
+        //        case "Label":
+        //            Label labelName = (Label)sender;
+        //            switch (labelName.Name)
+        //            {
+        //                case "label2": homePanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //                case "label3": blinkPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //                case "label4": workPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //                case "label5": settingsPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+        //            }
+        //            break;
+        //    }
+        //}
+
+        //private void MouseLeave(object sender, EventArgs e)
+        //{
+        //    homePanel.BackColor = Color.FromArgb(39, 168, 150); 
+        //    blinkPanel.BackColor = Color.FromArgb(39, 168, 150); 
+        //    workPanel.BackColor = Color.FromArgb(39, 168, 150); 
+        //    settingsPanel.BackColor = Color.FromArgb(39, 168, 150); 
+        //}
+
+
     }
 }

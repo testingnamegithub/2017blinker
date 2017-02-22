@@ -48,7 +48,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl3";
-            this.Size = new System.Drawing.Size(761, 617);
+            this.Size = new System.Drawing.Size(731, 617);
             this.ResumeLayout(false);
             this.PerformLayout();
 

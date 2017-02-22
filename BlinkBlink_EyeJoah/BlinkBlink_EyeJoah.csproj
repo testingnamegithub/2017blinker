@@ -302,23 +302,20 @@
     <Content Include="OpenCL.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\eye %283%29.png" />
+    <None Include="Resources\house.png" />
+    <None Include="Resources\analytics.png" />
+    <None Include="Resources\almond-eyed.png" />
+    <None Include="Resources\house-outline.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\screen.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Resources\screen.png" />
     <None Include="Resources\settings.png" />
     <Content Include="Resources\_checked.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\avatar.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\almond-eyed.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\house-outline.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Resources\logo.png">
