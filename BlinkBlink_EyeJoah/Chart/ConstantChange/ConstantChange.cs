@@ -87,7 +87,7 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
 
             //Form1.lb.Text = value.ToString();
             //lets only use the last 30 values
-            if (ChartValues.Count > 60) ChartValues.RemoveAt(0);
+            if (ChartValues.Count > 150) ChartValues.RemoveAt(0);
         }
 
         private void TimerOnTick(object sender, EventArgs eventArgs)

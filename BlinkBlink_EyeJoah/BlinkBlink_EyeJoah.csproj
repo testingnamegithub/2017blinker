@@ -307,6 +307,7 @@
     <None Include="Resources\analytics.png" />
     <None Include="Resources\almond-eyed.png" />
     <None Include="Resources\house-outline.png" />
+    <None Include="Resources\logo.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -316,9 +317,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\avatar.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="bin\Debug\OpenCamera1.png" />

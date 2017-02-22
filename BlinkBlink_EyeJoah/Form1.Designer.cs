@@ -36,23 +36,18 @@
             this.settingsPanel = new System.Windows.Forms.Panel();
             this.settingsLabel = new System.Windows.Forms.Label();
             this.back_settings = new System.Windows.Forms.Panel();
-            this.picturebox_Setting = new System.Windows.Forms.PictureBox();
             this.workPanel = new System.Windows.Forms.Panel();
             this.workLabel = new System.Windows.Forms.Label();
             this.back_work = new System.Windows.Forms.Panel();
-            this.picturebox_Work = new System.Windows.Forms.PictureBox();
             this.blinkPanel = new System.Windows.Forms.Panel();
             this.back_blink = new System.Windows.Forms.Panel();
-            this.picturebox_BlinkStaticis = new System.Windows.Forms.PictureBox();
             this.blinkLabel = new System.Windows.Forms.Label();
             this.homePanel = new System.Windows.Forms.Panel();
             this.back_home = new System.Windows.Forms.Panel();
-            this.picturebox_Home = new System.Windows.Forms.PictureBox();
             this.homeLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.profilePanel = new System.Windows.Forms.Panel();
-            this.tempProfile = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pinkLine1 = new System.Windows.Forms.Panel();
             this.teamLabel = new System.Windows.Forms.Label();
@@ -60,11 +55,8 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.header = new System.Windows.Forms.Panel();
-            this.tempLogo = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.minimizeBtn = new System.Windows.Forms.PictureBox();
-            this.closeButton = new System.Windows.Forms.PictureBox();
             this.menuLabel = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.thresholdValueText = new System.Windows.Forms.Label();
@@ -73,30 +65,38 @@
             this.rightEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.leftEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
+            this.minimizeBtn = new System.Windows.Forms.PictureBox();
+            this.closeButton = new System.Windows.Forms.PictureBox();
+            this.tempLogo = new System.Windows.Forms.PictureBox();
+            this.picturebox_Setting = new System.Windows.Forms.PictureBox();
+            this.picturebox_Work = new System.Windows.Forms.PictureBox();
+            this.picturebox_BlinkStaticis = new System.Windows.Forms.PictureBox();
+            this.picturebox_Home = new System.Windows.Forms.PictureBox();
+            this.tempProfile = new System.Windows.Forms.PictureBox();
             this.sidebar.SuspendLayout();
             this.settingsPanel.SuspendLayout();
             this.back_settings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Setting)).BeginInit();
             this.workPanel.SuspendLayout();
             this.back_work.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Work)).BeginInit();
             this.blinkPanel.SuspendLayout();
             this.back_blink.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_BlinkStaticis)).BeginInit();
             this.homePanel.SuspendLayout();
             this.back_home.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Home)).BeginInit();
             this.panel1.SuspendLayout();
             this.profilePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).BeginInit();
             this.header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).BeginInit();
             this.topPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leftEyeImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxCapturedFrame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Setting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Work)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_BlinkStaticis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Home)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -165,18 +165,6 @@
             this.back_settings.Size = new System.Drawing.Size(80, 85);
             this.back_settings.TabIndex = 52;
             // 
-            // picturebox_Setting
-            // 
-            this.picturebox_Setting.Image = global::BlinkBlink_EyeJoah.Properties.Resources.settings;
-            this.picturebox_Setting.Location = new System.Drawing.Point(20, 24);
-            this.picturebox_Setting.Margin = new System.Windows.Forms.Padding(4);
-            this.picturebox_Setting.Name = "picturebox_Setting";
-            this.picturebox_Setting.Size = new System.Drawing.Size(40, 40);
-            this.picturebox_Setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturebox_Setting.TabIndex = 49;
-            this.picturebox_Setting.TabStop = false;
-            this.picturebox_Setting.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
-            // 
             // workPanel
             // 
             this.workPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
@@ -212,19 +200,6 @@
             this.back_work.Size = new System.Drawing.Size(80, 85);
             this.back_work.TabIndex = 51;
             // 
-            // picturebox_Work
-            // 
-            this.picturebox_Work.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picturebox_Work.Image = global::BlinkBlink_EyeJoah.Properties.Resources.work;
-            this.picturebox_Work.Location = new System.Drawing.Point(20, 24);
-            this.picturebox_Work.Margin = new System.Windows.Forms.Padding(4);
-            this.picturebox_Work.Name = "picturebox_Work";
-            this.picturebox_Work.Size = new System.Drawing.Size(40, 40);
-            this.picturebox_Work.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturebox_Work.TabIndex = 0;
-            this.picturebox_Work.TabStop = false;
-            this.picturebox_Work.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton3_Click);
-            // 
             // blinkPanel
             // 
             this.blinkPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
@@ -246,19 +221,6 @@
             this.back_blink.Name = "back_blink";
             this.back_blink.Size = new System.Drawing.Size(80, 85);
             this.back_blink.TabIndex = 50;
-            // 
-            // picturebox_BlinkStaticis
-            // 
-            this.picturebox_BlinkStaticis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picturebox_BlinkStaticis.Image = global::BlinkBlink_EyeJoah.Properties.Resources.eye;
-            this.picturebox_BlinkStaticis.Location = new System.Drawing.Point(20, 24);
-            this.picturebox_BlinkStaticis.Margin = new System.Windows.Forms.Padding(4);
-            this.picturebox_BlinkStaticis.Name = "picturebox_BlinkStaticis";
-            this.picturebox_BlinkStaticis.Size = new System.Drawing.Size(40, 40);
-            this.picturebox_BlinkStaticis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturebox_BlinkStaticis.TabIndex = 0;
-            this.picturebox_BlinkStaticis.TabStop = false;
-            this.picturebox_BlinkStaticis.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton2_Click);
             // 
             // blinkLabel
             // 
@@ -294,19 +256,6 @@
             this.back_home.Name = "back_home";
             this.back_home.Size = new System.Drawing.Size(80, 85);
             this.back_home.TabIndex = 49;
-            // 
-            // picturebox_Home
-            // 
-            this.picturebox_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picturebox_Home.Image = global::BlinkBlink_EyeJoah.Properties.Resources.house;
-            this.picturebox_Home.Location = new System.Drawing.Point(20, 24);
-            this.picturebox_Home.Margin = new System.Windows.Forms.Padding(4);
-            this.picturebox_Home.Name = "picturebox_Home";
-            this.picturebox_Home.Size = new System.Drawing.Size(40, 40);
-            this.picturebox_Home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturebox_Home.TabIndex = 0;
-            this.picturebox_Home.TabStop = false;
-            this.picturebox_Home.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton1_Click);
             // 
             // homeLabel
             // 
@@ -349,16 +298,6 @@
             this.profilePanel.Name = "profilePanel";
             this.profilePanel.Size = new System.Drawing.Size(308, 109);
             this.profilePanel.TabIndex = 50;
-            // 
-            // tempProfile
-            // 
-            this.tempProfile.Image = ((System.Drawing.Image)(resources.GetObject("tempProfile.Image")));
-            this.tempProfile.Location = new System.Drawing.Point(28, 18);
-            this.tempProfile.Name = "tempProfile";
-            this.tempProfile.Size = new System.Drawing.Size(77, 75);
-            this.tempProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.tempProfile.TabIndex = 0;
-            this.tempProfile.TabStop = false;
             // 
             // label1
             // 
@@ -412,16 +351,6 @@
             this.header.TabIndex = 1;
             this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // tempLogo
-            // 
-            this.tempLogo.Image = ((System.Drawing.Image)(resources.GetObject("tempLogo.Image")));
-            this.tempLogo.Location = new System.Drawing.Point(39, 37);
-            this.tempLogo.Name = "tempLogo";
-            this.tempLogo.Size = new System.Drawing.Size(50, 50);
-            this.tempLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tempLogo.TabIndex = 2;
-            this.tempLogo.TabStop = false;
-            // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
@@ -446,33 +375,11 @@
             this.topPanel.TabIndex = 3;
             this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // minimizeBtn
-            // 
-            this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(696, 12);
-            this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(34, 34);
-            this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minimizeBtn.TabIndex = 3;
-            this.minimizeBtn.TabStop = false;
-            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click_1);
-            // 
-            // closeButton
-            // 
-            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(749, 12);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(34, 34);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.closeButton.TabIndex = 2;
-            this.closeButton.TabStop = false;
-            this.closeButton.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // menuLabel
             // 
             this.menuLabel.AutoSize = true;
             this.menuLabel.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuLabel.Location = new System.Drawing.Point(58, 46);
+            this.menuLabel.Location = new System.Drawing.Point(50, 46);
             this.menuLabel.Name = "menuLabel";
             this.menuLabel.Size = new System.Drawing.Size(121, 38);
             this.menuLabel.TabIndex = 1;
@@ -552,6 +459,99 @@
             this.imageBoxCapturedFrame.TabIndex = 43;
             this.imageBoxCapturedFrame.TabStop = false;
             // 
+            // minimizeBtn
+            // 
+            this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
+            this.minimizeBtn.Location = new System.Drawing.Point(696, 12);
+            this.minimizeBtn.Name = "minimizeBtn";
+            this.minimizeBtn.Size = new System.Drawing.Size(34, 34);
+            this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.minimizeBtn.TabIndex = 3;
+            this.minimizeBtn.TabStop = false;
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click_1);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
+            this.closeButton.Location = new System.Drawing.Point(749, 12);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(34, 34);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.closeButton.TabIndex = 2;
+            this.closeButton.TabStop = false;
+            this.closeButton.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // tempLogo
+            // 
+            this.tempLogo.Image = global::BlinkBlink_EyeJoah.Properties.Resources.logo;
+            this.tempLogo.Location = new System.Drawing.Point(39, 37);
+            this.tempLogo.Name = "tempLogo";
+            this.tempLogo.Size = new System.Drawing.Size(50, 50);
+            this.tempLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tempLogo.TabIndex = 2;
+            this.tempLogo.TabStop = false;
+            // 
+            // picturebox_Setting
+            // 
+            this.picturebox_Setting.Image = global::BlinkBlink_EyeJoah.Properties.Resources.settings;
+            this.picturebox_Setting.Location = new System.Drawing.Point(20, 24);
+            this.picturebox_Setting.Margin = new System.Windows.Forms.Padding(4);
+            this.picturebox_Setting.Name = "picturebox_Setting";
+            this.picturebox_Setting.Size = new System.Drawing.Size(40, 40);
+            this.picturebox_Setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturebox_Setting.TabIndex = 49;
+            this.picturebox_Setting.TabStop = false;
+            this.picturebox_Setting.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
+            // 
+            // picturebox_Work
+            // 
+            this.picturebox_Work.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picturebox_Work.Image = global::BlinkBlink_EyeJoah.Properties.Resources.work;
+            this.picturebox_Work.Location = new System.Drawing.Point(20, 24);
+            this.picturebox_Work.Margin = new System.Windows.Forms.Padding(4);
+            this.picturebox_Work.Name = "picturebox_Work";
+            this.picturebox_Work.Size = new System.Drawing.Size(40, 40);
+            this.picturebox_Work.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturebox_Work.TabIndex = 0;
+            this.picturebox_Work.TabStop = false;
+            this.picturebox_Work.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton3_Click);
+            // 
+            // picturebox_BlinkStaticis
+            // 
+            this.picturebox_BlinkStaticis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picturebox_BlinkStaticis.Image = global::BlinkBlink_EyeJoah.Properties.Resources.eye;
+            this.picturebox_BlinkStaticis.Location = new System.Drawing.Point(20, 24);
+            this.picturebox_BlinkStaticis.Margin = new System.Windows.Forms.Padding(4);
+            this.picturebox_BlinkStaticis.Name = "picturebox_BlinkStaticis";
+            this.picturebox_BlinkStaticis.Size = new System.Drawing.Size(40, 40);
+            this.picturebox_BlinkStaticis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturebox_BlinkStaticis.TabIndex = 0;
+            this.picturebox_BlinkStaticis.TabStop = false;
+            this.picturebox_BlinkStaticis.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton2_Click);
+            // 
+            // picturebox_Home
+            // 
+            this.picturebox_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picturebox_Home.Image = global::BlinkBlink_EyeJoah.Properties.Resources.house;
+            this.picturebox_Home.Location = new System.Drawing.Point(20, 24);
+            this.picturebox_Home.Margin = new System.Windows.Forms.Padding(4);
+            this.picturebox_Home.Name = "picturebox_Home";
+            this.picturebox_Home.Size = new System.Drawing.Size(40, 40);
+            this.picturebox_Home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturebox_Home.TabIndex = 0;
+            this.picturebox_Home.TabStop = false;
+            this.picturebox_Home.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton1_Click);
+            // 
+            // tempProfile
+            // 
+            this.tempProfile.Image = ((System.Drawing.Image)(resources.GetObject("tempProfile.Image")));
+            this.tempProfile.Location = new System.Drawing.Point(28, 18);
+            this.tempProfile.Name = "tempProfile";
+            this.tempProfile.Size = new System.Drawing.Size(77, 75);
+            this.tempProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tempProfile.TabIndex = 0;
+            this.tempProfile.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -576,34 +576,34 @@
             this.settingsPanel.ResumeLayout(false);
             this.settingsPanel.PerformLayout();
             this.back_settings.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Setting)).EndInit();
             this.workPanel.ResumeLayout(false);
             this.workPanel.PerformLayout();
             this.back_work.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Work)).EndInit();
             this.blinkPanel.ResumeLayout(false);
             this.blinkPanel.PerformLayout();
             this.back_blink.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_BlinkStaticis)).EndInit();
             this.homePanel.ResumeLayout(false);
             this.homePanel.PerformLayout();
             this.back_home.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Home)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.profilePanel.ResumeLayout(false);
             this.profilePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).EndInit();
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.leftEyeImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxCapturedFrame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Setting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Work)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_BlinkStaticis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Home)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

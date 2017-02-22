@@ -68,7 +68,7 @@ namespace BlinkBlink_EyeJoah
             //WebCam 장치 이름을 불러오기
             loadWebCamDevice();
             //PictureBox UI 둥글게 하기
-            makePictureBoxToRound();
+            //makePictureBoxToRound();
 
             //Capture Device 초기화
             grabber = new Capture();
