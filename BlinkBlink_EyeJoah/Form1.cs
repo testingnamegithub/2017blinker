@@ -75,7 +75,7 @@ namespace BlinkBlink_EyeJoah
             //picturebox_Setting.SizeMode = PictureBoxSizeMode.CenterImage;
 
 
-            this.label1.Text = File.ReadAllText(Application.StartupPath + "/TrainedFaces/UserName.txt");
+            //this.label1.Text = File.ReadAllText(Application.StartupPath + "/TrainedFaces/UserName.txt");
             this.FormBorderStyle = FormBorderStyle.None;
             this.panelContainer.BringToFront();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
