@@ -378,6 +378,17 @@
     <Content Include="opencvDll\opencv_videostab2410.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\1.gif" />
+    <None Include="Resources\2.gif" />
+    <None Include="Resources\3.gif" />
+    <None Include="Resources\4.gif" />
+    <None Include="Resources\5.gif" />
+    <None Include="Resources\6.gif" />
+    <None Include="Resources\7.gif" />
+    <None Include="Resources\8.gif" />
+    <None Include="Resources\9.gif" />
+    <None Include="Resources\10.gif" />
+    <None Include="Resources\11.gif" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
