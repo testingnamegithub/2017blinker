@@ -21,10 +21,10 @@ namespace BlinkBlink_EyeJoah
         public UserControl3()
         {
             InitializeComponent();
-            
+            makeChart();
         }
 
-        private void chartPanel1_Paint(object sender, PaintEventArgs e)
+        private void makeChart()
         {
             chartPanel1.Controls.Clear();
             FunnelExample fun = new FunnelExample();

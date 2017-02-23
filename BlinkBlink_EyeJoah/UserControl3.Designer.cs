@@ -39,7 +39,6 @@
             this.chartPanel1.Name = "chartPanel1";
             this.chartPanel1.Size = new System.Drawing.Size(614, 280);
             this.chartPanel1.TabIndex = 3;
-            this.chartPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.chartPanel1_Paint);
             // 
             // UserControl3
             // 
@@ -48,7 +47,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl3";
-            this.Size = new System.Drawing.Size(731, 617);
+            this.Size = new System.Drawing.Size(770, 617);
             this.ResumeLayout(false);
             this.PerformLayout();
 
