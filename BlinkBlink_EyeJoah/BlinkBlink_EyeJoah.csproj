@@ -389,6 +389,11 @@
     <None Include="Resources\9.gif" />
     <None Include="Resources\10.gif" />
     <None Include="Resources\11.gif" />
+    <None Include="Resources\houseLogo.png" />
+    <None Include="Resources\blinkLogo.png" />
+    <None Include="Resources\houseLogo2.png" />
+    <None Include="Resources\blinkLogo2.png" />
+    <None Include="Resources\blinkerLogo.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -398,6 +403,10 @@
     <None Include="Resources\settings.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\workLogo.png" />
+    <None Include="Resources\settingsLogo.png" />
+    <None Include="Resources\settingsLogo2.png" />
+    <None Include="Resources\workLogo2.png" />
     <Content Include="Resources\_checked.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -48,14 +48,13 @@
             // 
             // UserControl2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.chartPanel2);
             this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl2";
-            this.Size = new System.Drawing.Size(757, 1169);
+            this.Size = new System.Drawing.Size(731, 1169);
             this.ResumeLayout(false);
 
         }

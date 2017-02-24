@@ -39,7 +39,7 @@ namespace BlinkBlink_EyeJoah
             eyeBlink.start_EyeBlink();
 
             homePanel.BackColor = Color.FromArgb(50, 208, 186);
-            back_home.BackColor = Color.FromArgb(39, 168, 150);
+            //back_home.BackColor = Color.FromArgb(39, 168, 150);
             homeLabel.ForeColor = Color.White;
         }
 
@@ -96,10 +96,10 @@ namespace BlinkBlink_EyeJoah
             blinkLabel.ForeColor = Color.Black;
             workLabel.ForeColor = Color.Black;
             settingsLabel.ForeColor = Color.Black;
-            back_home.BackColor = Color.FromArgb(39, 168, 150);
-            back_settings.BackColor = Color.FromArgb(46, 200, 178);
-            back_work.BackColor = Color.FromArgb(46, 200, 178);
-            back_blink.BackColor = Color.FromArgb(46, 200, 178);
+            //back_home.BackColor = Color.FromArgb(39, 168, 150);
+            //back_settings.BackColor = Color.FromArgb(46, 200, 178);
+            //back_work.BackColor = Color.FromArgb(46, 200, 178);
+            //back_blink.BackColor = Color.FromArgb(46, 200, 178);
         }
 
         private void bunifuFlatButton2_Click(object sender, MouseEventArgs e)
@@ -118,10 +118,10 @@ namespace BlinkBlink_EyeJoah
             settingsLabel.ForeColor = Color.Black;
             workLabel.ForeColor = Color.Black;
             homeLabel.ForeColor = Color.Black;
-            back_blink.BackColor = Color.FromArgb(39, 168, 150);
-            back_home.BackColor = Color.FromArgb(46, 200, 178);
-            back_settings.BackColor = Color.FromArgb(46, 200, 178);
-            back_work.BackColor = Color.FromArgb(46, 200, 178);
+            //back_blink.BackColor = Color.FromArgb(39, 168, 150);
+            //back_home.BackColor = Color.FromArgb(46, 200, 178);
+            //back_settings.BackColor = Color.FromArgb(46, 200, 178);
+            //back_work.BackColor = Color.FromArgb(46, 200, 178);
         }
 
         private void bunifuFlatButton3_Click(object sender, MouseEventArgs e)
@@ -142,10 +142,10 @@ namespace BlinkBlink_EyeJoah
             blinkLabel.ForeColor = Color.Black;
             homeLabel.ForeColor = Color.Black;
             settingsLabel.ForeColor = Color.Black;
-            back_work.BackColor = Color.FromArgb(39, 168, 150);
-            back_blink.BackColor = Color.FromArgb(46, 200, 178);
-            back_home.BackColor = Color.FromArgb(46, 200, 178);
-            back_settings.BackColor = Color.FromArgb(46, 200, 178);
+            //back_work.BackColor = Color.FromArgb(39, 168, 150);
+            //back_blink.BackColor = Color.FromArgb(46, 200, 178);
+            //back_home.BackColor = Color.FromArgb(46, 200, 178);
+            //back_settings.BackColor = Color.FromArgb(46, 200, 178);
         }
 
 
@@ -166,10 +166,10 @@ namespace BlinkBlink_EyeJoah
             blinkLabel.ForeColor = Color.Black;
             workLabel.ForeColor = Color.Black;
             homeLabel.ForeColor = Color.Black;
-            back_settings.BackColor = Color.FromArgb(39, 168, 150);
-            back_blink.BackColor = Color.FromArgb(46, 200, 178);
-            back_work.BackColor = Color.FromArgb(46, 200, 178);
-            back_home.BackColor = Color.FromArgb(46, 200, 178);
+            //back_settings.BackColor = Color.FromArgb(39, 168, 150);
+            //back_blink.BackColor = Color.FromArgb(46, 200, 178);
+            //back_work.BackColor = Color.FromArgb(46, 200, 178);
+            //back_home.BackColor = Color.FromArgb(46, 200, 178);
         }
         
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -199,6 +199,8 @@ namespace BlinkBlink_EyeJoah
             get{ return thresholdValue ; }
             set{ thresholdValue = value; }
         }
+
+
 
 
 
