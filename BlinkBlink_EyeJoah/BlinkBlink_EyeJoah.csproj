@@ -184,6 +184,12 @@
     <Compile Include="Chart\Gant chart\GantchartExample.Designer.cs">
       <DependentUpon>GantchartExample.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chart\PieChart\DoughnutExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart\PieChart\DoughnutExample.Designer.cs">
+      <DependentUpon>DoughnutExample.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chart\PieChart\PieChartExample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\Gant chart\GantchartExample.resx">
       <DependentUpon>GantchartExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\PieChart\DoughnutExample.resx">
+      <DependentUpon>DoughnutExample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\PieChart\PieChartExample.resx">
       <DependentUpon>PieChartExample.cs</DependentUpon>
