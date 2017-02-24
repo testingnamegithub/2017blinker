@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
-
+using System.Drawing;
 
 namespace BlinkBlink_EyeJoah.Chart.PieChart
 {
@@ -13,21 +13,22 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
         {
             InitializeComponent();
 
-            pieChart1.InnerRadius = 100;
+            pieChart1.InnerRadius = 40;
             pieChart1.LegendLocation = LegendLocation.Right;
 
             pieChart1.Series = new SeriesCollection
             {
                 new PieSeries
                 {
-                    Title = "Greate",
+                    Title = "Great",
                     Values = new ChartValues<double> {8},
                     PushOut = 15,
-                    DataLabels = true
+                    DataLabels = true,
+                    Fill=System.Windows.Media.Brushes.DarkCyan
                 },
                 new PieSeries
                 {
-                    Title = "Nomal",
+                    Title = "Normal",
                     Values = new ChartValues<double> {6},
                     DataLabels = true
                 },

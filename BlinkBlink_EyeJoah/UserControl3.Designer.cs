@@ -35,9 +35,9 @@
             // 
             this.chartPanel1.AutoScroll = true;
             this.chartPanel1.AutoSize = true;
-            this.chartPanel1.Location = new System.Drawing.Point(63, 42);
+            this.chartPanel1.Location = new System.Drawing.Point(13, 73);
             this.chartPanel1.Name = "chartPanel1";
-            this.chartPanel1.Size = new System.Drawing.Size(614, 280);
+            this.chartPanel1.Size = new System.Drawing.Size(349, 192);
             this.chartPanel1.TabIndex = 3;
             // 
             // UserControl3
@@ -46,7 +46,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl3";
-            this.Size = new System.Drawing.Size(808, 448);
+            this.Size = new System.Drawing.Size(378, 372);
             this.ResumeLayout(false);
             this.PerformLayout();
 

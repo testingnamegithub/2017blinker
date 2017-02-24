@@ -28,31 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Y = new System.Windows.Forms.Label();
-            this.X = new System.Windows.Forms.Label();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.SuspendLayout();
-            // 
-            // Y
-            // 
-            this.Y.AutoSize = true;
-            this.Y.Location = new System.Drawing.Point(159, 18);
-            this.Y.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Y.Name = "Y";
-            this.Y.Size = new System.Drawing.Size(31, 18);
-            this.Y.TabIndex = 8;
-            this.Y.Text = "Y: ";
-            // 
-            // X
-            // 
-            this.X.AutoSize = true;
-            this.X.Location = new System.Drawing.Point(53, 18);
-            this.X.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.X.Name = "X";
-            this.X.Size = new System.Drawing.Size(31, 18);
-            this.X.TabIndex = 7;
-            this.X.Text = "X: ";
-            this.X.Click += new System.EventHandler(this.X_Click);
             // 
             // cartesianChart1
             // 
@@ -60,7 +37,7 @@
             this.cartesianChart1.Location = new System.Drawing.Point(0, 0);
             this.cartesianChart1.Margin = new System.Windows.Forms.Padding(4);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(517, 356);
+            this.cartesianChart1.Size = new System.Drawing.Size(400, 440);
             this.cartesianChart1.TabIndex = 6;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
@@ -68,23 +45,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 356);
-            this.Controls.Add(this.Y);
-            this.Controls.Add(this.X);
+            this.ClientSize = new System.Drawing.Size(400, 440);
             this.Controls.Add(this.cartesianChart1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UielementsExample";
             this.Text = "UielementsExample";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label Y;
-        private System.Windows.Forms.Label X;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }

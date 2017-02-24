@@ -63,7 +63,6 @@
             this.topPanel = new System.Windows.Forms.Panel();
             this.minimizeBtn = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
-            this.menuLabel = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.thresholdValueText = new System.Windows.Forms.Label();
             this.eyeBlinkText = new System.Windows.Forms.Label();
@@ -105,22 +104,22 @@
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(237, 557);
+            this.sidebar.Size = new System.Drawing.Size(263, 614);
             this.sidebar.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(234)))), ((int)(((byte)(228)))));
-            this.panel1.Controls.Add(this.settingsPanel);
             this.panel1.Controls.Add(this.profilePanel);
+            this.panel1.Controls.Add(this.settingsPanel);
             this.panel1.Controls.Add(this.workPanel);
             this.panel1.Controls.Add(this.pinkLine1);
             this.panel1.Controls.Add(this.blinkPanel);
             this.panel1.Controls.Add(this.teamLabel);
             this.panel1.Controls.Add(this.homePanel);
-            this.panel1.Location = new System.Drawing.Point(3, 105);
+            this.panel1.Location = new System.Drawing.Point(3, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(236, 448);
+            this.panel1.Size = new System.Drawing.Size(257, 551);
             this.panel1.TabIndex = 0;
             // 
             // settingsPanel
@@ -128,22 +127,22 @@
             this.settingsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.settingsPanel.Controls.Add(this.settingsLabel);
             this.settingsPanel.Controls.Add(this.back_settings);
-            this.settingsPanel.Location = new System.Drawing.Point(0, 339);
+            this.settingsPanel.Location = new System.Drawing.Point(0, 344);
             this.settingsPanel.Margin = new System.Windows.Forms.Padding(4);
             this.settingsPanel.Name = "settingsPanel";
-            this.settingsPanel.Size = new System.Drawing.Size(234, 70);
+            this.settingsPanel.Size = new System.Drawing.Size(257, 75);
             this.settingsPanel.TabIndex = 52;
             this.settingsPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
             // 
             // settingsLabel
             // 
             this.settingsLabel.AutoSize = true;
-            this.settingsLabel.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
+            this.settingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.settingsLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.settingsLabel.Location = new System.Drawing.Point(80, 23);
             this.settingsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.settingsLabel.Name = "settingsLabel";
-            this.settingsLabel.Size = new System.Drawing.Size(122, 39);
+            this.settingsLabel.Size = new System.Drawing.Size(83, 25);
             this.settingsLabel.TabIndex = 52;
             this.settingsLabel.Text = "Settings";
             this.settingsLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
@@ -172,22 +171,23 @@
             // 
             // profilePanel
             // 
+            this.profilePanel.BackColor = System.Drawing.Color.White;
             this.profilePanel.Controls.Add(this.editProfile);
             this.profilePanel.Controls.Add(this.tempProfile);
             this.profilePanel.Controls.Add(this.label1);
-            this.profilePanel.Location = new System.Drawing.Point(0, 3);
+            this.profilePanel.Location = new System.Drawing.Point(0, 0);
             this.profilePanel.Name = "profilePanel";
-            this.profilePanel.Size = new System.Drawing.Size(235, 101);
+            this.profilePanel.Size = new System.Drawing.Size(257, 100);
             this.profilePanel.TabIndex = 50;
             // 
             // editProfile
             // 
             this.editProfile.AutoSize = true;
-            this.editProfile.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Underline);
+            this.editProfile.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Underline);
             this.editProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.editProfile.Location = new System.Drawing.Point(174, 6);
+            this.editProfile.Location = new System.Drawing.Point(193, 6);
             this.editProfile.Name = "editProfile";
-            this.editProfile.Size = new System.Drawing.Size(76, 32);
+            this.editProfile.Size = new System.Drawing.Size(57, 24);
             this.editProfile.TabIndex = 2;
             this.editProfile.Text = " EDIT ";
             // 
@@ -204,11 +204,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(85, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 39);
+            this.label1.Size = new System.Drawing.Size(123, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "User Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -218,22 +218,22 @@
             this.workPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.workPanel.Controls.Add(this.workLabel);
             this.workPanel.Controls.Add(this.back_work);
-            this.workPanel.Location = new System.Drawing.Point(0, 263);
+            this.workPanel.Location = new System.Drawing.Point(0, 266);
             this.workPanel.Margin = new System.Windows.Forms.Padding(4);
             this.workPanel.Name = "workPanel";
-            this.workPanel.Size = new System.Drawing.Size(234, 70);
+            this.workPanel.Size = new System.Drawing.Size(257, 75);
             this.workPanel.TabIndex = 51;
             this.workPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton3_Click);
             // 
             // workLabel
             // 
             this.workLabel.AutoSize = true;
-            this.workLabel.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
+            this.workLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.workLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.workLabel.Location = new System.Drawing.Point(80, 23);
             this.workLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.workLabel.Name = "workLabel";
-            this.workLabel.Size = new System.Drawing.Size(88, 39);
+            this.workLabel.Size = new System.Drawing.Size(59, 25);
             this.workLabel.TabIndex = 4;
             this.workLabel.Text = "Work";
             this.workLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton3_Click);
@@ -264,9 +264,9 @@
             // pinkLine1
             // 
             this.pinkLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
-            this.pinkLine1.Location = new System.Drawing.Point(0, 103);
+            this.pinkLine1.Location = new System.Drawing.Point(0, 100);
             this.pinkLine1.Name = "pinkLine1";
-            this.pinkLine1.Size = new System.Drawing.Size(235, 10);
+            this.pinkLine1.Size = new System.Drawing.Size(257, 10);
             this.pinkLine1.TabIndex = 2;
             // 
             // blinkPanel
@@ -274,22 +274,22 @@
             this.blinkPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.blinkPanel.Controls.Add(this.blinkLabel);
             this.blinkPanel.Controls.Add(this.back_blink);
-            this.blinkPanel.Location = new System.Drawing.Point(1, 187);
+            this.blinkPanel.Location = new System.Drawing.Point(0, 188);
             this.blinkPanel.Margin = new System.Windows.Forms.Padding(4);
             this.blinkPanel.Name = "blinkPanel";
-            this.blinkPanel.Size = new System.Drawing.Size(234, 70);
+            this.blinkPanel.Size = new System.Drawing.Size(257, 75);
             this.blinkPanel.TabIndex = 50;
             this.blinkPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton2_Click);
             // 
             // blinkLabel
             // 
             this.blinkLabel.AutoSize = true;
-            this.blinkLabel.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
+            this.blinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.blinkLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.blinkLabel.Location = new System.Drawing.Point(80, 23);
             this.blinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.blinkLabel.Name = "blinkLabel";
-            this.blinkLabel.Size = new System.Drawing.Size(123, 39);
+            this.blinkLabel.Size = new System.Drawing.Size(80, 25);
             this.blinkLabel.TabIndex = 3;
             this.blinkLabel.Text = "Blinking";
             this.blinkLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton2_Click);
@@ -321,11 +321,11 @@
             // 
             this.teamLabel.AutoSize = true;
             this.teamLabel.BackColor = System.Drawing.Color.Transparent;
-            this.teamLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.teamLabel.ForeColor = System.Drawing.Color.Silver;
-            this.teamLabel.Location = new System.Drawing.Point(135, 413);
+            this.teamLabel.Font = new System.Drawing.Font("Calibri", 10F);
+            this.teamLabel.ForeColor = System.Drawing.Color.Gray;
+            this.teamLabel.Location = new System.Drawing.Point(141, 521);
             this.teamLabel.Name = "teamLabel";
-            this.teamLabel.Size = new System.Drawing.Size(129, 29);
+            this.teamLabel.Size = new System.Drawing.Size(109, 24);
             this.teamLabel.TabIndex = 0;
             this.teamLabel.Text = "(T) Eye Joah";
             // 
@@ -334,22 +334,22 @@
             this.homePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.homePanel.Controls.Add(this.homeLabel);
             this.homePanel.Controls.Add(this.back_home);
-            this.homePanel.Location = new System.Drawing.Point(0, 111);
+            this.homePanel.Location = new System.Drawing.Point(0, 110);
             this.homePanel.Margin = new System.Windows.Forms.Padding(4);
             this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(235, 70);
+            this.homePanel.Size = new System.Drawing.Size(257, 75);
             this.homePanel.TabIndex = 49;
             this.homePanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton1_Click);
             // 
             // homeLabel
             // 
             this.homeLabel.AutoSize = true;
-            this.homeLabel.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.homeLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.homeLabel.Location = new System.Drawing.Point(80, 23);
             this.homeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.homeLabel.Name = "homeLabel";
-            this.homeLabel.Size = new System.Drawing.Size(96, 39);
+            this.homeLabel.Size = new System.Drawing.Size(64, 25);
             this.homeLabel.TabIndex = 2;
             this.homeLabel.Text = "Home";
             this.homeLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton1_Click);
@@ -379,21 +379,21 @@
             // 
             // header
             // 
-            this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
             this.header.Controls.Add(this.tempLogo);
             this.header.Controls.Add(this.titleLabel);
-            this.header.Location = new System.Drawing.Point(3, 0);
+            this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(235, 108);
+            this.header.Size = new System.Drawing.Size(260, 60);
             this.header.TabIndex = 1;
             this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // tempLogo
             // 
             this.tempLogo.Image = global::BlinkBlink_EyeJoah.Properties.Resources.blinkerLogo;
-            this.tempLogo.Location = new System.Drawing.Point(25, 35);
+            this.tempLogo.Location = new System.Drawing.Point(35, 15);
             this.tempLogo.Name = "tempLogo";
-            this.tempLogo.Size = new System.Drawing.Size(35, 35);
+            this.tempLogo.Size = new System.Drawing.Size(30, 30);
             this.tempLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tempLogo.TabIndex = 2;
             this.tempLogo.TabStop = false;
@@ -401,11 +401,11 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Georgia", 23F, System.Drawing.FontStyle.Bold);
+            this.titleLabel.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold);
             this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(75, 33);
+            this.titleLabel.Location = new System.Drawing.Point(75, 15);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(201, 53);
+            this.titleLabel.Size = new System.Drawing.Size(106, 28);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Blinker";
             // 
@@ -413,29 +413,28 @@
             // 
             this.panelContainer.AutoScroll = true;
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
-            this.panelContainer.Location = new System.Drawing.Point(237, 105);
+            this.panelContainer.Location = new System.Drawing.Point(263, 60);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(808, 448);
+            this.panelContainer.Size = new System.Drawing.Size(867, 551);
             this.panelContainer.TabIndex = 2;
             // 
             // topPanel
             // 
-            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
+            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
             this.topPanel.Controls.Add(this.minimizeBtn);
             this.topPanel.Controls.Add(this.closeButton);
-            this.topPanel.Controls.Add(this.menuLabel);
-            this.topPanel.Location = new System.Drawing.Point(237, 0);
+            this.topPanel.Location = new System.Drawing.Point(246, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(808, 105);
+            this.topPanel.Size = new System.Drawing.Size(887, 60);
             this.topPanel.TabIndex = 3;
             this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // minimizeBtn
             // 
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(713, 12);
+            this.minimizeBtn.Location = new System.Drawing.Point(792, 12);
             this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(34, 34);
+            this.minimizeBtn.Size = new System.Drawing.Size(30, 30);
             this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.minimizeBtn.TabIndex = 3;
             this.minimizeBtn.TabStop = false;
@@ -444,23 +443,13 @@
             // closeButton
             // 
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(766, 12);
+            this.closeButton.Location = new System.Drawing.Point(828, 12);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(34, 34);
+            this.closeButton.Size = new System.Drawing.Size(30, 30);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.closeButton.TabIndex = 2;
             this.closeButton.TabStop = false;
             this.closeButton.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // menuLabel
-            // 
-            this.menuLabel.AutoSize = true;
-            this.menuLabel.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuLabel.Location = new System.Drawing.Point(50, 46);
-            this.menuLabel.Name = "menuLabel";
-            this.menuLabel.Size = new System.Drawing.Size(121, 38);
-            this.menuLabel.TabIndex = 1;
-            this.menuLabel.Text = "Home";
             // 
             // imageList1
             // 
@@ -538,9 +527,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1049, 557);
+            this.ClientSize = new System.Drawing.Size(1133, 614);
             this.Controls.Add(this.rightEyeImageBox);
             this.Controls.Add(this.thresholdValueText);
             this.Controls.Add(this.eyeBlinkText);
@@ -580,7 +570,6 @@
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).EndInit();
             this.topPanel.ResumeLayout(false);
-            this.topPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).EndInit();
@@ -600,7 +589,6 @@
         private System.Windows.Forms.Panel header;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Panel topPanel;
-        private System.Windows.Forms.Label menuLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox tempProfile;

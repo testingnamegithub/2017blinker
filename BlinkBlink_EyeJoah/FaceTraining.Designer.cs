@@ -97,7 +97,7 @@
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
             this.minimizeBtn.Location = new System.Drawing.Point(800, 14);
             this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(29, 30);
+            this.minimizeBtn.Size = new System.Drawing.Size(30, 30);
             this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.minimizeBtn.TabIndex = 11;
             this.minimizeBtn.TabStop = false;
@@ -107,7 +107,7 @@
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.Location = new System.Drawing.Point(850, 14);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(29, 30);
+            this.closeButton.Size = new System.Drawing.Size(30, 30);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.closeButton.TabIndex = 10;
             this.closeButton.TabStop = false;
@@ -158,9 +158,9 @@
             this.label2.Location = new System.Drawing.Point(45, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(259, 36);
+            this.label2.Size = new System.Drawing.Size(272, 36);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Photo Enrollment";
+            this.label2.Text = "Photo Registration";
             // 
             // panel3
             // 

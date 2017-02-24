@@ -18,21 +18,23 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
         {
             InitializeComponent();
 
-            var lineSeries = new LineSeries
+            var lineSeries = new LineSeries //꺾은선
             {
-                Values = new ChartValues<double> { 12, 10, 13, 9, 12, 13, 14, 15 },
+                Values = new ChartValues<double> { 12, 10, 13, 9, 12 },
                 Fill = Brushes.Transparent,
-                StrokeThickness = 5,
+                StrokeThickness = 3,
                 PointGeometry = null
             };
-            var barSeries = new ColumnSeries
+            var barSeries = new ColumnSeries //막대그래프
             {
-                Values = new ChartValues<double> { 12, 10, 13, 9, 12, 13, 14, 15 },
-                StrokeThickness = 11,
-                PointGeometry = null
+                Values = new ChartValues<double> { 12, 10, 13, 9, 12 },
+                StrokeThickness = 2,
+                PointGeometry = null,
+                MaxColumnWidth = 30,
+                
             };
 
-            cartesianChart1.Series.Add(lineSeries);
+            //cartesianChart1.Series.Add(lineSeries);
             cartesianChart1.Series.Add(barSeries);
 
             cartesianChart1.VisualElements.Add(new VisualElement
@@ -43,10 +45,11 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                 VerticalAlignment = VerticalAlignment.Top,
                 UIElement = new TextBlock //notice this property must be a wpf control
                 {
-                    Text = "Warning!",
+                    Text = "WARNING",
                     FontWeight = FontWeights.Bold,
                     FontSize = 16,
-                    Opacity = 0.6
+                    Foreground = new SolidColorBrush(Colors.IndianRed),
+                    //Opacity = 0.6
                 }
             });
             var uri = new Uri("Cartesian/UielementsExample/warning.png", UriKind.Relative);
@@ -72,15 +75,15 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     new AxisSection
                     {
                         Value = 12,
-                        Stroke = Brushes.YellowGreen,
-                        StrokeThickness = 5,
-                       // StrokeDashArray = new DoubleCollection(new [] {10d})
+                        Stroke = Brushes.IndianRed,
+                        StrokeThickness = 4,
+                        StrokeDashArray = new DoubleCollection(new [] {3d})
                     }
                 }
             });
             cartesianChart1.AxisX.Add(new Axis
             {
-                Labels = new[] { "9", "10", "11", "12", "14", "15", "16", "17" }
+                Labels = new[] { "9시", "10시", "11시", "12시", "13시" } //마우스 가까이댔을때 뜨는 라벨
             });
 
             Panel.SetZIndex(barSeries, 0);
