@@ -81,36 +81,43 @@
       <HintPath>packages\AForge.Vision.2.2.5\lib\AForge.Vision.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Emgu.CV, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438" />
+    <Reference Include="Emgu.CV, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438">
+      <HintPath>..\..\..\..\..\..\Emgu\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.dll</HintPath>
+    </Reference>
     <Reference Include="Emgu.CV.DebuggerVisualizers.VS2015, Version=3.1.0.2504, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.DebuggerVisualizers.VS2015.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Emgu\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.DebuggerVisualizers.VS2015.dll</HintPath>
     </Reference>
     <Reference Include="Emgu.CV.GPU, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.GPU.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Emgu\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.GPU.dll</HintPath>
     </Reference>
     <Reference Include="Emgu.CV.ML, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.ML.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Emgu\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.ML.dll</HintPath>
     </Reference>
     <Reference Include="Emgu.CV.OCR, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.OCR.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Emgu\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.OCR.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.OpenCL">
+      <HintPath>..\..\..\..\..\..\Emgu\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.OpenCL.dll</HintPath>
     </Reference>
     <Reference Include="Emgu.CV.Stitching, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.Stitching.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Emgu\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.Stitching.dll</HintPath>
     </Reference>
     <Reference Include="Emgu.CV.UI, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Emgu.CV.UI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Emgu\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.UI.dll</HintPath>
     </Reference>
     <Reference Include="Emgu.CV.VideoStab, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.VideoStab.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Emgu\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.CV.VideoStab.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.Util, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438" />
+    <Reference Include="Emgu.Util, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438">
+      <HintPath>..\..\..\..\..\..\Emgu\Emgu\emgucv-windows-universal 2.4.10.1940\bin\Emgu.Util.dll</HintPath>
+    </Reference>
     <Reference Include="LiveCharts, Version=0.9.2.0, Culture=neutral, PublicKeyToken=c5935629d38af058, processorArchitecture=MSIL">
       <HintPath>packages\LiveCharts.0.9.2\lib\net45\LiveCharts.dll</HintPath>
       <Private>True</Private>
@@ -146,6 +153,12 @@
     <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chart\360\Gauge360Example.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart\360\Gauge360Example.Designer.cs">
+      <DependentUpon>Gauge360Example.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chart\ConstantChange\ConstantChange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +249,9 @@
     <Compile Include="UserControl4.Designer.cs">
       <DependentUpon>UserControl4.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Chart\360\Gauge360Example.resx">
+      <DependentUpon>Gauge360Example.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chart\ConstantChange\ConstantChange.resx">
       <DependentUpon>ConstantChange.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +297,7 @@
       <DependentUpon>UserControl4.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ETC\packages.config" />
+    <None Include="MjpegProcessor.winmd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -303,6 +320,26 @@
     <Content Include="OpenCL.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\_checked1.png" />
+    <None Include="Resources\almond-eyed1.png" />
+    <None Include="Resources\avatar1.png" />
+    <None Include="Resources\house-outline1.png" />
+    <None Include="Resources\logo1.png" />
+    <None Include="Resources\OpenCamera11.png" />
+    <None Include="Resources\screen1.png" />
+    <None Include="Resources\settings1.png" />
+    <None Include="Resources\1.gif" />
+    <None Include="Resources\2.gif" />
+    <None Include="Resources\3.gif" />
+    <None Include="Resources\4.gif" />
+    <None Include="Resources\5.gif" />
+    <None Include="Resources\6.gif" />
+    <None Include="Resources\7.gif" />
+    <None Include="Resources\8.gif" />
+    <None Include="Resources\9.gif" />
+    <None Include="Resources\10.gif" />
+    <None Include="Resources\11.gif" />
+    <Content Include="ZedGraph.dll" />
     <None Include="Resources\eye %283%29.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -378,17 +415,6 @@
     <Content Include="opencvDll\opencv_videostab2410.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\1.gif" />
-    <None Include="Resources\2.gif" />
-    <None Include="Resources\3.gif" />
-    <None Include="Resources\4.gif" />
-    <None Include="Resources\5.gif" />
-    <None Include="Resources\6.gif" />
-    <None Include="Resources\7.gif" />
-    <None Include="Resources\8.gif" />
-    <None Include="Resources\9.gif" />
-    <None Include="Resources\10.gif" />
-    <None Include="Resources\11.gif" />
     <None Include="Resources\houseLogo.png" />
     <None Include="Resources\blinkLogo.png" />
     <None Include="Resources\houseLogo2.png" />
@@ -419,6 +445,7 @@
     <None Include="bin\Debug\checked.png" />
     <None Include="bin\Debug\house-outline.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

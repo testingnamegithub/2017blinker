@@ -31,6 +31,7 @@ namespace BlinkBlink_EyeJoah
             comboBox1.Visible = false;
             comboBox2.Visible = false;
             label5.Visible = false;
+
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -67,43 +68,63 @@ namespace BlinkBlink_EyeJoah
             label1.Text = "눈 운동 에니메이션";
             pictureBox2.Image = Properties.Resources._5;
             label3.Text = "일정시간 사용자가 작업시 \n눈 건강을 위해 운동을 알려줍니다.";
-            comboBox1.Visible = true;
-            comboBox2.Visible = true;
-            label5.Visible = false;
+
+            if (checkBox1.Checked)
+            {
+                comboBox1.Visible = true;
+                comboBox2.Visible = true;
+                label5.Visible = true;
+            }
+            else
+            {
+                comboBox1.Visible = false;
+                comboBox2.Visible = false;
+                label5.Visible = false;
+                comboBox1.SelectionLength = 0;
+                comboBox2.SelectionLength = 0;
+            }
         }
 
 
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selects = comboBox2.SelectedItem.ToString();
-            switch (selects)
+            if (comboBox1.SelectedItem == null & comboBox2.SelectedItem == null)
             {
-                case "ClockWise":
-                    pictureBox2.Image = Properties.Resources._6;
-                    break;
-                case "CounterClockWise":
-                    pictureBox2.Image = Properties.Resources._7;
-                    break;
-                case "LeftAndRight":
-                    pictureBox2.Image = Properties.Resources._11;
-                    break;
-                case "Diagonal_RightTop":
-                    pictureBox2.Image = Properties.Resources._8;
-                    break;
-                case "Diagonal_RightBelow":
-                    pictureBox2.Image = Properties.Resources._9;
-                    break;
-                case "Infinity":
-                    pictureBox2.Image = Properties.Resources._10;
-                    break;
-                case "Random":
-                    pictureBox2.Image = Properties.Resources._10;
-                    break;
+                comboBox1.SelectedIndex = 1;
+                comboBox2.SelectedIndex = 1;
+            }
+            else
+            {
+                string selects = comboBox2.SelectedItem.ToString();
+                switch (selects)
+                {
+                    case "ClockWise":
+                        pictureBox2.Image = Properties.Resources._6;
+                        break;
+                    case "CounterClockWise":
+                        pictureBox2.Image = Properties.Resources._7;
+                        break;
+                    case "LeftAndRight":
+                        pictureBox2.Image = Properties.Resources._11;
+                        break;
+                    case "Diagonal_RightTop":
+                        pictureBox2.Image = Properties.Resources._8;
+                        break;
+                    case "Diagonal_RightBelow":
+                        pictureBox2.Image = Properties.Resources._9;
+                        break;
+                    case "Infinity":
+                        pictureBox2.Image = Properties.Resources._10;
+                        break;
+                    case "Random":
+                        pictureBox2.Image = Properties.Resources._10;
+                        break;
 
-                default:
-                    MessageBox.Show("선택해주세요");
-                    break;
+                    default:
+                        MessageBox.Show("선택해주세요");
+                        break;
+                }
             }
         }
 
@@ -115,6 +136,47 @@ namespace BlinkBlink_EyeJoah
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null & comboBox2.SelectedItem == null)
+            {
+                comboBox1.SelectedIndex = 1;
+                comboBox2.SelectedIndex = 1;
+            }
+            else
+            {
+                string selects = comboBox2.SelectedItem.ToString();
+                switch (selects)
+                {
+                    case "ClockWise":
+                        pictureBox2.Image = Properties.Resources._6;
+                        break;
+                    case "CounterClockWise":
+                        pictureBox2.Image = Properties.Resources._7;
+                        break;
+                    case "LeftAndRight":
+                        pictureBox2.Image = Properties.Resources._11;
+                        break;
+                    case "Diagonal_RightTop":
+                        pictureBox2.Image = Properties.Resources._8;
+                        break;
+                    case "Diagonal_RightBelow":
+                        pictureBox2.Image = Properties.Resources._9;
+                        break;
+                    case "Infinity":
+                        pictureBox2.Image = Properties.Resources._10;
+                        break;
+                    case "Random":
+                        pictureBox2.Image = Properties.Resources._10;
+                        break;
+
+                    default:
+                        MessageBox.Show("선택해주세요");
+                        break;
+                }
+            }
         }
     }
 }
