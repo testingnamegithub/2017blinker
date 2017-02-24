@@ -58,7 +58,6 @@ namespace BlinkBlink_EyeJoah
         public FaceTraining()
         {
             InitializeComponent();
-            takePic_NextBtn.Image = Properties.Resources.OpenCamera1;
             
             //얼굴 검출을 위한 Haarcascade Load
             face = new HaarCascade("haarcascade_frontalface_default.xml");
@@ -147,11 +146,11 @@ namespace BlinkBlink_EyeJoah
 
         //}
         
-        private void reTryBtn_Click(object sender, MouseEventArgs e)
-        {
-            reTryBtn.Visible = false;
-            pictureBox1.Image = null;
-        }
+        //private void reTryBtn_Click(object sender, MouseEventArgs e)
+        //{
+        //    reTryBtn.Visible = false;
+        //    pictureBox1.Image = null;
+        //}
 
         private void nameTxtbox_MouseClick(object sender, MouseEventArgs e)
         {
@@ -184,6 +183,7 @@ namespace BlinkBlink_EyeJoah
         {
             try
             {
+                takePic.Text = "Try again";
                 // Training Image 카운트 증가
                 trainingData.getset_CountTrain = trainingData.getset_CountTrain + 1;
 
@@ -199,7 +199,6 @@ namespace BlinkBlink_EyeJoah
                 captureBitmap = ResizeImage.adjust(captureBitmap, new Size(120, 120));
                 pictureBox1.Image = captureBitmap;
 
-                reTryBtn.Visible = true;
                 MessageBox.Show(nameTxtbox.Text + "´s face was detected and registered. :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
@@ -236,17 +235,24 @@ namespace BlinkBlink_EyeJoah
 
         private void takePic_Click(object sender, EventArgs e)
         {
-            // Shoot 버튼을 누른 상태일 경우 ( Next버튼으로 변한 상태 ) 
+            // Shoot 두번째 눌렀을 경우, 
             if (clickedShootBtn.Equals(true))
             {
-                // userName을 Text파일에 저장하기( 덮어쓰기 )
-                File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
-                // MainForm 띄우기
-                showMainForm();
+                //새로고침
+                pictureBox1.Image = null;
+                clickedShootBtn = false;
+                takePic.Text = "Take a picture";
             }
+
+            //shoot 세번째 눌렀을 경우,
             // Shoot 버튼을 한번도 안 눌렀을 경우
             else
             {
+                if(takePic.Text.Equals("Take a picture"))
+                {
+                    // 버튼을 Next 사진으로 변경 후 Click 했음을 나타내는 clickedShootBtn = true로 변경 
+                    clickedShootBtn = true;
+                }
                 if (nameTxtbox.Text.Equals("Insert name") ||
                     nameTxtbox.Text.Length.Equals(0))
                 {
@@ -255,10 +261,16 @@ namespace BlinkBlink_EyeJoah
                 }
                 // user 등록하기 
                 add_User_To_TrainingImage();
-                // 버튼을 Next 사진으로 변경 후 Click 했음을 나타내는 clickedShootBtn = true로 변경 
-                takePic_NextBtn.Image = Properties.Resources._checked;
-                clickedShootBtn = true;
+           
             }
+        }
+
+        private void goNext_Click(object sender, EventArgs e)
+        {
+            // userName을 Text파일에 저장하기( 덮어쓰기 )
+            File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
+            // MainForm 띄우기
+            showMainForm();
         }
 
         private void makePictureBoxToRound()

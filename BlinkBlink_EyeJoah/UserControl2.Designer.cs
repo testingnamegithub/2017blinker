@@ -30,31 +30,43 @@
         {
             this.chartPanel1 = new System.Windows.Forms.Panel();
             this.chartPanel2 = new System.Windows.Forms.Panel();
+            this.whitePanel = new System.Windows.Forms.Panel();
+            this.whitePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // chartPanel1
             // 
-            this.chartPanel1.Location = new System.Drawing.Point(56, 29);
+            this.chartPanel1.Location = new System.Drawing.Point(24, 62);
             this.chartPanel1.Name = "chartPanel1";
-            this.chartPanel1.Size = new System.Drawing.Size(616, 644);
+            this.chartPanel1.Size = new System.Drawing.Size(365, 223);
             this.chartPanel1.TabIndex = 4;
             // 
             // chartPanel2
             // 
-            this.chartPanel2.Location = new System.Drawing.Point(56, 705);
+            this.chartPanel2.Location = new System.Drawing.Point(418, 62);
             this.chartPanel2.Name = "chartPanel2";
-            this.chartPanel2.Size = new System.Drawing.Size(616, 593);
+            this.chartPanel2.Size = new System.Drawing.Size(365, 223);
             this.chartPanel2.TabIndex = 0;
+            // 
+            // whitePanel
+            // 
+            this.whitePanel.BackColor = System.Drawing.Color.White;
+            this.whitePanel.Controls.Add(this.chartPanel2);
+            this.whitePanel.Controls.Add(this.chartPanel1);
+            this.whitePanel.Location = new System.Drawing.Point(13, 47);
+            this.whitePanel.Name = "whitePanel";
+            this.whitePanel.Size = new System.Drawing.Size(798, 320);
+            this.whitePanel.TabIndex = 0;
             // 
             // UserControl2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
-            this.Controls.Add(this.chartPanel2);
-            this.Controls.Add(this.chartPanel1);
+            this.Controls.Add(this.whitePanel);
             this.Name = "UserControl2";
-            this.Size = new System.Drawing.Size(774, 1169);
+            this.Size = new System.Drawing.Size(833, 447);
+            this.whitePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -62,5 +74,6 @@
         #endregion
         private System.Windows.Forms.Panel chartPanel1;
         private System.Windows.Forms.Panel chartPanel2;
+        private System.Windows.Forms.Panel whitePanel;
     }
 }
