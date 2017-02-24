@@ -50,11 +50,11 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.Controls.Add(this.chartPanel2);
             this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl2";
-            this.Size = new System.Drawing.Size(731, 1169);
+            this.Size = new System.Drawing.Size(774, 1169);
             this.ResumeLayout(false);
 
         }

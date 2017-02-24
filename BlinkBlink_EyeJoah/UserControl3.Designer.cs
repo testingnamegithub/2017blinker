@@ -43,10 +43,10 @@
             // UserControl3
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl3";
-            this.Size = new System.Drawing.Size(770, 617);
+            this.Size = new System.Drawing.Size(774, 617);
             this.ResumeLayout(false);
             this.PerformLayout();
 
