@@ -35,7 +35,7 @@ namespace BlinkBlink_EyeJoah
         }
 
         private void makeChart2() {
-            PieChartExample pie = new PieChartExample();
+            DoughnutExample pie = new DoughnutExample();
             pie.TopLevel = false;
             pie.AutoScroll = true;
             chartPanel2.Controls.Add(pie);
