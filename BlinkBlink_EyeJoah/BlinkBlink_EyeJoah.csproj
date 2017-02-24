@@ -339,6 +339,7 @@
     <None Include="Resources\9.gif" />
     <None Include="Resources\10.gif" />
     <None Include="Resources\11.gif" />
+    <None Include="Resources\profile.png" />
     <Content Include="ZedGraph.dll" />
     <None Include="Resources\eye %283%29.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
