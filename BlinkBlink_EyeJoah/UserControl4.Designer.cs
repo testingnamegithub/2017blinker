@@ -271,7 +271,7 @@
             // UserControl4
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label3);
@@ -280,6 +280,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "UserControl4";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Size = new System.Drawing.Size(744, 475);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
