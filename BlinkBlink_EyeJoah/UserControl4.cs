@@ -137,5 +137,46 @@ namespace BlinkBlink_EyeJoah
         {
 
         }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null & comboBox2.SelectedItem == null)
+            {
+                comboBox1.SelectedIndex = 1;
+                comboBox2.SelectedIndex = 1;
+            }
+            else
+            {
+                string selects = comboBox2.SelectedItem.ToString();
+                switch (selects)
+                {
+                    case "ClockWise":
+                        pictureBox2.Image = Properties.Resources._6;
+                        break;
+                    case "CounterClockWise":
+                        pictureBox2.Image = Properties.Resources._7;
+                        break;
+                    case "LeftAndRight":
+                        pictureBox2.Image = Properties.Resources._11;
+                        break;
+                    case "Diagonal_RightTop":
+                        pictureBox2.Image = Properties.Resources._8;
+                        break;
+                    case "Diagonal_RightBelow":
+                        pictureBox2.Image = Properties.Resources._9;
+                        break;
+                    case "Infinity":
+                        pictureBox2.Image = Properties.Resources._10;
+                        break;
+                    case "Random":
+                        pictureBox2.Image = Properties.Resources._10;
+                        break;
+
+                    default:
+                        MessageBox.Show("선택해주세요");
+                        break;
+                }
+            }
+        }
     }
 }

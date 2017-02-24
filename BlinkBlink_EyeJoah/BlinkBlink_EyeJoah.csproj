@@ -339,17 +339,6 @@
     <None Include="Resources\9.gif" />
     <None Include="Resources\10.gif" />
     <None Include="Resources\11.gif" />
-    <None Include="Resources\12.gif" />
-    <None Include="Resources\21.gif" />
-    <None Include="Resources\31.gif" />
-    <None Include="Resources\41.gif" />
-    <None Include="Resources\51.gif" />
-    <None Include="Resources\61.gif" />
-    <None Include="Resources\71.gif" />
-    <None Include="Resources\81.gif" />
-    <None Include="Resources\91.gif" />
-    <None Include="Resources\101.gif" />
-    <None Include="Resources\111.gif" />
     <Content Include="ZedGraph.dll" />
     <None Include="Resources\eye %283%29.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
