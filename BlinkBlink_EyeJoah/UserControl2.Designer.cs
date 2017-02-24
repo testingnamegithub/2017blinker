@@ -43,9 +43,9 @@
             // 
             // chartPanel2
             // 
-            this.chartPanel2.Location = new System.Drawing.Point(418, 62);
+            this.chartPanel2.Location = new System.Drawing.Point(413, 62);
             this.chartPanel2.Name = "chartPanel2";
-            this.chartPanel2.Size = new System.Drawing.Size(365, 223);
+            this.chartPanel2.Size = new System.Drawing.Size(339, 223);
             this.chartPanel2.TabIndex = 0;
             // 
             // whitePanel
@@ -55,7 +55,7 @@
             this.whitePanel.Controls.Add(this.chartPanel1);
             this.whitePanel.Location = new System.Drawing.Point(13, 47);
             this.whitePanel.Name = "whitePanel";
-            this.whitePanel.Size = new System.Drawing.Size(798, 320);
+            this.whitePanel.Size = new System.Drawing.Size(770, 320);
             this.whitePanel.TabIndex = 0;
             // 
             // UserControl2
@@ -65,7 +65,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.Controls.Add(this.whitePanel);
             this.Name = "UserControl2";
-            this.Size = new System.Drawing.Size(833, 447);
+            this.Size = new System.Drawing.Size(808, 448);
             this.whitePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 

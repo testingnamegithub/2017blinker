@@ -415,7 +415,7 @@
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
             this.panelContainer.Location = new System.Drawing.Point(237, 105);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(843, 448);
+            this.panelContainer.Size = new System.Drawing.Size(808, 448);
             this.panelContainer.TabIndex = 2;
             // 
             // topPanel
@@ -424,17 +424,16 @@
             this.topPanel.Controls.Add(this.minimizeBtn);
             this.topPanel.Controls.Add(this.closeButton);
             this.topPanel.Controls.Add(this.menuLabel);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(237, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(845, 105);
+            this.topPanel.Size = new System.Drawing.Size(808, 105);
             this.topPanel.TabIndex = 3;
             this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // minimizeBtn
             // 
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(759, 12);
+            this.minimizeBtn.Location = new System.Drawing.Point(713, 12);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(34, 34);
             this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -445,7 +444,7 @@
             // closeButton
             // 
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(799, 12);
+            this.closeButton.Location = new System.Drawing.Point(766, 12);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(34, 34);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -541,7 +540,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1082, 557);
+            this.ClientSize = new System.Drawing.Size(1049, 557);
             this.Controls.Add(this.rightEyeImageBox);
             this.Controls.Add(this.thresholdValueText);
             this.Controls.Add(this.eyeBlinkText);
