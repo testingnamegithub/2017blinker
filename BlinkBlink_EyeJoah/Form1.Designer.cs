@@ -507,7 +507,7 @@
             // rightEyeImageBox
             // 
             this.rightEyeImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rightEyeImageBox.Location = new System.Drawing.Point(799, 478);
+            this.rightEyeImageBox.Location = new System.Drawing.Point(799, 400);
             this.rightEyeImageBox.Margin = new System.Windows.Forms.Padding(4);
             this.rightEyeImageBox.Name = "rightEyeImageBox";
             this.rightEyeImageBox.Size = new System.Drawing.Size(131, 95);
@@ -531,7 +531,7 @@
             this.imageBoxCapturedFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imageBoxCapturedFrame.Location = new System.Drawing.Point(426, 207);
             this.imageBoxCapturedFrame.Name = "imageBoxCapturedFrame";
-            this.imageBoxCapturedFrame.Size = new System.Drawing.Size(503, 366);
+            this.imageBoxCapturedFrame.Size = new System.Drawing.Size(503, 307);
             this.imageBoxCapturedFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBoxCapturedFrame.TabIndex = 43;
             this.imageBoxCapturedFrame.TabStop = false;
