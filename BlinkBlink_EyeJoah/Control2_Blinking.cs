@@ -12,9 +12,9 @@ using BlinkBlink_EyeJoah.Chart.Uie;
 
 namespace BlinkBlink_EyeJoah
 {
-    public partial class UserControl2 : UserControl
+    public partial class Control2_Blinking : UserControl
     {
-        public UserControl2()
+        public Control2_Blinking()
         {
             InitializeComponent();
             makeChart1();

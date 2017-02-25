@@ -11,10 +11,10 @@ using BlinkBlink_EyeJoah.Chart.ConstantChange;
 
 namespace BlinkBlink_EyeJoah
 {
-    public partial class UserControl1 : UserControl
+    public partial class Control1_Home : UserControl
     {
         ConstantChange con;
-        public UserControl1()
+        public Control1_Home()
         {
             InitializeComponent();
 

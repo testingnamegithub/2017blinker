@@ -17,9 +17,9 @@ using BlinkBlink_EyeJoah.Chart._360;
 
 namespace BlinkBlink_EyeJoah
 {
-    public partial class UserControl3 : UserControl
+    public partial class Control3_Work : UserControl
     {
-        public UserControl3()
+        public Control3_Work()
         {
             InitializeComponent();
             makeChart();

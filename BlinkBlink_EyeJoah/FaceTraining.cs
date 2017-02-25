@@ -273,6 +273,11 @@ namespace BlinkBlink_EyeJoah
             showMainForm();
         }
 
+        private void idCheck_Click(object sender, EventArgs e)
+        {
+       
+        }
+
         private void makePictureBoxToRound()
         {
             Rectangle r = new Rectangle(0, 0, imageBoxFrameGrabber.Width, imageBoxFrameGrabber.Height);

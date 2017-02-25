@@ -231,29 +231,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="Control1_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="Control1_Home.Designer.cs">
+      <DependentUpon>Control1_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl2.cs">
+    <Compile Include="Control2_Blinking.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl2.Designer.cs">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <Compile Include="Control2_Blinking.Designer.cs">
+      <DependentUpon>Control2_Blinking.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl3.cs">
+    <Compile Include="Control3_Work.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl3.Designer.cs">
-      <DependentUpon>UserControl3.cs</DependentUpon>
+    <Compile Include="Control3_Work.Designer.cs">
+      <DependentUpon>Control3_Work.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl4.cs">
+    <Compile Include="Control4_Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl4.Designer.cs">
-      <DependentUpon>UserControl4.cs</DependentUpon>
+    <Compile Include="Control4_Settings.Designer.cs">
+      <DependentUpon>Control4_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings_Scroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Settings_Scroll.Designer.cs">
+      <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Chart\360\Gauge360Example.resx">
       <DependentUpon>Gauge360Example.cs</DependentUpon>
@@ -293,17 +299,20 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="Control1_Home.resx">
+      <DependentUpon>Control1_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl2.resx">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <EmbeddedResource Include="Control2_Blinking.resx">
+      <DependentUpon>Control2_Blinking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl3.resx">
-      <DependentUpon>UserControl3.cs</DependentUpon>
+    <EmbeddedResource Include="Control3_Work.resx">
+      <DependentUpon>Control3_Work.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl4.resx">
-      <DependentUpon>UserControl4.cs</DependentUpon>
+    <EmbeddedResource Include="Control4_Settings.resx">
+      <DependentUpon>Control4_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings_Scroll.resx">
+      <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ETC\packages.config" />
     <None Include="MjpegProcessor.winmd" />

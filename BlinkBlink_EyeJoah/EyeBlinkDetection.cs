@@ -54,11 +54,11 @@ namespace BlinkBlink_EyeJoah
         public static Boolean catchBlink = false;       // Blink 감지를 위한 변수
 
         /* ContantChange 그래프에 관련된 변수 */
-        private UserControl1 control1;
+        private Control1_Home control1;
         private ConstantChange con;
 
         /* constructor(생성자) */
-        public EyeBlinkDetection(UserControl1 control1, Emgu.CV.UI.ImageBox imageBoxCapturedFrame,
+        public EyeBlinkDetection(Control1_Home control1, Emgu.CV.UI.ImageBox imageBoxCapturedFrame,
                         Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox,
                         Label thresholdValue, Label eyeBlinkNum)
         {

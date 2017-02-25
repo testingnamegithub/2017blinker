@@ -12,7 +12,7 @@ namespace BlinkBlink_EyeJoah
         private EyeBlinkDetection eyeBlink;
         private int thresholdValue = 0;
 
-        private UserControl1 control1;
+        private Control1_Home control1;
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -29,7 +29,7 @@ namespace BlinkBlink_EyeJoah
             init_UI();
             
             /* Main화면 띄우기 */
-            control1 = new UserControl1();
+            control1 = new Control1_Home();
             control1.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(control1);
 
@@ -78,7 +78,7 @@ namespace BlinkBlink_EyeJoah
             //this.label1.Text = File.ReadAllText(Application.StartupPath + "/TrainedFaces/UserName.txt");
             this.FormBorderStyle = FormBorderStyle.None;
             this.panelContainer.BringToFront();
-            //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void bunifuFlatButton1_Click(object sender, MouseEventArgs e)
@@ -103,7 +103,7 @@ namespace BlinkBlink_EyeJoah
 
         private void bunifuFlatButton2_Click(object sender, MouseEventArgs e)
         {
-            UserControl2 control2 = new UserControl2();
+            Control2_Blinking control2 = new Control2_Blinking();
 
             control2.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
@@ -124,7 +124,7 @@ namespace BlinkBlink_EyeJoah
 
         private void bunifuFlatButton3_Click(object sender, MouseEventArgs e)
         {
-            UserControl3 control3 = new UserControl3();
+            Control3_Work control3 = new Control3_Work();
 
             control3.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
@@ -148,7 +148,7 @@ namespace BlinkBlink_EyeJoah
 
         private void bunifuFlatButton4_Click(object sender, MouseEventArgs e)
         {
-            UserControl4 control4 = new UserControl4();
+            Control4_Settings control4 = new Control4_Settings();
 
             control4.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);

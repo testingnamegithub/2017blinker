@@ -46,6 +46,7 @@
             this.goNext = new System.Windows.Forms.Button();
             this.takePic = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.idCheck = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).BeginInit();
@@ -135,7 +136,7 @@
             this.nameTxtbox.Location = new System.Drawing.Point(616, 368);
             this.nameTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTxtbox.Name = "nameTxtbox";
-            this.nameTxtbox.Size = new System.Drawing.Size(169, 28);
+            this.nameTxtbox.Size = new System.Drawing.Size(142, 28);
             this.nameTxtbox.TabIndex = 20;
             this.nameTxtbox.Text = "Insert name";
             this.nameTxtbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.nameTxtbox_MouseClick);
@@ -186,6 +187,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.idCheck);
             this.panel2.Controls.Add(this.goNext);
             this.panel2.Controls.Add(this.takePic);
             this.panel2.Controls.Add(this.label2);
@@ -230,6 +232,16 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // idCheck
+            // 
+            this.idCheck.Location = new System.Drawing.Point(765, 369);
+            this.idCheck.Name = "idCheck";
+            this.idCheck.Size = new System.Drawing.Size(75, 23);
+            this.idCheck.TabIndex = 30;
+            this.idCheck.Text = "check";
+            this.idCheck.UseVisualStyleBackColor = true;
+            this.idCheck.Click += new System.EventHandler(this.idCheck_Click);
+            // 
             // FaceTraining
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -273,5 +285,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button takePic;
         private System.Windows.Forms.Button goNext;
+        private System.Windows.Forms.Button idCheck;
     }
 }

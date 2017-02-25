@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.sidebar = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.settingsPanel = new System.Windows.Forms.Panel();
-            this.settingsLabel = new System.Windows.Forms.Label();
-            this.back_settings = new System.Windows.Forms.Panel();
-            this.picturebox_Setting = new System.Windows.Forms.PictureBox();
             this.profilePanel = new System.Windows.Forms.Panel();
             this.editProfile = new System.Windows.Forms.Label();
             this.tempProfile = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.settingsPanel = new System.Windows.Forms.Panel();
+            this.settingsLabel = new System.Windows.Forms.Label();
+            this.back_settings = new System.Windows.Forms.Panel();
+            this.picturebox_Setting = new System.Windows.Forms.PictureBox();
             this.workPanel = new System.Windows.Forms.Panel();
             this.workLabel = new System.Windows.Forms.Label();
             this.back_work = new System.Windows.Forms.Panel();
@@ -49,7 +49,6 @@
             this.blinkLabel = new System.Windows.Forms.Label();
             this.back_blink = new System.Windows.Forms.Panel();
             this.picturebox_BlinkStaticis = new System.Windows.Forms.PictureBox();
-            this.teamLabel = new System.Windows.Forms.Label();
             this.homePanel = new System.Windows.Forms.Panel();
             this.homeLabel = new System.Windows.Forms.Label();
             this.back_home = new System.Windows.Forms.Panel();
@@ -72,11 +71,11 @@
             this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.profilePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).BeginInit();
             this.settingsPanel.SuspendLayout();
             this.back_settings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_Setting)).BeginInit();
-            this.profilePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).BeginInit();
             this.workPanel.SuspendLayout();
             this.back_work.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_Work)).BeginInit();
@@ -115,59 +114,11 @@
             this.panel1.Controls.Add(this.workPanel);
             this.panel1.Controls.Add(this.pinkLine1);
             this.panel1.Controls.Add(this.blinkPanel);
-            this.panel1.Controls.Add(this.teamLabel);
             this.panel1.Controls.Add(this.homePanel);
             this.panel1.Location = new System.Drawing.Point(3, 60);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 551);
             this.panel1.TabIndex = 0;
-            // 
-            // settingsPanel
-            // 
-            this.settingsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
-            this.settingsPanel.Controls.Add(this.settingsLabel);
-            this.settingsPanel.Controls.Add(this.back_settings);
-            this.settingsPanel.Location = new System.Drawing.Point(0, 344);
-            this.settingsPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.settingsPanel.Name = "settingsPanel";
-            this.settingsPanel.Size = new System.Drawing.Size(257, 75);
-            this.settingsPanel.TabIndex = 52;
-            this.settingsPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
-            // 
-            // settingsLabel
-            // 
-            this.settingsLabel.AutoSize = true;
-            this.settingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.settingsLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.settingsLabel.Location = new System.Drawing.Point(80, 23);
-            this.settingsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.settingsLabel.Name = "settingsLabel";
-            this.settingsLabel.Size = new System.Drawing.Size(83, 25);
-            this.settingsLabel.TabIndex = 52;
-            this.settingsLabel.Text = "Settings";
-            this.settingsLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
-            // 
-            // back_settings
-            // 
-            this.back_settings.BackColor = System.Drawing.Color.Transparent;
-            this.back_settings.Controls.Add(this.picturebox_Setting);
-            this.back_settings.Location = new System.Drawing.Point(4, 0);
-            this.back_settings.Margin = new System.Windows.Forms.Padding(4);
-            this.back_settings.Name = "back_settings";
-            this.back_settings.Size = new System.Drawing.Size(70, 70);
-            this.back_settings.TabIndex = 52;
-            // 
-            // picturebox_Setting
-            // 
-            this.picturebox_Setting.Image = global::BlinkBlink_EyeJoah.Properties.Resources.settingsLogo2;
-            this.picturebox_Setting.Location = new System.Drawing.Point(15, 15);
-            this.picturebox_Setting.Margin = new System.Windows.Forms.Padding(4);
-            this.picturebox_Setting.Name = "picturebox_Setting";
-            this.picturebox_Setting.Size = new System.Drawing.Size(40, 40);
-            this.picturebox_Setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturebox_Setting.TabIndex = 49;
-            this.picturebox_Setting.TabStop = false;
-            this.picturebox_Setting.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
             // 
             // profilePanel
             // 
@@ -213,6 +164,53 @@
             this.label1.Text = "User Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // settingsPanel
+            // 
+            this.settingsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
+            this.settingsPanel.Controls.Add(this.settingsLabel);
+            this.settingsPanel.Controls.Add(this.back_settings);
+            this.settingsPanel.Location = new System.Drawing.Point(0, 344);
+            this.settingsPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.settingsPanel.Name = "settingsPanel";
+            this.settingsPanel.Size = new System.Drawing.Size(257, 66);
+            this.settingsPanel.TabIndex = 52;
+            this.settingsPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
+            // 
+            // settingsLabel
+            // 
+            this.settingsLabel.AutoSize = true;
+            this.settingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.settingsLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.settingsLabel.Location = new System.Drawing.Point(70, 23);
+            this.settingsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.settingsLabel.Name = "settingsLabel";
+            this.settingsLabel.Size = new System.Drawing.Size(83, 25);
+            this.settingsLabel.TabIndex = 52;
+            this.settingsLabel.Text = "Settings";
+            this.settingsLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
+            // 
+            // back_settings
+            // 
+            this.back_settings.BackColor = System.Drawing.Color.Transparent;
+            this.back_settings.Controls.Add(this.picturebox_Setting);
+            this.back_settings.Location = new System.Drawing.Point(4, 0);
+            this.back_settings.Margin = new System.Windows.Forms.Padding(4);
+            this.back_settings.Name = "back_settings";
+            this.back_settings.Size = new System.Drawing.Size(60, 70);
+            this.back_settings.TabIndex = 52;
+            // 
+            // picturebox_Setting
+            // 
+            this.picturebox_Setting.Image = global::BlinkBlink_EyeJoah.Properties.Resources.settingsLogo2;
+            this.picturebox_Setting.Location = new System.Drawing.Point(15, 13);
+            this.picturebox_Setting.Margin = new System.Windows.Forms.Padding(4);
+            this.picturebox_Setting.Name = "picturebox_Setting";
+            this.picturebox_Setting.Size = new System.Drawing.Size(40, 40);
+            this.picturebox_Setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturebox_Setting.TabIndex = 49;
+            this.picturebox_Setting.TabStop = false;
+            this.picturebox_Setting.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
+            // 
             // workPanel
             // 
             this.workPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
@@ -221,7 +219,7 @@
             this.workPanel.Location = new System.Drawing.Point(0, 266);
             this.workPanel.Margin = new System.Windows.Forms.Padding(4);
             this.workPanel.Name = "workPanel";
-            this.workPanel.Size = new System.Drawing.Size(257, 75);
+            this.workPanel.Size = new System.Drawing.Size(257, 66);
             this.workPanel.TabIndex = 51;
             this.workPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton3_Click);
             // 
@@ -230,7 +228,7 @@
             this.workLabel.AutoSize = true;
             this.workLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.workLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.workLabel.Location = new System.Drawing.Point(80, 23);
+            this.workLabel.Location = new System.Drawing.Point(70, 23);
             this.workLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.workLabel.Name = "workLabel";
             this.workLabel.Size = new System.Drawing.Size(59, 25);
@@ -245,14 +243,14 @@
             this.back_work.Location = new System.Drawing.Point(6, 0);
             this.back_work.Margin = new System.Windows.Forms.Padding(4);
             this.back_work.Name = "back_work";
-            this.back_work.Size = new System.Drawing.Size(70, 70);
+            this.back_work.Size = new System.Drawing.Size(60, 70);
             this.back_work.TabIndex = 51;
             // 
             // picturebox_Work
             // 
             this.picturebox_Work.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picturebox_Work.Image = global::BlinkBlink_EyeJoah.Properties.Resources.workLogo2;
-            this.picturebox_Work.Location = new System.Drawing.Point(15, 15);
+            this.picturebox_Work.Location = new System.Drawing.Point(15, 13);
             this.picturebox_Work.Margin = new System.Windows.Forms.Padding(4);
             this.picturebox_Work.Name = "picturebox_Work";
             this.picturebox_Work.Size = new System.Drawing.Size(40, 40);
@@ -263,7 +261,7 @@
             // 
             // pinkLine1
             // 
-            this.pinkLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.pinkLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(154)))), ((int)(((byte)(117)))));
             this.pinkLine1.Location = new System.Drawing.Point(0, 100);
             this.pinkLine1.Name = "pinkLine1";
             this.pinkLine1.Size = new System.Drawing.Size(257, 10);
@@ -277,7 +275,7 @@
             this.blinkPanel.Location = new System.Drawing.Point(0, 188);
             this.blinkPanel.Margin = new System.Windows.Forms.Padding(4);
             this.blinkPanel.Name = "blinkPanel";
-            this.blinkPanel.Size = new System.Drawing.Size(257, 75);
+            this.blinkPanel.Size = new System.Drawing.Size(257, 66);
             this.blinkPanel.TabIndex = 50;
             this.blinkPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton2_Click);
             // 
@@ -286,12 +284,12 @@
             this.blinkLabel.AutoSize = true;
             this.blinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.blinkLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.blinkLabel.Location = new System.Drawing.Point(80, 23);
+            this.blinkLabel.Location = new System.Drawing.Point(70, 23);
             this.blinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.blinkLabel.Name = "blinkLabel";
-            this.blinkLabel.Size = new System.Drawing.Size(80, 25);
+            this.blinkLabel.Size = new System.Drawing.Size(54, 25);
             this.blinkLabel.TabIndex = 3;
-            this.blinkLabel.Text = "Blinking";
+            this.blinkLabel.Text = "Blink";
             this.blinkLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton2_Click);
             // 
             // back_blink
@@ -301,14 +299,14 @@
             this.back_blink.Location = new System.Drawing.Point(4, 0);
             this.back_blink.Margin = new System.Windows.Forms.Padding(4);
             this.back_blink.Name = "back_blink";
-            this.back_blink.Size = new System.Drawing.Size(70, 70);
+            this.back_blink.Size = new System.Drawing.Size(60, 70);
             this.back_blink.TabIndex = 50;
             // 
             // picturebox_BlinkStaticis
             // 
             this.picturebox_BlinkStaticis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picturebox_BlinkStaticis.Image = global::BlinkBlink_EyeJoah.Properties.Resources.blinkLogo2;
-            this.picturebox_BlinkStaticis.Location = new System.Drawing.Point(15, 15);
+            this.picturebox_BlinkStaticis.Location = new System.Drawing.Point(15, 13);
             this.picturebox_BlinkStaticis.Margin = new System.Windows.Forms.Padding(4);
             this.picturebox_BlinkStaticis.Name = "picturebox_BlinkStaticis";
             this.picturebox_BlinkStaticis.Size = new System.Drawing.Size(40, 40);
@@ -316,18 +314,6 @@
             this.picturebox_BlinkStaticis.TabIndex = 0;
             this.picturebox_BlinkStaticis.TabStop = false;
             this.picturebox_BlinkStaticis.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton2_Click);
-            // 
-            // teamLabel
-            // 
-            this.teamLabel.AutoSize = true;
-            this.teamLabel.BackColor = System.Drawing.Color.Transparent;
-            this.teamLabel.Font = new System.Drawing.Font("Calibri", 10F);
-            this.teamLabel.ForeColor = System.Drawing.Color.Gray;
-            this.teamLabel.Location = new System.Drawing.Point(141, 521);
-            this.teamLabel.Name = "teamLabel";
-            this.teamLabel.Size = new System.Drawing.Size(109, 24);
-            this.teamLabel.TabIndex = 0;
-            this.teamLabel.Text = "(T) Eye Joah";
             // 
             // homePanel
             // 
@@ -337,7 +323,7 @@
             this.homePanel.Location = new System.Drawing.Point(0, 110);
             this.homePanel.Margin = new System.Windows.Forms.Padding(4);
             this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(257, 75);
+            this.homePanel.Size = new System.Drawing.Size(257, 66);
             this.homePanel.TabIndex = 49;
             this.homePanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton1_Click);
             // 
@@ -346,7 +332,7 @@
             this.homeLabel.AutoSize = true;
             this.homeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.homeLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.homeLabel.Location = new System.Drawing.Point(80, 23);
+            this.homeLabel.Location = new System.Drawing.Point(70, 23);
             this.homeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.homeLabel.Name = "homeLabel";
             this.homeLabel.Size = new System.Drawing.Size(64, 25);
@@ -361,14 +347,14 @@
             this.back_home.Location = new System.Drawing.Point(4, 0);
             this.back_home.Margin = new System.Windows.Forms.Padding(4);
             this.back_home.Name = "back_home";
-            this.back_home.Size = new System.Drawing.Size(70, 70);
+            this.back_home.Size = new System.Drawing.Size(60, 70);
             this.back_home.TabIndex = 49;
             // 
             // picturebox_Home
             // 
             this.picturebox_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picturebox_Home.Image = global::BlinkBlink_EyeJoah.Properties.Resources.houseLogo2;
-            this.picturebox_Home.Location = new System.Drawing.Point(15, 15);
+            this.picturebox_Home.Location = new System.Drawing.Point(15, 13);
             this.picturebox_Home.Margin = new System.Windows.Forms.Padding(4);
             this.picturebox_Home.Name = "picturebox_Home";
             this.picturebox_Home.Size = new System.Drawing.Size(40, 40);
@@ -546,14 +532,13 @@
             this.Text = "                                     Blink Blink";
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.profilePanel.ResumeLayout(false);
+            this.profilePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).EndInit();
             this.settingsPanel.ResumeLayout(false);
             this.settingsPanel.PerformLayout();
             this.back_settings.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_Setting)).EndInit();
-            this.profilePanel.ResumeLayout(false);
-            this.profilePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).EndInit();
             this.workPanel.ResumeLayout(false);
             this.workPanel.PerformLayout();
             this.back_work.ResumeLayout(false);
@@ -592,7 +577,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox tempProfile;
-        private System.Windows.Forms.Label teamLabel;
         private System.Windows.Forms.PictureBox tempLogo;
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.PictureBox minimizeBtn;
