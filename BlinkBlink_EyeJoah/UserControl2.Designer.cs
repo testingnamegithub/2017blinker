@@ -30,36 +30,77 @@
         {
             this.chartPanel1 = new System.Windows.Forms.Panel();
             this.chartPanel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chartPanel1
             // 
-            this.chartPanel1.Location = new System.Drawing.Point(15, 31);
+            this.chartPanel1.Location = new System.Drawing.Point(24, 50);
             this.chartPanel1.Name = "chartPanel1";
-            this.chartPanel1.Size = new System.Drawing.Size(262, 319);
+            this.chartPanel1.Size = new System.Drawing.Size(262, 284);
             this.chartPanel1.TabIndex = 4;
             // 
             // chartPanel2
             // 
-            this.chartPanel2.Location = new System.Drawing.Point(316, 31);
+            this.chartPanel2.Location = new System.Drawing.Point(315, 50);
             this.chartPanel2.Name = "chartPanel2";
-            this.chartPanel2.Size = new System.Drawing.Size(300, 319);
+            this.chartPanel2.Size = new System.Drawing.Size(300, 284);
             this.chartPanel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(18, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(393, 31);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "How often you blink in using PC";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(50, 337);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(269, 23);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Blinking frequency per hour";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(380, 337);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(183, 23);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "How well you blink";
             // 
             // UserControl2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.chartPanel2);
             this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl2";
             this.Size = new System.Drawing.Size(670, 386);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Panel chartPanel1;
         private System.Windows.Forms.Panel chartPanel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }

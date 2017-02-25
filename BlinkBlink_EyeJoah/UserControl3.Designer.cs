@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.chartPanel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chartPanel1
@@ -40,10 +41,22 @@
             this.chartPanel1.Size = new System.Drawing.Size(349, 192);
             this.chartPanel1.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(7, 13);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(663, 31);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "How well you follow recommended PC use per session";
+            // 
             // UserControl3
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.chartPanel1);
             this.Name = "UserControl3";
             this.Size = new System.Drawing.Size(378, 372);
@@ -55,5 +68,6 @@
         #endregion
 
         private System.Windows.Forms.Panel chartPanel1;
+        private System.Windows.Forms.Label label2;
     }
 }

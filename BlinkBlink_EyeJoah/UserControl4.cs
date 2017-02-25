@@ -38,14 +38,14 @@ namespace BlinkBlink_EyeJoah
         {
             label1.Text = "모니터 거리알람";
             pictureBox2.Image = Properties.Resources._3;
-            label3.Text = "모니터와 거리가 가까워질시 알람을 줍니다";
+            //label3.Text = "모니터와 거리가 가까워질시 알람을 줍니다";
         }
 
         private void UpdateLabel1(object sender, EventArgs e)
         {
             label1.Text = "반 투명이미지";
             pictureBox2.Image = Properties.Resources._1;
-            label3.Text = "사용자의 작업에 방해하지 않게 \n반투명이지를 보여줍니다.";
+            //label3.Text = "사용자의 작업에 방해하지 않게 \n반투명이지를 보여줍니다.";
 
         }
 
@@ -53,21 +53,21 @@ namespace BlinkBlink_EyeJoah
         {
             label1.Text = "화면 밝기 조절";
             pictureBox2.Image = Properties.Resources._2;
-            label3.Text = "사용자의 눈깜빡임을 무의식으로\n교정시키기위해 사용됩니다";
+            //label3.Text = "사용자의 눈깜빡임을 무의식으로\n교정시키기위해 사용됩니다";
         }
 
         private void up3(object sender, EventArgs e)
         {
             label1.Text = "20-20-20알람";
             pictureBox2.Image = Properties.Resources._4;
-            label3.Text = "사용자에게 20분마다 20peat를 \n쉬는 운동을 알려줍니다";
+            //label3.Text = "사용자에게 20분마다 20peat를 \n쉬는 운동을 알려줍니다";
         }
 
         private void up4(object sender, EventArgs e)
         {
             label1.Text = "눈 운동 에니메이션";
             pictureBox2.Image = Properties.Resources._5;
-            label3.Text = "일정시간 사용자가 작업시 \n눈 건강을 위해 운동을 알려줍니다.";
+            //label3.Text = "일정시간 사용자가 작업시 \n눈 건강을 위해 운동을 알려줍니다.";
 
             if (checkBox1.Checked)
             {
@@ -177,6 +177,11 @@ namespace BlinkBlink_EyeJoah
                         break;
                 }
             }
+        }
+
+        private void UserControl4_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
