@@ -335,9 +335,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="haarcascade_frontalface_default.xml" />
-    <Content Include="OpenCL.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\_checked1.png" />
     <None Include="Resources\almond-eyed1.png" />
     <None Include="Resources\avatar1.png" />
@@ -359,7 +356,6 @@
     <None Include="Resources\11.gif" />
     <None Include="Resources\profile.png" />
     <None Include="Resources\cancel.png" />
-    <Content Include="ZedGraph.dll" />
     <None Include="Resources\eye %283%29.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

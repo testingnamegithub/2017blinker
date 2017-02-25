@@ -103,7 +103,7 @@
             this.sidebar.Controls.Add(this.header);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(2);
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(184, 409);
             this.sidebar.TabIndex = 0;
@@ -119,7 +119,7 @@
             this.panel1.Controls.Add(this.teamLabel);
             this.panel1.Controls.Add(this.homePanel);
             this.panel1.Location = new System.Drawing.Point(2, 40);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(180, 367);
             this.panel1.TabIndex = 0;
@@ -131,7 +131,7 @@
             this.profilePanel.Controls.Add(this.tempProfile);
             this.profilePanel.Controls.Add(this.label1);
             this.profilePanel.Location = new System.Drawing.Point(0, 0);
-            this.profilePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profilePanel.Margin = new System.Windows.Forms.Padding(2);
             this.profilePanel.Name = "profilePanel";
             this.profilePanel.Size = new System.Drawing.Size(180, 67);
             this.profilePanel.TabIndex = 50;
@@ -152,7 +152,7 @@
             // 
             this.tempProfile.Image = ((System.Drawing.Image)(resources.GetObject("tempProfile.Image")));
             this.tempProfile.Location = new System.Drawing.Point(10, 15);
-            this.tempProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tempProfile.Margin = new System.Windows.Forms.Padding(2);
             this.tempProfile.Name = "tempProfile";
             this.tempProfile.Size = new System.Drawing.Size(43, 40);
             this.tempProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -263,7 +263,7 @@
             // 
             this.pinkLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
             this.pinkLine1.Location = new System.Drawing.Point(0, 67);
-            this.pinkLine1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pinkLine1.Margin = new System.Windows.Forms.Padding(2);
             this.pinkLine1.Name = "pinkLine1";
             this.pinkLine1.Size = new System.Drawing.Size(180, 7);
             this.pinkLine1.TabIndex = 2;
@@ -375,7 +375,7 @@
             this.header.Controls.Add(this.tempLogo);
             this.header.Controls.Add(this.titleLabel);
             this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.header.Margin = new System.Windows.Forms.Padding(2);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(182, 40);
             this.header.TabIndex = 1;
@@ -385,7 +385,7 @@
             // 
             this.tempLogo.Image = global::BlinkBlink_EyeJoah.Properties.Resources.blinkerLogo;
             this.tempLogo.Location = new System.Drawing.Point(24, 10);
-            this.tempLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tempLogo.Margin = new System.Windows.Forms.Padding(2);
             this.tempLogo.Name = "tempLogo";
             this.tempLogo.Size = new System.Drawing.Size(21, 20);
             this.tempLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -408,19 +408,20 @@
             // 
             this.panelContainer.AutoScroll = true;
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
-            this.panelContainer.Location = new System.Drawing.Point(184, 365);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelContainer.Location = new System.Drawing.Point(184, 40);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(607, 42);
+            this.panelContainer.Size = new System.Drawing.Size(607, 367);
             this.panelContainer.TabIndex = 2;
             // 
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
             this.topPanel.Controls.Add(this.minimizeBtn);
+            this.topPanel.Controls.Add(this.thresholdValueText);
             this.topPanel.Controls.Add(this.closeButton);
             this.topPanel.Location = new System.Drawing.Point(172, 0);
-            this.topPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.topPanel.Margin = new System.Windows.Forms.Padding(2);
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(621, 40);
             this.topPanel.TabIndex = 3;
@@ -430,7 +431,7 @@
             // 
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
             this.minimizeBtn.Location = new System.Drawing.Point(554, 8);
-            this.minimizeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.minimizeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(21, 20);
             this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -442,7 +443,7 @@
             // 
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.Location = new System.Drawing.Point(580, 8);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(2);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(21, 20);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -461,7 +462,7 @@
             this.thresholdValueText.AutoSize = true;
             this.thresholdValueText.BackColor = System.Drawing.Color.Black;
             this.thresholdValueText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.thresholdValueText.Location = new System.Drawing.Point(478, 105);
+            this.thresholdValueText.Location = new System.Drawing.Point(245, 17);
             this.thresholdValueText.Name = "thresholdValueText";
             this.thresholdValueText.Size = new System.Drawing.Size(38, 12);
             this.thresholdValueText.TabIndex = 48;
@@ -517,7 +518,7 @@
             // 
             this.imageBoxCapturedFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imageBoxCapturedFrame.Location = new System.Drawing.Point(298, 138);
-            this.imageBoxCapturedFrame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imageBoxCapturedFrame.Margin = new System.Windows.Forms.Padding(2);
             this.imageBoxCapturedFrame.Name = "imageBoxCapturedFrame";
             this.imageBoxCapturedFrame.Size = new System.Drawing.Size(353, 205);
             this.imageBoxCapturedFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -531,7 +532,6 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(793, 409);
             this.Controls.Add(this.rightEyeImageBox);
-            this.Controls.Add(this.thresholdValueText);
             this.Controls.Add(this.eyeBlinkText);
             this.Controls.Add(this.leftEyeImageBox);
             this.Controls.Add(this.eyeBlinkNumText);
@@ -540,7 +540,7 @@
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "                                     Blink Blink";
@@ -570,6 +570,7 @@
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).EndInit();
             this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).EndInit();

@@ -180,8 +180,6 @@ namespace BlinkBlink_EyeJoah
         //프로그램 종료
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Application.ExitThread();
-            Environment.Exit(0);
             Application.Exit();
         }
 
