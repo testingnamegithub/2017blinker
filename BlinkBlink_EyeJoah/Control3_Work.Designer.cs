@@ -45,20 +45,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(7, 13);
+            this.label2.Location = new System.Drawing.Point(75, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(663, 31);
             this.label2.TabIndex = 27;
             this.label2.Text = "How well you follow recommended PC use per session";
             // 
-            // UserControl3
+            // Control3_Work
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.chartPanel1);
-            this.Name = "UserControl3";
+            this.Name = "Control3_Work";
             this.Size = new System.Drawing.Size(378, 372);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -78,7 +78,7 @@ namespace BlinkBlink_EyeJoah
             //this.label1.Text = File.ReadAllText(Application.StartupPath + "/TrainedFaces/UserName.txt");
             this.FormBorderStyle = FormBorderStyle.None;
             this.panelContainer.BringToFront();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
         }
 
         private void bunifuFlatButton1_Click(object sender, MouseEventArgs e)

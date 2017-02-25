@@ -54,11 +54,25 @@ namespace BlinkBlink_EyeJoah
         private VideoCaptureDevice FinalVideo;
         #endregion
 
+        //가장자리 둥글게
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+(
+    int nLeftRect,     // x-coordinate of upper-left corner
+    int nTopRect,      // y-coordinate of upper-left corner
+    int nRightRect,    // x-coordinate of lower-right corner
+    int nBottomRect,   // y-coordinate of lower-right corner
+    int nWidthEllipse, // height of ellipse
+    int nHeightEllipse // width of ellipse
+ );
 
         public FaceTraining()
         {
             InitializeComponent();
-            
+
+            //가장자리 둥글게
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+
             //얼굴 검출을 위한 Haarcascade Load
             face = new HaarCascade("haarcascade_frontalface_default.xml");
 
@@ -145,7 +159,7 @@ namespace BlinkBlink_EyeJoah
         //    //}
 
         //}
-        
+
         //private void reTryBtn_Click(object sender, MouseEventArgs e)
         //{
         //    reTryBtn.Visible = false;
@@ -248,7 +262,7 @@ namespace BlinkBlink_EyeJoah
             // Shoot 버튼을 한번도 안 눌렀을 경우
             else
             {
-                if(takePic.Text.Equals("Take a picture"))
+                if (takePic.Text.Equals("Take a picture"))
                 {
                     // 버튼을 Next 사진으로 변경 후 Click 했음을 나타내는 clickedShootBtn = true로 변경 
                     clickedShootBtn = true;
@@ -261,7 +275,7 @@ namespace BlinkBlink_EyeJoah
                 }
                 // user 등록하기 
                 add_User_To_TrainingImage();
-           
+
             }
         }
 
@@ -275,7 +289,7 @@ namespace BlinkBlink_EyeJoah
 
         private void idCheck_Click(object sender, EventArgs e)
         {
-       
+
         }
 
         private void makePictureBoxToRound()
