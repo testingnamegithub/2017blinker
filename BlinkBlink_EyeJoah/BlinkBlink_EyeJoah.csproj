@@ -208,6 +208,12 @@
     <Compile Include="Chart\Uie\UielementsExample.Designer.cs">
       <DependentUpon>UielementsExample.cs</DependentUpon>
     </Compile>
+    <Compile Include="DistanceAlertScreencs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DistanceAlertScreencs.Designer.cs">
+      <DependentUpon>DistanceAlertScreencs.cs</DependentUpon>
+    </Compile>
     <Compile Include="EigenObjectRecognizer.cs" />
     <Compile Include="EyeBlinkDetection.cs" />
     <Compile Include="FaceTraining.cs">
@@ -282,6 +288,9 @@
     <EmbeddedResource Include="Chart\Uie\UielementsExample.resx">
       <DependentUpon>UielementsExample.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DistanceAlertScreencs.resx">
+      <DependentUpon>DistanceAlertScreencs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FaceTraining.resx">
       <DependentUpon>FaceTraining.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,6 +358,7 @@
     <None Include="Resources\10.gif" />
     <None Include="Resources\11.gif" />
     <None Include="Resources\profile.png" />
+    <None Include="Resources\cancel.png" />
     <Content Include="ZedGraph.dll" />
     <None Include="Resources\eye %283%29.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

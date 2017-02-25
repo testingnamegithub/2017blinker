@@ -252,7 +252,6 @@ namespace BlinkBlink_EyeJoah
             workPanel.BackColor = Color.FromArgb(218, 253, 247);
             settingsPanel.BackColor = Color.FromArgb(218, 253, 247);
         }
-
-
+        
     }
 }

@@ -125,7 +125,8 @@ namespace BlinkBlink_EyeJoah
                 frame.Draw(face.rect, new Bgr(Color.Red), 2);
                 if (face.rect.Width > 300)
                 {
-                    MessageBox.Show("모니터와 사이가 넓습니다 거리를 유지시켜주세요");
+                    //DistanceAlertScreencs showAlert = new DistanceAlertScreencs();
+                    //showAlert.Show();
                 }
             }
 
@@ -133,23 +134,23 @@ namespace BlinkBlink_EyeJoah
             if (!worker.IsBusy)
                 worker.RunWorkerAsync(grayFrame);
 
-            #region 눈 영역이 Null이 아닐 경우
-            // EventHandler 주기마다 worker(Thread)에서 Detect 성공한 눈 영역을 ImageBox에 투영,
-            // 그리고 threshold를 통한 눈 깜빡임 횟수 검출하는 thresholdEffect() 함수 실행
-            if (possibleROI_rightEye.IsEmpty.Equals(false) && possibleROI_leftEye.IsEmpty.Equals(false))
-            {
-                try
-                {
-                    rightEyeImageBox.Image = frame.Copy(possibleROI_rightEye).Convert<Bgr, byte>();
-                    leftEyeImageBox.Image = frame.Copy(possibleROI_leftEye).Convert<Bgr, byte>();
+            //#region 눈 영역이 Null이 아닐 경우
+            //// EventHandler 주기마다 worker(Thread)에서 Detect 성공한 눈 영역을 ImageBox에 투영,
+            //// 그리고 threshold를 통한 눈 깜빡임 횟수 검출하는 thresholdEffect() 함수 실행
+            //if (possibleROI_rightEye.IsEmpty.Equals(false) && possibleROI_leftEye.IsEmpty.Equals(false))
+            //{
+            //    try
+            //    {
+            //        rightEyeImageBox.Image = frame.Copy(possibleROI_rightEye).Convert<Bgr, byte>();
+            //        leftEyeImageBox.Image = frame.Copy(possibleROI_leftEye).Convert<Bgr, byte>();
 
-                    // 실행하기전 눈 깜빡임을 판단하는 catchBlackPixel 값 false로 초기화
-                    EyeBlinkDetection.catchBlackPixel = false;
-                    thresholdEffect(thresholdValue);
-                }
-                catch (ArgumentException expt) { }
-            }
-            #endregion
+            //        // 실행하기전 눈 깜빡임을 판단하는 catchBlackPixel 값 false로 초기화
+            //        EyeBlinkDetection.catchBlackPixel = false;
+            //        thresholdEffect(thresholdValue);
+            //    }
+            //    catch (ArgumentException expt) { }
+            //}
+            //#endregion
         }//FrameGrapper
 
 
