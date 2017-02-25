@@ -32,6 +32,7 @@ namespace BlinkBlink_EyeJoah
         private Label thresholdValueText, eyeBlinkNumText;
 
         private TrainingData trainingData;
+        private DistanceAlertScreencs distanceAlertScreen;
 
         private Capture _capture;                                     // WebCam 작동 시키는 변수 + (Frame 뿌려주기)
         private Image<Bgr, Byte> frame;                               // 현재 Frame 담는 변수
@@ -49,9 +50,10 @@ namespace BlinkBlink_EyeJoah
         private int blinkNum = 0;               // 눈 깜빡임 횟수담는 변수
 
         private List<int> averageThresholdValue;
-        private Boolean detectedUser = false;           // 감지된 얼굴이 등록되어진 User일 경우를 확인하는 변수
-        public static Boolean catchBlackPixel = false;  // Black Pixel을 발견했다 안했다를 알려주는 변수
-        public static Boolean catchBlink = false;       // Blink 감지를 위한 변수
+        private Boolean detectedUser = false;                   // 감지된 얼굴이 등록되어진 User일 경우를 확인하는 변수
+        public static Boolean catchBlackPixel = false;          // Black Pixel을 발견했다 안했다를 알려주는 변수
+        public static Boolean catchBlink = false;               // Blink 감지를 위한 변수
+        public static Boolean checkDistanceAlertScreen = false; // DistanceAlertScreen 켜져있는 상태인지 아닌지 확인하는 변수 
 
         /* ContantChange 그래프에 관련된 변수 */
         private Control1_Home control1;
@@ -119,13 +121,19 @@ namespace BlinkBlink_EyeJoah
             Image<Gray, Byte> grayFrame = frame.Convert<Gray, Byte>();
             grayFrame._EqualizeHist();
 
-            // EventHandler 주기마다 Detect한 얼굴 사각형으로 그리기
+            // EventHandler 주기마다 Detect한 얼굴 사각형으로 그리기 + 모니터와 가까워지면 알림주기
             if (!face.Equals(null))
             {
                 frame.Draw(face.rect, new Bgr(Color.Red), 2);
-                if (face.rect.Width > 300)
+                if (possibleROI_leftEye.Width > 120 && checkDistanceAlertScreen.Equals(false))
                 {
-                    MessageBox.Show("모니터와 사이가 넓습니다 거리를 유지시켜주세요");
+                    checkDistanceAlertScreen = true;
+                    distanceAlertScreen = DistanceAlertScreencs.Instance;
+                    distanceAlertScreen.Show();
+                }
+                else
+                {
+
                 }
             }
 
@@ -157,47 +165,12 @@ namespace BlinkBlink_EyeJoah
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
             Image<Gray, Byte> grayFrame = (Image<Gray, Byte>)e.Argument;
-            detectedUser = false;
-
             // 머신러닝을 이용한 얼굴 인식 Haaracascade 돌리기
             MCvAvgComp[][] facesDetected = grayFrame.DetectHaarCascade(_faces, 1.1, 0, Emgu.CV.CvEnum.HAAR_DETECTION_TYPE.FIND_BIGGEST_OBJECT, new Size(20, 20));
-            //Detect한 얼굴들(elements) 작업
-            foreach (MCvAvgComp detectedface in facesDetected[0])
+            if (facesDetected[0].Length != 0)
             {
-                // result 변수에 현재 잡힌 얼굴 저장.(얼굴 training 등록할 때 쓰임 )
-                Image<Gray, byte> result = frame.Copy(detectedface.rect).Convert<Gray, byte>().Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-  
-                //잡힌 얼굴 비교하기 ( Training안에 있는 이미지를 통해 )
-                if (trainingData.getset_TrainingImages.ToArray().Length != 0)
-                {
-                    //TermCriteria for face recognition with numbers of trained images like maxIteration
-                    MCvTermCriteria termCrit = new MCvTermCriteria(trainingData.getset_CountTrain, 0.001);
-                    //Eigen face recognizer
-                    EigenObjectRecognizer recognizer = new EigenObjectRecognizer(trainingData.getset_TrainingImages.ToArray(),
-                                                                                 trainingData.getset_trainedNamesList.ToArray(), 3000, ref termCrit);
-                    //해당 검출한 Face의 이름 찾기 작업 수행
-                    String userName = recognizer.Recognize(result);
-                    //검출된 Face의 이름이 User와 같다면 face 변수에 해당 얼굴로 저장.
-                    if(userName.Equals(File.ReadAllText(Application.StartupPath + "/TrainedFaces/UserName.txt")))
-                    {
-                        face = detectedface;
-                        detectedUser = true;
-                    }
-                    //해당 얼굴 없으면 continue
-                    else
-                    {
-                        continue;
-                    }
+                face = facesDetected[0][0];
 
-                    // frame안 Detect된 User 얼굴 위에 이름 써주기
-                    frame.Draw(userName, ref FaceTraining.font, new System.Drawing.Point(detectedface.rect.X - 2, detectedface.rect.Y - 2), new Bgr(Color.LightGreen));
-                }
-                // 만약 Detect된 얼굴들 중 하나도 User와 매칭이 되지 않았을 경우 
-                // face 변수는 가장 먼저 인식된 얼굴로 저장
-                if (detectedUser.Equals(false))
-                {
-                    face = facesDetected[0][0];
-                }
                 #region 얼굴 인식한것을 토대로 눈 찾기
                 Int32 yCoordStartSearchEyes = face.rect.Top + (face.rect.Height * 3 / 11);
                 System.Drawing.Point startingPointSearchEyes = new System.Drawing.Point(face.rect.X, yCoordStartSearchEyes);
@@ -213,13 +186,14 @@ namespace BlinkBlink_EyeJoah
                 Rectangle rightEyeArea = new Rectangle(new System.Drawing.Point(startingLeftEyePointOptimized.X + 5, startingLeftEyePointOptimized.Y + 10),
                                                      new Size(eyeAreaSize.Width - 33, eyeAreaSize.Height - 20));
                 #endregion
+
                 #region 눈 영역 검출한 Rectangle의 크기가 양수일 경우에만 눈 영역 적출하기
                 if (leftEyeArea.Width > 0 && leftEyeArea.Height > 0 && rightEyeArea.Width > 0 && rightEyeArea.Height > 0)
                 {
                     possibleROI_leftEye = leftEyeArea;
                     possibleROI_rightEye = rightEyeArea;
                 }
-                #endregion 
+                #endregion
             }// if(faceDetect[0])
         }
 
@@ -233,6 +207,7 @@ namespace BlinkBlink_EyeJoah
         {
             thresholdValueText.Text = TV.ToString();
 
+            //thresholdValueText.Text = possibleROI_leftEye.Width.ToString();
             // constantGraph에 현재 Threshold값 넘겨주기
             con.ShowThresholdValue(TV);
         }

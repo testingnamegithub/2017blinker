@@ -44,13 +44,13 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // UserControl1
+            // Control1_Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
-            this.Name = "UserControl1";
+            this.Name = "Control1_Home";
             resources.ApplyResources(this, "$this");
             this.ResumeLayout(false);
             this.PerformLayout();
