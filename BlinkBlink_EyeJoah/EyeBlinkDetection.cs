@@ -75,7 +75,7 @@ namespace BlinkBlink_EyeJoah
         public void start_EyeBlink()
         {
             // constantChange Graph 참조하기
-            con = control1.getConstantChange;
+        //    con = control1.getConstantChange;
             // TrainingData 참조하기
             trainingData = TrainingData.Instance;
             // trainingImage에 관한 Data Load하기
