@@ -43,10 +43,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.idCheck = new System.Windows.Forms.Button();
             this.goNext = new System.Windows.Forms.Button();
             this.takePic = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.idCheck = new System.Windows.Forms.Button();
+            this.nicknameCheckTxt = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).BeginInit();
@@ -145,12 +146,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(525, 365);
+            this.label1.Location = new System.Drawing.Point(498, 368);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 26);
+            this.label1.Size = new System.Drawing.Size(110, 26);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Name: ";
+            this.label1.Text = "Nickname";
             // 
             // label2
             // 
@@ -187,6 +188,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.nicknameCheckTxt);
             this.panel2.Controls.Add(this.idCheck);
             this.panel2.Controls.Add(this.goNext);
             this.panel2.Controls.Add(this.takePic);
@@ -200,6 +202,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(896, 530);
             this.panel2.TabIndex = 28;
+            // 
+            // idCheck
+            // 
+            this.idCheck.Location = new System.Drawing.Point(765, 359);
+            this.idCheck.Name = "idCheck";
+            this.idCheck.Size = new System.Drawing.Size(91, 42);
+            this.idCheck.TabIndex = 30;
+            this.idCheck.Text = "check";
+            this.idCheck.UseVisualStyleBackColor = true;
+            this.idCheck.Click += new System.EventHandler(this.idCheck_Click);
             // 
             // goNext
             // 
@@ -232,15 +244,18 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // idCheck
+            // nicknameCheckTxt
             // 
-            this.idCheck.Location = new System.Drawing.Point(765, 369);
-            this.idCheck.Name = "idCheck";
-            this.idCheck.Size = new System.Drawing.Size(75, 23);
-            this.idCheck.TabIndex = 30;
-            this.idCheck.Text = "check";
-            this.idCheck.UseVisualStyleBackColor = true;
-            this.idCheck.Click += new System.EventHandler(this.idCheck_Click);
+            this.nicknameCheckTxt.BackColor = System.Drawing.Color.White;
+            this.nicknameCheckTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nicknameCheckTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.nicknameCheckTxt.ForeColor = System.Drawing.Color.Black;
+            this.nicknameCheckTxt.Location = new System.Drawing.Point(543, 415);
+            this.nicknameCheckTxt.Name = "nicknameCheckTxt";
+            this.nicknameCheckTxt.ReadOnly = true;
+            this.nicknameCheckTxt.Size = new System.Drawing.Size(283, 21);
+            this.nicknameCheckTxt.TabIndex = 31;
+            this.nicknameCheckTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FaceTraining
             // 
@@ -286,5 +301,6 @@
         private System.Windows.Forms.Button takePic;
         private System.Windows.Forms.Button goNext;
         private System.Windows.Forms.Button idCheck;
+        private System.Windows.Forms.TextBox nicknameCheckTxt;
     }
 }

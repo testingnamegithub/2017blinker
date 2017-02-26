@@ -16,6 +16,9 @@ using AForge;
 using AForge.Video;
 using AForge.Video.DirectShow;
 
+//azure database
+using DT = System.Data;            // System.Data.dll  
+using QC = System.Data.SqlClient;  // System.Data.dll  
 
 namespace BlinkBlink_EyeJoah
 {
@@ -65,6 +68,9 @@ namespace BlinkBlink_EyeJoah
     int nWidthEllipse, // height of ellipse
     int nHeightEllipse // width of ellipse
  );
+
+        //nickname check-azure database
+        private bool checkNameDup;
 
         public FaceTraining()
         {
@@ -281,16 +287,127 @@ namespace BlinkBlink_EyeJoah
 
         private void goNext_Click(object sender, EventArgs e)
         {
-            // userName을 Text파일에 저장하기( 덮어쓰기 )
-            File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
-            // MainForm 띄우기
-            showMainForm();
+            if (checkNameDup == true)
+            {
+                //create user data rows in azure database
+                using (var connection = new QC.SqlConnection(
+                   "Server=tcp:blinkerserver.database.windows.net,1433;Initial Catalog=blinker_db;Persist Security Info=False;User ID=sm5duck;Password=Ajtwlstjdals2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+                    ))
+                {
+                    connection.Open();
+                    insertData(connection, nameTxtbox.Text);
+                    connection.Close();
+                }
+
+                // userName을 Text파일에 저장하기( 덮어쓰기 )
+                File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
+                // MainForm 띄우기
+                showMainForm();
+            }
+            else if (checkNameDup == false)
+            {
+                MessageBox.Show("Check your nickname");
+            }
+        }
+
+        //테이블 데이터 삽입
+        static public void insertData(QC.SqlConnection connection,String nickname)
+        {
+            string cmdString = "INSERT INTO EyeInfoTable values(@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16, @val17, @val18, @val19, @val20, @val21, @val22, @val23, @val24, @val25)";
+            //string connString = "your connection string";
+
+            using (var command = new QC.SqlCommand())
+            {
+                command.Connection = connection;
+                command.CommandText = cmdString;
+                command.Parameters.AddWithValue("@val1", nickname);
+                command.Parameters.AddWithValue("@val2", 0);
+                command.Parameters.AddWithValue("@val3", 0);
+                command.Parameters.AddWithValue("@val4", 1);
+                command.Parameters.AddWithValue("@val5", 2);
+                command.Parameters.AddWithValue("@val6", 3);
+                command.Parameters.AddWithValue("@val7", 4);
+                command.Parameters.AddWithValue("@val8", 5);
+                command.Parameters.AddWithValue("@val9", 6);
+                command.Parameters.AddWithValue("@val10", 7);
+                command.Parameters.AddWithValue("@val11", 8);
+                command.Parameters.AddWithValue("@val12", 9);
+                command.Parameters.AddWithValue("@val13", 10);
+                command.Parameters.AddWithValue("@val14", 11);
+                command.Parameters.AddWithValue("@val15", 12);
+                command.Parameters.AddWithValue("@val16", 13);
+                command.Parameters.AddWithValue("@val17", 14);
+                command.Parameters.AddWithValue("@val18", 15);
+                command.Parameters.AddWithValue("@val19", 16);
+                command.Parameters.AddWithValue("@val20", 17);
+                command.Parameters.AddWithValue("@val21", 18);
+                command.Parameters.AddWithValue("@val22", 19);
+                command.Parameters.AddWithValue("@val23", 20);
+                command.Parameters.AddWithValue("@val24", 21);
+                command.Parameters.AddWithValue("@val25", 22);
+
+                command.ExecuteNonQuery();
+            }
+
         }
 
         private void idCheck_Click(object sender, EventArgs e)
         {
+            // nameTxtbox.Text
+            using (var connection = new QC.SqlConnection(
+                 "Server=tcp:blinkerserver.database.windows.net,1433;Initial Catalog=blinker_db;Persist Security Info=False;User ID=sm5duck;Password=Ajtwlstjdals2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+                  ))
+            {
+                //sql 연결
+                connection.Open();
 
+                //데이터 존재 유무 확인
+                if (ifExistsRow(connection, nameTxtbox.Text).Equals(true))
+                {
+                    nicknameCheckTxt.ForeColor = Color.Red;
+                    nicknameCheckTxt.Text=("The nickname already exists");
+                    checkNameDup = false; //fail
+                }
+                else //false
+                {
+                    nicknameCheckTxt.ForeColor = Color.Blue;
+                   nicknameCheckTxt.Text=("Nickname available");
+                    checkNameDup = true; //pass
+                }
+
+                connection.Close();
+            }
         }
+
+        static public bool ifExistsRow(QC.SqlConnection connection, String nicknameID)
+        {
+            object returnValue="f";
+            String cmdString = "if exists(select*from EyeInfoTable where nicknameID='" + nicknameID + "') select 'true' else select 'false' return";
+
+            using (var command = new QC.SqlCommand())
+            {
+                command.Connection = connection;
+                command.CommandText = cmdString;
+                command.ExecuteNonQuery();
+                QC.SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    returnValue=reader.GetSqlValue(0).ToString(); //String값으로 받아옴
+                }
+                reader.Close();
+            }
+            if (returnValue.Equals("true"))
+            {
+                return true;
+            }
+            else if (returnValue.Equals("false"))
+            {
+                return false;
+            }
+            else return false;
+        }
+
 
         private void makePictureBoxToRound()
         {
