@@ -39,7 +39,7 @@
             // solidGauge7
             // 
             this.solidGauge7.Location = new System.Drawing.Point(573, 18);
-            this.solidGauge7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.solidGauge7.Margin = new System.Windows.Forms.Padding(4);
             this.solidGauge7.Name = "solidGauge7";
             this.solidGauge7.Size = new System.Drawing.Size(249, 208);
             this.solidGauge7.TabIndex = 12;
@@ -48,7 +48,7 @@
             // solidGauge5
             // 
             this.solidGauge5.Location = new System.Drawing.Point(17, 18);
-            this.solidGauge5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.solidGauge5.Margin = new System.Windows.Forms.Padding(4);
             this.solidGauge5.Name = "solidGauge5";
             this.solidGauge5.Size = new System.Drawing.Size(249, 208);
             this.solidGauge5.TabIndex = 13;
@@ -57,7 +57,7 @@
             // solidGauge6
             // 
             this.solidGauge6.Location = new System.Drawing.Point(300, 18);
-            this.solidGauge6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.solidGauge6.Margin = new System.Windows.Forms.Padding(4);
             this.solidGauge6.Name = "solidGauge6";
             this.solidGauge6.Size = new System.Drawing.Size(249, 208);
             this.solidGauge6.TabIndex = 14;
@@ -66,32 +66,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(88, 230);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label1.Location = new System.Drawing.Point(22, 230);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 29);
+            this.label1.Size = new System.Drawing.Size(226, 26);
             this.label1.TabIndex = 15;
-            this.label1.Text = "PC 권장량";
+            this.label1.Text = "Recommended usage";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(338, 230);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label2.Location = new System.Drawing.Point(356, 230);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 29);
+            this.label2.Size = new System.Drawing.Size(138, 26);
             this.label2.TabIndex = 16;
-            this.label2.Text = "실제 PC 사용 시간";
+            this.label2.Text = "Actual usage";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(654, 230);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label3.Location = new System.Drawing.Point(666, 230);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 29);
+            this.label3.Size = new System.Drawing.Size(69, 26);
             this.label3.TabIndex = 17;
-            this.label3.Text = "휴식 시간";
+            this.label3.Text = "Break";
             // 
             // Gauge360Example
             // 
@@ -105,7 +105,7 @@
             this.Controls.Add(this.solidGauge5);
             this.Controls.Add(this.solidGauge7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Gauge360Example";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gauge360Example";

@@ -237,34 +237,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Control1_Home.cs">
+    <Compile Include="MainForm Controls\Control1_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control1_Home.Designer.cs">
+    <Compile Include="MainForm Controls\Control1_Home.Designer.cs">
       <DependentUpon>Control1_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control2_Blinking.cs">
+    <Compile Include="MainForm Controls\Control2_Blinking.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control2_Blinking.Designer.cs">
+    <Compile Include="MainForm Controls\Control2_Blinking.Designer.cs">
       <DependentUpon>Control2_Blinking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control3_Work.cs">
+    <Compile Include="MainForm Controls\Control3_Work.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control3_Work.Designer.cs">
+    <Compile Include="MainForm Controls\Control3_Work.Designer.cs">
       <DependentUpon>Control3_Work.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control4_Settings.cs">
+    <Compile Include="MainForm Controls\Control4_Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control4_Settings.Designer.cs">
+    <Compile Include="MainForm Controls\Control4_Settings.Designer.cs">
       <DependentUpon>Control4_Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings_Scroll.cs">
+    <Compile Include="MainForm Controls\Settings_Scroll.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Settings_Scroll.Designer.cs">
+    <Compile Include="MainForm Controls\Settings_Scroll.Designer.cs">
       <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Chart\360\Gauge360Example.resx">
@@ -308,19 +308,19 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control1_Home.resx">
+    <EmbeddedResource Include="MainForm Controls\Control1_Home.resx">
       <DependentUpon>Control1_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control2_Blinking.resx">
+    <EmbeddedResource Include="MainForm Controls\Control2_Blinking.resx">
       <DependentUpon>Control2_Blinking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control3_Work.resx">
+    <EmbeddedResource Include="MainForm Controls\Control3_Work.resx">
       <DependentUpon>Control3_Work.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control4_Settings.resx">
+    <EmbeddedResource Include="MainForm Controls\Control4_Settings.resx">
       <DependentUpon>Control4_Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings_Scroll.resx">
+    <EmbeddedResource Include="MainForm Controls\Settings_Scroll.resx">
       <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ETC\packages.config" />

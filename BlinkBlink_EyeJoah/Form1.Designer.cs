@@ -60,8 +60,8 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.minimizeBtn = new System.Windows.Forms.PictureBox();
             this.thresholdValueText = new System.Windows.Forms.Label();
+            this.minimizeBtn = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.eyeBlinkText = new System.Windows.Forms.Label();
@@ -170,7 +170,7 @@
             this.settingsPanel.Controls.Add(this.settingsLabel);
             this.settingsPanel.Controls.Add(this.back_settings);
             this.settingsPanel.Location = new System.Drawing.Point(0, 344);
-            this.settingsPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.settingsPanel.Margin = new System.Windows.Forms.Padding(4);
             this.settingsPanel.Name = "settingsPanel";
             this.settingsPanel.Size = new System.Drawing.Size(257, 66);
             this.settingsPanel.TabIndex = 52;
@@ -194,7 +194,7 @@
             this.back_settings.BackColor = System.Drawing.Color.Transparent;
             this.back_settings.Controls.Add(this.picturebox_Setting);
             this.back_settings.Location = new System.Drawing.Point(4, 0);
-            this.back_settings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.back_settings.Margin = new System.Windows.Forms.Padding(4);
             this.back_settings.Name = "back_settings";
             this.back_settings.Size = new System.Drawing.Size(60, 70);
             this.back_settings.TabIndex = 52;
@@ -203,7 +203,7 @@
             // 
             this.picturebox_Setting.Image = global::BlinkBlink_EyeJoah.Properties.Resources.settingsLogo2;
             this.picturebox_Setting.Location = new System.Drawing.Point(14, 12);
-            this.picturebox_Setting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picturebox_Setting.Margin = new System.Windows.Forms.Padding(4);
             this.picturebox_Setting.Name = "picturebox_Setting";
             this.picturebox_Setting.Size = new System.Drawing.Size(40, 40);
             this.picturebox_Setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -217,7 +217,7 @@
             this.workPanel.Controls.Add(this.workLabel);
             this.workPanel.Controls.Add(this.back_work);
             this.workPanel.Location = new System.Drawing.Point(0, 266);
-            this.workPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.workPanel.Margin = new System.Windows.Forms.Padding(4);
             this.workPanel.Name = "workPanel";
             this.workPanel.Size = new System.Drawing.Size(257, 66);
             this.workPanel.TabIndex = 51;
@@ -241,7 +241,7 @@
             this.back_work.BackColor = System.Drawing.Color.Transparent;
             this.back_work.Controls.Add(this.picturebox_Work);
             this.back_work.Location = new System.Drawing.Point(6, 0);
-            this.back_work.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.back_work.Margin = new System.Windows.Forms.Padding(4);
             this.back_work.Name = "back_work";
             this.back_work.Size = new System.Drawing.Size(60, 70);
             this.back_work.TabIndex = 51;
@@ -251,7 +251,7 @@
             this.picturebox_Work.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picturebox_Work.Image = global::BlinkBlink_EyeJoah.Properties.Resources.workLogo2;
             this.picturebox_Work.Location = new System.Drawing.Point(14, 12);
-            this.picturebox_Work.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picturebox_Work.Margin = new System.Windows.Forms.Padding(4);
             this.picturebox_Work.Name = "picturebox_Work";
             this.picturebox_Work.Size = new System.Drawing.Size(40, 40);
             this.picturebox_Work.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -261,7 +261,7 @@
             // 
             // pinkLine1
             // 
-            this.pinkLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(154)))), ((int)(((byte)(117)))));
+            this.pinkLine1.BackColor = System.Drawing.Color.Silver;
             this.pinkLine1.Location = new System.Drawing.Point(0, 100);
             this.pinkLine1.Name = "pinkLine1";
             this.pinkLine1.Size = new System.Drawing.Size(257, 10);
@@ -273,7 +273,7 @@
             this.blinkPanel.Controls.Add(this.blinkLabel);
             this.blinkPanel.Controls.Add(this.back_blink);
             this.blinkPanel.Location = new System.Drawing.Point(0, 188);
-            this.blinkPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.blinkPanel.Margin = new System.Windows.Forms.Padding(4);
             this.blinkPanel.Name = "blinkPanel";
             this.blinkPanel.Size = new System.Drawing.Size(257, 66);
             this.blinkPanel.TabIndex = 50;
@@ -297,7 +297,7 @@
             this.back_blink.BackColor = System.Drawing.Color.Transparent;
             this.back_blink.Controls.Add(this.picturebox_BlinkStaticis);
             this.back_blink.Location = new System.Drawing.Point(4, 0);
-            this.back_blink.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.back_blink.Margin = new System.Windows.Forms.Padding(4);
             this.back_blink.Name = "back_blink";
             this.back_blink.Size = new System.Drawing.Size(60, 70);
             this.back_blink.TabIndex = 50;
@@ -307,7 +307,7 @@
             this.picturebox_BlinkStaticis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picturebox_BlinkStaticis.Image = global::BlinkBlink_EyeJoah.Properties.Resources.blinkLogo2;
             this.picturebox_BlinkStaticis.Location = new System.Drawing.Point(14, 12);
-            this.picturebox_BlinkStaticis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picturebox_BlinkStaticis.Margin = new System.Windows.Forms.Padding(4);
             this.picturebox_BlinkStaticis.Name = "picturebox_BlinkStaticis";
             this.picturebox_BlinkStaticis.Size = new System.Drawing.Size(40, 40);
             this.picturebox_BlinkStaticis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -321,7 +321,7 @@
             this.homePanel.Controls.Add(this.homeLabel);
             this.homePanel.Controls.Add(this.back_home);
             this.homePanel.Location = new System.Drawing.Point(0, 110);
-            this.homePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.homePanel.Margin = new System.Windows.Forms.Padding(4);
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(257, 66);
             this.homePanel.TabIndex = 49;
@@ -345,7 +345,7 @@
             this.back_home.BackColor = System.Drawing.Color.Transparent;
             this.back_home.Controls.Add(this.picturebox_Home);
             this.back_home.Location = new System.Drawing.Point(4, 0);
-            this.back_home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.back_home.Margin = new System.Windows.Forms.Padding(4);
             this.back_home.Name = "back_home";
             this.back_home.Size = new System.Drawing.Size(60, 70);
             this.back_home.TabIndex = 49;
@@ -355,7 +355,7 @@
             this.picturebox_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picturebox_Home.Image = global::BlinkBlink_EyeJoah.Properties.Resources.houseLogo2;
             this.picturebox_Home.Location = new System.Drawing.Point(14, 12);
-            this.picturebox_Home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picturebox_Home.Margin = new System.Windows.Forms.Padding(4);
             this.picturebox_Home.Name = "picturebox_Home";
             this.picturebox_Home.Size = new System.Drawing.Size(40, 40);
             this.picturebox_Home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -416,17 +416,6 @@
             this.topPanel.TabIndex = 3;
             this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // minimizeBtn
-            // 
-            this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(791, 12);
-            this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(30, 30);
-            this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minimizeBtn.TabIndex = 3;
-            this.minimizeBtn.TabStop = false;
-            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click_1);
-            // 
             // thresholdValueText
             // 
             this.thresholdValueText.AutoSize = true;
@@ -438,6 +427,17 @@
             this.thresholdValueText.Size = new System.Drawing.Size(54, 18);
             this.thresholdValueText.TabIndex = 48;
             this.thresholdValueText.Text = "label4";
+            // 
+            // minimizeBtn
+            // 
+            this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
+            this.minimizeBtn.Location = new System.Drawing.Point(791, 12);
+            this.minimizeBtn.Name = "minimizeBtn";
+            this.minimizeBtn.Size = new System.Drawing.Size(30, 30);
+            this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.minimizeBtn.TabIndex = 3;
+            this.minimizeBtn.TabStop = false;
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click_1);
             // 
             // closeButton
             // 
@@ -484,7 +484,7 @@
             // 
             this.rightEyeImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rightEyeImageBox.Location = new System.Drawing.Point(799, 400);
-            this.rightEyeImageBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rightEyeImageBox.Margin = new System.Windows.Forms.Padding(4);
             this.rightEyeImageBox.Name = "rightEyeImageBox";
             this.rightEyeImageBox.Size = new System.Drawing.Size(131, 95);
             this.rightEyeImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -495,7 +495,7 @@
             // 
             this.leftEyeImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.leftEyeImageBox.Location = new System.Drawing.Point(799, 208);
-            this.leftEyeImageBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.leftEyeImageBox.Margin = new System.Windows.Forms.Padding(4);
             this.leftEyeImageBox.Name = "leftEyeImageBox";
             this.leftEyeImageBox.Size = new System.Drawing.Size(131, 90);
             this.leftEyeImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

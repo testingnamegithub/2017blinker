@@ -30,6 +30,7 @@
         {
             this.scrollPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,10 +56,20 @@
             this.pictureBox2.TabIndex = 51;
             this.pictureBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(520, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 53;
+            this.button1.Text = "save";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Control4_Settings
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.scrollPanel);
             this.Controls.Add(this.pictureBox2);
             this.Name = "Control4_Settings";
@@ -72,5 +83,6 @@
         #endregion
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel scrollPanel;
+        private System.Windows.Forms.Button button1;
     }
 }

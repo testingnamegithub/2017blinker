@@ -45,12 +45,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(75, 25);
+            this.label2.Location = new System.Drawing.Point(150, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(663, 31);
+            this.label2.Size = new System.Drawing.Size(427, 31);
             this.label2.TabIndex = 27;
-            this.label2.Text = "How well you follow recommended PC use per session";
+            this.label2.Text = "Average PC usage time per session";
             // 
             // Control3_Work
             // 
