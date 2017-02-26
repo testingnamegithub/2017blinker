@@ -14,13 +14,15 @@ namespace BlinkBlink_EyeJoah
 {
     public partial class Control1_Home : UserControl
     {
-        // ConstantChange con;
+        //ConstantChange con;
         CustomizedLineSeries con;
+
         public Control1_Home()
         {
             InitializeComponent();
 
-            con = new ConstantChange();
+            //con = new ConstantChange();
+            con = new CustomizedLineSeries();
             con.TopLevel = false;
             con.AutoScroll = true;
         }
@@ -31,10 +33,10 @@ namespace BlinkBlink_EyeJoah
             con.Show();
         }
 
-        public ConstantChange getConstantChange
+       /* public ConstantChange getConstantChange
         {
-            get { return con; }
-            set { con = value; }
-        }
+            //get { return con; }
+            //set { con = value; }
+        }*/
     }
 }
