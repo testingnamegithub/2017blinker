@@ -166,13 +166,6 @@
       <DependentUpon>ConstantChange.cs</DependentUpon>
     </Compile>
     <Compile Include="Chart\ConstantChange\MeasureModel.cs" />
-    <Compile Include="Chart\Customized Line Series\CustomizedLineSeries.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Chart\Customized Line Series\CustomizedLineSeries.Designer.cs">
-      <DependentUpon>CustomizedLineSeries.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Chart\Customized Line Series\MeasureModel.cs" />
     <Compile Include="Chart\Events Chart\EventsExample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,9 +272,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\ConstantChange\ConstantChange.resx">
       <DependentUpon>ConstantChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Chart\Customized Line Series\CustomizedLineSeries.resx">
-      <DependentUpon>CustomizedLineSeries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\Events Chart\EventsExample.resx">
       <DependentUpon>EventsExample.cs</DependentUpon>
