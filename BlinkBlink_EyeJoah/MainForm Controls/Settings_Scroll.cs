@@ -17,6 +17,17 @@ namespace BlinkBlink_EyeJoah
             InitializeComponent();
         }
 
+        //비디오 박스 컨텐츠 삽입
+        public void setVideo(Image videoImage)
+        {
+            Control4_Settings.control4_settings.updateVideo(videoImage);
+        }
+        //비디오 박스 초기화
+        public void emptyVideo()
+        {
+            Control4_Settings.control4_settings.emptyVideo();
+        }
+
         //콤보박스 데이터 셋
         private void Settings_Scroll_Load(object sender, EventArgs e)
         {
@@ -140,12 +151,14 @@ namespace BlinkBlink_EyeJoah
             if (radiobtn_Image.Checked && !isCheckedImage)
             {
                 radiobtn_Image.Checked = false;
+                emptyVideo();
             }
             else
             {
                 radiobtn_Image.Checked = true;
                 isCheckedImage = false;
                 cb_monitorColor.Enabled = false;
+                setVideo(Properties.Resources._1);
             }
         }
 
@@ -159,11 +172,13 @@ namespace BlinkBlink_EyeJoah
             if (radiobtn_MsgAlert.Checked && !isCheckedMsg)
             {
                 radiobtn_MsgAlert.Checked = false;
+                emptyVideo();
             }
             else
             {
                 radiobtn_MsgAlert.Checked = true;
                 isCheckedMsg = false;
+                setVideo(Properties.Resources._3);
             }
         }
 
@@ -221,5 +236,34 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
+        private void cb_exercises_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cb_exercises.SelectedIndex)
+            {
+                //case 0: //random
+                //    setVideo(Properties.Resources._10);
+                //    break;
+                case 1: //clockwise
+                    setVideo(Properties.Resources._6);
+                    break;
+                case 2: //counterclockwise
+                    setVideo(Properties.Resources._7);
+                    break;
+                case 3: //left and right
+                    setVideo(Properties.Resources._11);
+                    break;
+                case 4: //right top
+                    setVideo(Properties.Resources._8);
+                    break;
+                case 5: //right below
+                    setVideo(Properties.Resources._9);
+                    break;
+                case 6: //infinity
+                    setVideo(Properties.Resources._10);
+                    break;
+            }
+        }
+
+ 
     }
 }

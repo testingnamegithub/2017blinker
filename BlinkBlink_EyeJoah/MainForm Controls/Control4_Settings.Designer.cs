@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.scrollPanel = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.videoBox = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.videoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // scrollPanel
@@ -43,18 +43,18 @@
             this.scrollPanel.Size = new System.Drawing.Size(607, 207);
             this.scrollPanel.TabIndex = 52;
             // 
-            // pictureBox2
+            // videoBox
             // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(192, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(233, 136);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 51;
-            this.pictureBox2.TabStop = false;
+            this.videoBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.videoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.videoBox.InitialImage = null;
+            this.videoBox.Location = new System.Drawing.Point(192, 15);
+            this.videoBox.Margin = new System.Windows.Forms.Padding(4);
+            this.videoBox.Name = "videoBox";
+            this.videoBox.Size = new System.Drawing.Size(233, 136);
+            this.videoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.videoBox.TabIndex = 51;
+            this.videoBox.TabStop = false;
             // 
             // button1
             // 
@@ -71,17 +71,17 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.scrollPanel);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.videoBox);
             this.Name = "Control4_Settings";
             this.Size = new System.Drawing.Size(631, 540);
             this.Load += new System.EventHandler(this.UserControl4_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.videoBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox videoBox;
         private System.Windows.Forms.Panel scrollPanel;
         private System.Windows.Forms.Button button1;
     }

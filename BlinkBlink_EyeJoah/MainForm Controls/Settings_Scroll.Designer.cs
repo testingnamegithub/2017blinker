@@ -251,6 +251,7 @@
             this.cb_exercises.Name = "cb_exercises";
             this.cb_exercises.Size = new System.Drawing.Size(225, 33);
             this.cb_exercises.TabIndex = 17;
+            this.cb_exercises.SelectedIndexChanged += new System.EventHandler(this.cb_exercises_SelectedIndexChanged);
             // 
             // cb_work
             // 
