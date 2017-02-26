@@ -74,7 +74,6 @@
             this.Controls.Add(this.videoBox);
             this.Name = "Control4_Settings";
             this.Size = new System.Drawing.Size(631, 540);
-            this.Load += new System.EventHandler(this.UserControl4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.videoBox)).EndInit();
             this.ResumeLayout(false);
 
