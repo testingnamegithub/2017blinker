@@ -8,14 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BlinkBlink_EyeJoah.Chart.ConstantChange;
-using BlinkBlink_EyeJoah.Chart.CustomizedLineSeries;
 
 namespace BlinkBlink_EyeJoah
 {
     public partial class Control1_Home : UserControl
     {
-        // ConstantChange con;
-        CustomizedLineSeries con;
+        ConstantChange con;
         public Control1_Home()
         {
             InitializeComponent();
