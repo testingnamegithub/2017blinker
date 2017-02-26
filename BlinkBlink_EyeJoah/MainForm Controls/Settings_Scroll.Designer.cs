@@ -280,7 +280,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(25, 621);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(546, 29);
+            this.panel1.Size = new System.Drawing.Size(546, 23);
             this.panel1.TabIndex = 24;
             // 
             // groupBox2
@@ -352,6 +352,7 @@
             this.cb_monitorColor.Name = "cb_monitorColor";
             this.cb_monitorColor.Size = new System.Drawing.Size(225, 33);
             this.cb_monitorColor.TabIndex = 19;
+            this.cb_monitorColor.SelectedIndexChanged += new System.EventHandler(this.cb_monitorColor_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -402,7 +403,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

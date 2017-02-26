@@ -133,11 +133,38 @@ namespace BlinkBlink_EyeJoah
             {
                 radiobtn_Monitor.Checked = false;
                 cb_monitorColor.Enabled = false;
+                emptyVideo();
             }else
             {
                 radiobtn_Monitor.Checked = true;
                 isCheckedMonitor = false;
                 cb_monitorColor.Enabled = true;
+
+                //선택된 인덱스값에 따른 비디오설정
+                switch (cb_monitorColor.SelectedIndex)
+                {
+                    case 0: //1200k
+                            setVideo(Properties.Resources.monitor_1200k);
+                        break;
+                    case 1: //1900k
+                        setVideo(Properties.Resources.monitor_1900k);
+                        break;
+                    case 2: //2300k
+                        setVideo(Properties.Resources.monitor_2300k);
+                        break;
+                    case 3: //2700k
+                        setVideo(Properties.Resources.monitor_2700k);
+                        break;
+                    case 4: //3400k
+                        setVideo(Properties.Resources.monitor_3400k);
+                        break;
+                    case 5: //4200k
+                        setVideo(Properties.Resources.monitor_4200k);
+                        break;
+                    case 6: //5000k
+                        setVideo(Properties.Resources.monitor_5000k);
+                        break;
+                }
             }
         }
 
@@ -240,30 +267,58 @@ namespace BlinkBlink_EyeJoah
         {
             switch (cb_exercises.SelectedIndex)
             {
-                //case 0: //random
-                //    setVideo(Properties.Resources._10);
-                //    break;
                 case 1: //clockwise
-                    setVideo(Properties.Resources._6);
+                    setVideo(Properties.Resources.clockwise);
                     break;
                 case 2: //counterclockwise
-                    setVideo(Properties.Resources._7);
+                    setVideo(Properties.Resources.anti_clockwise);
                     break;
                 case 3: //left and right
-                    setVideo(Properties.Resources._11);
+                    setVideo(Properties.Resources.left_and_right);
                     break;
                 case 4: //right top
-                    setVideo(Properties.Resources._8);
+                    setVideo(Properties.Resources.right_top);
                     break;
                 case 5: //right below
-                    setVideo(Properties.Resources._9);
+                    setVideo(Properties.Resources.right_below);
                     break;
                 case 6: //infinity
-                    setVideo(Properties.Resources._10);
+                    setVideo(Properties.Resources.infinity);
                     break;
             }
         }
 
- 
+        private void cb_monitorColor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cb_monitorColor.SelectedIndex)
+            {
+                case 0: //1200k
+                    if (cb_monitorColor.Enabled == true) //콤보박스가 활성화되어있을때만
+                    {
+                        setVideo(Properties.Resources.monitor_1200k);
+                    }
+                    break;
+                case 1: //1900k
+                    setVideo(Properties.Resources.monitor_1900k);
+                    break;
+                case 2: //2300k
+                    setVideo(Properties.Resources.monitor_2300k);
+                    break;
+                case 3: //2700k
+                    setVideo(Properties.Resources.monitor_2700k);
+                    break;
+                case 4: //3400k
+                    setVideo(Properties.Resources.monitor_3400k);
+                    break;
+                case 5: //4200k
+                    setVideo(Properties.Resources.monitor_4200k);
+                    break;
+                case 6: //5000k
+                    setVideo(Properties.Resources.monitor_5000k);
+                    break;
+            }
+        }
+
+
     }
 }

@@ -445,6 +445,24 @@
     <None Include="Resources\houseLogo2.png" />
     <None Include="Resources\blinkLogo2.png" />
     <None Include="Resources\blinkerLogo.png" />
+    <None Include="Resources\clockwise.mp4" />
+    <None Include="Resources\infinity.mp4" />
+    <None Include="Resources\left_and_right.mp4" />
+    <None Include="Resources\anti_clockwise.mp4" />
+    <None Include="Resources\clockwise.gif" />
+    <None Include="Resources\left_and_right.gif" />
+    <None Include="Resources\infinity.gif" />
+    <None Include="Resources\anti_clockwise.gif" />
+    <None Include="Resources\3400.gif" />
+    <None Include="Resources\4200.gif" />
+    <None Include="Resources\5000.gif" />
+    <None Include="Resources\1200.gif" />
+    <None Include="Resources\2700.gif" />
+    <None Include="Resources\1900.gif" />
+    <None Include="Resources\2300.gif" />
+    <None Include="Resources\KakaoTalk_20170227_032818944.gif" />
+    <None Include="Resources\KakaoTalk_20170227_032823853.gif" />
+    <None Include="Resources\KakaoTalk_20170227_032835020.gif" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -458,6 +476,10 @@
     <None Include="Resources\settingsLogo.png" />
     <None Include="Resources\settingsLogo2.png" />
     <None Include="Resources\workLogo2.png" />
+    <None Include="Resources\right_below.mp4" />
+    <None Include="Resources\right_top.mp4" />
+    <None Include="Resources\right_below.gif" />
+    <None Include="Resources\right_top.gif" />
     <Content Include="Resources\_checked.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
