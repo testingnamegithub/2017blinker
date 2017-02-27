@@ -42,8 +42,10 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
                     Stroke = System.Windows.Media.Brushes.CadetBlue,
                     Values = ChartValues,
                     PointGeometrySize = 2,
-                    StrokeThickness = 4
-                }
+                    StrokeThickness = 4,
+                    //Fill=new SolidColorBrush(Color.FromRgb(240,240,240)),
+                    //Stroke=new SolidColorBrush(Color.FromRgb(50,208,186))
+        }
             };
             cartesianChart1.AxisX.Add(new Axis
             {

@@ -9,13 +9,14 @@ namespace BlinkBlink_EyeJoah.Chart._360
         public Gauge360Example()
         {
             InitializeComponent();
-            
+
             //standard gauge
             //solidGauge5.From = 0;
             //solidGauge5.To = 100;
             //solidGauge5.Value = 50;
 
             //custom fill
+            solidGauge5.Uses360Mode = true;
             solidGauge5.From = 0;
             solidGauge5.To = 100;
             solidGauge5.Value = 60;
@@ -36,6 +37,7 @@ namespace BlinkBlink_EyeJoah.Chart._360
             //solidGauge6.Value = 50;
 
             //custom fill
+            solidGauge6.Uses360Mode = true;
             solidGauge6.From = 0;
             solidGauge6.To = 100;
             solidGauge6.Value = 40;
@@ -56,6 +58,7 @@ namespace BlinkBlink_EyeJoah.Chart._360
             //solidGauge7.Value = 50;
 
             //custom fill
+            solidGauge7.Uses360Mode = true;
             solidGauge7.From = 0;
             solidGauge7.To = 100;
             solidGauge7.Value = 70;

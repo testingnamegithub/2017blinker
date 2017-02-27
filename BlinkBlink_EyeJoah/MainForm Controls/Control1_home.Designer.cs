@@ -35,7 +35,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.DarkRed;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
