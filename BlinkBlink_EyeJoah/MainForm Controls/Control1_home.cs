@@ -19,6 +19,7 @@ namespace BlinkBlink_EyeJoah
             InitializeComponent();
 
             con = new ConstantChange();
+            con.BackColor = Color.Beige;
             con.TopLevel = false;
             con.AutoScroll = true;
         }
@@ -34,5 +35,6 @@ namespace BlinkBlink_EyeJoah
             get { return con; }
             set { con = value; }
         }
+
     }
 }
