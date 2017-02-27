@@ -38,8 +38,8 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
             {
                 new LineSeries
                 {
-                    Fill = System.Windows.Media.Brushes.Transparent,
-                    Stroke = System.Windows.Media.Brushes.CadetBlue,
+                    //Fill = System.Windows.Media.Brushes.Transparent,
+                    //Stroke = System.Windows.Media.Brushes.CadetBlue,
                     Values = ChartValues,
                     PointGeometrySize = 2,
                     StrokeThickness = 4,
