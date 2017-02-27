@@ -5,6 +5,7 @@ using LiveCharts;
 using LiveCharts.Configurations;
 using LiveCharts.Wpf;
 using Winforms.Cartesian.ConstantChanges;
+using System.Windows.Media;
 
 namespace BlinkBlink_EyeJoah.Chart.ConstantChange
 {
@@ -39,8 +40,10 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
                 {
                     Values = ChartValues,
                     PointGeometrySize = 2,
-                    StrokeThickness = 4
-                }
+                    StrokeThickness = 4,
+                    Fill=new SolidColorBrush(Color.FromRgb(240,240,240)),
+                    Stroke=new SolidColorBrush(Color.FromRgb(50,208,186))
+        }
             };
             cartesianChart1.AxisX.Add(new Axis
             {

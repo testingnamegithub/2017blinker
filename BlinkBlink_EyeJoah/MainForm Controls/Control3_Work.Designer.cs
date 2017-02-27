@@ -36,7 +36,7 @@
             // 
             this.chartPanel1.AutoScroll = true;
             this.chartPanel1.AutoSize = true;
-            this.chartPanel1.Location = new System.Drawing.Point(13, 73);
+            this.chartPanel1.Location = new System.Drawing.Point(13, 100);
             this.chartPanel1.Name = "chartPanel1";
             this.chartPanel1.Size = new System.Drawing.Size(349, 192);
             this.chartPanel1.TabIndex = 3;
@@ -45,7 +45,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(150, 25);
+            this.label2.Location = new System.Drawing.Point(150, 40);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(427, 31);
