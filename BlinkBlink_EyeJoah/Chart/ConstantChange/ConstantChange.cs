@@ -43,6 +43,8 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
                     Values = ChartValues,
                     PointGeometrySize = 2,
                     StrokeThickness = 4,
+                    Stroke=new SolidColorBrush(Color.FromRgb(50, 208, 186)),
+                    Fill=new SolidColorBrush(Color.FromArgb(200,218, 253, 247))
                     //Fill=new SolidColorBrush(Color.FromRgb(240,240,240)),
                     //Stroke=new SolidColorBrush(Color.FromRgb(50,208,186))
         }
