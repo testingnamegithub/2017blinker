@@ -225,7 +225,7 @@
             this.goNext.Name = "goNext";
             this.goNext.Size = new System.Drawing.Size(160, 49);
             this.goNext.TabIndex = 29;
-            this.goNext.Text = "Go to next";
+            this.goNext.Text = "Go next";
             this.goNext.UseVisualStyleBackColor = true;
             this.goNext.Click += new System.EventHandler(this.goNext_Click);
             // 
