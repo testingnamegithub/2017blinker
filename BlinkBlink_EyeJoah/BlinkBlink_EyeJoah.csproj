@@ -216,18 +216,19 @@
     <Compile Include="Chart\Uie\UielementsExample.Designer.cs">
       <DependentUpon>UielementsExample.cs</DependentUpon>
     </Compile>
-    <Compile Include="DistanceAlertScreencs.cs">
+    <Compile Include="DateTimeLabelSet.cs" />
+    <Compile Include="Main Controls\DistanceAlertScreencs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DistanceAlertScreencs.Designer.cs">
+    <Compile Include="Main Controls\DistanceAlertScreencs.Designer.cs">
       <DependentUpon>DistanceAlertScreencs.cs</DependentUpon>
     </Compile>
     <Compile Include="EigenObjectRecognizer.cs" />
     <Compile Include="EyeBlinkDetection.cs" />
-    <Compile Include="FaceTraining.cs">
+    <Compile Include="Main Controls\FaceTraining.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FaceTraining.Designer.cs">
+    <Compile Include="Main Controls\FaceTraining.Designer.cs">
       <DependentUpon>FaceTraining.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -245,34 +246,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MainForm Controls\Control1_Home.cs">
+    <Compile Include="Main Controls\Control1_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm Controls\Control1_Home.Designer.cs">
+    <Compile Include="Main Controls\Control1_Home.Designer.cs">
       <DependentUpon>Control1_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm Controls\Control2_Blinking.cs">
+    <Compile Include="Main Controls\Control2_Blinking.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm Controls\Control2_Blinking.Designer.cs">
+    <Compile Include="Main Controls\Control2_Blinking.Designer.cs">
       <DependentUpon>Control2_Blinking.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm Controls\Control3_Work.cs">
+    <Compile Include="Main Controls\Control3_Work.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm Controls\Control3_Work.Designer.cs">
+    <Compile Include="Main Controls\Control3_Work.Designer.cs">
       <DependentUpon>Control3_Work.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm Controls\Control4_Settings.cs">
+    <Compile Include="Main Controls\Control4_Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm Controls\Control4_Settings.Designer.cs">
+    <Compile Include="Main Controls\Control4_Settings.Designer.cs">
       <DependentUpon>Control4_Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm Controls\Settings_Scroll.cs">
+    <Compile Include="Main Controls\Settings_Scroll.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm Controls\Settings_Scroll.Designer.cs">
+    <Compile Include="Main Controls\Settings_Scroll.Designer.cs">
       <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInfoAzureDB.cs" />
@@ -303,10 +304,10 @@
     <EmbeddedResource Include="Chart\Uie\UielementsExample.resx">
       <DependentUpon>UielementsExample.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DistanceAlertScreencs.resx">
+    <EmbeddedResource Include="Main Controls\DistanceAlertScreencs.resx">
       <DependentUpon>DistanceAlertScreencs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FaceTraining.resx">
+    <EmbeddedResource Include="Main Controls\FaceTraining.resx">
       <DependentUpon>FaceTraining.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -317,19 +318,19 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm Controls\Control1_Home.resx">
+    <EmbeddedResource Include="Main Controls\Control1_Home.resx">
       <DependentUpon>Control1_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm Controls\Control2_Blinking.resx">
+    <EmbeddedResource Include="Main Controls\Control2_Blinking.resx">
       <DependentUpon>Control2_Blinking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm Controls\Control3_Work.resx">
+    <EmbeddedResource Include="Main Controls\Control3_Work.resx">
       <DependentUpon>Control3_Work.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm Controls\Control4_Settings.resx">
+    <EmbeddedResource Include="Main Controls\Control4_Settings.resx">
       <DependentUpon>Control4_Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm Controls\Settings_Scroll.resx">
+    <EmbeddedResource Include="Main Controls\Settings_Scroll.resx">
       <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ETC\packages.config" />

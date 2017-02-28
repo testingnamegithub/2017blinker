@@ -304,18 +304,18 @@ namespace BlinkBlink_EyeJoah
             nicknameCheckTxt.Text = message;
             nicknameCheckTxt.ForeColor = color;
         }
+        //return nickname textbox text
         public String nameText()
         {
             return nameTxtbox.Text;
         }
-
 
         //insert data and go to the next form
         private void goNext_Click(object sender, EventArgs e)
         {
             if (checkNameDup == true)
             {
-
+                //insert data in azure database using queries
                 userInfoAzureDB.insertData(nameTxtbox.Text);
 
                 // userName을 Text파일에 저장하기( 덮어쓰기 )
@@ -328,7 +328,7 @@ namespace BlinkBlink_EyeJoah
                 MessageBox.Show("Check your nickname");
             }
         }
-
+        //check id duplication
         private void idCheck_Click(object sender, EventArgs e)
         {
             userInfoAzureDB.idDupCheck();
