@@ -33,6 +33,7 @@
             // 
             // cartesianChart1
             // 
+            this.cartesianChart1.BackColor = System.Drawing.Color.Transparent;
             this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cartesianChart1.Location = new System.Drawing.Point(0, 0);
             this.cartesianChart1.Margin = new System.Windows.Forms.Padding(4);
@@ -45,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(841, 454);
             this.Controls.Add(this.cartesianChart1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

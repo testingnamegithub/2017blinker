@@ -35,7 +35,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
@@ -43,12 +43,13 @@
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.label1.Name = "label1";
             // 
             // Control1_Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Name = "Control1_Home";
