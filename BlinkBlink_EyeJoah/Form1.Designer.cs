@@ -431,7 +431,7 @@
             // minimizeBtn
             // 
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(791, 12);
+            this.minimizeBtn.Location = new System.Drawing.Point(780, 12);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(30, 30);
             this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

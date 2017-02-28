@@ -267,6 +267,9 @@ namespace BlinkBlink_EyeJoah
         {
             switch (cb_exercises.SelectedIndex)
             {
+                case 0: //random
+                    emptyVideo();
+                    break;
                 case 1: //clockwise
                     setVideo(Properties.Resources.clockwise);
                     break;
