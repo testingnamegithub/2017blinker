@@ -41,6 +41,8 @@ namespace BlinkBlink_EyeJoah
             homePanel.BackColor = Color.FromArgb(50, 208, 186);
             //back_home.BackColor = Color.FromArgb(39, 168, 150);
             homeLabel.ForeColor = Color.White;
+
+
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]

@@ -38,16 +38,15 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.nameTxtbox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nicknameCheckTxt = new System.Windows.Forms.TextBox();
             this.idCheck = new System.Windows.Forms.Button();
             this.goNext = new System.Windows.Forms.Button();
             this.takePic = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.nicknameCheckTxt = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).BeginInit();
@@ -67,7 +66,7 @@
             this.panel1.Controls.Add(this.closeButton);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(904, 60);
+            this.panel1.Size = new System.Drawing.Size(900, 60);
             this.panel1.TabIndex = 16;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -97,7 +96,7 @@
             // minimizeBtn
             // 
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(800, 14);
+            this.minimizeBtn.Location = new System.Drawing.Point(795, 14);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(30, 30);
             this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,7 +106,7 @@
             // closeButton
             // 
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(850, 14);
+            this.closeButton.Location = new System.Drawing.Point(845, 14);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(30, 30);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,36 +121,25 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(47, 84);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label5.Location = new System.Drawing.Point(47, 80);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(417, 25);
+            this.label5.Size = new System.Drawing.Size(464, 26);
             this.label5.TabIndex = 22;
             this.label5.Text = "Take a picture of yourself for blinking accuracy.";
             // 
             // nameTxtbox
             // 
-            this.nameTxtbox.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nameTxtbox.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nameTxtbox.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.nameTxtbox.Location = new System.Drawing.Point(616, 368);
+            this.nameTxtbox.Location = new System.Drawing.Point(495, 330);
             this.nameTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTxtbox.Name = "nameTxtbox";
-            this.nameTxtbox.Size = new System.Drawing.Size(142, 28);
+            this.nameTxtbox.Size = new System.Drawing.Size(200, 33);
             this.nameTxtbox.TabIndex = 20;
-            this.nameTxtbox.Text = "Insert name";
+            this.nameTxtbox.Text = "insert nickname";
             this.nameTxtbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.nameTxtbox_MouseClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(498, 368);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 26);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Nickname";
             // 
             // label2
             // 
@@ -169,7 +157,7 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.imageBoxFrameGrabber);
             this.panel3.ForeColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(36, 135);
+            this.panel3.Location = new System.Drawing.Point(36, 130);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(416, 345);
@@ -177,10 +165,10 @@
             // 
             // imageBoxFrameGrabber
             // 
-            this.imageBoxFrameGrabber.Location = new System.Drawing.Point(41, 15);
+            this.imageBoxFrameGrabber.Location = new System.Drawing.Point(31, 15);
             this.imageBoxFrameGrabber.Margin = new System.Windows.Forms.Padding(4);
             this.imageBoxFrameGrabber.Name = "imageBoxFrameGrabber";
-            this.imageBoxFrameGrabber.Size = new System.Drawing.Size(320, 320);
+            this.imageBoxFrameGrabber.Size = new System.Drawing.Size(338, 320);
             this.imageBoxFrameGrabber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBoxFrameGrabber.TabIndex = 2;
             this.imageBoxFrameGrabber.TabStop = false;
@@ -197,25 +185,43 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.nameTxtbox);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(3, 52);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(896, 530);
+            this.panel2.Size = new System.Drawing.Size(890, 517);
             this.panel2.TabIndex = 28;
+            // 
+            // nicknameCheckTxt
+            // 
+            this.nicknameCheckTxt.BackColor = System.Drawing.Color.White;
+            this.nicknameCheckTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nicknameCheckTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.nicknameCheckTxt.ForeColor = System.Drawing.Color.Black;
+            this.nicknameCheckTxt.Location = new System.Drawing.Point(530, 385);
+            this.nicknameCheckTxt.Name = "nicknameCheckTxt";
+            this.nicknameCheckTxt.ReadOnly = true;
+            this.nicknameCheckTxt.Size = new System.Drawing.Size(283, 21);
+            this.nicknameCheckTxt.TabIndex = 31;
+            this.nicknameCheckTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // idCheck
             // 
-            this.idCheck.Location = new System.Drawing.Point(765, 359);
+            this.idCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
+            this.idCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idCheck.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold);
+            this.idCheck.ForeColor = System.Drawing.Color.White;
+            this.idCheck.Location = new System.Drawing.Point(705, 315);
+            this.idCheck.Margin = new System.Windows.Forms.Padding(0);
             this.idCheck.Name = "idCheck";
-            this.idCheck.Size = new System.Drawing.Size(91, 42);
+            this.idCheck.Size = new System.Drawing.Size(119, 62);
             this.idCheck.TabIndex = 30;
-            this.idCheck.Text = "check";
-            this.idCheck.UseVisualStyleBackColor = true;
+            this.idCheck.Text = "CHECK";
+            this.idCheck.UseVisualStyleBackColor = false;
             this.idCheck.Click += new System.EventHandler(this.idCheck_Click);
             // 
             // goNext
             // 
-            this.goNext.Location = new System.Drawing.Point(666, 445);
+            this.goNext.Font = new System.Drawing.Font("굴림", 9F);
+            this.goNext.Location = new System.Drawing.Point(666, 420);
             this.goNext.Name = "goNext";
             this.goNext.Size = new System.Drawing.Size(160, 49);
             this.goNext.TabIndex = 29;
@@ -225,7 +231,8 @@
             // 
             // takePic
             // 
-            this.takePic.Location = new System.Drawing.Point(494, 445);
+            this.takePic.Font = new System.Drawing.Font("굴림", 9F);
+            this.takePic.Location = new System.Drawing.Point(494, 420);
             this.takePic.Name = "takePic";
             this.takePic.Size = new System.Drawing.Size(161, 49);
             this.takePic.TabIndex = 28;
@@ -235,34 +242,21 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.profile;
+            this.pictureBox1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.profile4;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(576, 150);
+            this.pictureBox1.Location = new System.Drawing.Point(565, 113);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 175);
+            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            // 
-            // nicknameCheckTxt
-            // 
-            this.nicknameCheckTxt.BackColor = System.Drawing.Color.White;
-            this.nicknameCheckTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nicknameCheckTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.nicknameCheckTxt.ForeColor = System.Drawing.Color.Black;
-            this.nicknameCheckTxt.Location = new System.Drawing.Point(543, 415);
-            this.nicknameCheckTxt.Name = "nicknameCheckTxt";
-            this.nicknameCheckTxt.ReadOnly = true;
-            this.nicknameCheckTxt.Size = new System.Drawing.Size(283, 21);
-            this.nicknameCheckTxt.TabIndex = 31;
-            this.nicknameCheckTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FaceTraining
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(902, 585);
+            this.ClientSize = new System.Drawing.Size(897, 575);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -293,7 +287,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox nameTxtbox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Emgu.CV.UI.ImageBox imageBoxFrameGrabber;
         private System.Windows.Forms.Panel panel3;

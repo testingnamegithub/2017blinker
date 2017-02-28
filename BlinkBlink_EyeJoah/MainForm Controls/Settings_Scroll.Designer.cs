@@ -86,7 +86,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(562, 295);
+            this.groupBox3.Size = new System.Drawing.Size(562, 290);
             this.groupBox3.TabIndex = 58;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Break time notifications";
@@ -280,7 +280,7 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(25, 621);
+            this.panel1.Location = new System.Drawing.Point(25, 605);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(546, 23);
             this.panel1.TabIndex = 24;

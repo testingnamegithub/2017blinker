@@ -95,6 +95,7 @@ namespace BlinkBlink_EyeJoah
             //Idle 대신 Timer로 FrameGraber event 실행
             timer1.Tick += new EventHandler(FrameGrabber);
             timer1.Start();
+
         }
 
         private void FrameGrabber(object sender, EventArgs e)
@@ -151,7 +152,7 @@ namespace BlinkBlink_EyeJoah
         //    //// Shoot 버튼을 한번도 안 눌렀을 경우
         //    //else
         //    //{
-        //    //    if (nameTxtbox.Text.Equals("Insert name") ||
+        //    //    if (nameTxtbox.Text.Equals("insert nickname") ||
         //    //        nameTxtbox.Text.Length.Equals(0))
         //    //    {
         //    //        MessageBox.Show("Please input your name");
@@ -273,7 +274,7 @@ namespace BlinkBlink_EyeJoah
                     // 버튼을 Next 사진으로 변경 후 Click 했음을 나타내는 clickedShootBtn = true로 변경 
                     clickedShootBtn = true;
                 }
-                if (nameTxtbox.Text.Equals("Insert name") ||
+                if (nameTxtbox.Text.Equals("insert nickname") ||
                     nameTxtbox.Text.Length.Equals(0))
                 {
                     MessageBox.Show("Please input your name.");
