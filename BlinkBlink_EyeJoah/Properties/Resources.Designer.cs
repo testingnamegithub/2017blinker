@@ -173,6 +173,56 @@ namespace BlinkBlink_EyeJoah.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar {
+            get {
+                object obj = ResourceManager.GetObject("calendar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar_2f9587 {
+            get {
+                object obj = ResourceManager.GetObject("calendar_2f9587", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar_8d8d8d {
+            get {
+                object obj = ResourceManager.GetObject("calendar_8d8d8d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar_dots {
+            get {
+                object obj = ResourceManager.GetObject("calendar_dots", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar_headline {
+            get {
+                object obj = ResourceManager.GetObject("calendar_headline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel {
             get {
                 object obj = ResourceManager.GetObject("cancel", resourceCulture);
@@ -236,6 +286,16 @@ namespace BlinkBlink_EyeJoah.Properties {
         internal static System.Drawing.Bitmap left_and_right {
             get {
                 object obj = ResourceManager.GetObject("left_and_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftArrow {
+            get {
+                object obj = ResourceManager.GetObject("leftArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +446,16 @@ namespace BlinkBlink_EyeJoah.Properties {
         internal static System.Drawing.Bitmap right_top {
             get {
                 object obj = ResourceManager.GetObject("right_top", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap rightArrow {
+            get {
+                object obj = ResourceManager.GetObject("rightArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

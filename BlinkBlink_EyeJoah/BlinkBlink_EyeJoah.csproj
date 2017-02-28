@@ -467,6 +467,11 @@
     <None Include="Resources\KakaoTalk_20170227_032823853.gif" />
     <None Include="Resources\KakaoTalk_20170227_032835020.gif" />
     <None Include="Resources\like.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\calendar_8d8d8d.png" />
+    <None Include="Resources\calendar %281%29.png" />
+    <None Include="Resources\calendar %282%29.png" />
+    <None Include="Resources\calendar %283%29.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
