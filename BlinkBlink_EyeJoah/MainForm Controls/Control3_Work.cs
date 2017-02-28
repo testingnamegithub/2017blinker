@@ -43,7 +43,15 @@ namespace BlinkBlink_EyeJoah
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            monthCalendar1.Visible = true;
+            if (monthCalendar1.Visible== true)
+            {
+                monthCalendar1.Visible = false;
+            }else
+            {
+                monthCalendar1.Visible = true;
+            }
         }
+
+
     }
 }
