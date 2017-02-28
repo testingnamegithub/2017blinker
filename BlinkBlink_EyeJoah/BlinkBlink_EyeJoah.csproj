@@ -275,6 +275,7 @@
     <Compile Include="MainForm Controls\Settings_Scroll.Designer.cs">
       <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInfoAzureDB.cs" />
     <EmbeddedResource Include="Chart\360\Gauge360Example.resx">
       <DependentUpon>Gauge360Example.cs</DependentUpon>
     </EmbeddedResource>

@@ -96,6 +96,8 @@ namespace BlinkBlink_EyeJoah
             timer1.Tick += new EventHandler(FrameGrabber);
             timer1.Start();
 
+            //access controls from another classes
+            faceTraining = this;
         }
 
         private void FrameGrabber(object sender, EventArgs e)
@@ -286,19 +288,35 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
+        //access UserInfoAzureDb
+        UserInfoAzureDB userInfoAzureDB = UserInfoAzureDB.getInstance();
+        //access controls from another classes
+        public static FaceTraining faceTraining;
+
+        //update checkNameDup(bool)
+        public void updateNameDup(bool boolValue)
+        {
+            checkNameDup = boolValue;
+        }
+        //update nicknameCheckText
+        public void updateCheckText(String message, Color color)
+        {
+            nicknameCheckTxt.Text = message;
+            nicknameCheckTxt.ForeColor = color;
+        }
+        public String nameText()
+        {
+            return nameTxtbox.Text;
+        }
+
+
+        //insert data and go to the next form
         private void goNext_Click(object sender, EventArgs e)
         {
             if (checkNameDup == true)
             {
-                //create user data rows in azure database
-                using (var connection = new QC.SqlConnection(
-                   "Server=tcp:blinkerserver.database.windows.net,1433;Initial Catalog=blinker_db;Persist Security Info=False;User ID=sm5duck;Password=Ajtwlstjdals2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-                    ))
-                {
-                    connection.Open();
-                    insertData(connection, nameTxtbox.Text);
-                    connection.Close();
-                }
+
+                userInfoAzureDB.insertData(nameTxtbox.Text);
 
                 // userName을 Text파일에 저장하기( 덮어쓰기 )
                 File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
@@ -311,115 +329,9 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
-        //테이블 데이터 삽입
-        static public void insertData(QC.SqlConnection connection,String nickname)
-        {
-            string cmdString = "INSERT INTO EyeInfoTable values(@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16, @val17, @val18, @val19, @val20, @val21, @val22, @val23, @val24, @val25)";
-            //string connString = "your connection string";
-
-            using (var command = new QC.SqlCommand())
-            {
-                command.Connection = connection;
-                command.CommandText = cmdString;
-                command.Parameters.AddWithValue("@val1", nickname);
-                command.Parameters.AddWithValue("@val2", 0);
-                command.Parameters.AddWithValue("@val3", 0);
-                command.Parameters.AddWithValue("@val4", 0);
-                command.Parameters.AddWithValue("@val5", 0);
-                command.Parameters.AddWithValue("@val6", 0);
-                command.Parameters.AddWithValue("@val7", 0);
-                command.Parameters.AddWithValue("@val8", 0);
-                command.Parameters.AddWithValue("@val9", 0);
-                command.Parameters.AddWithValue("@val10", 0);
-                command.Parameters.AddWithValue("@val11", 0);
-                command.Parameters.AddWithValue("@val12", 0);
-                command.Parameters.AddWithValue("@val13", 0);
-                command.Parameters.AddWithValue("@val14", 0);
-                command.Parameters.AddWithValue("@val15", 0);
-                command.Parameters.AddWithValue("@val16", 0);
-                command.Parameters.AddWithValue("@val17", 0);
-                command.Parameters.AddWithValue("@val18", 0);
-                command.Parameters.AddWithValue("@val19", 0);
-                command.Parameters.AddWithValue("@val20", 0);
-                command.Parameters.AddWithValue("@val21", 0);
-                command.Parameters.AddWithValue("@val22", 0);
-                command.Parameters.AddWithValue("@val23", 0);
-                command.Parameters.AddWithValue("@val24", 0);
-                command.Parameters.AddWithValue("@val25", 0);
-
-                command.ExecuteNonQuery();
-            }
-
-        }
-
         private void idCheck_Click(object sender, EventArgs e)
         {
-            // nameTxtbox.Text
-            using (var connection = new QC.SqlConnection(
-                 "Server=tcp:blinkerserver.database.windows.net,1433;Initial Catalog=blinker_db;Persist Security Info=False;User ID=sm5duck;Password=Ajtwlstjdals2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-                  ))
-            {
-                //sql 연결
-                connection.Open();
-
-                //데이터 존재 유무 확인
-                if (ifExistsRow(connection, nameTxtbox.Text).Equals(true))
-                {
-                    nicknameCheckTxt.ForeColor = Color.Red;
-                    nicknameCheckTxt.Text=("The nickname already exists");
-                    checkNameDup = false; //fail
-                }
-                else //false
-                {
-                    nicknameCheckTxt.ForeColor = Color.Blue;
-                   nicknameCheckTxt.Text=("Nickname available");
-                    checkNameDup = true; //pass
-                }
-
-                connection.Close();
-            }
-        }
-
-        static public bool ifExistsRow(QC.SqlConnection connection, String nicknameID)
-        {
-            object returnValue="f";
-            String cmdString = "if exists(select*from EyeInfoTable where nicknameID='" + nicknameID + "') select 'true' else select 'false' return";
-
-            using (var command = new QC.SqlCommand())
-            {
-                command.Connection = connection;
-                command.CommandText = cmdString;
-                command.ExecuteNonQuery();
-                QC.SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    returnValue=reader.GetSqlValue(0).ToString(); //String값으로 받아옴
-                }
-                reader.Close();
-            }
-            if (returnValue.Equals("true"))
-            {
-                return true;
-            }
-            else if (returnValue.Equals("false"))
-            {
-                return false;
-            }
-            else return false;
-        }
-
-
-        private void makePictureBoxToRound()
-        {
-            Rectangle r = new Rectangle(0, 0, imageBoxFrameGrabber.Width, imageBoxFrameGrabber.Height);
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            int d = 50;
-            gp.AddArc(r.X, r.Y, d, d, 180, 90);
-            gp.AddArc(r.X + r.Width - d, r.Y, d, d, 270, 90);
-            gp.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
-            gp.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
-            imageBoxFrameGrabber.Region = new Region(gp);
+            userInfoAzureDB.idDupCheck();
         }
 
     }
