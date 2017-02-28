@@ -24,55 +24,55 @@ namespace BlinkBlink_EyeJoah.Chart.Section
                 {
                     Values = new ChartValues<ObservableValue>
                     {
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5),
-                        new ObservableValue(5)
+                        new ObservableValue(10),
+                        new ObservableValue(12),
+                        new ObservableValue(8),
+                        new ObservableValue(6),
+                        new ObservableValue(10),
+                        //new ObservableValue(5),
+                        //new ObservableValue(5),
+                        //new ObservableValue(5),
+                        //new ObservableValue(5),
+                        //new ObservableValue(5),
+                        //new ObservableValue(5),
+                        //new ObservableValue(5),
+                        //new ObservableValue(5),
+                        //new ObservableValue(5),
+                        //new ObservableValue(5),
+                        //new ObservableValue(5)
 
                     },
                     PointGeometry = DefaultGeometries.None,
                     StrokeThickness = 4,
                     Fill = System.Windows.Media.Brushes.Transparent
                 },
-                new LineSeries
-                {
-                    Values = new ChartValues<ObservableValue>
-                    {
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1),
-                        new ObservableValue(1)
-                    },
-                    PointGeometry = DefaultGeometries.None,
-                    StrokeThickness = 4,
-                    Fill = System.Windows.Media.Brushes.Transparent
-                }
+                //new LineSeries
+                //{
+                //    Values = new ChartValues<ObservableValue>
+                //    {
+                //        new ObservableValue(1),
+                //        new ObservableValue(1),
+                //        new ObservableValue(1),
+                //        new ObservableValue(1),
+                //        new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1),
+                //        //new ObservableValue(1)
+                //    },
+                //    PointGeometry = DefaultGeometries.None,
+                //    StrokeThickness = 4,
+                //    Fill = System.Windows.Media.Brushes.Transparent
+                //}
             };
 
             cartesianChart1.AxisY.Add(new Axis
@@ -81,14 +81,14 @@ namespace BlinkBlink_EyeJoah.Chart.Section
                 {
                     new AxisSection
                     {
-                        Value = 8.5,
+                        Value = 5,
                         Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(248, 213, 72))
                     },
                     new AxisSection
                     {
                         Label = "Good",
-                        Value = 4,
-                        SectionWidth = 4,
+                        Value = 8,
+                        SectionWidth = 15,
                         Fill = new SolidColorBrush
                         {
                             Color = System.Windows.Media.Color.FromRgb(204,204,204),
@@ -99,7 +99,7 @@ namespace BlinkBlink_EyeJoah.Chart.Section
                     {
                         Label = "Bad",
                         Value = 0,
-                        SectionWidth = 4,
+                        SectionWidth = 8,
                         Fill = new SolidColorBrush
                         {
                             Color = System.Windows.Media.Color.FromRgb(254,132,132),

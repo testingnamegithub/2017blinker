@@ -49,7 +49,7 @@
             // Control1_Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Name = "Control1_Home";

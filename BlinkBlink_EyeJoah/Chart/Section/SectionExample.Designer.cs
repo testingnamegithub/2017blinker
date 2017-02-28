@@ -35,21 +35,23 @@
             // 
             this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cartesianChart1.Location = new System.Drawing.Point(0, 0);
+            this.cartesianChart1.Margin = new System.Windows.Forms.Padding(4);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(674, 317);
+            this.cartesianChart1.Size = new System.Drawing.Size(371, 345);
             this.cartesianChart1.TabIndex = 4;
             this.cartesianChart1.Text = "cartesianChart1";
             this.cartesianChart1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.cartesianChart1_ChildChanged);
             // 
             // SectionExample
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(674, 317);
+            this.ClientSize = new System.Drawing.Size(371, 345);
             this.Controls.Add(this.cartesianChart1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SectionExample";
             this.Text = "SectionExample";
             this.ResumeLayout(false);
