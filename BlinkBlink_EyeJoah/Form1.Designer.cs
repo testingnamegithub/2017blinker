@@ -376,7 +376,7 @@
             // 
             // tempLogo
             // 
-            this.tempLogo.Image = global::BlinkBlink_EyeJoah.Properties.Resources.blinkerLogo;
+            this.tempLogo.Image = global::BlinkBlink_EyeJoah.Properties.Resources.blinkerLogo_gradient4;
             this.tempLogo.Location = new System.Drawing.Point(34, 15);
             this.tempLogo.Name = "tempLogo";
             this.tempLogo.Size = new System.Drawing.Size(30, 30);

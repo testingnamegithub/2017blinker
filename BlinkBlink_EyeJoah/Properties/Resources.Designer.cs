@@ -161,11 +161,61 @@ namespace BlinkBlink_EyeJoah.Properties {
         }
         
         /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap blinkerLogo_gradient1 {
+            get {
+                object obj = ResourceManager.GetObject("blinkerLogo_gradient1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap blinkerLogo_gradient2 {
+            get {
+                object obj = ResourceManager.GetObject("blinkerLogo_gradient2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap blinkerLogo_gradient3 {
+            get {
+                object obj = ResourceManager.GetObject("blinkerLogo_gradient3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap blinkerLogo_gradient4 {
+            get {
+                object obj = ResourceManager.GetObject("blinkerLogo_gradient4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
         internal static System.Drawing.Icon blinkerLogo1 {
             get {
                 object obj = ResourceManager.GetObject("blinkerLogo1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Icon blinkerLogoIcon {
+            get {
+                object obj = ResourceManager.GetObject("blinkerLogoIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

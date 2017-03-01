@@ -72,7 +72,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.blinkerLogo;
+            this.pictureBox2.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.blinkerLogo_gradient4;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(35, 15);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
@@ -205,9 +205,9 @@
             // 
             // idCheck
             // 
-            this.idCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
+            this.idCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(149)))), ((int)(((byte)(135)))));
             this.idCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.idCheck.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold);
+            this.idCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idCheck.ForeColor = System.Drawing.Color.White;
             this.idCheck.Location = new System.Drawing.Point(705, 315);
             this.idCheck.Margin = new System.Windows.Forms.Padding(0);

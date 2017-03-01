@@ -57,7 +57,7 @@
     </Win32Resource>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>blinkerLogo.ico</ApplicationIcon>
+    <ApplicationIcon>blinkerLogoIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -279,15 +279,19 @@
     <Compile Include="UserInfoAzureDB.cs" />
     <EmbeddedResource Include="Chart\360\Gauge360Example.resx">
       <DependentUpon>Gauge360Example.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\ConstantChange\ConstantChange.resx">
       <DependentUpon>ConstantChange.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\Events Chart\EventsExample.resx">
       <DependentUpon>EventsExample.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\Funnel chart\FunnelExample.resx">
       <DependentUpon>FunnelExample.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\Gant chart\GantchartExample.resx">
       <DependentUpon>GantchartExample.cs</DependentUpon>
@@ -351,6 +355,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="blinkerLogo.ico" />
+    <Content Include="blinkerLogoIcon.ico" />
     <Content Include="cvextern.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -484,6 +489,11 @@
     <None Include="Resources\calendar %282%29.png" />
     <None Include="Resources\calendar %283%29.png" />
     <None Include="Resources\blinkerLogo.ico" />
+    <None Include="Resources\blinkerLogo_gradient2.png" />
+    <None Include="Resources\blinkerLogo_gradient1.png" />
+    <None Include="Resources\blinkerLogo_gradient3.png" />
+    <None Include="Resources\blinkerLogo_gradient4.png" />
+    <None Include="Resources\blinkerLogoIcon.ico" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
