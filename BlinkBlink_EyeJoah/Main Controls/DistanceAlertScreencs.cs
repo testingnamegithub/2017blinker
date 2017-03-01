@@ -53,6 +53,8 @@ namespace BlinkBlink_EyeJoah
 
 
             worker.RunWorkerAsync();
+
+            this.Icon = new Icon("Resources/blinkerLogo.ico");
         }
 
         private void formShow()

@@ -196,7 +196,7 @@
             this.nicknameCheckTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nicknameCheckTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.nicknameCheckTxt.ForeColor = System.Drawing.Color.Black;
-            this.nicknameCheckTxt.Location = new System.Drawing.Point(530, 385);
+            this.nicknameCheckTxt.Location = new System.Drawing.Point(515, 385);
             this.nicknameCheckTxt.Name = "nicknameCheckTxt";
             this.nicknameCheckTxt.ReadOnly = true;
             this.nicknameCheckTxt.Size = new System.Drawing.Size(283, 21);
@@ -260,6 +260,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FaceTraining";
             this.Text = "FaceTraining";

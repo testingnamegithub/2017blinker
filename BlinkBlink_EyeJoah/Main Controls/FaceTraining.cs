@@ -98,6 +98,9 @@ namespace BlinkBlink_EyeJoah
 
             //access controls from another classes
             faceTraining = this;
+
+         
+
         }
 
         private void FrameGrabber(object sender, EventArgs e)
@@ -222,7 +225,7 @@ namespace BlinkBlink_EyeJoah
                 captureBitmap = ResizeImage.adjust(captureBitmap, new Size(120, 120));
                 pictureBox1.Image = captureBitmap;
 
-                MessageBox.Show(nameTxtbox.Text + "´s face was detected and registered. :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(nameTxtbox.Text + "´s face was detected and registered. :)", "Photo Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch
@@ -279,7 +282,8 @@ namespace BlinkBlink_EyeJoah
                 if (nameTxtbox.Text.Equals("insert nickname") ||
                     nameTxtbox.Text.Length.Equals(0))
                 {
-                    MessageBox.Show("Please input your name.");
+                    //MessageBox with ok button, title, and information logo(I)
+                    MessageBox.Show("Please input your name","Photo Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 // user 등록하기 

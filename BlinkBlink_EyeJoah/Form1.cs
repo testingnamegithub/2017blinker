@@ -38,10 +38,9 @@ namespace BlinkBlink_EyeJoah
                                              this.rightEyeImageBox, this.thresholdValueText, this.eyeBlinkNumText);
             eyeBlink.start_EyeBlink();
 
-            homePanel.BackColor = Color.FromArgb(50, 208, 186);
+            homePanel.BackColor = Color.FromArgb(45, 187, 167); //기존 컬러
             //back_home.BackColor = Color.FromArgb(39, 168, 150);
             homeLabel.ForeColor = Color.White;
-
 
         }
 

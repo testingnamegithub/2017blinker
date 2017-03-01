@@ -59,13 +59,16 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(149)))), ((int)(((byte)(135)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(520, 15);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(510, 15);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(85, 26);
             this.button1.TabIndex = 53;
-            this.button1.Text = "save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "SAVE";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label3
             // 

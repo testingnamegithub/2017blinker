@@ -21,6 +21,7 @@ namespace BlinkBlink_EyeJoah
             makeChart1();
             makeChart2();
             //setRealTime();
+
         }
 
         //private void setRealTime()

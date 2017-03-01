@@ -27,6 +27,7 @@ namespace BlinkBlink_EyeJoah
             scrollPanel.Controls.Add(settingsControl);
 
             control4_settings = this; //객체 가르키기
+
         }
 
         //외부 클래스에서 점근할 메서드-  비디오박스 컨텐츠 수정

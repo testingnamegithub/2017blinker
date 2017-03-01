@@ -23,6 +23,7 @@ namespace BlinkBlink_EyeJoah
         {
             InitializeComponent();
             makeChart();
+
         }
 
         private void makeChart()

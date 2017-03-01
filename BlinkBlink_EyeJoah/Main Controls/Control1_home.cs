@@ -21,6 +21,7 @@ namespace BlinkBlink_EyeJoah
             con = new ConstantChange();
             con.TopLevel = false;
             con.AutoScroll = true;
+
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
