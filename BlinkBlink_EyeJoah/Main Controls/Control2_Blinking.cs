@@ -15,34 +15,29 @@ namespace BlinkBlink_EyeJoah
 {
     public partial class Control2_Blinking : UserControl
     {
+        //싱글톤으로 외부 클래스 접근
+        DateTimeLabelSettings dateTimeLabelSet = DateTimeLabelSettings.getInstance();
+
         public Control2_Blinking()
         {
             InitializeComponent();
             makeChart1();
             makeChart2();
-            //setRealTime();
+            //setRealDate();
 
+
+            //update realtime text from datetimelabelsettings class
+            updateRealtimeText();
         }
 
-        //private void setRealTime()
-        //{
-        //    DateTime datetime = DateTime.Now;
-        //    string time_UTC = datetime.ToString();
-        //    realtimeTxt.Text = time_UTC;
-        //}
+        //update realtime text from datetimelabelsettings class
+        private void updateRealtimeText()
+        {
+            realtimeTxt.Text = dateTimeLabelSet.createDateString();
+        }
 
-        //public static DateTime get_UTCNow()
-        //{
-        //    DateTime UTCNow = DateTime.UtcNow;
-        //    int year = UTCNow.Year;
-        //    int month = UTCNow.Month;
-        //    int day = UTCNow.Day;
-        //    int hour = UTCNow.Hour;
-        //    int min = UTCNow.Minute;
-        //    int sec = UTCNow.Second;
-        //    DateTime datetime = new DateTime(year, month, day, hour, min, sec);
-        //    return datetime;
-        //}
+
+    
 
         private void makeChart1()
         {

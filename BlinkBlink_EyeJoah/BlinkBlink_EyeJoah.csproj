@@ -216,7 +216,7 @@
     <Compile Include="Chart\Uie\UielementsExample.Designer.cs">
       <DependentUpon>UielementsExample.cs</DependentUpon>
     </Compile>
-    <Compile Include="DateTimeLabelSet.cs" />
+    <Compile Include="DateTimeLabelSettings.cs" />
     <Compile Include="Main Controls\DistanceAlertScreencs.cs">
       <SubType>Form</SubType>
     </Compile>

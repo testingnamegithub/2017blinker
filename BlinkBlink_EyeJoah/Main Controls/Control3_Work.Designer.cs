@@ -31,7 +31,7 @@
             this.chartPanel1 = new System.Windows.Forms.Panel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.realtimeTxt = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -67,19 +67,19 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Average PC usage time per session";
             // 
-            // textBox1
+            // realtimeTxt
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(145, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(340, 25);
-            this.textBox1.TabIndex = 31;
-            this.textBox1.Text = "March 1, 2017 (Wednesday)";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.realtimeTxt.BackColor = System.Drawing.Color.White;
+            this.realtimeTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.realtimeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.realtimeTxt.Location = new System.Drawing.Point(145, 49);
+            this.realtimeTxt.Name = "realtimeTxt";
+            this.realtimeTxt.ReadOnly = true;
+            this.realtimeTxt.Size = new System.Drawing.Size(340, 25);
+            this.realtimeTxt.TabIndex = 31;
+            this.realtimeTxt.Text = "March 1, 2017 (Wednesday)";
+            this.realtimeTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.realtimeTxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // pictureBox2
             // 
@@ -120,7 +120,7 @@
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.realtimeTxt);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.chartPanel1);
@@ -141,7 +141,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox realtimeTxt;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

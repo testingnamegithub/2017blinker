@@ -19,11 +19,22 @@ namespace BlinkBlink_EyeJoah
 {
     public partial class Control3_Work : UserControl
     {
+        //싱글톤으로 외부 클래스 접근
+        DateTimeLabelSettings dateTimeLabelSet = DateTimeLabelSettings.getInstance();
+
         public Control3_Work()
         {
             InitializeComponent();
             makeChart();
 
+            //update realtime text from datetimelabelsettings class
+            updateRealtimeText();
+        }
+
+        //update realtime text from datetimelabelsettings class
+        private void updateRealtimeText()
+        {
+            realtimeTxt.Text = dateTimeLabelSet.createDateString();
         }
 
         private void makeChart()
