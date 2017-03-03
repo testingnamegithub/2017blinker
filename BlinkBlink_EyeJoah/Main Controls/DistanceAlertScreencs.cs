@@ -65,9 +65,9 @@ namespace BlinkBlink_EyeJoah
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
             location = new Point(0, 0);
-            for (int i = 0; i < 251; i++)
+            for (int i = 0; i < 530; i++)
             {
-                location = new Point(workingArea.Right - i*2, workingArea.Bottom - Size.Height - 30);
+                location = new Point(workingArea.Right - i, workingArea.Bottom - Size.Height - 30);
                 this.Location = location;
 
             }

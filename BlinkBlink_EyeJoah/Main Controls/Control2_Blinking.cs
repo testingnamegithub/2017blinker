@@ -15,8 +15,6 @@ namespace BlinkBlink_EyeJoah
 {
     public partial class Control2_Blinking : UserControl
     {
-        //싱글톤으로 외부 클래스 접근
-        DateTimeLabelSettings dateTimeLabelSet = DateTimeLabelSettings.getInstance();
 
         public Control2_Blinking()
         {
@@ -33,7 +31,6 @@ namespace BlinkBlink_EyeJoah
         //update realtime text from datetimelabelsettings class
         private void updateRealtimeText()
         {
-            realtimeTxt.Text = dateTimeLabelSet.createDateString();
         }
 
 
