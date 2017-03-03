@@ -87,6 +87,7 @@ namespace BlinkBlink_EyeJoah
             control1.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control1);
+            EyeBlinkDetection.stopIdle = false;
 
             homePanel.BackColor = Color.FromArgb(50, 208, 186); 
             blinkPanel.BackColor = Color.FromArgb(218, 253, 247);
@@ -106,6 +107,7 @@ namespace BlinkBlink_EyeJoah
         {
             Control2_Blinking control2 = new Control2_Blinking();
 
+            EyeBlinkDetection.stopIdle = true;
             control2.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control2);
@@ -127,6 +129,7 @@ namespace BlinkBlink_EyeJoah
         {
             Control3_Work control3 = new Control3_Work();
 
+            EyeBlinkDetection.stopIdle = true;
             control3.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control3);
@@ -151,6 +154,7 @@ namespace BlinkBlink_EyeJoah
         {
             Control4_Settings control4 = new Control4_Settings();
 
+            EyeBlinkDetection.stopIdle = true;
             control4.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control4);

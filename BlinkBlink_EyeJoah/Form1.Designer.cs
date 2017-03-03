@@ -60,7 +60,6 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.thresholdValueText = new System.Windows.Forms.Label();
             this.minimizeBtn = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -69,6 +68,7 @@
             this.rightEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.leftEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
+            this.thresholdValueText = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.profilePanel.SuspendLayout();
@@ -138,7 +138,7 @@
             this.editProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.editProfile.Location = new System.Drawing.Point(193, 6);
             this.editProfile.Name = "editProfile";
-            this.editProfile.Size = new System.Drawing.Size(57, 24);
+            this.editProfile.Size = new System.Drawing.Size(41, 17);
             this.editProfile.TabIndex = 2;
             this.editProfile.Text = " EDIT ";
             // 
@@ -159,7 +159,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(84, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 26);
+            this.label1.Size = new System.Drawing.Size(84, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "User Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,7 +184,7 @@
             this.settingsLabel.Location = new System.Drawing.Point(70, 20);
             this.settingsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.settingsLabel.Name = "settingsLabel";
-            this.settingsLabel.Size = new System.Drawing.Size(83, 25);
+            this.settingsLabel.Size = new System.Drawing.Size(59, 17);
             this.settingsLabel.TabIndex = 52;
             this.settingsLabel.Text = "Settings";
             this.settingsLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton4_Click);
@@ -231,7 +231,7 @@
             this.workLabel.Location = new System.Drawing.Point(70, 20);
             this.workLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.workLabel.Name = "workLabel";
-            this.workLabel.Size = new System.Drawing.Size(59, 25);
+            this.workLabel.Size = new System.Drawing.Size(41, 17);
             this.workLabel.TabIndex = 4;
             this.workLabel.Text = "Work";
             this.workLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton3_Click);
@@ -287,7 +287,7 @@
             this.blinkLabel.Location = new System.Drawing.Point(70, 20);
             this.blinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.blinkLabel.Name = "blinkLabel";
-            this.blinkLabel.Size = new System.Drawing.Size(54, 25);
+            this.blinkLabel.Size = new System.Drawing.Size(38, 17);
             this.blinkLabel.TabIndex = 3;
             this.blinkLabel.Text = "Blink";
             this.blinkLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton2_Click);
@@ -335,7 +335,7 @@
             this.homeLabel.Location = new System.Drawing.Point(70, 20);
             this.homeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.homeLabel.Name = "homeLabel";
-            this.homeLabel.Size = new System.Drawing.Size(64, 25);
+            this.homeLabel.Size = new System.Drawing.Size(45, 17);
             this.homeLabel.TabIndex = 2;
             this.homeLabel.Text = "Home";
             this.homeLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuFlatButton1_Click);
@@ -391,7 +391,7 @@
             this.titleLabel.ForeColor = System.Drawing.Color.White;
             this.titleLabel.Location = new System.Drawing.Point(74, 15);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(106, 28);
+            this.titleLabel.Size = new System.Drawing.Size(68, 19);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Blinker";
             // 
@@ -415,18 +415,6 @@
             this.topPanel.Size = new System.Drawing.Size(887, 60);
             this.topPanel.TabIndex = 3;
             this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            // 
-            // thresholdValueText
-            // 
-            this.thresholdValueText.AutoSize = true;
-            this.thresholdValueText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
-            this.thresholdValueText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
-            this.thresholdValueText.Location = new System.Drawing.Point(349, 27);
-            this.thresholdValueText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.thresholdValueText.Name = "thresholdValueText";
-            this.thresholdValueText.Size = new System.Drawing.Size(54, 18);
-            this.thresholdValueText.TabIndex = 48;
-            this.thresholdValueText.Text = "label4";
             // 
             // minimizeBtn
             // 
@@ -464,7 +452,7 @@
             this.eyeBlinkText.ForeColor = System.Drawing.Color.Red;
             this.eyeBlinkText.Location = new System.Drawing.Point(679, 316);
             this.eyeBlinkText.Name = "eyeBlinkText";
-            this.eyeBlinkText.Size = new System.Drawing.Size(262, 46);
+            this.eyeBlinkText.Size = new System.Drawing.Size(169, 30);
             this.eyeBlinkText.TabIndex = 46;
             this.eyeBlinkText.Text = "눈 깜빡임 횟수 ";
             // 
@@ -476,7 +464,7 @@
             this.eyeBlinkNumText.ForeColor = System.Drawing.Color.Red;
             this.eyeBlinkNumText.Location = new System.Drawing.Point(531, 130);
             this.eyeBlinkNumText.Name = "eyeBlinkNumText";
-            this.eyeBlinkNumText.Size = new System.Drawing.Size(43, 46);
+            this.eyeBlinkNumText.Size = new System.Drawing.Size(28, 30);
             this.eyeBlinkNumText.TabIndex = 47;
             this.eyeBlinkNumText.Text = "0";
             // 
@@ -511,6 +499,18 @@
             this.imageBoxCapturedFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBoxCapturedFrame.TabIndex = 43;
             this.imageBoxCapturedFrame.TabStop = false;
+            // 
+            // thresholdValueText
+            // 
+            this.thresholdValueText.AutoSize = true;
+            this.thresholdValueText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
+            this.thresholdValueText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
+            this.thresholdValueText.Location = new System.Drawing.Point(462, 27);
+            this.thresholdValueText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.thresholdValueText.Name = "thresholdValueText";
+            this.thresholdValueText.Size = new System.Drawing.Size(54, 18);
+            this.thresholdValueText.TabIndex = 48;
+            this.thresholdValueText.Text = "label4";
             // 
             // Form1
             // 
@@ -584,7 +584,6 @@
         private System.Windows.Forms.PictureBox minimizeBtn;
         private System.Windows.Forms.ImageList imageList1;
         private Emgu.CV.UI.ImageBox rightEyeImageBox;
-        private System.Windows.Forms.Label thresholdValueText;
         private System.Windows.Forms.Label eyeBlinkText;
         private Emgu.CV.UI.ImageBox leftEyeImageBox;
         private System.Windows.Forms.Label eyeBlinkNumText;
@@ -608,6 +607,7 @@
         private System.Windows.Forms.Panel pinkLine1;
         private System.Windows.Forms.Panel profilePanel;
         private System.Windows.Forms.Label editProfile;
+        private System.Windows.Forms.Label thresholdValueText;
     }
 }
 

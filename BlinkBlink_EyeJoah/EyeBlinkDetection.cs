@@ -54,6 +54,7 @@ namespace BlinkBlink_EyeJoah
         public static Boolean catchBlackPixel = false;          // Black Pixel을 발견했다 안했다를 알려주는 변수
         public static Boolean catchBlink = false;               // Blink 감지를 위한 변수
         public static Boolean checkDistanceAlertScreen = false; // DistanceAlertScreen 켜져있는 상태인지 아닌지 확인하는 변수 
+        public static Boolean stopIdle = false;
 
         /* ContantChange 그래프에 관련된 변수 */
         private Control1_Home control1;
@@ -113,51 +114,56 @@ namespace BlinkBlink_EyeJoah
 
         void FrameGrabber(object sender, EventArgs e)
         {
-            //새로운 Frame 얻은 후 ImageBox에 투영하기
-            frame = _capture.QueryFrame();
-            imageBoxCapturedFrame.Image = frame;
-
-            //grayscale로 변환( haarcascade를 적용할 땐 회색 화면을 더 잘 잡는다고 함 )
-            Image<Gray, Byte> grayFrame = frame.Convert<Gray, Byte>();
-            grayFrame._EqualizeHist();
-
-            // EventHandler 주기마다 Detect한 얼굴 사각형으로 그리기 + 모니터와 가까워지면 알림주기
-            if (!face.Equals(null))
+            if (!stopIdle)
             {
-                frame.Draw(face.rect, new Bgr(Color.Red), 2);
-                if (possibleROI_leftEye.Width > 120 && checkDistanceAlertScreen.Equals(false))
-                {
-                    checkDistanceAlertScreen = true;
-                    distanceAlertScreen = DistanceAlertScreencs.Instance;
-                    distanceAlertScreen.Show();
-                }
-                else
-                {
+                //새로운 Frame 얻은 후 ImageBox에 투영하기
+                frame = _capture.QueryFrame();
+                imageBoxCapturedFrame.Image = frame;
 
+                //grayscale로 변환( haarcascade를 적용할 땐 회색 화면을 더 잘 잡는다고 함 )
+                Image<Gray, Byte> grayFrame = frame.Convert<Gray, Byte>();
+                grayFrame._EqualizeHist();
+
+                // EventHandler 주기마다 Detect한 얼굴 사각형으로 그리기 + 모니터와 가까워지면 알림주기
+                if (!face.Equals(null))
+                {
+                    frame.Draw(face.rect, new Bgr(Color.Red), 2);
+
+                    //// 모니터와 가까워 졌을 경우 알림창 띄우기
+                    //if (possibleROI_leftEye.Width > 120 && checkDistanceAlertScreen.Equals(false))
+                    //{
+                    //    checkDistanceAlertScreen = true;
+                    //    distanceAlertScreen = DistanceAlertScreencs.Instance;
+                    //    distanceAlertScreen.Show();
+                    //}
+                    //else
+                    //{
+
+                    //}
                 }
+
+                // worker 쓰레드 실행
+                if (!worker.IsBusy)
+                    worker.RunWorkerAsync(grayFrame);
+
+                #region 눈 영역이 Null이 아닐 경우
+                // EventHandler 주기마다 worker(Thread)에서 Detect 성공한 눈 영역을 ImageBox에 투영,
+                // 그리고 threshold를 통한 눈 깜빡임 횟수 검출하는 thresholdEffect() 함수 실행
+                if (possibleROI_rightEye.IsEmpty.Equals(false) && possibleROI_leftEye.IsEmpty.Equals(false))
+                {
+                    try
+                    {
+                        rightEyeImageBox.Image = frame.Copy(possibleROI_rightEye).Convert<Bgr, byte>();
+                        leftEyeImageBox.Image = frame.Copy(possibleROI_leftEye).Convert<Bgr, byte>();
+
+                        // 실행하기전 눈 깜빡임을 판단하는 catchBlackPixel 값 false로 초기화
+                        EyeBlinkDetection.catchBlackPixel = false;
+                        thresholdEffect(thresholdValue);
+                    }
+                    catch (ArgumentException expt) { }
+                }
+                #endregion
             }
-
-            // worker 쓰레드 실행
-            if (!worker.IsBusy)
-                worker.RunWorkerAsync(grayFrame);
-
-            #region 눈 영역이 Null이 아닐 경우
-            // EventHandler 주기마다 worker(Thread)에서 Detect 성공한 눈 영역을 ImageBox에 투영,
-            // 그리고 threshold를 통한 눈 깜빡임 횟수 검출하는 thresholdEffect() 함수 실행
-            if (possibleROI_rightEye.IsEmpty.Equals(false) && possibleROI_leftEye.IsEmpty.Equals(false))
-            {
-                try
-                {
-                    rightEyeImageBox.Image = frame.Copy(possibleROI_rightEye).Convert<Bgr, byte>();
-                    leftEyeImageBox.Image = frame.Copy(possibleROI_leftEye).Convert<Bgr, byte>();
-
-                    // 실행하기전 눈 깜빡임을 판단하는 catchBlackPixel 값 false로 초기화
-                    EyeBlinkDetection.catchBlackPixel = false;
-                    thresholdEffect(thresholdValue);
-                }
-                catch (ArgumentException expt) { }
-            }
-            #endregion
         }//FrameGrapper
 
 
