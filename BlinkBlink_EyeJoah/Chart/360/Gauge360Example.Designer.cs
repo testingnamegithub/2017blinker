@@ -101,11 +101,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label4.Location = new System.Drawing.Point(137, 150);
+            this.label4.Location = new System.Drawing.Point(127, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 36);
+            this.label4.Size = new System.Drawing.Size(110, 36);
             this.label4.TabIndex = 18;
-            this.label4.Text = "20-20";
+            this.label4.Text = "120-15";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label2
             // 
@@ -115,7 +116,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 29);
             this.label2.TabIndex = 19;
-            this.label2.Text = "70 min";
+            this.label2.Text = "86 min";
             // 
             // label5
             // 
@@ -125,17 +126,17 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 29);
             this.label5.TabIndex = 20;
-            this.label5.Text = "30 min";
+            this.label5.Text = "18 min";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(75, 335);
+            this.label6.Location = new System.Drawing.Point(70, 335);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(214, 29);
+            this.label6.Size = new System.Drawing.Size(228, 29);
             this.label6.TabIndex = 21;
-            this.label6.Text = "20 min - 20 break";
+            this.label6.Text = "120 min - 15 break";
             // 
             // Gauge360Example
             // 

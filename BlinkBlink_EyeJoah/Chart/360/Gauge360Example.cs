@@ -18,8 +18,8 @@ namespace BlinkBlink_EyeJoah.Chart._360
             //custom fill
             recomUsage.Uses360Mode = true;
             recomUsage.From = 0;
-            recomUsage.To = 40;
-            recomUsage.Value = 20;
+            recomUsage.To = 135;
+            recomUsage.Value = 15;
             recomUsage.Base.Foreground = new SolidColorBrush(Colors.White); //폰트 색상
             recomUsage.GaugeBackground = new LinearGradientBrush
             {
@@ -47,7 +47,7 @@ namespace BlinkBlink_EyeJoah.Chart._360
             solidGauge6.Uses360Mode = false;
             solidGauge6.From = 0;
             solidGauge6.To = 60;
-            solidGauge6.Value = 70;
+            solidGauge6.Value = 86;
             solidGauge6.Base.LabelsVisibility = Visibility.Visible;
             solidGauge6.Base.GaugeActiveFill = new LinearGradientBrush
             {
@@ -63,7 +63,7 @@ namespace BlinkBlink_EyeJoah.Chart._360
             solidGauge7.Uses360Mode = false;
             solidGauge7.From = 0;
             solidGauge7.To = 60;
-            solidGauge7.Value = 30;
+            solidGauge7.Value = 18;
             solidGauge7.Base.LabelsVisibility = Visibility.Visible;
             solidGauge7.Base.GaugeActiveFill = new LinearGradientBrush
             {
@@ -75,6 +75,11 @@ namespace BlinkBlink_EyeJoah.Chart._360
                     //new GradientStop(Colors.Olive, 1)
                 }
             };
+
+        }
+
+        private void label4_Click(object sender, System.EventArgs e)
+        {
 
         }
     }
