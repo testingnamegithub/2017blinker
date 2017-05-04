@@ -27,14 +27,14 @@ namespace BlinkBlink_EyeJoah
             InitializeComponent();
 
             init_UI();
-            
+
             /* Main화면 띄우기 */
             control1 = new Control1_Home();
             control1.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(control1);
 
             /* Eye Blink Detection 감지하는 Class 생성 및 실행 */
-            eyeBlink = new EyeBlinkDetection(this.control1, this.imageBoxCapturedFrame, this.leftEyeImageBox, 
+            eyeBlink = new EyeBlinkDetection(this.control1, this.imageBoxCapturedFrame, this.leftEyeImageBox,
                                              this.rightEyeImageBox, this.thresholdValueText, this.eyeBlinkNumText);
             eyeBlink.start_EyeBlink();
 
@@ -89,7 +89,7 @@ namespace BlinkBlink_EyeJoah
             panelContainer.Controls.Add(control1);
             EyeBlinkDetection.stopIdle = false;
 
-            homePanel.BackColor = Color.FromArgb(50, 208, 186); 
+            homePanel.BackColor = Color.FromArgb(50, 208, 186);
             blinkPanel.BackColor = Color.FromArgb(218, 253, 247);
             workPanel.BackColor = Color.FromArgb(218, 253, 247);
             settingsPanel.BackColor = Color.FromArgb(218, 253, 247);
@@ -172,7 +172,7 @@ namespace BlinkBlink_EyeJoah
             //back_work.BackColor = Color.FromArgb(46, 200, 178);
             //back_home.BackColor = Color.FromArgb(46, 200, 178);
         }
-        
+
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -197,8 +197,8 @@ namespace BlinkBlink_EyeJoah
         // Continuos Graph 값을 넣기 위한 Threshold getset method 
         private int getsetThresholdValue
         {
-            get{ return thresholdValue ; }
-            set{ thresholdValue = value; }
+            get { return thresholdValue; }
+            set { thresholdValue = value; }
         }
 
 
@@ -225,26 +225,26 @@ namespace BlinkBlink_EyeJoah
                         case "settingsPanel": settingsPanel.BackColor = Color.FromArgb(50, 208, 186); break;
                     }
                     break;
-                //case "PictureBox":
-                //    PictureBox pictureboxName = (PictureBox)sender;
-                //    switch (pictureboxName.Name)
-                //    {
-                //        case "picturebox_Home": homePanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                //        case "picturebox_BlinkStaticis": blinkPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                //        case "picturebox_Work": workPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                //        case "picturebox_Setting": settingsPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                //    }
-                //    break;
-                //case "Label":
-                //    Label labelName = (Label)sender;
-                //    switch (labelName.Name)
-                //    {
-                //        case "label2": homePanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                //        case "label3": blinkPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                //        case "label4": workPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                //        case "label5": settingsPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                //    }
-                //    break;
+                    //case "PictureBox":
+                    //    PictureBox pictureboxName = (PictureBox)sender;
+                    //    switch (pictureboxName.Name)
+                    //    {
+                    //        case "picturebox_Home": homePanel.BackColor = Color.FromArgb(29, 188, 170); break;
+                    //        case "picturebox_BlinkStaticis": blinkPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+                    //        case "picturebox_Work": workPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+                    //        case "picturebox_Setting": settingsPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+                    //    }
+                    //    break;
+                    //case "Label":
+                    //    Label labelName = (Label)sender;
+                    //    switch (labelName.Name)
+                    //    {
+                    //        case "label2": homePanel.BackColor = Color.FromArgb(29, 188, 170); break;
+                    //        case "label3": blinkPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+                    //        case "label4": workPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+                    //        case "label5": settingsPanel.BackColor = Color.FromArgb(29, 188, 170); break;
+                    //    }
+                    //    break;
             }
         }
 
@@ -255,6 +255,6 @@ namespace BlinkBlink_EyeJoah
             workPanel.BackColor = Color.FromArgb(218, 253, 247);
             settingsPanel.BackColor = Color.FromArgb(218, 253, 247);
         }
-        
+
     }
 }

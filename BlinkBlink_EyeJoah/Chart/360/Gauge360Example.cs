@@ -6,8 +6,12 @@ namespace BlinkBlink_EyeJoah.Chart._360
 {
     public partial class Gauge360Example : Form
     {
+        public static Gauge360Example gauge360example;
+
         public Gauge360Example()
         {
+            gauge360example = this;
+
             InitializeComponent();
 
             //standard gauge
@@ -39,9 +43,6 @@ namespace BlinkBlink_EyeJoah.Chart._360
                     new GradientStop(Colors.DarkBlue, 1)
                 }
             };
-
-
-
 
             //Actual Usage
             solidGauge6.Uses360Mode = false;
@@ -78,9 +79,17 @@ namespace BlinkBlink_EyeJoah.Chart._360
 
         }
 
-        private void label4_Click(object sender, System.EventArgs e)
+        public void updateUsageValue(int usageTime)
         {
-
+            usageLabel.Text = usageTime + " min";
+            solidGauge6.Value = usageTime;
         }
+
+        public void updateBreakValue(int breakTime)
+        {
+            breakLabel.Text = breakTime + " min";
+            solidGauge7.Value = breakTime;
+        }
+
     }
 }

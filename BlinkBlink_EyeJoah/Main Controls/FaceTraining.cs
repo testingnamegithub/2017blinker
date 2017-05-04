@@ -80,7 +80,7 @@ namespace BlinkBlink_EyeJoah
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
 
             //얼굴 검출을 위한 Haarcascade Load
-            face = new HaarCascade("haarcascade_frontalface_default.xml");
+            face = new HaarCascade("C:\\haarcascade_frontalface_default.xml");
 
             //Training 폴더에 있는 얼굴 이미지 및 이름들 불러오기
             loadTrainingImage();
@@ -98,9 +98,6 @@ namespace BlinkBlink_EyeJoah
 
             //access controls from another classes
             faceTraining = this;
-
-         
-
         }
 
         private void FrameGrabber(object sender, EventArgs e)
@@ -283,7 +280,7 @@ namespace BlinkBlink_EyeJoah
                     nameTxtbox.Text.Length.Equals(0))
                 {
                     //MessageBox with ok button, title, and information logo(I)
-                    MessageBox.Show("Please input your name","Photo Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Please input your name", "Photo Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 // user 등록하기 
@@ -322,10 +319,10 @@ namespace BlinkBlink_EyeJoah
             //    //insert data in azure database using queries
             //    userInfoAzureDB.insertData(nameTxtbox.Text);
 
-                // userName을 Text파일에 저장하기( 덮어쓰기 )
-                File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
-                // MainForm 띄우기
-                showMainForm();
+            //// userName을 Text파일에 저장하기( 덮어쓰기 )
+            File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
+            // MainForm 띄우기
+            showMainForm();
             //}
             //else if (checkNameDup == false)
             //{

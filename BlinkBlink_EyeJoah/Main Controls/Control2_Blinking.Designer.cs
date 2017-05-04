@@ -34,12 +34,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.realtimeTxt = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.nextDayBtn = new System.Windows.Forms.PictureBox();
+            this.beforeDayBtn = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nextDayBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beforeDayBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,25 +101,27 @@
             this.realtimeTxt.Text = "March 1, 2017 (Wednesday)";
             this.realtimeTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox2
+            // nextDayBtn
             // 
-            this.pictureBox2.Image = global::BlinkBlink_EyeJoah.Properties.Resources.rightArrow;
-            this.pictureBox2.Location = new System.Drawing.Point(460, 50);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 33;
-            this.pictureBox2.TabStop = false;
+            this.nextDayBtn.Image = global::BlinkBlink_EyeJoah.Properties.Resources.rightArrow;
+            this.nextDayBtn.Location = new System.Drawing.Point(460, 50);
+            this.nextDayBtn.Name = "nextDayBtn";
+            this.nextDayBtn.Size = new System.Drawing.Size(30, 20);
+            this.nextDayBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.nextDayBtn.TabIndex = 33;
+            this.nextDayBtn.TabStop = false;
+            this.nextDayBtn.Click += new System.EventHandler(this.nextDayBtn_Click);
             // 
-            // pictureBox1
+            // beforeDayBtn
             // 
-            this.pictureBox1.Image = global::BlinkBlink_EyeJoah.Properties.Resources.leftArrow;
-            this.pictureBox1.Location = new System.Drawing.Point(120, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
+            this.beforeDayBtn.Image = global::BlinkBlink_EyeJoah.Properties.Resources.leftArrow;
+            this.beforeDayBtn.Location = new System.Drawing.Point(120, 50);
+            this.beforeDayBtn.Name = "beforeDayBtn";
+            this.beforeDayBtn.Size = new System.Drawing.Size(30, 20);
+            this.beforeDayBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.beforeDayBtn.TabIndex = 34;
+            this.beforeDayBtn.TabStop = false;
+            this.beforeDayBtn.Click += new System.EventHandler(this.beforeDayBtn_Click);
             // 
             // pictureBox3
             // 
@@ -139,6 +141,7 @@
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 36;
             this.monthCalendar1.Visible = false;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // Control2_Blinking
             // 
@@ -146,8 +149,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.beforeDayBtn);
+            this.Controls.Add(this.nextDayBtn);
             this.Controls.Add(this.realtimeTxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
@@ -156,8 +159,8 @@
             this.Controls.Add(this.chartPanel1);
             this.Name = "Control2_Blinking";
             this.Size = new System.Drawing.Size(670, 386);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nextDayBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beforeDayBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,8 +174,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox realtimeTxt;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox nextDayBtn;
+        private System.Windows.Forms.PictureBox beforeDayBtn;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
     }

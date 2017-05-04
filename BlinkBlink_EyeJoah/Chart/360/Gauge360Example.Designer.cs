@@ -35,8 +35,8 @@
             this.actualUsage = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.usageLabel = new System.Windows.Forms.Label();
+            this.breakLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -106,27 +106,26 @@
             this.label4.Size = new System.Drawing.Size(110, 36);
             this.label4.TabIndex = 18;
             this.label4.Text = "120-15";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label2
+            // usageLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(595, 178);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 29);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "86 min";
+            this.usageLabel.AutoSize = true;
+            this.usageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usageLabel.Location = new System.Drawing.Point(595, 178);
+            this.usageLabel.Name = "usageLabel";
+            this.usageLabel.Size = new System.Drawing.Size(90, 29);
+            this.usageLabel.TabIndex = 19;
+            this.usageLabel.Text = "86 min";
             // 
-            // label5
+            // breakLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(573, 387);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 29);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "18 min";
+            this.breakLabel.AutoSize = true;
+            this.breakLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breakLabel.Location = new System.Drawing.Point(573, 387);
+            this.breakLabel.Name = "breakLabel";
+            this.breakLabel.Size = new System.Drawing.Size(90, 29);
+            this.breakLabel.TabIndex = 20;
+            this.breakLabel.Text = "18 min";
             // 
             // label6
             // 
@@ -145,8 +144,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(774, 439);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.breakLabel);
+            this.Controls.Add(this.usageLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.actualUsage);
@@ -173,8 +172,8 @@
         private System.Windows.Forms.Label actualUsage;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label usageLabel;
+        private System.Windows.Forms.Label breakLabel;
         private System.Windows.Forms.Label label6;
     }
 }

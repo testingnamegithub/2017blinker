@@ -10,8 +10,12 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
 {
     public partial class DoughnutExample : Form
     {
+        public static DoughnutExample doughnut;
+
         public DoughnutExample()
         {
+            doughnut = this;
+
             InitializeComponent();
 
             //pieChart1.InnerRadius = 40; //내원 반지름
@@ -72,6 +76,37 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                 },
             };
 
+        }
+
+        public void updateBlinkPie(int great, int normal, int bad)
+        {
+            pieChart1.Series = new SeriesCollection
+            {
+                new PieSeries
+                {
+                    Title = "Great",
+                    Values = new ChartValues<double> {great}, //값
+                    //PushOut = 5, //pushout:: 슬라이스와 슬라이스 사이 간격
+                    DataLabels = true,
+                    Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(1,85,157))
+                },
+                new PieSeries
+                {
+                    Title = "Normal",
+                    Values = new ChartValues<double> {normal},
+                    //PushOut = 5,
+                    DataLabels = true,
+                        Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(0,171,188))
+                },
+                new PieSeries
+                {
+                    Title = "Bad",
+                    Values = new ChartValues<double> {bad},
+                    //PushOut = 5,
+                    DataLabels = true,
+                      Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(222,111,39))
+                },
+            };
         }
     }
 }

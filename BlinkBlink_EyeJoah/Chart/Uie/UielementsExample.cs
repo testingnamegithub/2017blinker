@@ -14,8 +14,15 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
 {
     public partial class UielementsExample : Form
     {
+        public static UielementsExample uiElement;
+
+        ColumnSeries barSeries;
+        ChartValues<double> Values;
+
         public UielementsExample()
         {
+            uiElement = this;
+
             InitializeComponent();
 
             //var lineSeries = new LineSeries //꺾은선
@@ -25,7 +32,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             //    StrokeThickness = 3,
             //    PointGeometry = null
             //};
-            var barSeries = new ColumnSeries //막대그래프
+            barSeries = new ColumnSeries //막대그래프
             {
                 Values = new ChartValues<double> { 5, 6, 9, 8, 10 },
                 StrokeThickness = 1.5,
@@ -68,7 +75,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     Text = "WARNING",
                     FontWeight = FontWeights.Bold,
                     FontSize = 16,
-                    Foreground = new SolidColorBrush(Color.FromRgb(187, 56, 53)),
+                    Foreground = new SolidColorBrush(Color.FromRgb(208, 54, 0)),
                     //Opacity = 0.6
                 }
             });
@@ -98,7 +105,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     {
                         Value = 8,
                         //Stroke = Brushes.Crimson,
-                        Stroke=new SolidColorBrush(Color.FromRgb(187,56,53)),
+                        Stroke=new SolidColorBrush(Color.FromRgb(222,111,39)),
                         StrokeThickness = 4,
                         StrokeDashArray = new DoubleCollection(new [] {3d})
                     },
@@ -107,7 +114,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     {
                         //Label = "Good",
                         Value = 8,
-                        SectionWidth = 4,
+                        SectionWidth = 8,
                         Fill = new SolidColorBrush
                         {
                             //Color=Colors.White,
@@ -123,7 +130,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                         SectionWidth = 8,
                         Fill = new SolidColorBrush
                         {
-                            Color = System.Windows.Media.Color.FromRgb(254,132,132),
+                            Color = System.Windows.Media.Color.FromRgb(234,168,101),
                             Opacity = .4
                         }
                     }
@@ -138,10 +145,13 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             //Panel.SetZIndex(lineSeries, 1);
         }
 
-
-        private void X_Click(object sender, EventArgs e)
+        public void updateBlinkBarValue(int aHour, int bHour, int cHour, int dHour, int eHour)
         {
-
+            barSeries.Values = new ChartValues<double> { aHour, bHour, cHour, dHour, eHour };
         }
+
     }
+
+
+
 }

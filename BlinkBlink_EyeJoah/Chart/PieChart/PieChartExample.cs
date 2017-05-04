@@ -52,7 +52,7 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                     DataLabels = true,
                     LabelPoint = labelPoint
                 }
-                
+
             };
 
             pieChart1.LegendLocation = LegendLocation.Bottom;
