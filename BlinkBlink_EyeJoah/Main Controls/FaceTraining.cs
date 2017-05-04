@@ -317,25 +317,25 @@ namespace BlinkBlink_EyeJoah
         //insert data and go to the next form
         private void goNext_Click(object sender, EventArgs e)
         {
-            if (checkNameDup == true)
-            {
-                //insert data in azure database using queries
-                userInfoAzureDB.insertData(nameTxtbox.Text);
+            //if (checkNameDup == true)
+            //{
+            //    //insert data in azure database using queries
+            //    userInfoAzureDB.insertData(nameTxtbox.Text);
 
                 // userName을 Text파일에 저장하기( 덮어쓰기 )
                 File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
                 // MainForm 띄우기
                 showMainForm();
-            }
-            else if (checkNameDup == false)
-            {
-                MessageBox.Show("Check your nickname");
-            }
+            //}
+            //else if (checkNameDup == false)
+            //{
+            //    MessageBox.Show("Check your nickname");
+            //}
         }
         //check id duplication
         private void idCheck_Click(object sender, EventArgs e)
         {
-            userInfoAzureDB.idDupCheck();
+            //userInfoAzureDB.idDupCheck();
         }
 
     }

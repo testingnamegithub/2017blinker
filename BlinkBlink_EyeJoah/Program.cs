@@ -24,8 +24,6 @@ namespace BlinkBlink_EyeJoah
             //Application.Run(new Form1());
             ////else
             Application.Run(new FaceTraining());
-
-            //////////////////////////////////////////////////////////////////////////////////////
         }
     }
 }
