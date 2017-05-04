@@ -87,6 +87,7 @@ namespace BlinkBlink_EyeJoah
             {
                 try
                 {
+                    // 임시
                     _capture = new Capture();
                     _faces = new HaarCascade("haarcascade_frontalface_default.xml");
 
