@@ -42,6 +42,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.registeredUserBtn = new System.Windows.Forms.Button();
             this.nicknameCheckTxt = new System.Windows.Forms.TextBox();
             this.idCheck = new System.Windows.Forms.Button();
             this.goNext = new System.Windows.Forms.Button();
@@ -176,6 +177,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.registeredUserBtn);
             this.panel2.Controls.Add(this.nicknameCheckTxt);
             this.panel2.Controls.Add(this.idCheck);
             this.panel2.Controls.Add(this.goNext);
@@ -189,6 +191,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(890, 517);
             this.panel2.TabIndex = 28;
+            // 
+            // registeredUserBtn
+            // 
+            this.registeredUserBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(149)))), ((int)(((byte)(135)))));
+            this.registeredUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registeredUserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registeredUserBtn.ForeColor = System.Drawing.Color.White;
+            this.registeredUserBtn.Location = new System.Drawing.Point(666, 39);
+            this.registeredUserBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.registeredUserBtn.Name = "registeredUserBtn";
+            this.registeredUserBtn.Size = new System.Drawing.Size(192, 36);
+            this.registeredUserBtn.TabIndex = 32;
+            this.registeredUserBtn.Text = "I\'m a registered user";
+            this.registeredUserBtn.UseVisualStyleBackColor = false;
+            this.registeredUserBtn.Click += new System.EventHandler(this.registeredUserBtn_Click);
             // 
             // nicknameCheckTxt
             // 
@@ -297,5 +314,6 @@
         private System.Windows.Forms.Button goNext;
         private System.Windows.Forms.Button idCheck;
         private System.Windows.Forms.TextBox nicknameCheckTxt;
+        private System.Windows.Forms.Button registeredUserBtn;
     }
 }

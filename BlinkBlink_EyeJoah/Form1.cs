@@ -22,6 +22,8 @@ namespace BlinkBlink_EyeJoah
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
+        public static Form1 mainForm;
+
         public Form1()
         {
             InitializeComponent();
@@ -42,6 +44,7 @@ namespace BlinkBlink_EyeJoah
             //back_home.BackColor = Color.FromArgb(39, 168, 150);
             homeLabel.ForeColor = Color.White;
 
+            mainForm = this;
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -256,5 +259,15 @@ namespace BlinkBlink_EyeJoah
             settingsPanel.BackColor = Color.FromArgb(218, 253, 247);
         }
 
+        //setting userName
+        public void SetUserName(string name)
+        {
+            UserNameLabel.Text = name;
+        }
+        //getting userName
+        public string GetUserName()
+        {
+            return UserNameLabel.Text;
+        }
     }
 }
