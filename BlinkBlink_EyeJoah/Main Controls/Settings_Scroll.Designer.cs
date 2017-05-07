@@ -86,7 +86,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(562, 290);
+            this.groupBox3.Size = new System.Drawing.Size(562, 280);
             this.groupBox3.TabIndex = 58;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Break time notifications";
@@ -96,7 +96,7 @@
             this.min1.AutoSize = true;
             this.min1.Enabled = false;
             this.min1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.min1.Location = new System.Drawing.Point(179, 190);
+            this.min1.Location = new System.Drawing.Point(179, 185);
             this.min1.Name = "min1";
             this.min1.Size = new System.Drawing.Size(43, 25);
             this.min1.TabIndex = 59;
@@ -107,7 +107,7 @@
             this.min2.AutoSize = true;
             this.min2.Enabled = false;
             this.min2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.min2.Location = new System.Drawing.Point(424, 190);
+            this.min2.Location = new System.Drawing.Point(424, 185);
             this.min2.Name = "min2";
             this.min2.Size = new System.Drawing.Size(43, 25);
             this.min2.TabIndex = 30;
@@ -117,7 +117,7 @@
             // 
             this.txt_break.Enabled = false;
             this.txt_break.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_break.Location = new System.Drawing.Point(369, 187);
+            this.txt_break.Location = new System.Drawing.Point(369, 182);
             this.txt_break.Name = "txt_break";
             this.txt_break.Size = new System.Drawing.Size(50, 30);
             this.txt_break.TabIndex = 29;
@@ -126,7 +126,7 @@
             // 
             this.txt_work.Enabled = false;
             this.txt_work.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_work.Location = new System.Drawing.Point(124, 187);
+            this.txt_work.Location = new System.Drawing.Point(124, 182);
             this.txt_work.Name = "txt_work";
             this.txt_work.Size = new System.Drawing.Size(50, 30);
             this.txt_work.TabIndex = 28;
@@ -136,7 +136,7 @@
             this.break2.AutoSize = true;
             this.break2.Enabled = false;
             this.break2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.break2.Location = new System.Drawing.Point(315, 190);
+            this.break2.Location = new System.Drawing.Point(315, 185);
             this.break2.Name = "break2";
             this.break2.Size = new System.Drawing.Size(66, 26);
             this.break2.TabIndex = 27;
@@ -147,7 +147,7 @@
             this.work2.AutoSize = true;
             this.work2.Enabled = false;
             this.work2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.work2.Location = new System.Drawing.Point(70, 190);
+            this.work2.Location = new System.Drawing.Point(70, 185);
             this.work2.Name = "work2";
             this.work2.Size = new System.Drawing.Size(58, 26);
             this.work2.TabIndex = 26;
@@ -158,7 +158,7 @@
             this.check_CustomizeTime.AutoSize = true;
             this.check_CustomizeTime.Enabled = false;
             this.check_CustomizeTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.check_CustomizeTime.Location = new System.Drawing.Point(39, 160);
+            this.check_CustomizeTime.Location = new System.Drawing.Point(39, 155);
             this.check_CustomizeTime.Name = "check_CustomizeTime";
             this.check_CustomizeTime.Size = new System.Drawing.Size(137, 30);
             this.check_CustomizeTime.TabIndex = 25;
@@ -218,7 +218,7 @@
             // 
             this.radiobtn_EyeExercise.AutoSize = true;
             this.radiobtn_EyeExercise.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.radiobtn_EyeExercise.Location = new System.Drawing.Point(14, 240);
+            this.radiobtn_EyeExercise.Location = new System.Drawing.Point(14, 230);
             this.radiobtn_EyeExercise.Name = "radiobtn_EyeExercise";
             this.radiobtn_EyeExercise.Size = new System.Drawing.Size(170, 30);
             this.radiobtn_EyeExercise.TabIndex = 20;
@@ -248,7 +248,7 @@
             this.cb_exercises.Enabled = false;
             this.cb_exercises.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cb_exercises.FormattingEnabled = true;
-            this.cb_exercises.Location = new System.Drawing.Point(303, 240);
+            this.cb_exercises.Location = new System.Drawing.Point(313, 230);
             this.cb_exercises.Margin = new System.Windows.Forms.Padding(4);
             this.cb_exercises.Name = "cb_exercises";
             this.cb_exercises.Size = new System.Drawing.Size(225, 33);
@@ -280,7 +280,7 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(25, 605);
+            this.panel1.Location = new System.Drawing.Point(25, 595);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(546, 23);
             this.panel1.TabIndex = 24;
