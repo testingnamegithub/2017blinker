@@ -49,7 +49,7 @@ namespace BlinkBlink_EyeJoah
 
             SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
 
-            MessageBox.Show(command.ExecuteScalar().ToString());
+            //MessageBox.Show(command.ExecuteScalar().ToString());
             int result = Convert.ToInt32(command.ExecuteScalar());
             DisconnectionToDB();
 
@@ -60,6 +60,7 @@ namespace BlinkBlink_EyeJoah
             else
             {
                 return false;
+
             }
         }
 
