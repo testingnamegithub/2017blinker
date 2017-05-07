@@ -375,7 +375,7 @@ namespace BlinkBlink_EyeJoah
 
             if (InputBox("Registered User Log-in", "Input your nickname.", ref value) == DialogResult.OK)
             {
-                if (login.DuplicationCheck(value)==true) //기존 사용자라면
+                if (login.DuplicationCheck(value)) //기존 사용자라면
                 {
                     // MainForm 띄우기
                     showMainForm();

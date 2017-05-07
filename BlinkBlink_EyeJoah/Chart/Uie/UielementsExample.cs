@@ -34,7 +34,8 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             //};
             barSeries = new ColumnSeries //막대그래프
             {
-                Values = new ChartValues<double> { 5, 6, 9, 8, 10 },
+                //Values = new ChartValues<double> { 5, 6, 9, 8, 10 },
+                Values = new ChartValues<double> { 0, 0, 0, 0, 0 },
                 StrokeThickness = 1.5,
                 PointGeometry = null,
                 MaxColumnWidth = 30,
@@ -103,7 +104,8 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     //warning 점선
                     new AxisSection
                     {
-                        Value = 8,
+                        //Value = 8,
+                        Value = 0,
                         //Stroke = Brushes.Crimson,
                         Stroke=new SolidColorBrush(Color.FromRgb(222,111,39)),
                         StrokeThickness = 4,
@@ -113,7 +115,8 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                         new AxisSection
                     {
                         //Label = "Good",
-                        Value = 8,
+                        //Value = 8,
+                        Value = 0,
                         SectionWidth = 8,
                         Fill = new SolidColorBrush
                         {
@@ -126,6 +129,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     new AxisSection
                     {
                         //Label = "Bad",
+                        //Value = 6,
                         Value = 0,
                         SectionWidth = 8,
                         Fill = new SolidColorBrush

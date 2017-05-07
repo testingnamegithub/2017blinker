@@ -32,7 +32,16 @@ namespace BlinkBlink_EyeJoah
             showDate = DateTime.Now;
 
             //control2_blinking = this;
-            updateBlinkChartByDate(showDate);
+
+            //오늘의 chart 
+            updateTodayBlinkChart();
+        }
+
+        //오늘의 chart
+        private void updateTodayBlinkChart()
+        {
+            DoughnutExample.doughnut.updateBlinkPie(1,2, 3);
+            UielementsExample.uiElement.updateBlinkBarValue(7, 8, 10, 11, 6);
         }
 
         //update realtime text from datetimelabelsettings class
@@ -62,7 +71,6 @@ namespace BlinkBlink_EyeJoah
             pie.AutoScroll = true;
             chartPanel2.Controls.Add(pie);
             pie.Show();
-
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -79,12 +87,9 @@ namespace BlinkBlink_EyeJoah
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            DoughnutExample.doughnut.updateBlinkPie(4, 4, 1);
-            UielementsExample.uiElement.updateBlinkBarValue(8, 8, 9, 10, 11);
             //선택된 날짜 확인
             //MessageBox.Show("Date Selected :"+ monthCalendar1.SelectionRange.Start.Month+" "
             //    + monthCalendar1.SelectionRange.Start.Day+" "+ monthCalendar1.SelectionRange.Start.Year);
-
             updateRealtimeText(monthCalendar1.SelectionRange.Start);
             updateBlinkChartByDate(showDate);
         }
@@ -105,78 +110,57 @@ namespace BlinkBlink_EyeJoah
 
         private void updateBlinkChartByDate(DateTime date)
         {
-            if (date.Day == 30)
-            {
-                DoughnutExample.doughnut.updateBlinkPie(0, 0, 0);
-                UielementsExample.uiElement.updateBlinkBarValue(0, 0, 0, 0, 0);
-            }
-            else if (date.Day == 29)
-            {
-                DoughnutExample.doughnut.updateBlinkPie(0, 0, 0);
-                UielementsExample.uiElement.updateBlinkBarValue(0, 0, 0, 0, 0);
-            }
-            else if (date.Day == 28)
-            {
-                DoughnutExample.doughnut.updateBlinkPie(2, 1, 2);
-                UielementsExample.uiElement.updateBlinkBarValue(5, 6, 9, 8, 10);
-            }
-            else if (date.Day == 27)
-            {
-                DoughnutExample.doughnut.updateBlinkPie(3, 3, 1);
-                UielementsExample.uiElement.updateBlinkBarValue(7, 8, 9, 8, 10);
-            }
-            else if (date.Day == 26)
-            {
-                DoughnutExample.doughnut.updateBlinkPie(2, 2, 1);
-                UielementsExample.uiElement.updateBlinkBarValue(5, 8, 9, 7, 11);
-            }
-            else if (date.Day == 25)
-            {
-                DoughnutExample.doughnut.updateBlinkPie(3, 4, 4);
-                UielementsExample.uiElement.updateBlinkBarValue(7, 8, 7, 10, 7);
-            }
-            else if (date.Day == 24)
-            {
-                DoughnutExample.doughnut.updateBlinkPie(4, 3, 1);
-                UielementsExample.uiElement.updateBlinkBarValue(9, 11, 9, 10, 8);
-            }
-            else if (date.Day == 23)
-            {
-                DoughnutExample.doughnut.updateBlinkPie(2, 4, 1);
-                UielementsExample.uiElement.updateBlinkBarValue(8, 8, 9, 8, 6);
-            }
-            else if (date.Day == 22)
-            {
-                DoughnutExample.doughnut.updateBlinkPie(1, 4, 1);
-                UielementsExample.uiElement.updateBlinkBarValue(6, 8, 9, 6, 10);
-            }
-            else if (date.Day == 21)
-            {
-                DoughnutExample.doughnut.updateBlinkPie(3, 4, 1);
-                UielementsExample.uiElement.updateBlinkBarValue(8, 8, 6, 10, 11);
-            }
+            //if (date.Day == 7)
+            //{
+            //    DoughnutExample.doughnut.updateBlinkPie(0, 0, 0);
+            //    UielementsExample.uiElement.updateBlinkBarValue(0, 0, 0, 0, 0);
+            //}
+            //else if (date.Day == 29)
+            //{
+            //    DoughnutExample.doughnut.updateBlinkPie(0, 0, 0);
+            //    UielementsExample.uiElement.updateBlinkBarValue(0, 0, 0, 0, 0);
+            //}
+            //else if (date.Day == 28)
+            //{
+            //    DoughnutExample.doughnut.updateBlinkPie(2, 1, 2);
+            //    UielementsExample.uiElement.updateBlinkBarValue(5, 6, 9, 8, 10);
+            //}
+            //else if (date.Day == 27)
+            //{
+            //    DoughnutExample.doughnut.updateBlinkPie(3, 3, 1);
+            //    UielementsExample.uiElement.updateBlinkBarValue(7, 8, 9, 8, 10);
+            //}
+            //else if (date.Day == 26)
+            //{
+            //    DoughnutExample.doughnut.updateBlinkPie(2, 2, 1);
+            //    UielementsExample.uiElement.updateBlinkBarValue(5, 8, 9, 7, 11);
+            //}
+            //else if (date.Day == 25)
+            //{
+            //    DoughnutExample.doughnut.updateBlinkPie(3, 4, 4);
+            //    UielementsExample.uiElement.updateBlinkBarValue(7, 8, 7, 10, 7);
+            //}
+            //else if (date.Day == 24)
+            //{
+            //    DoughnutExample.doughnut.updateBlinkPie(4, 3, 1);
+            //    UielementsExample.uiElement.updateBlinkBarValue(9, 11, 9, 10, 8);
+            //}
+            //else if (date.Day == 23)
+            //{
+            //    DoughnutExample.doughnut.updateBlinkPie(2, 4, 1);
+            //    UielementsExample.uiElement.updateBlinkBarValue(8, 8, 9, 8, 6);
+            //}
+            //else if (date.Day == 22)
+            //{
+            //    DoughnutExample.doughnut.updateBlinkPie(1, 4, 1);
+            //    UielementsExample.uiElement.updateBlinkBarValue(6, 8, 9, 6, 10);
+            //}
+            //else if (date.Day == 21)
+            //{
+            //    DoughnutExample.doughnut.updateBlinkPie(3, 4, 1);
+            //    UielementsExample.uiElement.updateBlinkBarValue(8, 8, 6, 10, 11);
+            //}
         }
-
-        //private void chartPanel1_Paint(object sender, PaintEventArgs e)
-        //{
-        //    chartPanel1.Controls.Clear();
-        //    UielementsExample sec = new UielementsExample();
-        //    sec.TopLevel = false;
-        //    sec.AutoScroll = true;
-        //    chartPanel1.Controls.Add(sec);
-        //    sec.Show();
-
-        //    PieChartExample pie = new PieChartExample();
-        //    pie.TopLevel = false;
-        //    pie.AutoScroll = true;
-        //    chartPanel1.Controls.Add(pie);
-        //    pie.Show();
-        //}
-        //private void chartPanel2_Paint(object sender, PaintEventArgs e)
-        //{
-
-        //}
-
 
     }
 }

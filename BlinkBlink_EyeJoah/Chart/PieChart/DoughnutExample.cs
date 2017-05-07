@@ -26,7 +26,7 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                 new PieSeries
                 {
                     Title = "Great",
-                    Values = new ChartValues<double> {2}, //값
+                    Values = new ChartValues<double> {0}, //값
                     //PushOut = 5, //pushout:: 슬라이스와 슬라이스 사이 간격
                     DataLabels = true,
                     Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(1,85,157))
@@ -43,7 +43,7 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                 new PieSeries
                 {
                     Title = "Normal",
-                    Values = new ChartValues<double> {1},
+                    Values = new ChartValues<double> {0},
                     //PushOut = 5,
                     DataLabels = true,
                         Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(0,171,188))
@@ -60,7 +60,7 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                 new PieSeries
                 {
                     Title = "Bad",
-                    Values = new ChartValues<double> {2},
+                    Values = new ChartValues<double> {0},
                     //PushOut = 5,
                     DataLabels = true,
                       Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(222,111,39))
