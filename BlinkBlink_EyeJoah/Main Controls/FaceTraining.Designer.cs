@@ -202,6 +202,7 @@
             this.nicknameCheckTxt.Size = new System.Drawing.Size(283, 21);
             this.nicknameCheckTxt.TabIndex = 31;
             this.nicknameCheckTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nicknameCheckTxt.TextChanged += new System.EventHandler(this.nicknameCheckTxt_TextChanged);
             // 
             // idCheck
             // 

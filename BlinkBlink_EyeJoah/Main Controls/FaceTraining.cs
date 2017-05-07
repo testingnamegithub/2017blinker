@@ -51,6 +51,8 @@ namespace BlinkBlink_EyeJoah
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
+        [DllImportAttribute("user32.dll")]
+        public static extern bool HideCaret(IntPtr hWnd);
         #endregion
         #region WebCam load에 대한 변수
         private FilterInfoCollection VideoCaptureDevices;
@@ -98,6 +100,7 @@ namespace BlinkBlink_EyeJoah
 
             //access controls from another classes
             faceTraining = this;
+
         }
 
         private void FrameGrabber(object sender, EventArgs e)
@@ -179,6 +182,7 @@ namespace BlinkBlink_EyeJoah
         {
             nameTxtbox.Clear();
             nameTxtbox.ForeColor = Color.Black;
+            nicknameCheckTxt.Clear();
         }
 
         private void loadWebCamDevice()
@@ -223,7 +227,6 @@ namespace BlinkBlink_EyeJoah
                 pictureBox1.Image = captureBitmap;
 
                 MessageBox.Show(nameTxtbox.Text + "´s face was detected and registered. :)", "Photo Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             catch
             {
@@ -289,8 +292,6 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
-        //access UserInfoAzureDb
-        UserInfoAzureDB userInfoAzureDB = UserInfoAzureDB.getInstance();
         //access controls from another classes
         public static FaceTraining faceTraining;
 
@@ -299,40 +300,66 @@ namespace BlinkBlink_EyeJoah
         {
             checkNameDup = boolValue;
         }
+
         //update nicknameCheckText
         public void updateCheckText(String message, Color color)
         {
             nicknameCheckTxt.Text = message;
             nicknameCheckTxt.ForeColor = color;
         }
+
         //return nickname textbox text
         public String nameText()
         {
             return nameTxtbox.Text;
         }
 
+        LocalDatabase localDB = LocalDatabase.getInstance();
+
         //insert data and go to the next form
         private void goNext_Click(object sender, EventArgs e)
         {
-            //if (checkNameDup == true)
-            //{
-            //    //insert data in azure database using queries
-            //    userInfoAzureDB.insertData(nameTxtbox.Text);
+            if (nicknameCheckTxt.Text.Equals("닉네임 생성 가능"))
+            {
+                //User이름의 database 생성(1회만)
+                localDB.CreateDatabase(nameTxtbox.Text);
 
-            //// userName을 Text파일에 저장하기( 덮어쓰기 )
-            File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
-            // MainForm 띄우기
-            showMainForm();
-            //}
-            //else if (checkNameDup == false)
-            //{
-            //    MessageBox.Show("Check your nickname");
-            //}
+                //// userName을 Text파일에 저장하기( 덮어쓰기 )
+                File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
+                // MainForm 띄우기
+                showMainForm();
+            }
+            else
+            {
+                MessageBox.Show("닉네임을 등록하세요.");
+            }
+            
         }
-        //check id duplication
+
+        NicknameCheck login = NicknameCheck.getInstance();
+
+        private void nicknameCheckTxt_TextChanged(object sender, EventArgs e)
+        {
+            HideCaret(nicknameCheckTxt.Handle);
+        }
+
+        //ID 검사
         private void idCheck_Click(object sender, EventArgs e)
         {
-            //userInfoAzureDB.idDupCheck();
+            if(login.DuplicationCheck(nameTxtbox.Text))
+            {
+                updateCheckText("닉네임이 이미 있습니다.", Color.Red);
+                return;
+            }
+            else if(login.CheckingIdEngNum(nameTxtbox.Text)==false || login.CheckingIdLength(nameTxtbox.Text)==false)
+            {
+                updateCheckText("영문과 숫자 조합으로 6~12자", Color.Red);
+                return;
+            }
+            else
+            {
+                updateCheckText("닉네임 생성 가능", Color.Blue);
+            }
         }
 
     }
