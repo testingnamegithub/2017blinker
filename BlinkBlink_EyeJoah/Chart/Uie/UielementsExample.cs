@@ -104,8 +104,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     //warning 점선
                     new AxisSection
                     {
-                        //Value = 8,
-                        Value = 0,
+                        Value = 8,
                         //Stroke = Brushes.Crimson,
                         Stroke=new SolidColorBrush(Color.FromRgb(222,111,39)),
                         StrokeThickness = 4,
@@ -115,8 +114,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                         new AxisSection
                     {
                         //Label = "Good",
-                        //Value = 8,
-                        Value = 0,
+                        Value = 8,
                         SectionWidth = 8,
                         Fill = new SolidColorBrush
                         {
@@ -129,7 +127,6 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     new AxisSection
                     {
                         //Label = "Bad",
-                        //Value = 6,
                         Value = 0,
                         SectionWidth = 8,
                         Fill = new SolidColorBrush

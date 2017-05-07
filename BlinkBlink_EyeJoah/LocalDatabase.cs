@@ -42,6 +42,27 @@ namespace BlinkBlink_EyeJoah
                 return false;
         }
 
+        public bool TableExists(string tableName, string dbName)
+        {
+            ConnectionToDB(dbName);
+            string sql = "SELECT COUNT(*) FROM sqlite_master WHERE name = '" + tableName + "'";
+
+            SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
+
+            MessageBox.Show(command.ExecuteScalar().ToString());
+            int result = Convert.ToInt32(command.ExecuteScalar());
+            DisconnectionToDB();
+
+            if (result == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void CreateTable(string tableName)
         {
             string sql = "create table if not exists " + tableName + " (idTime int, blinkTimes double, UNIQUE(idTime))"; //존재하지 않는 경우에만 테이블 추가
@@ -55,7 +76,8 @@ namespace BlinkBlink_EyeJoah
         {
             ConnectionToDB(dbName);
 
-            CreateTable(tableName); //테이블 생성(테이블 존재하지 않을 경우에만 생성)
+            //테이블 생성(테이블 존재하지 않을 경우에만 생성)
+            CreateTable(tableName);
 
             string sql = "insert or ignore into " + tableName + " (idTime, blinkTimes) values (" + idTime + "," + blinkTimes + ")";
             SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
@@ -64,19 +86,23 @@ namespace BlinkBlink_EyeJoah
             DisconnectionToDB();
         }
 
-        //public void ReadAllDataFromTable(string dbName, string tableName)
-        //{
-        //    ConnectionToDB(dbName);
+        public void ReadAllDataFromTable(ref int [,] arrayData, string dbName, string tableName)
+        {
+            ConnectionToDB(dbName);
 
-        //    string sql = "select * from " + tableName + " order by idTime asc"; //오름차순
-        //    SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
-        //    SQLiteDataReader reader = command.ExecuteReader();
+            string sql = "select * from " + tableName + " order by idTime asc"; //오름차순
+            SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
+            SQLiteDataReader reader = command.ExecuteReader();
 
-        //    while (reader.Read())
-        //        Form1.form.UpdateText("idTime: " + reader["idTime"] + "  blinkTimes: " + reader["blinkTimes"]);
+            int i = 0;
+            while (reader.Read())
+            {
+                arrayData[i++, 1] = Convert.ToInt32(reader["blinkTimes"]);
+            }
+            //Form1.form.UpdateText("idTime: " + reader["idTime"] + "  blinkTimes: " + reader["blinkTimes"]);
 
-        //    DisconnectionToDB();
-        //}
+            DisconnectionToDB();
+        }
 
         //public void SelectTables(string dbName)
         //{

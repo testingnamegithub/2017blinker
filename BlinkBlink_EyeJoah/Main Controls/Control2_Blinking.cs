@@ -19,12 +19,15 @@ namespace BlinkBlink_EyeJoah
         //public static Control2_Blinking control2_blinking;
 
         public DateTime showDate; //현재 화면에 보여주고 있는 DateTime
+        LocalDatabase localDB;
+        string tableTypeName;
 
         public Control2_Blinking()
         {
             InitializeComponent();
             makeChart1();
             makeChart2();
+            localDB = LocalDatabase.getInstance();
             //setRealDate();
 
             //update realtime text from datetimelabelsettings class
@@ -33,16 +36,33 @@ namespace BlinkBlink_EyeJoah
 
             //control2_blinking = this;
 
+            //inserting data sm5duck
+            insertingDataToSm5duck();
+
             //오늘의 chart 
-            updateTodayBlinkChart();
+            //updateTodayBlinkChart();
+
+            updateBlinkChartByDate(showDate);
         }
 
-        //오늘의 chart
-        private void updateTodayBlinkChart()
+        private void insertingDataToSm5duck()
         {
-            DoughnutExample.doughnut.updateBlinkPie(1,2, 3);
-            UielementsExample.uiElement.updateBlinkBarValue(7, 8, 10, 11, 6);
+            if(Form1.mainForm.GetUserName().Equals("sm5duck"))
+            {
+                localDB.InsertDataToTable("sm5duck", "d20170506", 15, 6);
+                localDB.InsertDataToTable("sm5duck", "d20170506", 16, 8);
+                localDB.InsertDataToTable("sm5duck", "d20170506", 17, 11);
+                localDB.InsertDataToTable("sm5duck", "d20170506", 18, 9);
+                localDB.InsertDataToTable("sm5duck", "d20170506", 19, 11);
+            }
         }
+
+        ////오늘의 chart
+        //private void updateTodayBlinkChart()
+        //{
+        //    DoughnutExample.doughnut.updateBlinkPie(1,1, 1);
+        //    UielementsExample.uiElement.updateBlinkBarValue(7, 8, 10, 11, 6);
+        //}
 
         //update realtime text from datetimelabelsettings class
         private void updateRealtimeText(DateTime date)
@@ -110,56 +130,24 @@ namespace BlinkBlink_EyeJoah
 
         private void updateBlinkChartByDate(DateTime date)
         {
-            //if (date.Day == 7)
-            //{
-            //    DoughnutExample.doughnut.updateBlinkPie(0, 0, 0);
-            //    UielementsExample.uiElement.updateBlinkBarValue(0, 0, 0, 0, 0);
-            //}
-            //else if (date.Day == 29)
-            //{
-            //    DoughnutExample.doughnut.updateBlinkPie(0, 0, 0);
-            //    UielementsExample.uiElement.updateBlinkBarValue(0, 0, 0, 0, 0);
-            //}
-            //else if (date.Day == 28)
-            //{
-            //    DoughnutExample.doughnut.updateBlinkPie(2, 1, 2);
-            //    UielementsExample.uiElement.updateBlinkBarValue(5, 6, 9, 8, 10);
-            //}
-            //else if (date.Day == 27)
-            //{
-            //    DoughnutExample.doughnut.updateBlinkPie(3, 3, 1);
-            //    UielementsExample.uiElement.updateBlinkBarValue(7, 8, 9, 8, 10);
-            //}
-            //else if (date.Day == 26)
-            //{
-            //    DoughnutExample.doughnut.updateBlinkPie(2, 2, 1);
-            //    UielementsExample.uiElement.updateBlinkBarValue(5, 8, 9, 7, 11);
-            //}
-            //else if (date.Day == 25)
-            //{
-            //    DoughnutExample.doughnut.updateBlinkPie(3, 4, 4);
-            //    UielementsExample.uiElement.updateBlinkBarValue(7, 8, 7, 10, 7);
-            //}
-            //else if (date.Day == 24)
-            //{
-            //    DoughnutExample.doughnut.updateBlinkPie(4, 3, 1);
-            //    UielementsExample.uiElement.updateBlinkBarValue(9, 11, 9, 10, 8);
-            //}
-            //else if (date.Day == 23)
-            //{
-            //    DoughnutExample.doughnut.updateBlinkPie(2, 4, 1);
-            //    UielementsExample.uiElement.updateBlinkBarValue(8, 8, 9, 8, 6);
-            //}
-            //else if (date.Day == 22)
-            //{
-            //    DoughnutExample.doughnut.updateBlinkPie(1, 4, 1);
-            //    UielementsExample.uiElement.updateBlinkBarValue(6, 8, 9, 6, 10);
-            //}
-            //else if (date.Day == 21)
-            //{
-            //    DoughnutExample.doughnut.updateBlinkPie(3, 4, 1);
-            //    UielementsExample.uiElement.updateBlinkBarValue(8, 8, 6, 10, 11);
-            //}
+            tableTypeName = "d" + date.Year + date.Month.ToString("00") + date.Day.ToString("00");
+
+            int[,] blinkDataArray = new int [5,2];
+
+            if(localDB.TableExists(tableTypeName,Form1.mainForm.GetUserName())) //테이블 있으면
+            {
+                localDB.ReadAllDataFromTable(ref blinkDataArray, Form1.mainForm.GetUserName(), tableTypeName);
+
+                DoughnutExample.doughnut.updateBlinkPie(0, 0, 0);
+                UielementsExample.uiElement.updateBlinkBarValue(blinkDataArray[0,1], blinkDataArray[1, 1],
+                                         blinkDataArray[2, 1], blinkDataArray[3, 1], blinkDataArray[4, 1]);
+            }
+            else //테이블 없으면
+            {
+                DoughnutExample.doughnut.updateBlinkPie(0, 0, 0);
+                UielementsExample.uiElement.updateBlinkBarValue(0, 0, 0, 0, 0);
+            }
+            
         }
 
     }
