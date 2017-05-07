@@ -372,11 +372,19 @@ namespace BlinkBlink_EyeJoah
         private void registeredUserBtn_Click(object sender, EventArgs e)
         {
             string value = "val";
-            if (InputBox("Registered User Login", "Input your nickname.", ref value) == DialogResult.OK)
+
+            if (InputBox("Registered User Log-in", "Input your nickname.", ref value) == DialogResult.OK)
             {
-                // MainForm 띄우기
-                showMainForm();
-                Form1.mainForm.SetUserName(value);
+                if (login.DuplicationCheck(value)==true) //기존 사용자라면
+                {
+                    // MainForm 띄우기
+                    showMainForm();
+                    Form1.mainForm.SetUserName(value);
+                }
+                else
+                {
+                    MessageBox.Show("등록된 사용자가 아닙니다.");
+                }
             }
         }
 

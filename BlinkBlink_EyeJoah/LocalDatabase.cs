@@ -23,12 +23,12 @@ namespace BlinkBlink_EyeJoah
 
         private SQLiteConnection dbConnection;
 
+        //데이터베이스 sqlite파일 생성(bin-x64-Debug)
         public void CreateDatabase(string dbName)
         {
             //if (!File.Exists(Form1.form.dbName+".sqlite"))
             //{
             SQLiteConnection.CreateFile(dbName + ".sqlite");
-            //MessageBox.Show("bin-debug폴더 안에 만들었쏘");
             //}
         }
 
