@@ -23,7 +23,6 @@ namespace BlinkBlink_EyeJoah
         public static extern bool ReleaseCapture();
 
         public static Form1 mainForm;
-
         public Form1()
         {
             InitializeComponent();

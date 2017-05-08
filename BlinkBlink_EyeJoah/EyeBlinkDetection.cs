@@ -2,19 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 using Emgu.CV;
-using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
-using Emgu.CV.VideoSurveillance;
-using System.Threading;
 
 using AForge;
 using AForge.Imaging;
@@ -101,6 +95,9 @@ namespace BlinkBlink_EyeJoah
                     worker.DoWork += new DoWorkEventHandler(worker_DoWork);
                     worker.ProgressChanged += new ProgressChangedEventHandler(worker_ProgressChanged);
                     worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
+                    
+                    Console.WriteLine("Press Enter to exit");
+                    Console.ReadLine();
                 }
                 catch (NullReferenceException excpt) { }
             }
@@ -271,6 +268,7 @@ namespace BlinkBlink_EyeJoah
             if (EyeBlinkDetection.catchBlackPixel.Equals(true))
             {
                 // Tresholdvalue =  Label에 투영시킬 변수 
+
                 TV = catchThreshold;
 
                 // 이 동작을 3번 ㅇ
@@ -288,13 +286,15 @@ namespace BlinkBlink_EyeJoah
 
                 // catchThreshold와 평균 Threshold값을 비교하여 눈 깜빡임 detect
                 // 만약 직전에도 이 값일 경우엔 Pass 
-                if (catchThreshold > averageThresholdValue.Average() + 9 &&
-                    catchThreshold < averageThresholdValue.Average() + 25)
+                if (catchThreshold > averageThresholdValue.Average() + 7 &&
+                    catchThreshold < averageThresholdValue.Average() + 20)
                 {
                     if (!catchBlink)
                     {
                         blinkNum++;
                         catchBlink = true;
+                        Control1_Home.blinkTimer.Stop();
+                        Control1_Home.blinkTimer.Start();
                         eyeBlinkNumText.Text = blinkNum.ToString();
                     }
                     else
@@ -307,7 +307,7 @@ namespace BlinkBlink_EyeJoah
                 {
                     catchBlink = false;
                 }
-
+                
                 //label2.Text = ((double)prevThresholdValue / (double)catchThreshold).ToString();
                 return;
             }

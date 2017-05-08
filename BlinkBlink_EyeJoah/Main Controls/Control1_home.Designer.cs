@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control1_Home));
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.BlinkTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // panel4
@@ -45,6 +47,11 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.label1.Name = "label1";
+            // 
+            // BlinkTimer
+            // 
+            this.BlinkTimer.Interval = 7000;
+            this.BlinkTimer.Tick += new System.EventHandler(this.BlinkTimer_Tick);
             // 
             // Control1_Home
             // 
@@ -63,5 +70,6 @@
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer BlinkTimer;
     }
 }
