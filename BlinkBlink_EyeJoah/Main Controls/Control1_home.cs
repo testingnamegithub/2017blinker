@@ -41,7 +41,9 @@ namespace BlinkBlink_EyeJoah
         private void BlinkTimer_Tick(object sender, EventArgs e)
         {
             // 여기다가 넣어주면 댐
-            MessageBox.Show("7초동안 눈을 한 번도 안 깜빡였네");
+            //MessageBox.Show("7초동안 눈을 한 번도 안 깜빡였네");
+            //////////////////////
+
         }
     }
 }
