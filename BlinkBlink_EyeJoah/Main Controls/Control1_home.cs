@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BlinkBlink_EyeJoah.Chart.ConstantChange;
+using System.Threading;
 
 namespace BlinkBlink_EyeJoah
 {
     public partial class Control1_Home : UserControl
     {
+        public static Boolean convertOriginalColor = false;
+        ScreenColorChange colorChange;
         ConstantChange con;
-        public static Timer blinkTimer;
+        public static System.Windows.Forms.Timer blinkTimer;
         public Control1_Home()
         {
             InitializeComponent();
@@ -24,6 +27,8 @@ namespace BlinkBlink_EyeJoah
             con.AutoScroll = true;
             blinkTimer = BlinkTimer;
             blinkTimer.Start();
+
+            colorChange = ScreenColorChange.getInstance();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -40,10 +45,13 @@ namespace BlinkBlink_EyeJoah
 
         private void BlinkTimer_Tick(object sender, EventArgs e)
         {
-            // 여기다가 넣어주면 댐
-            //MessageBox.Show("7초동안 눈을 한 번도 안 깜빡였네");
-            //////////////////////
+            convertOriginalColor = true;
 
+            colorChange.changeScreenColor("color");
+
+            Thread.Sleep(3000);
+
+            colorChange.changeScreenOriginal();
         }
     }
 }
