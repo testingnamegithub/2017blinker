@@ -78,6 +78,7 @@ namespace BlinkBlink_EyeJoah
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+            showDate = monthCalendar1.SelectionRange.Start.Date;
             UpdateUsageChartByDate(showDate);
 
             //선택된 날짜 확인

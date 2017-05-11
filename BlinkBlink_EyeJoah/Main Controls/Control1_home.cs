@@ -47,11 +47,11 @@ namespace BlinkBlink_EyeJoah
         {
             convertOriginalColor = true;
 
-            colorChange.changeScreenColor("color");
+            //colorChange.changeScreenColor("color");
 
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
 
-            colorChange.changeScreenOriginal();
+            //colorChange.changeScreenOriginal();
         }
     }
 }

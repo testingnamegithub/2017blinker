@@ -118,6 +118,7 @@ namespace BlinkBlink_EyeJoah
             //선택된 날짜 확인
             //MessageBox.Show("Date Selected :"+ monthCalendar1.SelectionRange.Start.Month+" "
             //    + monthCalendar1.SelectionRange.Start.Day+" "+ monthCalendar1.SelectionRange.Start.Year);
+            showDate = monthCalendar1.SelectionRange.Start.Date;
             updateRealtimeText(monthCalendar1.SelectionRange.Start);
             updateBlinkChartByDate(showDate);
         }
