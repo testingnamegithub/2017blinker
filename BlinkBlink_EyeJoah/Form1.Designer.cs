@@ -386,9 +386,9 @@
             // 
             this.panelContainer.AutoScroll = true;
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
-            this.panelContainer.Location = new System.Drawing.Point(263, 539);
+            this.panelContainer.Location = new System.Drawing.Point(263, 60);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(867, 71);
+            this.panelContainer.Size = new System.Drawing.Size(867, 550);
             this.panelContainer.TabIndex = 2;
             // 
             // topPanel
@@ -505,12 +505,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1133, 614);
+            this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.rightEyeImageBox);
             this.Controls.Add(this.eyeBlinkText);
             this.Controls.Add(this.leftEyeImageBox);
             this.Controls.Add(this.eyeBlinkNumText);
             this.Controls.Add(this.imageBoxCapturedFrame);
-            this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

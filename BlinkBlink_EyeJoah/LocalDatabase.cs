@@ -64,7 +64,7 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
-        public void CreateTable(string tableName)
+        public void CreateBlinkTable(string tableName)
         {
             string sql = "create table if not exists " + tableName + " (idTime int, blinkTimes double, UNIQUE(idTime))"; //존재하지 않는 경우에만 테이블 추가
 
@@ -73,12 +73,12 @@ namespace BlinkBlink_EyeJoah
         }
 
         //데이터 삽입(테이블 생성 포함)
-        public void InsertDataToTable(string dbName, string tableName, int idTime, double blinkTimes)
+        public void InsertDataBlinkTable(string dbName, string tableName, int idTime, double blinkTimes)
         {
             ConnectionToDB(dbName);
 
             //테이블 생성(테이블 존재하지 않을 경우에만 생성)
-            CreateTable(tableName);
+            CreateBlinkTable(tableName);
 
             string sql = "insert or ignore into " + tableName + " (idTime, blinkTimes) values (" + idTime + "," + blinkTimes + ")";
             SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
@@ -87,7 +87,7 @@ namespace BlinkBlink_EyeJoah
             DisconnectionToDB();
         }
 
-        public void ReadAllDataFromTable(ref int [,] arrayData, string dbName, string tableName)
+        public void ReadDataBlinkTable(ref int [,] arrayBlinkData, string dbName, string tableName)
         {
             ConnectionToDB(dbName);
 
@@ -98,26 +98,54 @@ namespace BlinkBlink_EyeJoah
             int i = 0;
             while (reader.Read())
             {
-                arrayData[i++, 1] = Convert.ToInt32(reader["blinkTimes"]);
+                arrayBlinkData[i++, 1] = Convert.ToInt32(reader["blinkTimes"]);
             }
             //Form1.form.UpdateText("idTime: " + reader["idTime"] + "  blinkTimes: " + reader["blinkTimes"]);
 
             DisconnectionToDB();
         }
 
-        //public void SelectTables(string dbName)
-        //{
-        //    ConnectionToDB(dbName);
+        //work 메뉴
 
-        //    string sql = "select name from BlinkerDB where type='table'";
-        //    SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
-        //    SQLiteDataReader reader = command.ExecuteReader();
+        public void CreateWorkTable(string tableName)
+        {
+            string sql = "create table if not exists " + tableName + " (usageTime int, breakTime int)"; 
 
-        //    while (reader.Read())
-        //        Form1.form.UpdateText("idTime= " + reader["idTime"]);
+            SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
+            command.ExecuteNonQuery();
+        }
 
-        //    DisconnectionToDB();
-        //}
+        //데이터 삽입(테이블 생성 포함)
+        public void InsertDataWorkTable(string dbName, string tableName, int usageTime, int breakTime)
+        {
+            ConnectionToDB(dbName);
+
+            //테이블 생성(테이블 존재하지 않을 경우에만 생성)
+            CreateWorkTable(tableName);
+
+            string sql = "insert or ignore into " + tableName + " (usageTime, breakTime) values (" + usageTime+","+breakTime+ ")";
+            SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
+            command.ExecuteNonQuery();
+
+            DisconnectionToDB();
+        }
+
+        public void ReadDataWorkTable(ref int usageTime, ref int breakTime, string dbName, string tableName)
+        {
+            ConnectionToDB(dbName);
+
+            string sql = "select * from " + tableName; //오름차순
+            SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                usageTime = Convert.ToInt32(reader["usageTime"]);
+                breakTime = Convert.ToInt32(reader["breakTime"]);
+            }
+
+            DisconnectionToDB();
+        }
 
         public void ConnectionToDB(string dbName)
         {

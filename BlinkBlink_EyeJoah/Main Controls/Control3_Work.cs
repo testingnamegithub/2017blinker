@@ -20,16 +20,28 @@ namespace BlinkBlink_EyeJoah
     public partial class Control3_Work : UserControl
     {
         public DateTime showDate; //현재 화면에 보여주고 있는 DateTime
+        LocalDatabase localDB;
+        string tableTypeName;
 
         public Control3_Work()
         {
             InitializeComponent();
             makeChart();
+            localDB = LocalDatabase.getInstance();
 
             //update realtime text from datetimelabelsettings class
             updateRealtimeText(DateTime.Now);
             showDate = DateTime.Now;
-            updateUsageChart(showDate);
+
+            //inserting data sm5duck
+            insertingDataToSm5duck();
+
+            UpdateUsageChartByDate(showDate);
+        }
+
+        private void insertingDataToSm5duck()
+        {
+            localDB.InsertDataWorkTable("sm5duck", "work20170511", 45, 15);
         }
 
         //update realtime text from datetimelabelsettings class
@@ -66,7 +78,7 @@ namespace BlinkBlink_EyeJoah
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            updateUsageChart(showDate);
+            UpdateUsageChartByDate(showDate);
 
             //선택된 날짜 확인
             //MessageBox.Show("Date Selected :"+ monthCalendar1.SelectionRange.Start.Month+" "
@@ -80,67 +92,32 @@ namespace BlinkBlink_EyeJoah
         {
             showDate = showDate.AddDays(1);
             updateRealtimeText(showDate);
-            updateUsageChart(showDate);
+            UpdateUsageChartByDate(showDate);
         }
 
         private void beforeDayBtn_Click(object sender, EventArgs e)
         {
             showDate = showDate.AddDays(-1);
             updateRealtimeText(showDate);
-            updateUsageChart(showDate);
+            UpdateUsageChartByDate(showDate);
         }
 
-        private void updateUsageChart(DateTime date)
+        private void UpdateUsageChartByDate(DateTime date)
         {
-            if (date.Day == 30)
+            tableTypeName = "work" + date.Year + date.Month.ToString("00") + date.Day.ToString("00");
+            int usageTime = 0, breakTime = 0;
+
+            if (localDB.TableExists(tableTypeName, Form1.mainForm.GetUserName())) //테이블 있으면
             {
-                Gauge360Example.gauge360example.updateBreakValue(0);
+                localDB.ReadDataWorkTable(ref usageTime, ref breakTime, Form1.mainForm.GetUserName(), tableTypeName);
+
+                Gauge360Example.gauge360example.updateUsageValue(usageTime);
+                Gauge360Example.gauge360example.updateBreakValue(breakTime);
+            }
+            else //테이블 없으면
+            {
                 Gauge360Example.gauge360example.updateUsageValue(0);
-            }
-            else if (date.Day == 29)
-            {
                 Gauge360Example.gauge360example.updateBreakValue(0);
-                Gauge360Example.gauge360example.updateUsageValue(0);
-            }
-            else if (date.Day == 28)
-            {
-                Gauge360Example.gauge360example.updateBreakValue(86);
-                Gauge360Example.gauge360example.updateUsageValue(18);
-            }
-            else if (date.Day == 27)
-            {
-                Gauge360Example.gauge360example.updateBreakValue(50);
-                Gauge360Example.gauge360example.updateUsageValue(17);
-            }
-            else if (date.Day == 26)
-            {
-                Gauge360Example.gauge360example.updateBreakValue(48);
-                Gauge360Example.gauge360example.updateUsageValue(8);
-            }
-            else if (date.Day == 25)
-            {
-                Gauge360Example.gauge360example.updateBreakValue(95);
-                Gauge360Example.gauge360example.updateUsageValue(10);
-            }
-            else if (date.Day == 24)
-            {
-                Gauge360Example.gauge360example.updateBreakValue(115);
-                Gauge360Example.gauge360example.updateUsageValue(20);
-            }
-            else if (date.Day == 23)
-            {
-                Gauge360Example.gauge360example.updateBreakValue(108);
-                Gauge360Example.gauge360example.updateUsageValue(18);
-            }
-            else if (date.Day == 22)
-            {
-                Gauge360Example.gauge360example.updateBreakValue(88);
-                Gauge360Example.gauge360example.updateUsageValue(7);
-            }
-            else if (date.Day == 21)
-            {
-                Gauge360Example.gauge360example.updateBreakValue(20);
-                Gauge360Example.gauge360example.updateUsageValue(15);
             }
         }
 

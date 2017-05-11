@@ -15,9 +15,6 @@ namespace BlinkBlink_EyeJoah
 {
     public partial class Control2_Blinking : UserControl
     {
-        ////access controls from another classes
-        //public static Control2_Blinking control2_blinking;
-
         public DateTime showDate; //현재 화면에 보여주고 있는 DateTime
         LocalDatabase localDB;
         string tableTypeName;
@@ -28,19 +25,13 @@ namespace BlinkBlink_EyeJoah
             makeChart1();
             makeChart2();
             localDB = LocalDatabase.getInstance();
-            //setRealDate();
 
             //update realtime text from datetimelabelsettings class
             updateRealtimeText(DateTime.Now);
             showDate = DateTime.Now;
 
-            //control2_blinking = this;
-
             //inserting data sm5duck
             insertingDataToSm5duck();
-
-            //오늘의 chart 
-            //updateTodayBlinkChart();
 
             updateBlinkChartByDate(showDate);
         }
@@ -49,20 +40,37 @@ namespace BlinkBlink_EyeJoah
         {
             if(Form1.mainForm.GetUserName().Equals("sm5duck"))
             {
-                localDB.InsertDataToTable("sm5duck", "d20170506", 15, 6);
-                localDB.InsertDataToTable("sm5duck", "d20170506", 16, 8);
-                localDB.InsertDataToTable("sm5duck", "d20170506", 17, 11);
-                localDB.InsertDataToTable("sm5duck", "d20170506", 18, 9);
-                localDB.InsertDataToTable("sm5duck", "d20170506", 19, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170506", 15, 6);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170506", 16, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170506", 17, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170506", 18, 9);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170506", 19, 11);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170509", 16, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170509", 17, 12);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170509", 18, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170509", 19, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170509", 20, 9);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170510", 18, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170510", 19, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170510", 20, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170510", 21, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170510", 22, 9);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170511", 16, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170511", 17, 9);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170511", 18, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170511", 19, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170511", 20, 7);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170512", 19, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170512", 20, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170512", 21, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170512", 22, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170512", 23, 7);
             }
         }
-
-        ////오늘의 chart
-        //private void updateTodayBlinkChart()
-        //{
-        //    DoughnutExample.doughnut.updateBlinkPie(1,1, 1);
-        //    UielementsExample.uiElement.updateBlinkBarValue(7, 8, 10, 11, 6);
-        //}
 
         //update realtime text from datetimelabelsettings class
         private void updateRealtimeText(DateTime date)
@@ -130,14 +138,14 @@ namespace BlinkBlink_EyeJoah
 
         private void updateBlinkChartByDate(DateTime date)
         {
-            tableTypeName = "d" + date.Year + date.Month.ToString("00") + date.Day.ToString("00");
+            tableTypeName = "blink" + date.Year + date.Month.ToString("00") + date.Day.ToString("00");
 
             int[,] blinkDataArray = new int [5,2];
             int normal=0, bad=0, good = 0;
 
             if(localDB.TableExists(tableTypeName,Form1.mainForm.GetUserName())) //테이블 있으면
             {
-                localDB.ReadAllDataFromTable(ref blinkDataArray, Form1.mainForm.GetUserName(), tableTypeName);
+                localDB.ReadDataBlinkTable(ref blinkDataArray, Form1.mainForm.GetUserName(), tableTypeName);
                 for(int i=0;i<5;i++)
                 {
                     if (blinkDataArray[i, 1] > 8)
