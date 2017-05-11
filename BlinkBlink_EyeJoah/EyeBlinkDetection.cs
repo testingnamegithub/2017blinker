@@ -121,11 +121,27 @@ namespace BlinkBlink_EyeJoah
                 //grayscale로 변환( haarcascade를 적용할 땐 회색 화면을 더 잘 잡는다고 함 )
                 Image<Gray, Byte> grayFrame = frame.Convert<Gray, Byte>();
                 grayFrame._EqualizeHist();
+                distanceAlertScreen = DistanceAlertScreencs.Instance;
 
                 // EventHandler 주기마다 Detect한 얼굴 사각형으로 그리기 + 모니터와 가까워지면 알림주기
                 if (!face.Equals(null))
                 {
                     frame.Draw(face.rect, new Bgr(Color.Red), 2);
+
+
+                    if (face.rect.Width > 270)
+                    {
+                        //MessageBox.Show("모니터와 사이가 넓습니다");
+                        //거리알람 이벤트 화면 가져오기
+                        distanceAlertScreen.Show();
+
+                    }
+
+                    else if (face.rect.Width < 280)
+                    {
+                        distanceAlertScreen.Hide();
+                    }
+
 
                     //// 모니터와 가까워 졌을 경우 알림창 띄우기
                     //if (possibleROI_leftEye.Width > 120 && checkDistanceAlertScreen.Equals(false))
