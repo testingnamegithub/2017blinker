@@ -47,7 +47,7 @@ namespace BlinkBlink_EyeJoah
         {
             convertOriginalColor = true;
 
-            //colorChange.changeScreenColor("color");
+            colorChange.changeScreenColor("color");
 
             //Thread.Sleep(3000);
 

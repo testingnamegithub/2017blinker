@@ -68,8 +68,11 @@ namespace BlinkBlink_EyeJoah
             for (int i = 0; i < 530; i++)
             {
                 location = new Point(workingArea.Right - i, workingArea.Bottom - Size.Height - 30);
-                this.Location = location;
-
+                try
+                {
+                    this.Location = location;
+                }
+                catch (Exception except) { }
             }
         }
 

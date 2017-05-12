@@ -54,6 +54,7 @@ namespace BlinkBlink_EyeJoah
         private Control1_Home control1;
         private ConstantChange con;
 
+        ScreenColorChange screenColorChange;
         /* constructor(생성자) */
         public EyeBlinkDetection(Control1_Home control1, Emgu.CV.UI.ImageBox imageBoxCapturedFrame,
                         Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox,
@@ -95,7 +96,8 @@ namespace BlinkBlink_EyeJoah
                     worker.DoWork += new DoWorkEventHandler(worker_DoWork);
                     worker.ProgressChanged += new ProgressChangedEventHandler(worker_ProgressChanged);
                     worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
-                    
+
+                    screenColorChange = ScreenColorChange.getInstance();
                     Console.WriteLine("Press Enter to exit");
                     Console.ReadLine();
                 }
@@ -311,10 +313,12 @@ namespace BlinkBlink_EyeJoah
                         catchBlink = true;
                         Control1_Home.blinkTimer.Stop();
                         Control1_Home.blinkTimer.Start();
+                        screenColorChange.changeScreenOriginal();
                         eyeBlinkNumText.Text = blinkNum.ToString();
                     }
                     else
                     {
+                        screenColorChange.changeScreenOriginal();
                         catchBlink = true;
                     }
 
@@ -323,7 +327,7 @@ namespace BlinkBlink_EyeJoah
                 {
                     catchBlink = false;
                 }
-                
+
                 //label2.Text = ((double)prevThresholdValue / (double)catchThreshold).ToString();
                 return;
             }
