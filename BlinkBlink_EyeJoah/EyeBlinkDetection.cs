@@ -258,6 +258,10 @@ namespace BlinkBlink_EyeJoah
             // catchBlackPixel = true로 변경.
             for (int x = 5; x <= Thimage.Width - 5; x++)
             {
+                // 검은 픽셀 나타나면 반복문 종료
+                if (EyeBlinkDetection.catchBlackPixel.Equals(true))
+                    break;
+
                 for (int y =  5; y <= Thimage.Height - 5; y++)
                 {
                     try
@@ -288,20 +292,13 @@ namespace BlinkBlink_EyeJoah
             if (EyeBlinkDetection.catchBlackPixel.Equals(true))
             {
                 // Tresholdvalue =  Label에 투영시킬 변수 
-
                 TV = catchThreshold;
 
-                // 이 동작을 3번 ㅇ
-                if (averageThresholdValue.Count > 3)
-                {
-                    averageThresholdValue.Add((averageThresholdValue[1] + averageThresholdValue[2]) / 2);
-                    Double doubleValue = averageThresholdValue.Average() - averageThresholdValue.Average() % 10;
-                    int a = (int)doubleValue;
-                    thresholdValue = a - 5;
-                }
-                else
+                // 이 동작을 3번
+                if (averageThresholdValue.Count < 3)
                 {
                     averageThresholdValue.Add(catchThreshold);
+                    return;
                 }
 
                 // catchThreshold와 평균 Threshold값을 비교하여 눈 깜빡임 detect
@@ -326,6 +323,7 @@ namespace BlinkBlink_EyeJoah
                 }
                 else
                 {
+                    averageThresholdValue.Add(catchThreshold);
                     catchBlink = false;
                 }
                 
