@@ -369,7 +369,6 @@
     <EmbeddedResource Include="Main Controls\Settings_Scroll.resx">
       <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
     <None Include="ETC\packages.config" />
     <None Include="MjpegProcessor.winmd" />
     <None Include="packages.config" />
