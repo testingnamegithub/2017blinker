@@ -378,10 +378,10 @@
             // 
             this.panelContainer.AutoScroll = true;
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
-            this.panelContainer.Location = new System.Drawing.Point(184, 374);
+            this.panelContainer.Location = new System.Drawing.Point(184, 119);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(607, 33);
+            this.panelContainer.Size = new System.Drawing.Size(607, 288);
             this.panelContainer.TabIndex = 2;
             // 
             // topPanel

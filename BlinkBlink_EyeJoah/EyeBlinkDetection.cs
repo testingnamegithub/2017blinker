@@ -300,6 +300,10 @@ namespace BlinkBlink_EyeJoah
                     averageThresholdValue.Add(catchThreshold);
                     return;
                 }
+                else if(averageThresholdValue.Count > 300)
+                {
+                    averageThresholdValue.RemoveRange(0, 200);
+                }
 
                 // catchThreshold와 평균 Threshold값을 비교하여 눈 깜빡임 detect
                 // 만약 직전에도 이 값일 경우엔 Pass 
