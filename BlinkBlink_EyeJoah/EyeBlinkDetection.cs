@@ -21,9 +21,8 @@ namespace BlinkBlink_EyeJoah
     class EyeBlinkDetection
     {
         /* Form1 UI 함수 */
-        private Form1 mainForm;
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame, leftEyeImageBox, rightEyeImageBox;
-        private Label thresholdValueText, eyeBlinkNumText;
+        private Label eyeBlinkNumText;
 
         private TrainingData trainingData;
         private DistanceAlertScreencs distanceAlertScreen;
@@ -38,7 +37,6 @@ namespace BlinkBlink_EyeJoah
         private BackgroundWorker worker;        // 얼굴 검출 및 눈 깜빡임 기능을 하는 Thread 변수
         public static int TV = 0;               // TV = Label에 현재 Threshold값 띄어주기 위해 저장하는 변수
 
-        private int blurAmount = 1;             // 블러값 = 1
         private int thresholdValue = 30;        // Threshold 초기값 = 30
         private int prevThresholdValue = 0;
         private int blinkNum = 0;               // 눈 깜빡임 횟수담는 변수
@@ -57,14 +55,12 @@ namespace BlinkBlink_EyeJoah
         ScreenColorChange screenColorChange;
         /* constructor(생성자) */
         public EyeBlinkDetection(Control1_Home control1, Emgu.CV.UI.ImageBox imageBoxCapturedFrame,
-                        Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox,
-                        Label thresholdValue, Label eyeBlinkNum)
+                        Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox, Label eyeBlinkNum)
         {
             this.control1 = control1;
             this.imageBoxCapturedFrame = imageBoxCapturedFrame;
             this.leftEyeImageBox = leftEyeImageBox;
             this.rightEyeImageBox = rightEyeImageBox;
-            this.thresholdValueText = thresholdValue;
             this.eyeBlinkNumText = eyeBlinkNum;
         }
 
@@ -227,8 +223,8 @@ namespace BlinkBlink_EyeJoah
         // 작업 완료 - UI Thread
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            thresholdValueText.Text = TV.ToString();
-
+            eyeBlinkNumText.Text = blinkNum.ToString();
+            //thresholdValueText.Text = TV.ToString();
             //thresholdValueText.Text = possibleROI_leftEye.Width.ToString();
             // constantGraph에 현재 Threshold값 넘겨주기
             con.ShowThresholdValue(TV);
@@ -260,23 +256,29 @@ namespace BlinkBlink_EyeJoah
 
             // 필터링 된 이미지 blur 처리 후 한 픽셀이라도 검은 Pixel이 존재한 다면 
             // catchBlackPixel = true로 변경.
-            for (int x = blurAmount + 5; x <= Thimage.Width - blurAmount; x++)
+            for (int x = 5; x <= Thimage.Width - 5; x++)
             {
-                for (int y = blurAmount + 5; y <= Thimage.Height - blurAmount; y++)
+                for (int y =  5; y <= Thimage.Height - 5; y++)
                 {
                     try
                     {
-                        Color prevX = Thimage.GetPixel(x - blurAmount, y);
-                        Color nextX = Thimage.GetPixel(x + blurAmount, y);
-                        Color prevY = Thimage.GetPixel(x, y - blurAmount);
-                        Color nextY = Thimage.GetPixel(x, y + blurAmount);
-
-                        int avgR = (int)((prevX.R + nextX.R + prevY.R + nextY.R) / 4);
-                        if (avgR < 150)
+                        Color blackPixel = Thimage.GetPixel(x, y);
+                        if( (int)blackPixel.R == 0)
                         {
                             EyeBlinkDetection.catchBlackPixel = true;
                             break;
                         }
+                        //Color prevX = Thimage.GetPixel(x - blurAmount, y);
+                        //Color nextX = Thimage.GetPixel(x + blurAmount, y);
+                        //Color prevY = Thimage.GetPixel(x, y - blurAmount);
+                        //Color nextY = Thimage.GetPixel(x, y + blurAmount);
+
+                        //int avgR = (int)((prevX.R + nextX.R + prevY.R + nextY.R) / 4);
+                        //if (avgR < 150)
+                        //{
+                        //    EyeBlinkDetection.catchBlackPixel = true;
+                        //    break;
+                        //}
                     }
                     catch (Exception) { }
                 }
@@ -314,7 +316,6 @@ namespace BlinkBlink_EyeJoah
                         Control1_Home.blinkTimer.Stop();
                         Control1_Home.blinkTimer.Start();
                         screenColorChange.changeScreenOriginal();
-                        eyeBlinkNumText.Text = blinkNum.ToString();
                     }
                     else
                     {
@@ -327,7 +328,7 @@ namespace BlinkBlink_EyeJoah
                 {
                     catchBlink = false;
                 }
-
+                
                 //label2.Text = ((double)prevThresholdValue / (double)catchThreshold).ToString();
                 return;
             }

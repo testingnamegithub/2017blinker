@@ -36,7 +36,7 @@ namespace BlinkBlink_EyeJoah
 
             /* Eye Blink Detection 감지하는 Class 생성 및 실행 */
             eyeBlink = new EyeBlinkDetection(this.control1, this.imageBoxCapturedFrame, this.leftEyeImageBox,
-                                             this.rightEyeImageBox, this.thresholdValueText, this.eyeBlinkNumText);
+                                             this.rightEyeImageBox, this.eyeBlinkNumText);
             eyeBlink.start_EyeBlink();
 
             homePanel.BackColor = Color.FromArgb(45, 187, 167); //기존 컬러
