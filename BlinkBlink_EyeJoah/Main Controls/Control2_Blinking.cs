@@ -69,6 +69,12 @@ namespace BlinkBlink_EyeJoah
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170512", 21, 8);
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170512", 22, 10);
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170512", 23, 7);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 10, 9);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 11, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 12, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 13, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 14, 9);
             }
         }
 
