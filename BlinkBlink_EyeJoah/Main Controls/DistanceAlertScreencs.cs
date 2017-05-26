@@ -59,8 +59,7 @@ namespace BlinkBlink_EyeJoah
         {
 
         }
-
-
+        
         // Worker Thread가 실제 하는 일
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
