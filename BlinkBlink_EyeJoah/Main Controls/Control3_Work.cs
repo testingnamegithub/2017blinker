@@ -48,7 +48,16 @@ namespace BlinkBlink_EyeJoah
             localDB.InsertDataWorkTable("sm5duck", "work20170511", 45, 15);
             localDB.InsertDataWorkTable("sm5duck", "work20170512", 137, 21);
             localDB.InsertDataWorkTable("sm5duck", "work20170513", 23, 15);
-
+            //new
+            localDB.InsertDataWorkTable("sm5duck", "work20170531", 83, 17);
+            localDB.InsertDataWorkTable("sm5duck", "work20170530", 110, 8);
+            localDB.InsertDataWorkTable("sm5duck", "work20170529", 107, 22);
+            localDB.InsertDataWorkTable("sm5duck", "work20170528", 45, 15);
+            localDB.InsertDataWorkTable("sm5duck", "work20170527", 137, 21);
+            localDB.InsertDataWorkTable("sm5duck", "work20170526", 23, 15);
+            //june
+            localDB.InsertDataWorkTable("sm5duck", "work20170601", 147, 48);
+            localDB.InsertDataWorkTable("sm5duck", "work20170602", 153, 31);
         }
 
         //update realtime text from datetimelabelsettings class

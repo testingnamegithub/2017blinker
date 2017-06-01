@@ -75,6 +75,54 @@ namespace BlinkBlink_EyeJoah
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 12, 11);
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 13, 8);
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 14, 9);
+                //new
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170531", 15, 6);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170531", 16, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170531", 17, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170531", 18, 9);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170531", 19, 11);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170530", 16, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170530", 17, 12);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170530", 18, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170530", 19, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170530", 20, 9);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170529", 18, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170529", 19, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170529", 20, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170529", 21, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170529", 22, 9);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170528", 16, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170528", 17, 9);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170528", 18, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170528", 19, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170528", 20, 7);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170527", 19, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170527", 20, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170527", 21, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170527", 22, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170527", 23, 7);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170526", 10, 9);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170526", 11, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170526", 12, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170526", 13, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170526", 14, 9);
+                //new june
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 17, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 18, 12);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 19, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 20, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 21, 9);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 9, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 10, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 11, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 12, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 13, 9);
             }
         }
 
