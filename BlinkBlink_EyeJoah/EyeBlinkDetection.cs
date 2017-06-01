@@ -21,10 +21,8 @@ namespace BlinkBlink_EyeJoah
     class EyeBlinkDetection
     {
         /* Form1 UI 함수 */
-        private Form1 mainForm;
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame, leftEyeImageBox, rightEyeImageBox;
-        private Label thresholdValueText, eyeBlinkNumText;
-
+        private Label eyeBlinkNumText;
         private TrainingData trainingData;
         private DistanceAlertScreencs distanceAlertScreen;
 
@@ -36,19 +34,21 @@ namespace BlinkBlink_EyeJoah
         private Rectangle possibleROI_rightEye, possibleROI_leftEye;  // 눈 영역을 담고 있는 Rect
 
         private BackgroundWorker worker;        // 얼굴 검출 및 눈 깜빡임 기능을 하는 Thread 변수
-        public static int TV = 0;               // TV = Label에 현재 Threshold값 띄어주기 위해 저장하는 변수
+        private int TV = 0;               // TV = Label에 현재 Threshold값 띄어주기 위해 저장하는 변수
 
-        private int blurAmount = 1;             // 블러값 = 1
-        private int thresholdValue = 30;        // Threshold 초기값 = 30
+        private int thresholdValue = 10;        // Threshold 초기값 = 30
         private int prevThresholdValue = 0;
         private int blinkNum = 0;               // 눈 깜빡임 횟수담는 변수
 
         private List<int> averageThresholdValue;
-        private Boolean detectedUser = false;                   // 감지된 얼굴이 등록되어진 User일 경우를 확인하는 변수
-        public static Boolean catchBlackPixel = false;          // Black Pixel을 발견했다 안했다를 알려주는 변수
-        public static Boolean catchBlink = false;               // Blink 감지를 위한 변수
-        public static Boolean checkDistanceAlertScreen = false; // DistanceAlertScreen 켜져있는 상태인지 아닌지 확인하는 변수 
+        private Boolean catchBlackPixel = false;                 // Black Pixel을 발견했다 안했다를 알려주는 변수
+        private Boolean catchBlink = false;                     // Blink 감지를 위한 변수
         public static Boolean stopIdle = false;
+        private Boolean detectedUser = false;                   // 감지된 얼굴이 등록되어진 User일 경우를 확인하는 변수
+
+        public static Boolean checkDistanceAlertScreen = false; // DistanceAlertScreen 켜져있는 상태인지 아닌지 확인하는 변수
+        private int checkdistance = 270;                        // 거리 초기값 270
+
 
         /* ContantChange 그래프에 관련된 변수 */
         private Control1_Home control1;
@@ -57,14 +57,12 @@ namespace BlinkBlink_EyeJoah
         ScreenColorChange screenColorChange;
         /* constructor(생성자) */
         public EyeBlinkDetection(Control1_Home control1, Emgu.CV.UI.ImageBox imageBoxCapturedFrame,
-                        Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox,
-                        Label thresholdValue, Label eyeBlinkNum)
+                        Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox, Label eyeBlinkNum)
         {
             this.control1 = control1;
             this.imageBoxCapturedFrame = imageBoxCapturedFrame;
             this.leftEyeImageBox = leftEyeImageBox;
             this.rightEyeImageBox = rightEyeImageBox;
-            this.thresholdValueText = thresholdValue;
             this.eyeBlinkNumText = eyeBlinkNum;
         }
 
@@ -84,7 +82,7 @@ namespace BlinkBlink_EyeJoah
                 {
                     // 임시
                     _capture = new Capture();
-                    _faces = new HaarCascade("haarcascade_frontalface_default.xml");
+                    _faces = new HaarCascade("C:\\haarcascade_frontalface_default.xml");
 
                     // 평균 Threadhold값 저장하는 list 생성
                     averageThresholdValue = new List<int>();
@@ -125,37 +123,30 @@ namespace BlinkBlink_EyeJoah
                 grayFrame._EqualizeHist();
                 distanceAlertScreen = DistanceAlertScreencs.Instance;
 
+
+
                 // EventHandler 주기마다 Detect한 얼굴 사각형으로 그리기 + 모니터와 가까워지면 알림주기
                 if (!face.Equals(null))
                 {
                     frame.Draw(face.rect, new Bgr(Color.Red), 2);
 
-
-                    if (face.rect.Width > 270)
+                    if (face.rect.Width > checkdistance)
                     {
-                        //MessageBox.Show("모니터와 사이가 넓습니다");
-                        //거리알람 이벤트 화면 가져오기
-                        distanceAlertScreen.Show();
-
+                        if (checkDistanceAlertScreen == false)
+                        {
+                            distanceAlertScreen.Show();
+                        }
+                        checkDistanceAlertScreen = true;
                     }
 
-                    else if (face.rect.Width < 280)
+                    else if (checkDistanceAlertScreen == true)
                     {
-                        distanceAlertScreen.Hide();
+                        if (face.rect.Width <= checkdistance)
+                        {
+                            distanceAlertScreen.Hide();
+                        }
+                        checkDistanceAlertScreen = false;
                     }
-
-
-                    //// 모니터와 가까워 졌을 경우 알림창 띄우기
-                    //if (possibleROI_leftEye.Width > 120 && checkDistanceAlertScreen.Equals(false))
-                    //{
-                    //    checkDistanceAlertScreen = true;
-                    //    distanceAlertScreen = DistanceAlertScreencs.Instance;
-                    //    distanceAlertScreen.Show();
-                    //}
-                    //else
-                    //{
-
-                    //}
                 }
 
                 // worker 쓰레드 실행
@@ -173,7 +164,7 @@ namespace BlinkBlink_EyeJoah
                         leftEyeImageBox.Image = frame.Copy(possibleROI_leftEye).Convert<Bgr, byte>();
 
                         // 실행하기전 눈 깜빡임을 판단하는 catchBlackPixel 값 false로 초기화
-                        EyeBlinkDetection.catchBlackPixel = false;
+                        catchBlackPixel = false;
                         thresholdEffect(thresholdValue);
                     }
                     catch (ArgumentException expt) { }
@@ -208,7 +199,6 @@ namespace BlinkBlink_EyeJoah
                 Rectangle rightEyeArea = new Rectangle(new System.Drawing.Point(startingLeftEyePointOptimized.X + 5, startingLeftEyePointOptimized.Y + 10),
                                                      new Size(eyeAreaSize.Width - 33, eyeAreaSize.Height - 20));
                 #endregion
-
                 #region 눈 영역 검출한 Rectangle의 크기가 양수일 경우에만 눈 영역 적출하기
                 if (leftEyeArea.Width > 0 && leftEyeArea.Height > 0 && rightEyeArea.Width > 0 && rightEyeArea.Height > 0)
                 {
@@ -227,9 +217,10 @@ namespace BlinkBlink_EyeJoah
         // 작업 완료 - UI Thread
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            thresholdValueText.Text = TV.ToString();
+            //eyeBlinkNumText.Text = blinkNum.ToString(); // UI 변화 지우면 렉 사그라들음
+            //eyeBlinkNumText.Text = TV.ToString();
+            //eyeBlinkNumText.Text = possibleROI_leftEye.Width.ToString();
 
-            //thresholdValueText.Text = possibleROI_leftEye.Width.ToString();
             // constantGraph에 현재 Threshold값 넘겨주기
             con.ShowThresholdValue(TV);
         }
@@ -238,10 +229,8 @@ namespace BlinkBlink_EyeJoah
         public void thresholdEffect(int catchThreshold)
         {
             // Black 픽셀이 잡힌 경우 재귀 함수 빠져나가기
-            if (EyeBlinkDetection.catchBlackPixel.Equals(true))
-            {
+            if (catchBlackPixel.Equals(true))
                 return;
-            }
 
             // 눈 깜빡임을 검출할 눈 영역 Median Blur 필터 적용
             Thimage = (Bitmap)rightEyeImageBox.Image.Bitmap;
@@ -260,21 +249,20 @@ namespace BlinkBlink_EyeJoah
 
             // 필터링 된 이미지 blur 처리 후 한 픽셀이라도 검은 Pixel이 존재한 다면 
             // catchBlackPixel = true로 변경.
-            for (int x = blurAmount + 5; x <= Thimage.Width - blurAmount; x++)
+            for (int x = 5; x <= Thimage.Width - 5; x++)
             {
-                for (int y = blurAmount + 5; y <= Thimage.Height - blurAmount; y++)
+                // 검은 픽셀 나타나면 반복문 종료
+                if (catchBlackPixel.Equals(true))
+                    break;
+
+                for (int y = 5; y <= Thimage.Height - 5; y++)
                 {
                     try
                     {
-                        Color prevX = Thimage.GetPixel(x - blurAmount, y);
-                        Color nextX = Thimage.GetPixel(x + blurAmount, y);
-                        Color prevY = Thimage.GetPixel(x, y - blurAmount);
-                        Color nextY = Thimage.GetPixel(x, y + blurAmount);
-
-                        int avgR = (int)((prevX.R + nextX.R + prevY.R + nextY.R) / 4);
-                        if (avgR < 150)
+                        Color blackPixel = Thimage.GetPixel(x, y);
+                        if ((int)blackPixel.R == 0)
                         {
-                            EyeBlinkDetection.catchBlackPixel = true;
+                            catchBlackPixel = true;
                             break;
                         }
                     }
@@ -283,38 +271,36 @@ namespace BlinkBlink_EyeJoah
             }
 
             // 검은 Pixel 존재 할 경우
-            if (EyeBlinkDetection.catchBlackPixel.Equals(true))
+            if (catchBlackPixel.Equals(true))
             {
                 // Tresholdvalue =  Label에 투영시킬 변수 
-
                 TV = catchThreshold;
 
-                // 이 동작을 3번 ㅇ
-                if (averageThresholdValue.Count > 3)
-                {
-                    averageThresholdValue.Add((averageThresholdValue[1] + averageThresholdValue[2]) / 2);
-                    Double doubleValue = averageThresholdValue.Average() - averageThresholdValue.Average() % 10;
-                    int a = (int)doubleValue;
-                    thresholdValue = a - 5;
-                }
-                else
+                // 이 알고리즘 동작을 3번 이하일 땐 평균 Data 넣어주기
+                if (averageThresholdValue.Count < 3)
                 {
                     averageThresholdValue.Add(catchThreshold);
+                    return;
+                }
+                // Data 값이 500이상이면 0~200까지 Data 지워서 Reset해주기
+                else if (averageThresholdValue.Count > 500)
+                {
+                    averageThresholdValue.RemoveRange(0, 200);
                 }
 
                 // catchThreshold와 평균 Threshold값을 비교하여 눈 깜빡임 detect
                 // 만약 직전에도 이 값일 경우엔 Pass 
-                if (catchThreshold > averageThresholdValue.Average() + 7 &&
+                if (catchThreshold > averageThresholdValue.Average() + 6 &&
                     catchThreshold < averageThresholdValue.Average() + 20)
                 {
                     if (!catchBlink)
                     {
                         blinkNum++;
+                        eyeBlinkNumText.Text = blinkNum.ToString();
                         catchBlink = true;
                         Control1_Home.blinkTimer.Stop();
                         Control1_Home.blinkTimer.Start();
                         screenColorChange.changeScreenOriginal();
-                        eyeBlinkNumText.Text = blinkNum.ToString();
                     }
                     else
                     {
@@ -323,8 +309,11 @@ namespace BlinkBlink_EyeJoah
                     }
 
                 }
+                //눈 깜빡임 인식이 안 됬을 경우엔 평균 Threshold 값만 Add해주고
+                //catchBlink = false
                 else
                 {
+                    averageThresholdValue.Add(catchThreshold);
                     catchBlink = false;
                 }
 
@@ -337,7 +326,12 @@ namespace BlinkBlink_EyeJoah
             {
                 if (catchThreshold < 120)
                 {
-                    catchThreshold += 1;
+                    // 눈 깜빡임 판단하는 평균값을 정하기위한 초반엔 catchThreshold +3 씩 증가시키기(계산량 줄이기 위해서)
+                    if (averageThresholdValue.Count < 3)
+                        catchThreshold += 3;
+                    else
+                        catchThreshold += 1;
+
                     prevThresholdValue = catchThreshold;
                     thresholdEffect(catchThreshold);
                 }
