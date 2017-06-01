@@ -87,6 +87,7 @@ namespace BlinkBlink_EyeJoah
         private void bunifuFlatButton1_Click(object sender, MouseEventArgs e)
         {
             control1.Dock = DockStyle.Fill;
+            Control1_Home.blinkTimer.Start();
             panelContainer.Controls.RemoveAt(0);
             panelContainer.Controls.Add(control1);
             EyeBlinkDetection.stopIdle = false;
@@ -109,6 +110,7 @@ namespace BlinkBlink_EyeJoah
         {
             Control2_Blinking control2 = new Control2_Blinking();
 
+            Control1_Home.blinkTimer.Stop();
             EyeBlinkDetection.stopIdle = true;
             control2.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
@@ -131,6 +133,7 @@ namespace BlinkBlink_EyeJoah
         {
             Control3_Work control3 = new Control3_Work();
 
+            Control1_Home.blinkTimer.Stop();
             EyeBlinkDetection.stopIdle = true;
             control3.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
