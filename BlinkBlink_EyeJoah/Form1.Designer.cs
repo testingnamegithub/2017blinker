@@ -108,6 +108,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(234)))), ((int)(((byte)(228)))));
+            this.panel1.Controls.Add(this.rightEyeImageBox);
+            this.panel1.Controls.Add(this.leftEyeImageBox);
+            this.panel1.Controls.Add(this.eyeBlinkNumText);
             this.panel1.Controls.Add(this.profilePanel);
             this.panel1.Controls.Add(this.settingsPanel);
             this.panel1.Controls.Add(this.workPanel);
@@ -445,7 +448,7 @@
             this.eyeBlinkNumText.BackColor = System.Drawing.Color.Black;
             this.eyeBlinkNumText.Font = new System.Drawing.Font("넥슨 풋볼고딕 B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.eyeBlinkNumText.ForeColor = System.Drawing.Color.Red;
-            this.eyeBlinkNumText.Location = new System.Drawing.Point(372, 87);
+            this.eyeBlinkNumText.Location = new System.Drawing.Point(5, 273);
             this.eyeBlinkNumText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.eyeBlinkNumText.Name = "eyeBlinkNumText";
             this.eyeBlinkNumText.Size = new System.Drawing.Size(28, 30);
@@ -455,9 +458,9 @@
             // rightEyeImageBox
             // 
             this.rightEyeImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rightEyeImageBox.Location = new System.Drawing.Point(559, 267);
+            this.rightEyeImageBox.Location = new System.Drawing.Point(93, 303);
             this.rightEyeImageBox.Name = "rightEyeImageBox";
-            this.rightEyeImageBox.Size = new System.Drawing.Size(92, 64);
+            this.rightEyeImageBox.Size = new System.Drawing.Size(84, 61);
             this.rightEyeImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rightEyeImageBox.TabIndex = 45;
             this.rightEyeImageBox.TabStop = false;
@@ -465,9 +468,9 @@
             // leftEyeImageBox
             // 
             this.leftEyeImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.leftEyeImageBox.Location = new System.Drawing.Point(559, 139);
+            this.leftEyeImageBox.Location = new System.Drawing.Point(3, 303);
             this.leftEyeImageBox.Name = "leftEyeImageBox";
-            this.leftEyeImageBox.Size = new System.Drawing.Size(92, 61);
+            this.leftEyeImageBox.Size = new System.Drawing.Size(84, 61);
             this.leftEyeImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.leftEyeImageBox.TabIndex = 44;
             this.leftEyeImageBox.TabStop = false;
@@ -490,10 +493,7 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(793, 409);
             this.Controls.Add(this.panelContainer);
-            this.Controls.Add(this.rightEyeImageBox);
             this.Controls.Add(this.eyeBlinkText);
-            this.Controls.Add(this.leftEyeImageBox);
-            this.Controls.Add(this.eyeBlinkNumText);
             this.Controls.Add(this.imageBoxCapturedFrame);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.sidebar);
@@ -505,6 +505,7 @@
             this.Text = "                                     Blink Blink";
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.profilePanel.ResumeLayout(false);
             this.profilePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempProfile)).EndInit();

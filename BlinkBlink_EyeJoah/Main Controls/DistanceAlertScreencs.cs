@@ -48,10 +48,7 @@ namespace BlinkBlink_EyeJoah
 
             workingArea = Screen.GetWorkingArea(this);
 
-            this.Location = new Point(workingArea.Right,
-                                      workingArea.Bottom - Size.Height - 30);
-
-
+            this.Location = new Point(workingArea.Right, workingArea.Bottom - Size.Height - 30);
             worker.RunWorkerAsync();
         }
 
