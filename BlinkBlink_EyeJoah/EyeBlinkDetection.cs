@@ -22,7 +22,7 @@ namespace BlinkBlink_EyeJoah
     {
         /* Form1 UI 함수 */
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame, leftEyeImageBox, rightEyeImageBox;
-        private Label eyeBlinkNumText;
+        private Label eyeBlinkNumText, label1;
         private TrainingData trainingData;
         private DistanceAlertScreencs distanceAlertScreen;
 
@@ -221,6 +221,7 @@ namespace BlinkBlink_EyeJoah
             //eyeBlinkNumText.Text = TV.ToString();
             //eyeBlinkNumText.Text = possibleROI_leftEye.Width.ToString();
 
+            eyeBlinkNumText.Text = blinkNum.ToString();
             // constantGraph에 현재 Threshold값 넘겨주기
             con.ShowThresholdValue(TV);
         }
@@ -296,7 +297,6 @@ namespace BlinkBlink_EyeJoah
                     if (!catchBlink)
                     {
                         blinkNum++;
-                        eyeBlinkNumText.Text = blinkNum.ToString();
                         catchBlink = true;
                         Control1_Home.blinkTimer.Stop();
                         Control1_Home.blinkTimer.Start();
