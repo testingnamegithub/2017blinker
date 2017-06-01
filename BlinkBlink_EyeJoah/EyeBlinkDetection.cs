@@ -23,7 +23,6 @@ namespace BlinkBlink_EyeJoah
         /* Form1 UI 함수 */
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame, leftEyeImageBox, rightEyeImageBox;
         private Label eyeBlinkNumText;
-
         private TrainingData trainingData;
         private DistanceAlertScreencs distanceAlertScreen;
 
@@ -42,10 +41,12 @@ namespace BlinkBlink_EyeJoah
         private int blinkNum = 0;               // 눈 깜빡임 횟수담는 변수
 
         private List<int> averageThresholdValue;
-        private Boolean catchBlackPixel = false;          // Black Pixel을 발견했다 안했다를 알려주는 변수
-        private Boolean catchBlink = false;               // Blink 감지를 위한 변수
+        private Boolean catchBlackPixel = false;                 // Black Pixel을 발견했다 안했다를 알려주는 변수
+        private Boolean catchBlink = false;                     // Blink 감지를 위한 변수
         public static Boolean stopIdle = false;
         private Boolean detectedUser = false;                   // 감지된 얼굴이 등록되어진 User일 경우를 확인하는 변수
+
+        public static Boolean checkDistanceAlertScreen = false; // DistanceAlertScreen 켜져있는 상태인지 아닌지 확인하는 변수
 
 
         /* ContantChange 그래프에 관련된 변수 */
@@ -121,20 +122,30 @@ namespace BlinkBlink_EyeJoah
                 grayFrame._EqualizeHist();
                 distanceAlertScreen = DistanceAlertScreencs.Instance;
 
+
+
                 // EventHandler 주기마다 Detect한 얼굴 사각형으로 그리기 + 모니터와 가까워지면 알림주기
                 if (!face.Equals(null))
                 {
                     frame.Draw(face.rect, new Bgr(Color.Red), 2);
 
-                    if (face.rect.Width > 270)
+                    if (face.rect.Width > 270) //checkDistanceAlertScreen == false
                     {
-                        //MessageBox.Show("모니터와 사이가 넓습니다");
-                        //거리알람 이벤트 화면 가져오기
-                        distanceAlertScreen.Show();
+                        if (checkDistanceAlertScreen == false)
+                        {
+                            distanceAlertScreen.Show();
+                        }
+                        checkDistanceAlertScreen = true;
                     }
 
-                    else if (face.rect.Width < 280)
-                        distanceAlertScreen.Hide();
+                    else if (checkDistanceAlertScreen == true)// (face.rect.Width <= 270)
+                    {
+                        if (face.rect.Width <= 270)
+                        {
+                            distanceAlertScreen.Hide();
+                        }
+                        checkDistanceAlertScreen = false;
+                    }
                 }
 
                 // worker 쓰레드 실행
