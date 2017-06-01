@@ -71,7 +71,11 @@ namespace BlinkBlink_EyeJoah
                 {
                     this.Location = location;
                 }
-                catch (Exception except) { }
+                catch (Exception except)
+                {
+
+                }
+
             }
         }
 

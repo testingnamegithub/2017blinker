@@ -47,6 +47,7 @@ namespace BlinkBlink_EyeJoah
         private Boolean detectedUser = false;                   // 감지된 얼굴이 등록되어진 User일 경우를 확인하는 변수
 
         public static Boolean checkDistanceAlertScreen = false; // DistanceAlertScreen 켜져있는 상태인지 아닌지 확인하는 변수
+        private int checkdistance = 270;                        // 거리 초기값 270
 
 
         /* ContantChange 그래프에 관련된 변수 */
@@ -129,7 +130,7 @@ namespace BlinkBlink_EyeJoah
                 {
                     frame.Draw(face.rect, new Bgr(Color.Red), 2);
 
-                    if (face.rect.Width > 270) //checkDistanceAlertScreen == false
+                    if (face.rect.Width > checkdistance) 
                     {
                         if (checkDistanceAlertScreen == false)
                         {
@@ -138,10 +139,11 @@ namespace BlinkBlink_EyeJoah
                         checkDistanceAlertScreen = true;
                     }
 
-                    else if (checkDistanceAlertScreen == true)// (face.rect.Width <= 270)
+                    else if (checkDistanceAlertScreen == true)
                     {
-                        if (face.rect.Width <= 270)
+                        if (face.rect.Width <= checkdistance)
                         {
+                           
                             distanceAlertScreen.Hide();
                         }
                         checkDistanceAlertScreen = false;
