@@ -23,7 +23,7 @@ namespace BlinkBlink_EyeJoah
 
         public void changeScreenColor(string color)
         {
-            setLCDbrightness(255, 228, 206);
+            setLCDbrightness(255, 198, 176);
         }
 
         public void changeScreenOriginal()

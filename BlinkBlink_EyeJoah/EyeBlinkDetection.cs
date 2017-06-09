@@ -292,7 +292,7 @@ namespace BlinkBlink_EyeJoah
                 // catchThreshold와 평균 Threshold값을 비교하여 눈 깜빡임 detect
                 // 만약 직전에도 이 값일 경우엔 Pass 
                 if (catchThreshold > averageThresholdValue.Average() + 6 &&
-                    catchThreshold < averageThresholdValue.Average() + 20)
+                    catchThreshold < averageThresholdValue.Average() + 25)
                 {
                     if (!catchBlink)
                     {
