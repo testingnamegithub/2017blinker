@@ -159,6 +159,7 @@ namespace BlinkBlink_EyeJoah
         {
             Control4_Settings control4 = new Control4_Settings();
 
+            Control1_Home.blinkTimer.Stop();
             EyeBlinkDetection.stopIdle = true;
             control4.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);

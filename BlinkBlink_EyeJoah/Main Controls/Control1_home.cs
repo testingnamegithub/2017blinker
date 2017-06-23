@@ -49,18 +49,7 @@ namespace BlinkBlink_EyeJoah
         private void BlinkTimer_Tick(object sender, EventArgs e)
         {
             convertOriginalColor = true;
-
             colorChange.changeScreenColor("color");
-
-            //string pathToSound = Assembly.GetExecutingAssembly().Location; // returns the full path to Application.exe is
-            //pathToSound = Path.GetDirectoryName(pathToSound); // returns the directory where Application.exe (and file.wav) are. 
-            //pathToSound = Path.Combine(pathToSound, "facebook_sound.wav"); // combines the directory name with file.wav. 
-            SoundPlayer sound = new SoundPlayer("C:\\facebook_sound.wav"); // loads the file. 
-            sound.Play(); // plays the file. 
-
-            //Thread.Sleep(3000);
-
-            //colorChange.changeScreenOriginal();
         }
     }
 }
