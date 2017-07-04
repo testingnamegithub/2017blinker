@@ -137,6 +137,10 @@
       <HintPath>packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="LiveCharts, Version=0.9.2.0, Culture=neutral, PublicKeyToken=c5935629d38af058, processorArchitecture=MSIL">
       <HintPath>packages\LiveCharts.0.9.2\lib\net45\LiveCharts.dll</HintPath>
       <Private>True</Private>
@@ -241,6 +245,25 @@
     <Compile Include="Chart\Uie\UielementsExample.Designer.cs">
       <DependentUpon>UielementsExample.cs</DependentUpon>
     </Compile>
+    <Compile Include="FacebookLogin\Analyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacebookLogin\Analyze.Designer.cs">
+      <DependentUpon>Analyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacebookLogin\FacebookLoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacebookLogin\FacebookLoginDialog.Designer.cs">
+      <DependentUpon>FacebookLoginDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacebookLogin\FB_Analyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacebookLogin\FB_Analyze.Designer.cs">
+      <DependentUpon>FB_Analyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacebookLogin\MiniJson.cs" />
     <Compile Include="LocalDatabase.cs" />
     <Compile Include="Main Controls\ScreenColorChange.cs" />
     <Compile Include="NicknameCheck.cs" />
@@ -334,6 +357,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\Uie\UielementsExample.resx">
       <DependentUpon>UielementsExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacebookLogin\Analyze.resx">
+      <DependentUpon>Analyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacebookLogin\FacebookLoginDialog.resx">
+      <DependentUpon>FacebookLoginDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacebookLogin\FB_Analyze.resx">
+      <DependentUpon>FB_Analyze.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Controls\DistanceAlertScreencs.resx">
       <DependentUpon>DistanceAlertScreencs.cs</DependentUpon>

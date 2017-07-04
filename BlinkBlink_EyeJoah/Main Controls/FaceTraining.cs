@@ -371,23 +371,27 @@ namespace BlinkBlink_EyeJoah
         /// <param name="e"></param>
         private void registeredUserBtn_Click(object sender, EventArgs e)
         {
-            string value = "val";
+            // MainForm 띄우기 
+            FacebookLogin.FB_Analyze facebookLoginForm = new FacebookLogin.FB_Analyze();
+            facebookLoginForm.Show();
+            facebookLoginForm.Activate();
+            //string value = "val";
 
-            if (InputBox("Registered User Log-in", "Input your nickname.", ref value) == DialogResult.OK)
-            {
-                if (login.DuplicationCheck(value)) //기존 사용자라면
-                {
-                    // MainForm 띄우기
-                    showMainForm();
-                    Form1.mainForm.SetUserName(value);
-                }
-                else
-                {
-                    MessageBox.Show("등록된 사용자가 아닙니다.");
-                }
-            }
+            //if (InputBox("Registered User Log-in", "Input your nickname.", ref value) == DialogResult.OK)
+            //{
+            //    if (login.DuplicationCheck(value)) //기존 사용자라면
+            //    {
+            //        // MainForm 띄우기
+            //        showMainForm();
+            //        Form1.mainForm.SetUserName(value);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("등록된 사용자가 아닙니다.");
+            //    }
+            //}
         }
-
+        
         //DialogResult 로그인 박스 
         public static DialogResult InputBox(string title, string promptText, ref string value)
         {
