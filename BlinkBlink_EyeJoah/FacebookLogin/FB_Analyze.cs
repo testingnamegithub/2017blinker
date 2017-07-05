@@ -9,7 +9,7 @@
         private const string AppId = "842840515831167";
         private const string ExtendedPermissions = "user_about_me,user_posts";
         private string _accessToken;
-        Analyze fbAnalyze;
+        private GetFacebookUserData getFacebookUserData;
 
         public FB_Analyze()
         {
@@ -26,8 +26,8 @@
                     _accessToken = facebookOAuthResult.AccessToken;
                     var fb = new FacebookClient(facebookOAuthResult.AccessToken);
 
-                    fbAnalyze = new Analyze(fb);
-                    fbAnalyze.Show();
+                    getFacebookUserData = new GetFacebookUserData(fb);
+                    getFacebookUserData.InitUserProfile();
 
                     btnLogout.Visible = true;
                 }
@@ -53,7 +53,6 @@
             var fb = new FacebookClient();
             var logouUrl = fb.GetLogoutUrl(new { access_token = _accessToken, next = "https://www.facebook.com/connect/login_success.html" });
             webBrowser.Navigate(logouUrl);
-            fbAnalyze.Close();
             btnLogout.Visible = false;
 
         }

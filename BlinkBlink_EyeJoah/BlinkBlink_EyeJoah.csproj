@@ -245,12 +245,6 @@
     <Compile Include="Chart\Uie\UielementsExample.Designer.cs">
       <DependentUpon>UielementsExample.cs</DependentUpon>
     </Compile>
-    <Compile Include="FacebookLogin\Analyze.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FacebookLogin\Analyze.Designer.cs">
-      <DependentUpon>Analyze.cs</DependentUpon>
-    </Compile>
     <Compile Include="FacebookLogin\FacebookLoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +257,7 @@
     <Compile Include="FacebookLogin\FB_Analyze.Designer.cs">
       <DependentUpon>FB_Analyze.cs</DependentUpon>
     </Compile>
+    <Compile Include="FacebookLogin\GetFacebookUserData.cs" />
     <Compile Include="FacebookLogin\MiniJson.cs" />
     <Compile Include="LocalDatabase.cs" />
     <Compile Include="Main Controls\ScreenColorChange.cs" />
@@ -357,9 +352,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\Uie\UielementsExample.resx">
       <DependentUpon>UielementsExample.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FacebookLogin\Analyze.resx">
-      <DependentUpon>Analyze.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacebookLogin\FacebookLoginDialog.resx">
       <DependentUpon>FacebookLoginDialog.cs</DependentUpon>
