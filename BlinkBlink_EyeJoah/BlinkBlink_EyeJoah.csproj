@@ -269,6 +269,12 @@
     <Compile Include="Main Controls\DistanceAlertScreencs.Designer.cs">
       <DependentUpon>DistanceAlertScreencs.cs</DependentUpon>
     </Compile>
+    <Compile Include="SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserFaceTraining\EigenObjectRecognizer.cs" />
     <Compile Include="EyeBlinkDetection.cs" />
     <Compile Include="Main Controls\FaceTraining.cs">
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Controls\Settings_Scroll.resx">
       <DependentUpon>Settings_Scroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="ETC config\packages.config" />
@@ -608,6 +617,7 @@
     <None Include="Resources\LoginButton.png" />
     <None Include="Resources\cancel2.png" />
     <None Include="Resources\cancel_loginWindow.png" />
+    <None Include="Resources\confirm.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -629,6 +639,7 @@
     <None Include="Resources\profile3.png" />
     <None Include="Resources\profile4.png" />
     <None Include="Resources\padlock.png" />
+    <None Include="Resources\signUp_with_facebook.png" />
     <Content Include="Resources\_checked.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

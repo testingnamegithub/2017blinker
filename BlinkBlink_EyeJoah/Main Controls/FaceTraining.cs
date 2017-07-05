@@ -290,18 +290,19 @@ namespace BlinkBlink_EyeJoah
         {
             if (nicknameCheckTxt.Text.Equals("닉네임 생성 가능"))
             {
-                ////User이름의 database 생성(1회만)
-                //localDB.CreateDatabase(nameTxtbox.Text);
+                this.timer1.Stop();
 
-                ////// userName을 Text파일에 저장하기( 덮어쓰기 )
-                //File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
-                // MainForm 띄우기
-                showMainForm();
-                //MainForm의 UserName 업데이트
-                Form1.mainForm.SetUserName(nameTxtbox.Text);
+                // MainForm 띄우기 
+                SignUpForm signUpForm = new SignUpForm();
+                signUpForm.Show();
+                signUpForm.Activate();
             }
             else
             {
+                // MainForm 띄우기 
+                SignUpForm signUpForm = new SignUpForm();
+                signUpForm.Show();
+                signUpForm.Activate();
                 MessageBox.Show("닉네임을 등록하세요.");
             }
             
@@ -346,22 +347,7 @@ namespace BlinkBlink_EyeJoah
             FacebookLogin.FB_Analyze facebookLoginForm = new FacebookLogin.FB_Analyze(this);
             facebookLoginForm.Show();
             facebookLoginForm.Activate();
-
-            //string value = "val";
-
-            //if (InputBox("Registered User Log-in", "Input your nickname.", ref value) == DialogResult.OK)
-            //{
-            //    if (login.DuplicationCheck(value)) //기존 사용자라면
-            //    {
-            //        // MainForm 띄우기
-            //        showMainForm();
-            //        Form1.mainForm.SetUserName(value);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("등록된 사용자가 아닙니다.");
-            //    }
-            //}
+            
         }
         
         //DialogResult 로그인 박스 
