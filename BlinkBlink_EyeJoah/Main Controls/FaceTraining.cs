@@ -146,40 +146,7 @@ namespace BlinkBlink_EyeJoah
             imageBoxFrameGrabber.Image = currentFrame;
         }
 
-        //private void takePictureBtn_Click(object sender, MouseEventArgs e)
-        //{
-        //    //// Shoot 버튼을 누른 상태일 경우 ( Next버튼으로 변한 상태 ) 
-        //    //if (clickedShootBtn.Equals(true))
-        //    //{
-        //    //    // userName을 Text파일에 저장하기( 덮어쓰기 )
-        //    //    File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
-        //    //    // MainForm 띄우기
-        //    //    showMainForm();
-        //    //}
-        //    //// Shoot 버튼을 한번도 안 눌렀을 경우
-        //    //else
-        //    //{
-        //    //    if (nameTxtbox.Text.Equals("insert nickname") ||
-        //    //        nameTxtbox.Text.Length.Equals(0))
-        //    //    {
-        //    //        MessageBox.Show("Please input your name");
-        //    //        return;
-        //    //    }
-        //    //    // user 등록하기 
-        //    //    add_User_To_TrainingImage();
-        //    //    // 버튼을 Next 사진으로 변경 후 Click 했음을 나타내는 clickedShootBtn = true로 변경 
-        //    //    takePic_NextBtn.Image = Properties.Resources._checked;
-        //    //    clickedShootBtn = true;
-        //    //}
-
-        //}
-
-        //private void reTryBtn_Click(object sender, MouseEventArgs e)
-        //{
-        //    reTryBtn.Visible = false;
-        //    pictureBox1.Image = null;
-        //}
-
+        
         private void nameTxtbox_MouseClick(object sender, MouseEventArgs e)
         {
             nameTxtbox.Clear();
@@ -445,4 +412,38 @@ namespace BlinkBlink_EyeJoah
             get { return timer1; }
         }
     }
+    //private void takePictureBtn_Click(object sender, MouseEventArgs e)
+    //{
+    //    //// Shoot 버튼을 누른 상태일 경우 ( Next버튼으로 변한 상태 ) 
+    //    //if (clickedShootBtn.Equals(true))
+    //    //{
+    //    //    // userName을 Text파일에 저장하기( 덮어쓰기 )
+    //    //    File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
+    //    //    // MainForm 띄우기
+    //    //    showMainForm();
+    //    //}
+    //    //// Shoot 버튼을 한번도 안 눌렀을 경우
+    //    //else
+    //    //{
+    //    //    if (nameTxtbox.Text.Equals("insert nickname") ||
+    //    //        nameTxtbox.Text.Length.Equals(0))
+    //    //    {
+    //    //        MessageBox.Show("Please input your name");
+    //    //        return;
+    //    //    }
+    //    //    // user 등록하기 
+    //    //    add_User_To_TrainingImage();
+    //    //    // 버튼을 Next 사진으로 변경 후 Click 했음을 나타내는 clickedShootBtn = true로 변경 
+    //    //    takePic_NextBtn.Image = Properties.Resources._checked;
+    //    //    clickedShootBtn = true;
+    //    //}
+
+    //}
+
+    //private void reTryBtn_Click(object sender, MouseEventArgs e)
+    //{
+    //    reTryBtn.Visible = false;
+    //    pictureBox1.Image = null;
+    //}
+
 }

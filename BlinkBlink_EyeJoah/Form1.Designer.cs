@@ -68,6 +68,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.eyeBlinkText = new System.Windows.Forms.Label();
             this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
+            this.logOutText = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.profilePanel.SuspendLayout();
@@ -124,6 +125,7 @@
             // profilePanel
             // 
             this.profilePanel.BackColor = System.Drawing.Color.White;
+            this.profilePanel.Controls.Add(this.logOutText);
             this.profilePanel.Controls.Add(this.tempProfile);
             this.profilePanel.Controls.Add(this.UserNameLabel);
             this.profilePanel.Location = new System.Drawing.Point(0, 0);
@@ -146,12 +148,12 @@
             // UserNameLabel
             // 
             this.UserNameLabel.AutoSize = true;
-            this.UserNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.UserNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserNameLabel.ForeColor = System.Drawing.Color.Black;
             this.UserNameLabel.Location = new System.Drawing.Point(59, 27);
             this.UserNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UserNameLabel.Name = "UserNameLabel";
-            this.UserNameLabel.Size = new System.Drawing.Size(84, 18);
+            this.UserNameLabel.Size = new System.Drawing.Size(93, 18);
             this.UserNameLabel.TabIndex = 1;
             this.UserNameLabel.Text = "User Name";
             this.UserNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -496,6 +498,20 @@
             this.imageBoxCapturedFrame.TabIndex = 43;
             this.imageBoxCapturedFrame.TabStop = false;
             // 
+            // logOutText
+            // 
+            this.logOutText.AutoSize = true;
+            this.logOutText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutText.ForeColor = System.Drawing.Color.Black;
+            this.logOutText.Location = new System.Drawing.Point(133, 48);
+            this.logOutText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.logOutText.Name = "logOutText";
+            this.logOutText.Size = new System.Drawing.Size(45, 15);
+            this.logOutText.TabIndex = 2;
+            this.logOutText.Text = "Logout";
+            this.logOutText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.logOutText.Click += new System.EventHandler(this.logOutText_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -592,6 +608,7 @@
         private System.Windows.Forms.Label eyeBlinkNumText;
         private Emgu.CV.UI.ImageBox rightEyeImageBox;
         private Emgu.CV.UI.ImageBox leftEyeImageBox;
+        private System.Windows.Forms.Label logOutText;
     }
 }
 

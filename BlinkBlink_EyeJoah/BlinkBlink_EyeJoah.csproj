@@ -245,6 +245,7 @@
     <Compile Include="Chart\Uie\UielementsExample.Designer.cs">
       <DependentUpon>UielementsExample.cs</DependentUpon>
     </Compile>
+    <Compile Include="ETC Class\Constant.cs" />
     <Compile Include="FacebookLogin\FacebookLoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
