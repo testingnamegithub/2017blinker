@@ -3,6 +3,7 @@
     using System;
     using System.Windows.Forms;
     using Facebook;
+    using System.Runtime.InteropServices;
 
     public partial class FB_Analyze : Form
     {
@@ -14,9 +15,20 @@
         public FB_Analyze()
         {
             InitializeComponent();
-
+            
         }
 
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImportAttribute("user32.dll")]
+        public static extern bool HideCaret(IntPtr hWnd);
+
+        #region 마우스로 Form 이동에 관한 변수
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        #endregion
 
         private void DisplayAppropriateMessage(FacebookOAuthResult facebookOAuthResult)
         {
@@ -66,10 +78,21 @@
             textBox3.PasswordChar = '*';
         }
         
+        
 
-        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
 
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

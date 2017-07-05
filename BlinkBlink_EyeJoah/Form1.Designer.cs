@@ -481,7 +481,7 @@
             this.eyeBlinkText.Location = new System.Drawing.Point(475, 211);
             this.eyeBlinkText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.eyeBlinkText.Name = "eyeBlinkText";
-            this.eyeBlinkText.Size = new System.Drawing.Size(170, 30);
+            this.eyeBlinkText.Size = new System.Drawing.Size(169, 30);
             this.eyeBlinkText.TabIndex = 46;
             this.eyeBlinkText.Text = "눈 깜빡임 횟수 ";
             // 

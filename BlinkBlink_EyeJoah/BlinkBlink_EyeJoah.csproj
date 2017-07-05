@@ -605,6 +605,8 @@
     <None Include="Resources\envelope.png" />
     <None Include="Resources\lock-icon.png" />
     <None Include="Resources\LoginButton.png" />
+    <None Include="Resources\cancel2.png" />
+    <None Include="Resources\cancel_loginWindow.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
