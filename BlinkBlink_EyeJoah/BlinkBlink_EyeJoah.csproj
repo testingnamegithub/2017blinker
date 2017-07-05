@@ -604,6 +604,7 @@
     <None Include="Resources\login_with_facebook.png" />
     <None Include="Resources\envelope.png" />
     <None Include="Resources\lock-icon.png" />
+    <None Include="Resources\LoginButton.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
