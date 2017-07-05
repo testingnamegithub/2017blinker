@@ -66,7 +66,7 @@
             this.panel1.Controls.Add(this.minimizeBtn);
             this.panel1.Controls.Add(this.closeButton);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(630, 40);
             this.panel1.TabIndex = 16;
@@ -99,7 +99,7 @@
             // 
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
             this.minimizeBtn.Location = new System.Drawing.Point(556, 9);
-            this.minimizeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.minimizeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(21, 20);
             this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -110,7 +110,7 @@
             // 
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.Location = new System.Drawing.Point(591, 9);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(2);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(21, 20);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -186,7 +186,7 @@
             this.panel2.Controls.Add(this.nameTxtbox);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(2, 35);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(623, 345);
             this.panel2.TabIndex = 28;
@@ -197,10 +197,10 @@
             this.registeredUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registeredUserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registeredUserBtn.ForeColor = System.Drawing.Color.White;
-            this.registeredUserBtn.Location = new System.Drawing.Point(466, 26);
+            this.registeredUserBtn.Location = new System.Drawing.Point(466, 20);
             this.registeredUserBtn.Margin = new System.Windows.Forms.Padding(0);
             this.registeredUserBtn.Name = "registeredUserBtn";
-            this.registeredUserBtn.Size = new System.Drawing.Size(134, 24);
+            this.registeredUserBtn.Size = new System.Drawing.Size(134, 32);
             this.registeredUserBtn.TabIndex = 32;
             this.registeredUserBtn.Text = "I\'m a registered user";
             this.registeredUserBtn.UseVisualStyleBackColor = false;
@@ -213,7 +213,7 @@
             this.nicknameCheckTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.nicknameCheckTxt.ForeColor = System.Drawing.Color.Black;
             this.nicknameCheckTxt.Location = new System.Drawing.Point(360, 257);
-            this.nicknameCheckTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nicknameCheckTxt.Margin = new System.Windows.Forms.Padding(2);
             this.nicknameCheckTxt.Name = "nicknameCheckTxt";
             this.nicknameCheckTxt.ReadOnly = true;
             this.nicknameCheckTxt.Size = new System.Drawing.Size(198, 14);
@@ -240,7 +240,7 @@
             // 
             this.goNext.Font = new System.Drawing.Font("굴림", 9F);
             this.goNext.Location = new System.Drawing.Point(466, 280);
-            this.goNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.goNext.Margin = new System.Windows.Forms.Padding(2);
             this.goNext.Name = "goNext";
             this.goNext.Size = new System.Drawing.Size(112, 33);
             this.goNext.TabIndex = 29;
@@ -252,7 +252,7 @@
             // 
             this.takePic.Font = new System.Drawing.Font("굴림", 9F);
             this.takePic.Location = new System.Drawing.Point(346, 280);
-            this.takePic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.takePic.Margin = new System.Windows.Forms.Padding(2);
             this.takePic.Name = "takePic";
             this.takePic.Size = new System.Drawing.Size(113, 33);
             this.takePic.TabIndex = 28;

@@ -47,8 +47,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 270);
             this.Controls.Add(this.webBrowser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FB_LoginDialog";
-            this.Text = "FacebookLoginDialog";
+            this.Text = "FacebookLogin";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.FB_LoginDialog_Load_1);
             this.ResumeLayout(false);
