@@ -49,6 +49,7 @@
             this.Controls.Add(this.webBrowser);
             this.Name = "FB_LoginDialog";
             this.Text = "FacebookLoginDialog";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FB_LoginDialog_Load_1);
             this.ResumeLayout(false);
 

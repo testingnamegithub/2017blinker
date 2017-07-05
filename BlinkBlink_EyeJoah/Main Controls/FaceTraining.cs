@@ -26,6 +26,7 @@ namespace BlinkBlink_EyeJoah
     {
         /* Training Data가 들어있는 Class */
         private TrainingData trainingData;
+        public static System.Windows.Forms.Timer timer;
 
         private Image<Bgr, Byte> currentFrame;
         private Capture grabber;
@@ -97,6 +98,7 @@ namespace BlinkBlink_EyeJoah
             //Idle 대신 Timer로 FrameGraber event 실행
             timer1.Tick += new EventHandler(FrameGrabber);
             timer1.Start();
+            timer = this.timer1;
 
             //access controls from another classes
             faceTraining = this;
@@ -321,11 +323,11 @@ namespace BlinkBlink_EyeJoah
         {
             if (nicknameCheckTxt.Text.Equals("닉네임 생성 가능"))
             {
-                //User이름의 database 생성(1회만)
-                localDB.CreateDatabase(nameTxtbox.Text);
+                ////User이름의 database 생성(1회만)
+                //localDB.CreateDatabase(nameTxtbox.Text);
 
-                //// userName을 Text파일에 저장하기( 덮어쓰기 )
-                File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
+                ////// userName을 Text파일에 저장하기( 덮어쓰기 )
+                //File.WriteAllText(Application.StartupPath + "/TrainedFaces/UserName.txt", nameTxtbox.Text);
                 // MainForm 띄우기
                 showMainForm();
                 //MainForm의 UserName 업데이트
@@ -371,10 +373,13 @@ namespace BlinkBlink_EyeJoah
         /// <param name="e"></param>
         private void registeredUserBtn_Click(object sender, EventArgs e)
         {
+            this.timer1.Stop();
+
             // MainForm 띄우기 
-            FacebookLogin.FB_Analyze facebookLoginForm = new FacebookLogin.FB_Analyze();
+            FacebookLogin.FB_Analyze facebookLoginForm = new FacebookLogin.FB_Analyze(this);
             facebookLoginForm.Show();
             facebookLoginForm.Activate();
+
             //string value = "val";
 
             //if (InputBox("Registered User Log-in", "Input your nickname.", ref value) == DialogResult.OK)
@@ -435,5 +440,9 @@ namespace BlinkBlink_EyeJoah
             return dialogResult;
         }
 
+        public System.Windows.Forms.Timer getTimer
+        {
+            get { return timer1; }
+        }
     }
 }

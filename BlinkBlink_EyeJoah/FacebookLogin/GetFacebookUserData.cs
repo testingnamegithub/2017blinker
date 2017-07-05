@@ -17,6 +17,7 @@ namespace BlinkBlink_EyeJoah.FacebookLogin
 
         private string id;
         private string name;
+        private List<String> userInfo;
 
         public GetFacebookUserData(FacebookClient fb)
         {
@@ -24,6 +25,7 @@ namespace BlinkBlink_EyeJoah.FacebookLogin
                 throw new ArgumentNullException("fb");
 
             _fb = fb;
+            userInfo = new List<String>();
         }
 
         public void InitUserProfile()
@@ -38,6 +40,15 @@ namespace BlinkBlink_EyeJoah.FacebookLogin
 
             id = dict["id"].ToString();
             name = dict["name"].ToString();
+            userInfo.Add(id);
+            userInfo.Add(name);
+            userInfo.Add("http://graph.facebook.com/" + id + "/picture");
         }
+
+        public List<String> getUserInfo
+        {
+            get { return userInfo; }
+        }
+        
     }
 }
