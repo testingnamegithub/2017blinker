@@ -14,6 +14,7 @@
         public FB_Analyze()
         {
             InitializeComponent();
+            
         }
 
 
@@ -54,6 +55,11 @@
             var logouUrl = fb.GetLogoutUrl(new { access_token = _accessToken, next = "https://www.facebook.com/connect/login_success.html" });
             webBrowser.Navigate(logouUrl);
             btnLogout.Visible = false;
+
+        }
+
+        private void FB_Analyze_Load(object sender, EventArgs e)
+        {
 
         }
     }

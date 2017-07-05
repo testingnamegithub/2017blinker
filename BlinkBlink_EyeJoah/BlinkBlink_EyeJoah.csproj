@@ -189,7 +189,7 @@
     <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalendarDate.cs" />
+    <Compile Include="ETC Class\CalendarDate.cs" />
     <Compile Include="Chart\360\Gauge360Example.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,16 +259,16 @@
     </Compile>
     <Compile Include="FacebookLogin\GetFacebookUserData.cs" />
     <Compile Include="FacebookLogin\MiniJson.cs" />
-    <Compile Include="LocalDatabase.cs" />
+    <Compile Include="Database\LocalDatabase.cs" />
     <Compile Include="Main Controls\ScreenColorChange.cs" />
-    <Compile Include="NicknameCheck.cs" />
+    <Compile Include="Database\NicknameCheck.cs" />
     <Compile Include="Main Controls\DistanceAlertScreencs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main Controls\DistanceAlertScreencs.Designer.cs">
       <DependentUpon>DistanceAlertScreencs.cs</DependentUpon>
     </Compile>
-    <Compile Include="EigenObjectRecognizer.cs" />
+    <Compile Include="UserFaceTraining\EigenObjectRecognizer.cs" />
     <Compile Include="EyeBlinkDetection.cs" />
     <Compile Include="Main Controls\FaceTraining.cs">
       <SubType>Form</SubType>
@@ -281,8 +281,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ResizeImage.cs" />
-    <Compile Include="TrainingData.cs" />
+    <Compile Include="ETC Class\ResizeImage.cs" />
+    <Compile Include="UserFaceTraining\TrainingData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,7 +321,7 @@
     <Compile Include="Main Controls\Settings_Scroll.Designer.cs">
       <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInfoAzureDB.cs" />
+    <Compile Include="Database\UserInfoAzureDB.cs" />
     <EmbeddedResource Include="Chart\360\Gauge360Example.resx">
       <DependentUpon>Gauge360Example.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -389,7 +389,7 @@
       <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="ETC\packages.config" />
+    <None Include="ETC config\packages.config" />
     <None Include="MjpegProcessor.winmd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -403,7 +403,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ETC\App.config" />
+    <None Include="ETC config\App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="blinkerLogo.ico" />
@@ -600,6 +600,10 @@
     <Content Include="opencv_videostab2410.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\LoginMain.png" />
+    <None Include="Resources\login_with_facebook.png" />
+    <None Include="Resources\envelope.png" />
+    <None Include="Resources\lock-icon.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -620,6 +624,7 @@
     <None Include="Resources\profile2.png" />
     <None Include="Resources\profile3.png" />
     <None Include="Resources\profile4.png" />
+    <None Include="Resources\padlock.png" />
     <Content Include="Resources\_checked.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
