@@ -32,8 +32,7 @@ namespace BlinkBlink_EyeJoah.FacebookLogin
         {
             var result = _fb.Get("me", new
             {
-                fields = new[] { "id", "name", "posts.limit(" +
-                (Convert.ToInt32(1)).ToString() + "){comments.limit(1000){id,message},likes.limit(1000){id,name},message,sharedposts,picture,link}" }
+                fields = new[] { "id", "name" }
             });
 
             var dict = Json.Deserialize(result.ToString()) as Dictionary<string, object>;

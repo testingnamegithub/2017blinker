@@ -189,6 +189,7 @@
     <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckInternetConnection.cs" />
     <Compile Include="ETC Class\CalendarDate.cs" />
     <Compile Include="Chart\360\Gauge360Example.cs">
       <SubType>Form</SubType>
@@ -269,18 +270,18 @@
     <Compile Include="Main Controls\DistanceAlertScreencs.Designer.cs">
       <DependentUpon>DistanceAlertScreencs.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignUpForm.cs">
+    <Compile Include="ETC Class\SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignUpForm.Designer.cs">
+    <Compile Include="ETC Class\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserFaceTraining\EigenObjectRecognizer.cs" />
     <Compile Include="EyeBlinkDetection.cs" />
-    <Compile Include="Main Controls\FaceTraining.cs">
+    <Compile Include="UserFaceTraining\FaceTraining.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Controls\FaceTraining.Designer.cs">
+    <Compile Include="UserFaceTraining\FaceTraining.Designer.cs">
       <DependentUpon>FaceTraining.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -369,7 +370,7 @@
     <EmbeddedResource Include="Main Controls\DistanceAlertScreencs.resx">
       <DependentUpon>DistanceAlertScreencs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Controls\FaceTraining.resx">
+    <EmbeddedResource Include="UserFaceTraining\FaceTraining.resx">
       <DependentUpon>FaceTraining.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -395,7 +396,7 @@
     <EmbeddedResource Include="Main Controls\Settings_Scroll.resx">
       <DependentUpon>Settings_Scroll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignUpForm.resx">
+    <EmbeddedResource Include="ETC Class\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />

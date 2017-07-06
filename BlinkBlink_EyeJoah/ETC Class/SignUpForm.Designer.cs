@@ -122,7 +122,7 @@
             this.textBox3.Size = new System.Drawing.Size(340, 23);
             this.textBox3.TabIndex = 33;
             this.textBox3.TabStop = false;
-            this.textBox3.Text = "Do you agree to use your information? ";
+            this.textBox3.Text = "Do you agree to use your data information? ";
             // 
             // contextMenuStrip1
             // 

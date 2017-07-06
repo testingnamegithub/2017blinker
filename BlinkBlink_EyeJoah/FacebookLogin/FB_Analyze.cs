@@ -48,7 +48,7 @@
                     getFacebookUserData.InitUserProfile();
                     userInfo = getFacebookUserData.getUserInfo;
 
-                    startMainForm();
+                    startMainForm(Constant.FacebookLogin);
                 }
                 else
                 {
@@ -57,7 +57,7 @@
             }
         }
 
-        private void startMainForm()
+        private void startMainForm(int Mode)
         {
             // Form들 숨기고 Timer Stop 시키기
             this.Hide();
@@ -65,16 +65,41 @@
             FaceTraining.timer.Stop();
 
             // MainForm 띄우기 
-            Form1 mainForm = new Form1(userInfo, _accessToken, trainingFaceForm);
+            Form1 mainForm;
+            if (Mode.Equals(Constant.FacebookLogin))
+            {
+                mainForm = new Form1(userInfo, _accessToken, trainingFaceForm);
+            }
+            else
+            {
+                mainForm = new Form1(trainingFaceForm);
+            }
             mainForm.Show();
             mainForm.Activate();
+            EyeBlinkDetection.stopIdle = false;
         }
+
         private void btnFacebookLogin_Click(object sender, EventArgs e)
         {
-            var fbLoginDialog = new FB_LoginDialog(AppId, ExtendedPermissions);
-            fbLoginDialog.ShowDialog();
+            // 인터넷 연결 됬는지 확인
+            CheckInternetConnection checkInternetConnection = CheckInternetConnection.GetInstance();
 
-            DisplayAppropriateMessage(fbLoginDialog.FacebookOAuthResult);
+            // 인터넷 연결이 되었을 경우
+            if(checkInternetConnection.CheckForConnection())
+            {
+                var fbLoginDialog = new FB_LoginDialog(AppId, ExtendedPermissions);
+                fbLoginDialog.ShowDialog();
+
+                DisplayAppropriateMessage(fbLoginDialog.FacebookOAuthResult);
+
+            }
+            // 안 되있을 경우 
+            else
+            {
+                MessageBox.Show("User data visualization service is not available because internet isn't connected.");
+                startMainForm(Constant.USUALLOGIN);
+            }
+            
         }
 
         

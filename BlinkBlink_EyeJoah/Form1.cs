@@ -38,6 +38,16 @@ namespace BlinkBlink_EyeJoah
             Start_Process();
         }
 
+        public Form1(Form trainingFaceForm)
+        {
+            InitializeComponent();
+
+            this.trainingFaceForm = trainingFaceForm;
+
+            Init_UI(Constant.USUALLOGIN);
+            Start_Process();
+        }
+
         // Facebook을 통해 Login한 경우
         public Form1(List<String> loginUserData, String _accessToken, Form trainingFaceForm)
         {
@@ -241,14 +251,21 @@ namespace BlinkBlink_EyeJoah
 
         private void logOutText_Click(object sender, EventArgs e)
         {
-            var webBrowser = new WebBrowser();
-            var fb = new FacebookClient();
-            var logouUrl = fb.GetLogoutUrl(new { access_token = accessToken, next = "https://www.facebook.com/connect/login_success.html" });
-            webBrowser.Navigate(logouUrl);
-
+            // 인터넷 연결이 되어 있을 경우
+            CheckInternetConnection checkInternetConnection = CheckInternetConnection.GetInstance();
+            if (checkInternetConnection.CheckForConnection().Equals(true))
+            {
+                var webBrowser = new WebBrowser();
+                var fb = new FacebookClient();
+                var logouUrl = fb.GetLogoutUrl(new { access_token = accessToken, next = "https://www.facebook.com/connect/login_success.html" });
+                webBrowser.Navigate(logouUrl);
+            }
+            
             // 현재 MainForm 닫고 FaceTraining Form 다시 실행시키기
             this.Close();
+            EyeBlinkDetection.stopIdle = true;
             this.trainingFaceForm.Show();
+
             FaceTraining.timer.Start();
         }
     }
