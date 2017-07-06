@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FB_Analyze));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.facebookLoginBtn = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -40,17 +39,21 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.LoginBtn = new System.Windows.Forms.Panel();
             this.closeBtn = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.registerBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -65,15 +68,17 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
-            // panel1
+            // facebookLoginBtn
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(25, 137);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(342, 51);
-            this.panel1.TabIndex = 10;
-            this.panel1.Click += new System.EventHandler(this.btnFacebookLogin_Click);
+            this.facebookLoginBtn.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.login_with_facebook;
+            this.facebookLoginBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.facebookLoginBtn.Location = new System.Drawing.Point(25, 132);
+            this.facebookLoginBtn.Name = "facebookLoginBtn";
+            this.facebookLoginBtn.Size = new System.Drawing.Size(342, 51);
+            this.facebookLoginBtn.TabIndex = 10;
+            this.facebookLoginBtn.Click += new System.EventHandler(this.btnFacebookLogin_Click);
+            this.facebookLoginBtn.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
+            this.facebookLoginBtn.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // panel2
             // 
@@ -152,11 +157,6 @@
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -180,14 +180,16 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Find Password";
             // 
-            // panel6
+            // LoginBtn
             // 
-            this.panel6.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.LoginButton;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel6.Location = new System.Drawing.Point(25, 348);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(342, 51);
-            this.panel6.TabIndex = 11;
+            this.LoginBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LoginBtn.BackgroundImage")));
+            this.LoginBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LoginBtn.Location = new System.Drawing.Point(25, 351);
+            this.LoginBtn.Name = "LoginBtn";
+            this.LoginBtn.Size = new System.Drawing.Size(342, 51);
+            this.LoginBtn.TabIndex = 11;
+            this.LoginBtn.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
+            this.LoginBtn.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // closeBtn
             // 
@@ -209,15 +211,58 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "or";
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.LightGray;
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Location = new System.Drawing.Point(28, 417);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(335, 1);
+            this.panel7.TabIndex = 13;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.LightGray;
+            this.panel8.Location = new System.Drawing.Point(259, -16);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(150, 3);
+            this.panel8.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(75, 430);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(244, 11);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Aren\'t you still a member of Blinker?";
+            // 
+            // registerBtn
+            // 
+            this.registerBtn.BackColor = System.Drawing.Color.Transparent;
+            this.registerBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.registerBtn.Location = new System.Drawing.Point(156, 453);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(75, 39);
+            this.registerBtn.TabIndex = 28;
+            this.registerBtn.Text = "Register";
+            this.registerBtn.UseVisualStyleBackColor = false;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
+            // 
             // FB_Analyze
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(393, 414);
+            this.ClientSize = new System.Drawing.Size(393, 504);
+            this.Controls.Add(this.registerBtn);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.closeBtn);
-            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox3);
@@ -226,11 +271,12 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.facebookLoginBtn);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Tmon몬소리 Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FB_Analyze";
             this.Text = "FB_Analyze";
             this.TopMost = true;
@@ -239,6 +285,7 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,7 +293,7 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel facebookLoginBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
@@ -255,11 +302,14 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel LoginBtn;
         private System.Windows.Forms.Panel closeBtn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button registerBtn;
     }
 }

@@ -403,9 +403,29 @@ namespace BlinkBlink_EyeJoah.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap login_with_facebook_hover {
+            get {
+                object obj = ResourceManager.GetObject("login_with_facebook_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap LoginButton {
             get {
                 object obj = ResourceManager.GetObject("LoginButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap LoginButton_hover {
+            get {
+                object obj = ResourceManager.GetObject("LoginButton_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -656,16 +676,6 @@ namespace BlinkBlink_EyeJoah.Properties {
         internal static System.Drawing.Bitmap settingsLogo2 {
             get {
                 object obj = ResourceManager.GetObject("settingsLogo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap signUp_with_facebook {
-            get {
-                object obj = ResourceManager.GetObject("signUp_with_facebook", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

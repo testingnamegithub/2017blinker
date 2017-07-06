@@ -75,7 +75,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.signUp_with_facebook;
+            this.panel1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.login_with_facebook;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Location = new System.Drawing.Point(26, 138);
             this.panel1.Name = "panel1";

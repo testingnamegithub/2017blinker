@@ -23,7 +23,7 @@ namespace BlinkBlink_EyeJoah
             //if (File.Exists(Application.StartupPath + "/TrainedFaces/UserName.txt"))
             //Application.Run(new Form1());
             ////else
-            Application.Run(new FaceTraining());
+            Application.Run(new FacebookLogin.FB_Analyze());
         }
     }
 }

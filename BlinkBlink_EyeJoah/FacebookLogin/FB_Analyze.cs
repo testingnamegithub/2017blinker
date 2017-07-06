@@ -15,13 +15,6 @@
         private GetFacebookUserData getFacebookUserData;
         private Form trainingFaceForm;
 
-        public FB_Analyze(Form trainingFaceForm)
-        {
-            InitializeComponent();
-
-            this.trainingFaceForm = trainingFaceForm;
-        }
-
         [DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
@@ -33,6 +26,37 @@
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         #endregion
+
+
+        // 가장자리 둥글게
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
+        public FB_Analyze()
+        {
+            InitializeComponent();
+
+            // Form 가장자리 둥글게 만들기
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+        }
+
+        public FB_Analyze(Form trainingFaceForm)
+        {
+            InitializeComponent();
+
+            // Form 가장자리 둥글게 만들기
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+
+            this.trainingFaceForm = trainingFaceForm;
+        }
+
 
         private void DisplayAppropriateMessage(FacebookOAuthResult facebookOAuthResult)
         {
@@ -121,8 +145,45 @@
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FaceTraining.timer.Start();
+            this.Close();
+            //FaceTraining.timer.Start();
+        }
+
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            SignUpForm signUpForm = new SignUpForm();
+
+            signUpForm.Show();
+            signUpForm.Activate();
+        }
+
+        private void Btn_MouseEnter(object sender, EventArgs e)
+        {
+            Panel panelName = (Panel)sender;
+            switch (panelName.Name)
+            {
+                case "facebookLoginBtn":
+                    panelName.BackgroundImage = Properties.Resources.login_with_facebook_hover;
+                    break;
+                case "LoginBtn":
+                    panelName.BackgroundImage = Properties.Resources.LoginButton_hover;
+                            break;
+            }
+        }
+
+        private void Btn_MouseLeave(object sender, EventArgs e)
+        {
+            Panel panelName = (Panel)sender;
+            switch (panelName.Name)
+            {
+                case "facebookLoginBtn":
+                    panelName.BackgroundImage = Properties.Resources.login_with_facebook;
+                    break;
+                case "LoginBtn":
+                    panelName.BackgroundImage = Properties.Resources.LoginButton;
+                    break;
+            }
+         
         }
         
     }

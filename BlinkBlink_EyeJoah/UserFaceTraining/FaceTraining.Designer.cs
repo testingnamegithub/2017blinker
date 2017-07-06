@@ -42,6 +42,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.registeredUserBtn = new System.Windows.Forms.Button();
             this.nicknameCheckTxt = new System.Windows.Forms.TextBox();
             this.idCheck = new System.Windows.Forms.Button();
@@ -136,7 +138,7 @@
             // 
             this.nameTxtbox.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nameTxtbox.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.nameTxtbox.Location = new System.Drawing.Point(346, 220);
+            this.nameTxtbox.Location = new System.Drawing.Point(343, 269);
             this.nameTxtbox.Name = "nameTxtbox";
             this.nameTxtbox.Size = new System.Drawing.Size(141, 24);
             this.nameTxtbox.TabIndex = 20;
@@ -175,6 +177,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.registeredUserBtn);
             this.panel2.Controls.Add(this.nicknameCheckTxt);
             this.panel2.Controls.Add(this.idCheck);
@@ -190,6 +194,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(623, 345);
             this.panel2.TabIndex = 28;
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Location = new System.Drawing.Point(343, 229);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(232, 37);
+            this.panel4.TabIndex = 34;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.textBox1.Location = new System.Drawing.Point(343, 293);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(141, 24);
+            this.textBox1.TabIndex = 33;
+            this.textBox1.Text = "insert nickname";
             // 
             // registeredUserBtn
             // 
@@ -212,7 +235,7 @@
             this.nicknameCheckTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nicknameCheckTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.nicknameCheckTxt.ForeColor = System.Drawing.Color.Black;
-            this.nicknameCheckTxt.Location = new System.Drawing.Point(360, 257);
+            this.nicknameCheckTxt.Location = new System.Drawing.Point(343, 319);
             this.nicknameCheckTxt.Margin = new System.Windows.Forms.Padding(2);
             this.nicknameCheckTxt.Name = "nicknameCheckTxt";
             this.nicknameCheckTxt.ReadOnly = true;
@@ -227,10 +250,10 @@
             this.idCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idCheck.ForeColor = System.Drawing.Color.White;
-            this.idCheck.Location = new System.Drawing.Point(493, 210);
+            this.idCheck.Location = new System.Drawing.Point(492, 269);
             this.idCheck.Margin = new System.Windows.Forms.Padding(0);
             this.idCheck.Name = "idCheck";
-            this.idCheck.Size = new System.Drawing.Size(83, 41);
+            this.idCheck.Size = new System.Drawing.Size(83, 48);
             this.idCheck.TabIndex = 30;
             this.idCheck.Text = "CHECK";
             this.idCheck.UseVisualStyleBackColor = false;
@@ -239,10 +262,10 @@
             // goNext
             // 
             this.goNext.Font = new System.Drawing.Font("굴림", 9F);
-            this.goNext.Location = new System.Drawing.Point(466, 280);
+            this.goNext.Location = new System.Drawing.Point(474, 174);
             this.goNext.Margin = new System.Windows.Forms.Padding(2);
             this.goNext.Name = "goNext";
-            this.goNext.Size = new System.Drawing.Size(112, 33);
+            this.goNext.Size = new System.Drawing.Size(126, 33);
             this.goNext.TabIndex = 29;
             this.goNext.Text = "Sign Up";
             this.goNext.UseVisualStyleBackColor = true;
@@ -251,10 +274,10 @@
             // takePic
             // 
             this.takePic.Font = new System.Drawing.Font("굴림", 9F);
-            this.takePic.Location = new System.Drawing.Point(346, 280);
+            this.takePic.Location = new System.Drawing.Point(474, 118);
             this.takePic.Margin = new System.Windows.Forms.Padding(2);
             this.takePic.Name = "takePic";
-            this.takePic.Size = new System.Drawing.Size(113, 33);
+            this.takePic.Size = new System.Drawing.Size(126, 33);
             this.takePic.TabIndex = 28;
             this.takePic.Text = "Take a picture";
             this.takePic.UseVisualStyleBackColor = true;
@@ -264,7 +287,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.profile4;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(395, 75);
+            this.pictureBox1.Location = new System.Drawing.Point(343, 87);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(126, 120);
             this.pictureBox1.TabIndex = 15;
@@ -315,5 +338,7 @@
         private System.Windows.Forms.Button idCheck;
         private System.Windows.Forms.TextBox nicknameCheckTxt;
         private System.Windows.Forms.Button registeredUserBtn;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel4;
     }
 }
