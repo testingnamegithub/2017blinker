@@ -180,52 +180,52 @@
             // 
             // textBox1
             // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.ForeColor = System.Drawing.Color.Silver;
             this.textBox1.Location = new System.Drawing.Point(26, 256);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(165, 29);
             this.textBox1.TabIndex = 41;
-            this.textBox1.TabStop = false;
             this.textBox1.Text = "First Name";
             this.textBox1.Click += new System.EventHandler(this.Txtbox_MouseClick);
             this.textBox1.TextChanged += new System.EventHandler(this.TextChanged);
             // 
             // textBox4
             // 
-            this.textBox4.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox4.ForeColor = System.Drawing.Color.Silver;
             this.textBox4.Location = new System.Drawing.Point(203, 256);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(165, 29);
             this.textBox4.TabIndex = 42;
-            this.textBox4.TabStop = false;
             this.textBox4.Text = "Last Name";
             this.textBox4.Click += new System.EventHandler(this.Txtbox_MouseClick);
             this.textBox4.TextChanged += new System.EventHandler(this.TextChanged);
             // 
             // textBox5
             // 
-            this.textBox5.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox5.ForeColor = System.Drawing.Color.Silver;
             this.textBox5.Location = new System.Drawing.Point(26, 293);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(340, 29);
             this.textBox5.TabIndex = 43;
-            this.textBox5.TabStop = false;
             this.textBox5.Text = "E-Mail";
             this.textBox5.Click += new System.EventHandler(this.Txtbox_MouseClick);
             this.textBox5.TextChanged += new System.EventHandler(this.TextChanged);
             // 
             // textBox6
             // 
-            this.textBox6.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox6.ForeColor = System.Drawing.Color.Silver;
             this.textBox6.Location = new System.Drawing.Point(26, 330);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(340, 29);
             this.textBox6.TabIndex = 44;
-            this.textBox6.TabStop = false;
             this.textBox6.Text = "Phone_Number";
             this.textBox6.Click += new System.EventHandler(this.Txtbox_MouseClick);
             this.textBox6.TextChanged += new System.EventHandler(this.TextChanged);
@@ -240,26 +240,26 @@
             // 
             // textBox7
             // 
-            this.textBox7.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox7.ForeColor = System.Drawing.Color.Silver;
             this.textBox7.Location = new System.Drawing.Point(26, 388);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(340, 29);
             this.textBox7.TabIndex = 46;
-            this.textBox7.TabStop = false;
             this.textBox7.Text = "Password";
             this.textBox7.Click += new System.EventHandler(this.Txtbox_MouseClick);
             this.textBox7.TextChanged += new System.EventHandler(this.PasswordTextChanged);
             // 
             // textBox8
             // 
-            this.textBox8.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox8.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox8.ForeColor = System.Drawing.Color.Silver;
             this.textBox8.Location = new System.Drawing.Point(26, 425);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(340, 29);
             this.textBox8.TabIndex = 47;
-            this.textBox8.TabStop = false;
             this.textBox8.Text = "Password Confirm";
             this.textBox8.Click += new System.EventHandler(this.Txtbox_MouseClick);
             this.textBox8.TextChanged += new System.EventHandler(this.PasswordTextChanged);

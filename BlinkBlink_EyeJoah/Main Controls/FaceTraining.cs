@@ -299,10 +299,6 @@ namespace BlinkBlink_EyeJoah
             }
             else
             {
-                // MainForm 띄우기 
-                SignUpForm signUpForm = new SignUpForm();
-                signUpForm.Show();
-                signUpForm.Activate();
                 MessageBox.Show("닉네임을 등록하세요.");
             }
             
