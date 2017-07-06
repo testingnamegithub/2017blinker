@@ -408,6 +408,55 @@ namespace BlinkBlink_EyeJoah
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+        // 텍스트 박스 클릭시
+        private void Txtbox_MouseClick(object sender, EventArgs e)
+        {
+            TextBox txtBox = (TextBox)sender;
+            txtBox.Clear();
+        }
+
+        // 비밀번호 변환
+        private void PasswordTextChanged(object sender, EventArgs e)
+        {
+            TextBox txtBox = (TextBox)sender;
+            txtBox.ForeColor = Color.Black;
+            txtBox.PasswordChar = '*';
+        }
+        // TextBox 글씨색 변환
+        private void TextboxContentsChanged(object sender, EventArgs e)
+        {
+            TextBox txtBox = (TextBox)sender;
+            txtBox.ForeColor = Color.Black;
+        }
+
+        private void MouseEnter(object sender, EventArgs e)
+        {
+            Panel panelName = (Panel)sender;
+            switch (panelName.Name)
+            {
+                case "facebookLoginBtn":
+                    panelName.BackgroundImage = Properties.Resources.signUpFacebook_Enter;
+                    break;
+                case "confirmBtn":
+                    panelName.BackgroundImage = Properties.Resources.confirm_Enter;
+                    break;
+            }
+        }
+
+        private void MouseLeave(object sender, EventArgs e)
+        {
+            Panel panelName = (Panel)sender;
+            switch (panelName.Name)
+            {
+                case "facebookLoginBtn":
+                    panelName.BackgroundImage = Properties.Resources.signUpFacebook;
+                    break;
+                case "confirmBtn":
+                    panelName.BackgroundImage = Properties.Resources.confirm;
+                    break;
+            }
+        }
+
         private void closeButton_Click(object sender, MouseEventArgs e)
         {
             //프로그램 종료

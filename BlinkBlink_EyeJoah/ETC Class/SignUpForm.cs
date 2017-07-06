@@ -41,7 +41,6 @@ namespace BlinkBlink_EyeJoah
         {
             TextBox txtBox = (TextBox)sender;
             txtBox.Clear();
-
         }
 
         private void PasswordTextChanged(object sender, EventArgs e)

@@ -218,13 +218,15 @@
             // 
             // confirmBtn
             // 
-            this.confirmBtn.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.confirm;
+            this.confirmBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmBtn.BackgroundImage")));
             this.confirmBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.confirmBtn.Location = new System.Drawing.Point(381, 362);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.Size = new System.Drawing.Size(342, 51);
             this.confirmBtn.TabIndex = 56;
             this.confirmBtn.Click += new System.EventHandler(this.ConfirmBtnClick);
+            this.confirmBtn.MouseEnter += new System.EventHandler(this.MouseEnter);
+            this.confirmBtn.MouseLeave += new System.EventHandler(this.MouseLeave);
             // 
             // panel10
             // 
@@ -244,6 +246,8 @@
             this.textBox8.Size = new System.Drawing.Size(340, 29);
             this.textBox8.TabIndex = 54;
             this.textBox8.Text = "Password Confirm";
+            this.textBox8.Click += new System.EventHandler(this.Txtbox_MouseClick);
+            this.textBox8.TextChanged += new System.EventHandler(this.PasswordTextChanged);
             // 
             // textBox7
             // 
@@ -255,6 +259,8 @@
             this.textBox7.Size = new System.Drawing.Size(340, 29);
             this.textBox7.TabIndex = 53;
             this.textBox7.Text = "Password";
+            this.textBox7.Click += new System.EventHandler(this.Txtbox_MouseClick);
+            this.textBox7.TextChanged += new System.EventHandler(this.PasswordTextChanged);
             // 
             // textBox5
             // 
@@ -266,6 +272,8 @@
             this.textBox5.Size = new System.Drawing.Size(340, 29);
             this.textBox5.TabIndex = 52;
             this.textBox5.Text = "E-Mail";
+            this.textBox5.Click += new System.EventHandler(this.Txtbox_MouseClick);
+            this.textBox5.TextChanged += new System.EventHandler(this.TextboxContentsChanged);
             // 
             // label1
             // 
@@ -348,6 +356,8 @@
             this.facebookLoginBtn.Size = new System.Drawing.Size(342, 51);
             this.facebookLoginBtn.TabIndex = 45;
             this.facebookLoginBtn.Click += new System.EventHandler(this.SignUpFacebookBtnClick);
+            this.facebookLoginBtn.MouseEnter += new System.EventHandler(this.MouseEnter);
+            this.facebookLoginBtn.MouseLeave += new System.EventHandler(this.MouseLeave);
             // 
             // textBox4
             // 
@@ -359,6 +369,8 @@
             this.textBox4.Size = new System.Drawing.Size(165, 29);
             this.textBox4.TabIndex = 44;
             this.textBox4.Text = "Last Name";
+            this.textBox4.Click += new System.EventHandler(this.Txtbox_MouseClick);
+            this.textBox4.TextChanged += new System.EventHandler(this.TextboxContentsChanged);
             // 
             // textBox1
             // 
@@ -370,6 +382,8 @@
             this.textBox1.Size = new System.Drawing.Size(165, 29);
             this.textBox1.TabIndex = 43;
             this.textBox1.Text = "First Name";
+            this.textBox1.Click += new System.EventHandler(this.Txtbox_MouseClick);
+            this.textBox1.TextChanged += new System.EventHandler(this.TextboxContentsChanged);
             // 
             // registeredUserBtn
             // 

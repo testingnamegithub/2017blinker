@@ -616,11 +616,12 @@
     <None Include="Resources\lock-icon.png" />
     <None Include="Resources\cancel2.png" />
     <None Include="Resources\cancel_loginWindow.png" />
-    <None Include="Resources\confirm.png" />
     <None Include="Resources\login_with_facebook.png" />
     <None Include="Resources\login_with_facebook_hover.png" />
     <None Include="Resources\LoginButton.png" />
     <None Include="Resources\LoginButton_hover.png" />
+    <None Include="Resources\confirm.png" />
+    <None Include="Resources\confirm_Enter.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -646,6 +647,7 @@
     <None Include="Resources\signUp_with_facebook2.png" />
     <None Include="Resources\signUpFacebook.png" />
     <None Include="Resources\scout-icon-13.png" />
+    <None Include="Resources\signUpFacebook_Enter.png" />
     <Content Include="Resources\_checked.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
