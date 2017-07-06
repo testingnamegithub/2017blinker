@@ -64,8 +64,39 @@ namespace BlinkBlink_EyeJoah
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            FaceTraining.timer.Start();
+        }
 
+        private void SignInFacebookBtn(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MouseEnter(object sender, EventArgs e)
+        {
+            Panel panelName = (Panel)sender;
+            switch (panelName.Name)
+            {
+                case "facebookLoginBtn":
+                    panelName.BackgroundImage = Properties.Resources.login_with_facebook_hover;
+                    break;
+                //case "LoginBtn":
+                //    panelName.BackgroundImage = Properties.Resources.LoginButton_hover;
+                //    break;
+            }
+        }
+
+        private void MouseLeave(object sender, EventArgs e)
+        {
+            Panel panelName = (Panel)sender;
+            switch (panelName.Name)
+            {
+                case "facebookLoginBtn":
+                    panelName.BackgroundImage = Properties.Resources.login_with_facebook;
+                    break;
+                //case "confirmBtn":
+                //    panelName.BackgroundImage = Properties.Resources.LoginButton;
+                //    break;
+            }
         }
     }
 }

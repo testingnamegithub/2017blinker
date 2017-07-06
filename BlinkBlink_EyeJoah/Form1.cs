@@ -12,7 +12,7 @@ namespace BlinkBlink_EyeJoah
     {
         /* 눈 깜빡임 기능을 담당하는 Class */
         private EyeBlinkDetection eyeBlink;
-        private Form trainingFaceForm;
+        private Form loginForm;
         private String accessToken;
         private int thresholdValue = 0;
 
@@ -42,21 +42,20 @@ namespace BlinkBlink_EyeJoah
         {
             InitializeComponent();
 
-            this.trainingFaceForm = trainingFaceForm;
+            //this.trainingFaceForm = trainingFaceForm;
 
             Init_UI(Constant.USUALLOGIN);
             Start_Process();
         }
 
         // Facebook을 통해 Login한 경우
-        public Form1(List<String> loginUserData, String _accessToken, Form trainingFaceForm)
+        public Form1(Form loginForm, List<String> loginUserData, String _accessToken)
         {
             InitializeComponent();
 
             this.facebookLoginUserData = loginUserData;
             this.accessToken = _accessToken;
-            this.trainingFaceForm = trainingFaceForm;
-
+            this.loginForm = loginForm;
             Init_UI(Constant.FacebookLogin);
             Start_Process();
         }
@@ -193,6 +192,25 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
+        // logout button 눌렀을 경우
+        private void logOutText_Click(object sender, EventArgs e)
+        {
+            // 인터넷 연결이 되어 있을 경우
+            CheckInternetConnection checkInternetConnection = CheckInternetConnection.GetInstance();
+            if (checkInternetConnection.CheckForConnection().Equals(true))
+            {
+                var webBrowser = new WebBrowser();
+                var fb = new FacebookClient();
+                var logouUrl = fb.GetLogoutUrl(new { access_token = accessToken, next = "https://www.facebook.com/connect/login_success.html" });
+                webBrowser.Navigate(logouUrl);
+            }
+
+            // 현재 MainForm 닫고 FaceTraining Form 다시 실행시키기
+            this.Close();
+            EyeBlinkDetection.stopIdle = true;
+            this.loginForm.Show();
+        }
+
         //프로그램 종료
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -249,24 +267,5 @@ namespace BlinkBlink_EyeJoah
             return UserNameLabel.Text;
         }
 
-        private void logOutText_Click(object sender, EventArgs e)
-        {
-            // 인터넷 연결이 되어 있을 경우
-            CheckInternetConnection checkInternetConnection = CheckInternetConnection.GetInstance();
-            if (checkInternetConnection.CheckForConnection().Equals(true))
-            {
-                var webBrowser = new WebBrowser();
-                var fb = new FacebookClient();
-                var logouUrl = fb.GetLogoutUrl(new { access_token = accessToken, next = "https://www.facebook.com/connect/login_success.html" });
-                webBrowser.Navigate(logouUrl);
-            }
-            
-            // 현재 MainForm 닫고 FaceTraining Form 다시 실행시키기
-            this.Close();
-            EyeBlinkDetection.stopIdle = true;
-            this.trainingFaceForm.Show();
-
-            FaceTraining.timer.Start();
-        }
     }
 }

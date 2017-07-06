@@ -633,6 +633,16 @@ namespace BlinkBlink_EyeJoah.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap scout_icon_13 {
+            get {
+                object obj = ResourceManager.GetObject("scout_icon_13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap screen {
             get {
                 object obj = ResourceManager.GetObject("screen", resourceCulture);
@@ -676,6 +686,16 @@ namespace BlinkBlink_EyeJoah.Properties {
         internal static System.Drawing.Bitmap settingsLogo2 {
             get {
                 object obj = ResourceManager.GetObject("settingsLogo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap signUpFacebook {
+            get {
+                object obj = ResourceManager.GetObject("signUpFacebook", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

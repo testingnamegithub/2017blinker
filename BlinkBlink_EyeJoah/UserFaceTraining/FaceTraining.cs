@@ -20,12 +20,16 @@ using AForge.Video.DirectShow;
 using DT = System.Data;            // System.Data.dll  
 using QC = System.Data.SqlClient;  // System.Data.dll  
 
+using Facebook;
+using BlinkBlink_EyeJoah.FacebookLogin;
+
 namespace BlinkBlink_EyeJoah
 {
     public partial class FaceTraining : Form
     {
         /* Training Data가 들어있는 Class */
         private TrainingData trainingData;
+        private Form loginForm;
         public static System.Windows.Forms.Timer timer;
 
         private Image<Bgr, Byte> currentFrame;
@@ -37,12 +41,23 @@ namespace BlinkBlink_EyeJoah
         private Bitmap captureBitmap;                                                         // Capture된 Face
         private MCvAvgComp f;                                                                 // 얼굴 검출된 face
         public static MCvFont font = new MCvFont(FONT.CV_FONT_HERSHEY_TRIPLEX, 0.5d, 0.5d);   // Font
+        
         /* Training Image 및 이름에 관한 변수 */
         private List<Image<Gray, byte>> trainingImages;
         private List<string> trainedNamesList;
 
         /* shoot 버튼을 눌렀는지 확인하는 변수 */
         private Boolean clickedShootBtn = false;
+        /* Facebook login 성공했는지 확인하는 변수 */
+        private bool facebookLoginSuccessFlag = false;
+
+        /*Facebook Sign Up 변수*/
+        private const string AppId = "842840515831167";
+        private const string ExtendedPermissions = "user_about_me,user_posts";
+        private string _accessToken;
+        private List<String> userInfo;
+        private GetFacebookUserData getFacebookUserData;
+
 
         #region 마우스로 Form 이동에 관한 변수
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -59,26 +74,26 @@ namespace BlinkBlink_EyeJoah
         private FilterInfoCollection VideoCaptureDevices;
         private VideoCaptureDevice FinalVideo;
         #endregion
-
-        //가장자리 둥글게
+        #region Form 가장자리 둥글게 만들기
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
-(
-    int nLeftRect,     // x-coordinate of upper-left corner
-    int nTopRect,      // y-coordinate of upper-left corner
-    int nRightRect,    // x-coordinate of lower-right corner
-    int nBottomRect,   // y-coordinate of lower-right corner
-    int nWidthEllipse, // height of ellipse
-    int nHeightEllipse // width of ellipse
- );
-
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+        #endregion
         //nickname check-azure database
         private bool checkNameDup;
 
-        public FaceTraining()
+        public FaceTraining(Form loginForm)
         {
             InitializeComponent();
 
+            this.loginForm = loginForm;
             //가장자리 둥글게
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
 
@@ -88,9 +103,7 @@ namespace BlinkBlink_EyeJoah
             //Training 폴더에 있는 얼굴 이미지 및 이름들 불러오기
             loadTrainingImage();
             //WebCam 장치 이름을 불러오기
-            loadWebCamDevice();
-            //PictureBox UI 둥글게 하기
-            //makePictureBoxToRound();
+            //loadWebCamDevice();
 
             //Capture Device 초기화
             grabber = new Capture();
@@ -137,21 +150,13 @@ namespace BlinkBlink_EyeJoah
                     String name = recognizer.Recognize(result);
 
                     //Draw the label for each face detected and recognized
-                    currentFrame.Draw(name, ref font, new System.Drawing.Point(face.rect.X - 2, face.rect.Y - 2), new Bgr(Color.LightGreen));
+                    currentFrame.Draw("ID: "+name, ref font, new System.Drawing.Point(face.rect.X - 2, face.rect.Y - 3), new Bgr(Color.Green));
                 }
             }
 
             //Show the faces procesed and recognized
             currentFrame.Draw(f.rect, new Bgr(Color.CadetBlue), 3);
             imageBoxFrameGrabber.Image = currentFrame;
-        }
-
-        
-        private void nameTxtbox_MouseClick(object sender, MouseEventArgs e)
-        {
-            nameTxtbox.Clear();
-            nameTxtbox.ForeColor = Color.Black;
-            nicknameCheckTxt.Clear();
         }
 
         private void loadWebCamDevice()
@@ -164,6 +169,7 @@ namespace BlinkBlink_EyeJoah
             //comboBox1.Items.Add("Smart Phone");
             //comboBox1.SelectedIndex = 0;
         }
+
         private void loadTrainingImage()
         {
             // trainingData 객체 참조
@@ -186,7 +192,7 @@ namespace BlinkBlink_EyeJoah
                 // 검출한 얼굴 이미지 100X100으로 사이즈 재조정 및 TrainingImage List에 저장
                 trainedFace = result.Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
                 trainingData.getset_TrainingImages.Add(trainedFace);
-                trainingData.getset_trainedNamesList.Add(nameTxtbox.Text);
+                trainingData.getset_trainedNamesList.Add(userInfo[0]);
 
                 // 파일에 위 Data 저장하기
                 trainingData.saveTrainingData();
@@ -195,7 +201,7 @@ namespace BlinkBlink_EyeJoah
                 captureBitmap = ResizeImage.adjust(captureBitmap, new Size(120, 120));
                 pictureBox1.Image = captureBitmap;
 
-                MessageBox.Show(nameTxtbox.Text + "´s face was detected and registered. :)", "Photo Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(userInfo[1] + "´s face was detected and registered. :)", "Photo Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
             {
@@ -203,30 +209,29 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-        private void closeButton_Click(object sender, MouseEventArgs e)
-        {
-            //프로그램 종료
-            Application.Exit();
-        }
 
-        private void showMainForm()
+        private void showMainForm(int Mode)
         {
-            // 현재 Form을 숨기고 Timer 기능 Stop 
+            // Form들 숨기고 Timer Stop 시키기
             this.Hide();
+            this.loginForm.Hide();
             timer1.Stop();
+
             // MainForm 띄우기 
-            Form1 mainForm = new Form1();
+            Form1 mainForm;
+            if (Mode.Equals(Constant.FacebookLogin))
+            {
+                mainForm = new Form1(this, userInfo, _accessToken);
+            }
+            else
+            {
+                mainForm = new Form1(this);
+            }
             mainForm.Show();
             mainForm.Activate();
+            EyeBlinkDetection.stopIdle = false;
         }
+        
 
         private void takePic_Click(object sender, EventArgs e)
         {
@@ -243,109 +248,88 @@ namespace BlinkBlink_EyeJoah
             // Shoot 버튼을 한번도 안 눌렀을 경우
             else
             {
+                if (facebookLoginSuccessFlag.Equals(false))
+                {
+                    MessageBox.Show("You Shold fill in the information", "Photo Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 if (takePic.Text.Equals("Take a picture"))
                 {
                     // 버튼을 Next 사진으로 변경 후 Click 했음을 나타내는 clickedShootBtn = true로 변경 
                     clickedShootBtn = true;
                 }
-                if (nameTxtbox.Text.Equals("insert nickname") ||
-                    nameTxtbox.Text.Length.Equals(0))
-                {
-                    //MessageBox with ok button, title, and information logo(I)
-                    MessageBox.Show("Please input your name", "Photo Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+             
                 // user 등록하기 
                 add_User_To_TrainingImage();
 
             }
         }
 
-        //access controls from another classes
-        public static FaceTraining faceTraining;
-
-        //update checkNameDup(bool)
-        public void updateNameDup(bool boolValue)
-        {
-            checkNameDup = boolValue;
-        }
-
-        //update nicknameCheckText
-        public void updateCheckText(String message, Color color)
-        {
-            nicknameCheckTxt.Text = message;
-            nicknameCheckTxt.ForeColor = color;
-        }
-
-        //return nickname textbox text
-        public String nameText()
-        {
-            return nameTxtbox.Text;
-        }
 
         LocalDatabase localDB = LocalDatabase.getInstance();
-
-        //insert data and go to the next form
-        private void goNext_Click(object sender, EventArgs e)
-        {
-            if (nicknameCheckTxt.Text.Equals("닉네임 생성 가능"))
-            {
-                this.timer1.Stop();
-
-                // MainForm 띄우기 
-                SignUpForm signUpForm = new SignUpForm();
-                signUpForm.Show();
-                signUpForm.Activate();
-            }
-            else
-            {
-                MessageBox.Show("닉네임을 등록하세요.");
-            }
-            
-        }
-
         NicknameCheck login = NicknameCheck.getInstance();
 
-        private void nicknameCheckTxt_TextChanged(object sender, EventArgs e)
+
+        private void SignUpFacebookBtnClick(object sender, EventArgs e)
         {
-            HideCaret(nicknameCheckTxt.Handle);
-        }
-                
-        //ID 검사
-        private void idCheck_Click(object sender, EventArgs e)
-        {
-            if(login.DuplicationCheck(nameTxtbox.Text))
+            // 인터넷 연결 됬는지 확인
+            CheckInternetConnection checkInternetConnection = CheckInternetConnection.GetInstance();
+
+            // 인터넷 연결이 되었을 경우
+            if (checkInternetConnection.CheckForConnection())
             {
-                updateCheckText("닉네임이 이미 있습니다.", Color.Red);
-                return;
+                var fbLoginDialog = new FB_LoginDialog(AppId, ExtendedPermissions);
+                fbLoginDialog.ShowDialog();
+
+                DisplayAppropriateMessage(fbLoginDialog.FacebookOAuthResult);
             }
-            else if(login.CheckingIdEngNum(nameTxtbox.Text)==false || login.CheckingIdLength(nameTxtbox.Text)==false)
-            {
-                updateCheckText("영문과 숫자 조합으로 6~12자", Color.Red);
-                return;
-            }
+            // 안 되있을 경우 
             else
             {
-                updateCheckText("닉네임 생성 가능", Color.Blue);
+                MessageBox.Show("User data visualization service is not available because internet isn't connected.");
             }
         }
 
-        /// <summary>
-        /// 등록된 사용자로 들어가는 로그인창(임시)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void registeredUserBtn_Click(object sender, EventArgs e)
+        private void DisplayAppropriateMessage(FacebookOAuthResult facebookOAuthResult)
         {
-            this.timer1.Stop();
+            if (facebookOAuthResult != null)
+            {
+                if (facebookOAuthResult.IsSuccess)
+                {
+                    facebookLoginSuccessFlag = true;
 
-            // MainForm 띄우기 
-            FacebookLogin.FB_Analyze facebookLoginForm = new FacebookLogin.FB_Analyze(this);
-            facebookLoginForm.Show();
-            facebookLoginForm.Activate();
-            
+                    _accessToken = facebookOAuthResult.AccessToken;
+                    var fb = new FacebookClient(facebookOAuthResult.AccessToken);
+
+                    userInfo = new List<String>();
+                    getFacebookUserData = new GetFacebookUserData(fb);
+                    getFacebookUserData.InitUserProfile();
+                    userInfo = getFacebookUserData.getUserInfo;
+                }
+                else
+                {
+                    MessageBox.Show(facebookOAuthResult.ErrorDescription);
+                }
+            }
         }
-        
+
+        private void ConfirmBtnClick(object sender, EventArgs e)
+        {
+            if (clickedShootBtn.Equals(false))
+            {
+                MessageBox.Show("You should take a picture");
+                return;
+            }
+            if (facebookLoginSuccessFlag.Equals(false))
+            {
+                MessageBox.Show("You should success the facebook login");
+                return;
+            }
+
+            showMainForm(Constant.FacebookLogin);
+        }
+
+
         //DialogResult 로그인 박스 
         public static DialogResult InputBox(string title, string promptText, ref string value)
         {
@@ -389,11 +373,48 @@ namespace BlinkBlink_EyeJoah
             return dialogResult;
         }
 
+
+        //access controls from another classes
+        public static FaceTraining faceTraining;
+
+        //update checkNameDup(bool)
+        public void updateNameDup(bool boolValue)
+        {
+            checkNameDup = boolValue;
+        }
+
+        //update nicknameCheckText
+        public void updateCheckText(String message, Color color)
+        {
+            nicknameCheckTxt.Text = message;
+            nicknameCheckTxt.ForeColor = color;
+        }
+        
+        private void nicknameCheckTxt_TextChanged(object sender, EventArgs e)
+        {
+            HideCaret(nicknameCheckTxt.Handle);
+        }
+
         public System.Windows.Forms.Timer getTimer
         {
             get { return timer1; }
         }
+        
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        private void closeButton_Click(object sender, MouseEventArgs e)
+        {
+            //프로그램 종료
+            Application.Exit();
+        }
     }
+
     //private void takePictureBtn_Click(object sender, MouseEventArgs e)
     //{
     //    //// Shoot 버튼을 누른 상태일 경우 ( Next버튼으로 변한 상태 ) 
@@ -421,11 +442,5 @@ namespace BlinkBlink_EyeJoah
     //    //}
 
     //}
-
-    //private void reTryBtn_Click(object sender, MouseEventArgs e)
-    //{
-    //    reTryBtn.Visible = false;
-    //    pictureBox1.Image = null;
-    //}
-
+    
 }

@@ -85,14 +85,14 @@
         {
             // Form들 숨기고 Timer Stop 시키기
             this.Hide();
-            this.trainingFaceForm.Hide();
-            FaceTraining.timer.Stop();
+            //this.trainingFaceForm.Hide();
+            //FaceTraining.timer.Stop();
 
             // MainForm 띄우기 
             Form1 mainForm;
             if (Mode.Equals(Constant.FacebookLogin))
             {
-                mainForm = new Form1(userInfo, _accessToken, trainingFaceForm);
+                mainForm = new Form1(this,userInfo, _accessToken);
             }
             else
             {
@@ -123,7 +123,6 @@
                 MessageBox.Show("User data visualization service is not available because internet isn't connected.");
                 startMainForm(Constant.USUALLOGIN);
             }
-            
         }
 
         
@@ -151,10 +150,11 @@
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            SignUpForm signUpForm = new SignUpForm();
-
-            signUpForm.Show();
-            signUpForm.Activate();
+            FaceTraining faceTrainingForm = new FaceTraining(this);
+            faceTrainingForm.TopMost = true;
+            faceTrainingForm.Show();
+            faceTrainingForm.Activate();
+            
         }
 
         private void Btn_MouseEnter(object sender, EventArgs e)

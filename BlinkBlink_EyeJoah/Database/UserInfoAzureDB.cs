@@ -102,30 +102,30 @@ namespace BlinkBlink_EyeJoah
         }
 
         //check nickname duplication
-        public void idDupCheck()
-        {
-            // nameTxtbox.Text
-            using (var connection = new QC.SqlConnection(
-                 "Server=tcp:blinkerserver.database.windows.net,1433;Initial Catalog=blinker_db;Persist Security Info=False;User ID=sm5duck;Password=Ajtwlstjdals2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-                  ))
-            {
-                //sql 연결
-                connection.Open();
+        //public void idDupCheck()
+        //{
+        //    // nameTxtbox.Text
+        //    using (var connection = new QC.SqlConnection(
+        //         "Server=tcp:blinkerserver.database.windows.net,1433;Initial Catalog=blinker_db;Persist Security Info=False;User ID=sm5duck;Password=Ajtwlstjdals2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+        //          ))
+        //    {
+        //        //sql 연결
+        //        connection.Open();
 
-                //데이터 존재 유무 확인
-                if (userInfoAzureDB.checkIfRowExists(connection, FaceTraining.faceTraining.nameText()).Equals(true))
-                {
-                    FaceTraining.faceTraining.updateCheckText("The nickname already exists", System.Drawing.Color.Red);
-                    FaceTraining.faceTraining.updateNameDup(false); //fail
-                }
-                else //false
-                {
-                    FaceTraining.faceTraining.updateCheckText("Nickname available", System.Drawing.Color.Blue);
-                    FaceTraining.faceTraining.updateNameDup(true); //pass
-                }
+        //        //데이터 존재 유무 확인
+        //        if (userInfoAzureDB.checkIfRowExists(connection, FaceTraining.faceTraining.nameText()).Equals(true))
+        //        {
+        //            FaceTraining.faceTraining.updateCheckText("The nickname already exists", System.Drawing.Color.Red);
+        //            FaceTraining.faceTraining.updateNameDup(false); //fail
+        //        }
+        //        else //false
+        //        {
+        //            FaceTraining.faceTraining.updateCheckText("Nickname available", System.Drawing.Color.Blue);
+        //            FaceTraining.faceTraining.updateNameDup(true); //pass
+        //        }
 
-                connection.Close();
-            }
-        }
+        //        connection.Close();
+        //    }
+        //}
     }
 }

@@ -644,6 +644,8 @@
     <None Include="Resources\padlock.png" />
     <None Include="Resources\signUp_with_facebook.png" />
     <None Include="Resources\signUp_with_facebook2.png" />
+    <None Include="Resources\signUpFacebook.png" />
+    <None Include="Resources\scout-icon-13.png" />
     <Content Include="Resources\_checked.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
