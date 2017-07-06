@@ -622,6 +622,7 @@
     <None Include="Resources\LoginButton_hover.png" />
     <None Include="Resources\confirm.png" />
     <None Include="Resources\confirm_Enter.png" />
+    <None Include="Resources\LoginSucceeded.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

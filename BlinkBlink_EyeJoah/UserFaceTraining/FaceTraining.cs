@@ -29,6 +29,8 @@ namespace BlinkBlink_EyeJoah
     {
         /* Training Data가 들어있는 Class */
         private TrainingData trainingData;
+        private LocalDatabase localDB = LocalDatabase.getInstance();
+        private NicknameCheck login = NicknameCheck.getInstance();
         private Form loginForm;
         public static System.Windows.Forms.Timer timer;
 
@@ -150,7 +152,7 @@ namespace BlinkBlink_EyeJoah
                     String name = recognizer.Recognize(result);
 
                     //Draw the label for each face detected and recognized
-                    currentFrame.Draw("ID: "+name, ref font, new System.Drawing.Point(face.rect.X - 2, face.rect.Y - 3), new Bgr(Color.Green));
+                    currentFrame.Draw("ID: "+name, ref font, new System.Drawing.Point(face.rect.X - 2, face.rect.Y - 3), new Bgr(Color.CadetBlue));
                 }
             }
 
@@ -221,7 +223,7 @@ namespace BlinkBlink_EyeJoah
             Form1 mainForm;
             if (Mode.Equals(Constant.FacebookLogin))
             {
-                mainForm = new Form1(this, userInfo, _accessToken);
+                mainForm = new Form1(loginForm, userInfo, _accessToken);
             }
             else
             {
@@ -264,12 +266,7 @@ namespace BlinkBlink_EyeJoah
 
             }
         }
-
-
-        LocalDatabase localDB = LocalDatabase.getInstance();
-        NicknameCheck login = NicknameCheck.getInstance();
-
-
+        
         private void SignUpFacebookBtnClick(object sender, EventArgs e)
         {
             // 인터넷 연결 됬는지 확인
@@ -305,6 +302,8 @@ namespace BlinkBlink_EyeJoah
                     getFacebookUserData = new GetFacebookUserData(fb);
                     getFacebookUserData.InitUserProfile();
                     userInfo = getFacebookUserData.getUserInfo;
+
+                    facebookLoginBtn.BackgroundImage = Properties.Resources.LoginSucceeded;
                 }
                 else
                 {
@@ -377,23 +376,7 @@ namespace BlinkBlink_EyeJoah
         //access controls from another classes
         public static FaceTraining faceTraining;
 
-        //update checkNameDup(bool)
-        public void updateNameDup(bool boolValue)
-        {
-            checkNameDup = boolValue;
-        }
 
-        //update nicknameCheckText
-        public void updateCheckText(String message, Color color)
-        {
-            nicknameCheckTxt.Text = message;
-            nicknameCheckTxt.ForeColor = color;
-        }
-        
-        private void nicknameCheckTxt_TextChanged(object sender, EventArgs e)
-        {
-            HideCaret(nicknameCheckTxt.Handle);
-        }
 
         public System.Windows.Forms.Timer getTimer
         {
@@ -414,7 +397,6 @@ namespace BlinkBlink_EyeJoah
             TextBox txtBox = (TextBox)sender;
             txtBox.Clear();
         }
-
         // 비밀번호 변환
         private void PasswordTextChanged(object sender, EventArgs e)
         {
@@ -435,7 +417,10 @@ namespace BlinkBlink_EyeJoah
             switch (panelName.Name)
             {
                 case "facebookLoginBtn":
-                    panelName.BackgroundImage = Properties.Resources.signUpFacebook_Enter;
+                        if (facebookLoginSuccessFlag.Equals(true))
+                            break;
+                        else
+                            panelName.BackgroundImage = Properties.Resources.signUpFacebook_Enter;
                     break;
                 case "confirmBtn":
                     panelName.BackgroundImage = Properties.Resources.confirm_Enter;
@@ -449,7 +434,10 @@ namespace BlinkBlink_EyeJoah
             switch (panelName.Name)
             {
                 case "facebookLoginBtn":
-                    panelName.BackgroundImage = Properties.Resources.signUpFacebook;
+                    if (facebookLoginSuccessFlag.Equals(true))
+                        break;
+                    else
+                        panelName.BackgroundImage = Properties.Resources.signUpFacebook;
                     break;
                 case "confirmBtn":
                     panelName.BackgroundImage = Properties.Resources.confirm;
@@ -491,5 +479,22 @@ namespace BlinkBlink_EyeJoah
     //    //}
 
     //}
-    
+    ////update checkNameDup(bool)
+    //public void updateNameDup(bool boolValue)
+    //{
+    //    checkNameDup = boolValue;
+    //}
+
+    ////update nicknameCheckText
+    //public void updateCheckText(String message, Color color)
+    //{
+    //    nicknameCheckTxt.Text = message;
+    //    nicknameCheckTxt.ForeColor = color;
+    //}
+
+    //private void nicknameCheckTxt_TextChanged(object sender, EventArgs e)
+    //{
+    //    HideCaret(nicknameCheckTxt.Handle);
+    //}
+
 }

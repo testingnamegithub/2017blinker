@@ -392,21 +392,6 @@
             this.registeredUserBtn.Size = new System.Drawing.Size(75, 23);
             this.registeredUserBtn.TabIndex = 60;
             // 
-            // nicknameCheckTxt
-            // 
-            this.nicknameCheckTxt.BackColor = System.Drawing.Color.White;
-            this.nicknameCheckTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nicknameCheckTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.nicknameCheckTxt.ForeColor = System.Drawing.Color.Black;
-            this.nicknameCheckTxt.Location = new System.Drawing.Point(431, 373);
-            this.nicknameCheckTxt.Margin = new System.Windows.Forms.Padding(2);
-            this.nicknameCheckTxt.Name = "nicknameCheckTxt";
-            this.nicknameCheckTxt.ReadOnly = true;
-            this.nicknameCheckTxt.Size = new System.Drawing.Size(198, 14);
-            this.nicknameCheckTxt.TabIndex = 31;
-            this.nicknameCheckTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nicknameCheckTxt.TextChanged += new System.EventHandler(this.nicknameCheckTxt_TextChanged);
-            // 
             // goNext
             // 
             this.goNext.Location = new System.Drawing.Point(0, 0);
