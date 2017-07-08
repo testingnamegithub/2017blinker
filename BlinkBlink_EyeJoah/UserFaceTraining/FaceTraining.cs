@@ -43,7 +43,7 @@ namespace BlinkBlink_EyeJoah
         private Bitmap captureBitmap;                                                         // Capture된 Face
         private MCvAvgComp f;                                                                 // 얼굴 검출된 face
         public static MCvFont font = new MCvFont(FONT.CV_FONT_HERSHEY_TRIPLEX, 0.5d, 0.5d);   // Font
-        
+
         /* Training Image 및 이름에 관한 변수 */
         private List<Image<Gray, byte>> trainingImages;
         private List<string> trainedNamesList;
@@ -152,7 +152,7 @@ namespace BlinkBlink_EyeJoah
                     String name = recognizer.Recognize(result);
 
                     //Draw the label for each face detected and recognized
-                    currentFrame.Draw("ID: "+name, ref font, new System.Drawing.Point(face.rect.X - 2, face.rect.Y - 3), new Bgr(Color.CadetBlue));
+                    currentFrame.Draw("ID: " + name, ref font, new System.Drawing.Point(face.rect.X - 2, face.rect.Y - 3), new Bgr(Color.CadetBlue));
                 }
             }
 
@@ -233,7 +233,7 @@ namespace BlinkBlink_EyeJoah
             mainForm.Activate();
             EyeBlinkDetection.stopIdle = false;
         }
-        
+
 
         private void takePic_Click(object sender, EventArgs e)
         {
@@ -260,13 +260,13 @@ namespace BlinkBlink_EyeJoah
                     // 버튼을 Next 사진으로 변경 후 Click 했음을 나타내는 clickedShootBtn = true로 변경 
                     clickedShootBtn = true;
                 }
-             
+
                 // user 등록하기 
                 add_User_To_TrainingImage();
 
             }
         }
-        
+
         private void SignUpFacebookBtnClick(object sender, EventArgs e)
         {
             // 인터넷 연결 됬는지 확인
@@ -382,7 +382,7 @@ namespace BlinkBlink_EyeJoah
         {
             get { return timer1; }
         }
-        
+
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -417,10 +417,10 @@ namespace BlinkBlink_EyeJoah
             switch (panelName.Name)
             {
                 case "facebookLoginBtn":
-                        if (facebookLoginSuccessFlag.Equals(true))
-                            break;
-                        else
-                            panelName.BackgroundImage = Properties.Resources.signUpFacebook_Enter;
+                    if (facebookLoginSuccessFlag.Equals(true))
+                        break;
+                    else
+                        panelName.BackgroundImage = Properties.Resources.signUpFacebook_Enter;
                     break;
                 case "confirmBtn":
                     panelName.BackgroundImage = Properties.Resources.confirm_Enter;
@@ -443,8 +443,7 @@ namespace BlinkBlink_EyeJoah
                     panelName.BackgroundImage = Properties.Resources.confirm;
                     break;
             }
-        }
-
+        } 
         private void closeButton_Click(object sender, MouseEventArgs e)
         {
             //프로그램 종료

@@ -57,9 +57,6 @@
             this.facebookLoginBtn = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.registeredUserBtn = new System.Windows.Forms.Button();
-            this.nicknameCheckTxt = new System.Windows.Forms.TextBox();
-            this.goNext = new System.Windows.Forms.Button();
             this.takePic = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
@@ -87,7 +84,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(817, 55);
+            this.panel1.Size = new System.Drawing.Size(817, 51);
             this.panel1.TabIndex = 16;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -117,7 +114,7 @@
             // minimizeBtn
             // 
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(675, 15);
+            this.minimizeBtn.Location = new System.Drawing.Point(664, 15);
             this.minimizeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(26, 26);
@@ -128,7 +125,7 @@
             // closeButton
             // 
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(710, 15);
+            this.closeButton.Location = new System.Drawing.Point(699, 15);
             this.closeButton.Margin = new System.Windows.Forms.Padding(2);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(26, 26);
@@ -145,7 +142,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(131, 314);
+            this.label2.Location = new System.Drawing.Point(493, 293);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(179, 23);
             this.label2.TabIndex = 25;
@@ -171,24 +168,21 @@
             this.panel2.Controls.Add(this.facebookLoginBtn);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.registeredUserBtn);
-            this.panel2.Controls.Add(this.nicknameCheckTxt);
-            this.panel2.Controls.Add(this.goNext);
             this.panel2.Controls.Add(this.takePic);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(1, 38);
+            this.panel2.Location = new System.Drawing.Point(1, 52);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(750, 438);
+            this.panel2.Size = new System.Drawing.Size(731, 417);
             this.panel2.TabIndex = 28;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(655, 346);
+            this.checkBox1.Location = new System.Drawing.Point(292, 330);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(68, 16);
             this.checkBox1.TabIndex = 59;
@@ -198,7 +192,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel11.Location = new System.Drawing.Point(383, 297);
+            this.panel11.Location = new System.Drawing.Point(20, 281);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(340, 2);
             this.panel11.TabIndex = 58;
@@ -207,7 +201,7 @@
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.Info;
             this.textBox3.Font = new System.Drawing.Font("나눔고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(383, 317);
+            this.textBox3.Location = new System.Drawing.Point(20, 301);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -220,7 +214,7 @@
             // 
             this.confirmBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmBtn.BackgroundImage")));
             this.confirmBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.confirmBtn.Location = new System.Drawing.Point(381, 362);
+            this.confirmBtn.Location = new System.Drawing.Point(18, 346);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.Size = new System.Drawing.Size(342, 51);
             this.confirmBtn.TabIndex = 56;
@@ -231,7 +225,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel10.Location = new System.Drawing.Point(381, 251);
+            this.panel10.Location = new System.Drawing.Point(18, 235);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(340, 5);
             this.panel10.TabIndex = 55;
@@ -240,7 +234,7 @@
             // 
             this.textBox8.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox8.ForeColor = System.Drawing.Color.Silver;
-            this.textBox8.Location = new System.Drawing.Point(381, 216);
+            this.textBox8.Location = new System.Drawing.Point(18, 200);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(340, 29);
@@ -253,7 +247,7 @@
             // 
             this.textBox7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox7.ForeColor = System.Drawing.Color.Silver;
-            this.textBox7.Location = new System.Drawing.Point(381, 179);
+            this.textBox7.Location = new System.Drawing.Point(18, 163);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(340, 29);
@@ -266,7 +260,7 @@
             // 
             this.textBox5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox5.ForeColor = System.Drawing.Color.Silver;
-            this.textBox5.Location = new System.Drawing.Point(381, 144);
+            this.textBox5.Location = new System.Drawing.Point(18, 128);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(340, 29);
@@ -279,7 +273,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(422, 117);
+            this.label1.Location = new System.Drawing.Point(59, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 16);
             this.label1.TabIndex = 50;
@@ -289,7 +283,7 @@
             // 
             this.panel9.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.envelope;
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel9.Location = new System.Drawing.Point(381, 113);
+            this.panel9.Location = new System.Drawing.Point(18, 97);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(33, 25);
             this.panel9.TabIndex = 51;
@@ -298,7 +292,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.LightGray;
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(381, 100);
+            this.panel5.Location = new System.Drawing.Point(18, 84);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(140, 1);
             this.panel5.TabIndex = 47;
@@ -315,7 +309,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.LightGray;
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(581, 100);
+            this.panel7.Location = new System.Drawing.Point(218, 84);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(140, 1);
             this.panel7.TabIndex = 48;
@@ -333,7 +327,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tmon몬소리 Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Location = new System.Drawing.Point(540, 90);
+            this.label3.Location = new System.Drawing.Point(177, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 19);
             this.label3.TabIndex = 49;
@@ -342,16 +336,16 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Location = new System.Drawing.Point(361, 38);
+            this.panel4.Location = new System.Drawing.Point(371, 16);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(2, 375);
+            this.panel4.Size = new System.Drawing.Size(2, 377);
             this.panel4.TabIndex = 46;
             // 
             // facebookLoginBtn
             // 
             this.facebookLoginBtn.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.signUpFacebook;
             this.facebookLoginBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.facebookLoginBtn.Location = new System.Drawing.Point(381, 33);
+            this.facebookLoginBtn.Location = new System.Drawing.Point(18, 17);
             this.facebookLoginBtn.Name = "facebookLoginBtn";
             this.facebookLoginBtn.Size = new System.Drawing.Size(342, 51);
             this.facebookLoginBtn.TabIndex = 45;
@@ -363,7 +357,7 @@
             // 
             this.textBox4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox4.ForeColor = System.Drawing.Color.Silver;
-            this.textBox4.Location = new System.Drawing.Point(558, 262);
+            this.textBox4.Location = new System.Drawing.Point(195, 246);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(165, 29);
@@ -376,7 +370,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(381, 262);
+            this.textBox1.Location = new System.Drawing.Point(18, 246);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(165, 29);
@@ -385,24 +379,10 @@
             this.textBox1.Click += new System.EventHandler(this.Txtbox_MouseClick);
             this.textBox1.TextChanged += new System.EventHandler(this.TextboxContentsChanged);
             // 
-            // registeredUserBtn
-            // 
-            this.registeredUserBtn.Location = new System.Drawing.Point(0, 0);
-            this.registeredUserBtn.Name = "registeredUserBtn";
-            this.registeredUserBtn.Size = new System.Drawing.Size(75, 23);
-            this.registeredUserBtn.TabIndex = 60;
-            // 
-            // goNext
-            // 
-            this.goNext.Location = new System.Drawing.Point(0, 0);
-            this.goNext.Name = "goNext";
-            this.goNext.Size = new System.Drawing.Size(75, 23);
-            this.goNext.TabIndex = 61;
-            // 
             // takePic
             // 
             this.takePic.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.takePic.Location = new System.Drawing.Point(135, 370);
+            this.takePic.Location = new System.Drawing.Point(497, 349);
             this.takePic.Margin = new System.Windows.Forms.Padding(2);
             this.takePic.Name = "takePic";
             this.takePic.Size = new System.Drawing.Size(215, 44);
@@ -416,16 +396,16 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.imageBoxFrameGrabber);
             this.panel3.ForeColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(25, 38);
+            this.panel3.Location = new System.Drawing.Point(387, 17);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(325, 249);
+            this.panel3.Size = new System.Drawing.Size(325, 258);
             this.panel3.TabIndex = 18;
             // 
             // imageBoxFrameGrabber
             // 
             this.imageBoxFrameGrabber.Location = new System.Drawing.Point(0, 0);
             this.imageBoxFrameGrabber.Name = "imageBoxFrameGrabber";
-            this.imageBoxFrameGrabber.Size = new System.Drawing.Size(325, 249);
+            this.imageBoxFrameGrabber.Size = new System.Drawing.Size(325, 258);
             this.imageBoxFrameGrabber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBoxFrameGrabber.TabIndex = 2;
             this.imageBoxFrameGrabber.TabStop = false;
@@ -434,7 +414,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.profile4;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 314);
+            this.pictureBox1.Location = new System.Drawing.Point(387, 293);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 15;
@@ -444,7 +424,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label5.Location = new System.Drawing.Point(133, 341);
+            this.label5.Location = new System.Drawing.Point(495, 320);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(193, 18);
             this.label5.TabIndex = 22;
@@ -455,7 +435,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(751, 474);
+            this.ClientSize = new System.Drawing.Size(734, 467);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -489,9 +469,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button takePic;
-        private System.Windows.Forms.Button goNext;
-        private System.Windows.Forms.TextBox nicknameCheckTxt;
-        private System.Windows.Forms.Button registeredUserBtn;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel3;

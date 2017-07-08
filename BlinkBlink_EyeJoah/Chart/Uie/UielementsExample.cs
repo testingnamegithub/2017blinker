@@ -67,8 +67,8 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
 
             cartesianChart1.VisualElements.Add(new VisualElement
             {
-                X = 1,
-                Y = 8,
+                X = 0.3,
+                Y = 8.5,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
                 UIElement = new TextBlock //notice this property must be a wpf control
@@ -77,7 +77,20 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     FontWeight = FontWeights.Bold,
                     FontSize = 16,
                     Foreground = new SolidColorBrush(Color.FromRgb(208, 54, 0)),
-                    //Opacity = 0.6
+                }
+            });
+            cartesianChart1.VisualElements.Add(new VisualElement
+            {
+                X = 0,
+                Y = 14,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Top,
+                UIElement = new TextBlock //notice this property must be a wpf control
+                {
+                    Text = "Good",
+                    FontWeight = FontWeights.Bold,
+                    FontSize = 16,
+                    Foreground = new SolidColorBrush(Color.FromRgb(133, 204, 208)),
                 }
             });
             var uri = new Uri("Cartesian/UielementsExample/warning.png", UriKind.Relative);
@@ -98,28 +111,53 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             //good or bad 영역에 따른 색
             cartesianChart1.AxisY.Add(new Axis
             {
-                IsMerged = true,
+                MinValue = 6,
+                MaxValue = 20,
+                FontWeight = FontWeights.Bold,
                 Sections = new SectionsCollection
                 {
                     //warning 점선
                     new AxisSection
                     {
-                        Value = 8,
+                        Value = 10,
                         //Stroke = Brushes.Crimson,
                         Stroke=new SolidColorBrush(Color.FromRgb(222,111,39)),
                         StrokeThickness = 4,
-                        StrokeDashArray = new DoubleCollection(new [] {3d})
+                        StrokeDashArray = new DoubleCollection(new [] {2d})
+                    },
+                    //Goog 점선
+                    new AxisSection
+                    {
+                        Value = 14,
+                        //Stroke = Brushes.Crimson,
+                        Stroke=new SolidColorBrush(Color.FromRgb(150,111,39)),
+                        StrokeThickness = 4,
+                        StrokeDashArray = new DoubleCollection(new [] {2d})
                     },
                     //good 영역
                         new AxisSection
                     {
                         //Label = "Good",
-                        Value = 8,
-                        SectionWidth = 8,
+                        Value = 14,
+
+                        SectionWidth = 6,
                         Fill = new SolidColorBrush
                         {
                             //Color=Colors.White,
-                            Color = System.Windows.Media.Color.FromRgb(163, 234, 228),
+                            Color = System.Windows.Media.Color.FromRgb(20, 20, 228),
+                            Opacity = .4
+                        }
+                    },
+                    // normal 영역
+                        new AxisSection
+                    {
+                        //Label = "Good",
+                        Value = 10,
+                        SectionWidth = 4,
+                        Fill = new SolidColorBrush
+                        {
+                            //Color=Colors.White,
+                            Color = System.Windows.Media.Color.FromRgb(103, 134, 228),
                             Opacity = .4
                         }
                     },
@@ -128,7 +166,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     {
                         //Label = "Bad",
                         Value = 0,
-                        SectionWidth = 8,
+                        SectionWidth = 10,
                         Fill = new SolidColorBrush
                         {
                             Color = System.Windows.Media.Color.FromRgb(234,168,101),
@@ -139,7 +177,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             });
             cartesianChart1.AxisX.Add(new Axis
             {
-                Labels = new[] { "9시", "10시", "11시", "12시", "13시" } //마우스 가까이댔을때 뜨는 라벨
+                Labels = new[] { "9시", "10시", "11시", "12시", "13시","14시" } //마우스 가까이댔을때 뜨는 라벨
             });
 
             Panel.SetZIndex(barSeries, 0);
@@ -148,7 +186,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
 
         public void updateBlinkBarValue(int aHour, int bHour, int cHour, int dHour, int eHour)
         {
-            barSeries.Values = new ChartValues<double> { aHour, bHour, cHour, dHour, eHour };
+            barSeries.Values = new ChartValues<double> { aHour, bHour, cHour, dHour, eHour};
         }
 
     }

@@ -10,9 +10,7 @@ using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
 using BlinkBlink_EyeJoah.Chart.PieChart;
-using BlinkBlink_EyeJoah.Chart.Section;
 using BlinkBlink_EyeJoah.Chart.Uie;
-using BlinkBlink_EyeJoah.Chart.Funnel_chart;
 using BlinkBlink_EyeJoah.Chart._360;
 
 namespace BlinkBlink_EyeJoah

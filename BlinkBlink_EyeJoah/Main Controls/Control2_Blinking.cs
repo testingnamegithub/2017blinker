@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BlinkBlink_EyeJoah.Chart.PieChart;
 using BlinkBlink_EyeJoah.Chart.Uie;
-using BlinkBlink_EyeJoah.Chart.Section;
 
 namespace BlinkBlink_EyeJoah
 {
@@ -24,14 +23,14 @@ namespace BlinkBlink_EyeJoah
             InitializeComponent();
             makeChart1();
             makeChart2();
-            localDB = LocalDatabase.getInstance();
+            //localDB = LocalDatabase.getInstance();
 
             //update realtime text from datetimelabelsettings class
             updateRealtimeText(DateTime.Now);
             showDate = DateTime.Now;
 
             //inserting data sm5duck
-            insertingDataToSm5duck();
+            //insertingDataToSm5duck();
 
             updateBlinkChartByDate(showDate);
         }
@@ -193,33 +192,33 @@ namespace BlinkBlink_EyeJoah
 
         private void updateBlinkChartByDate(DateTime date)
         {
-            tableTypeName = "blink" + date.Year + date.Month.ToString("00") + date.Day.ToString("00");
+            //tableTypeName = "blink" + date.Year + date.Month.ToString("00") + date.Day.ToString("00");
 
-            int[,] blinkDataArray = new int [5,2];
-            int normal=0, bad=0, good = 0;
+            //int[,] blinkDataArray = new int [5,2];
+            //int normal=0, bad=0, good = 0;
 
-            if(localDB.TableExists(tableTypeName,Form1.mainForm.GetUserName())) //테이블 있으면
-            {
-                localDB.ReadDataBlinkTable(ref blinkDataArray, Form1.mainForm.GetUserName(), tableTypeName);
-                for(int i=0;i<5;i++)
-                {
-                    if (blinkDataArray[i, 1] > 8)
-                        good++;
-                    else if (blinkDataArray[i, 1] == 8)
-                        normal++;
-                    else
-                        bad++;
-                }
+            //if(localDB.TableExists(tableTypeName,Form1.mainForm.GetUserName())) //테이블 있으면
+            //{
+            //    localDB.ReadDataBlinkTable(ref blinkDataArray, Form1.mainForm.GetUserName(), tableTypeName);
+            //    for(int i=0;i<5;i++)
+            //    {
+            //        if (blinkDataArray[i, 1] > 8)
+            //            good++;
+            //        else if (blinkDataArray[i, 1] == 8)
+            //            normal++;
+            //        else
+            //            bad++;
+            //    }
 
-                DoughnutExample.doughnut.updateBlinkPie(good, normal, bad);
-                UielementsExample.uiElement.updateBlinkBarValue(blinkDataArray[0,1], blinkDataArray[1, 1],
-                                         blinkDataArray[2, 1], blinkDataArray[3, 1], blinkDataArray[4, 1]);
-            }
-            else //테이블 없으면
-            {
-                DoughnutExample.doughnut.updateBlinkPie(0, 0, 0);
-                UielementsExample.uiElement.updateBlinkBarValue(0, 0, 0, 0, 0);
-            }
+            //    DoughnutExample.doughnut.updateBlinkPie(good, normal, bad);
+            //    UielementsExample.uiElement.updateBlinkBarValue(blinkDataArray[0,1], blinkDataArray[1, 1],
+            //                             blinkDataArray[2, 1], blinkDataArray[3, 1], blinkDataArray[4, 1]);
+            //}
+            //else //테이블 없으면
+            //{
+            DoughnutExample.doughnut.updateBlinkPie(5, 3, 2);
+            UielementsExample.uiElement.updateBlinkBarValue(8, 12, 16, 15, 10);
+            //}
             
         }
 

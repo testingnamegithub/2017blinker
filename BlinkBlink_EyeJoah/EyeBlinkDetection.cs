@@ -122,9 +122,7 @@ namespace BlinkBlink_EyeJoah
                 Image<Gray, Byte> grayFrame = frame.Convert<Gray, Byte>();
                 grayFrame._EqualizeHist();
                 distanceAlertScreen = DistanceAlertScreencs.Instance;
-
-
-
+                
                 // EventHandler 주기마다 Detect한 얼굴 사각형으로 그리기 + 모니터와 가까워지면 알림주기
                 if (!face.Equals(null))
                 {
@@ -284,7 +282,7 @@ namespace BlinkBlink_EyeJoah
                     return;
                 }
                 // Data 값이 500이상이면 0~200까지 Data 지워서 Reset해주기
-                else if (averageThresholdValue.Count > 500)
+                else if (averageThresholdValue.Count > 400)
                 {
                     averageThresholdValue.RemoveRange(0, 200);
                 }
