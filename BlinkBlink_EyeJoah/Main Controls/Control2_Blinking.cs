@@ -225,7 +225,6 @@ namespace BlinkBlink_EyeJoah
             AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
             AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
             AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
-            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
             
             //good bad, normal 개수 새기
             int goodNum = 0, normalNum = 0, badNum = 0;

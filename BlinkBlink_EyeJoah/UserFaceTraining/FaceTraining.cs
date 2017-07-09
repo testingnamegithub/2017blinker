@@ -100,7 +100,7 @@ namespace BlinkBlink_EyeJoah
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
 
             //얼굴 검출을 위한 Haarcascade Load
-            face = new HaarCascade("C:\\haarcascade_frontalface_default.xml");
+            face = new HaarCascade(Application.StartupPath + "/haarcascade_frontalface_default.xml");
 
             //Training 폴더에 있는 얼굴 이미지 및 이름들 불러오기
             loadTrainingImage();

@@ -82,7 +82,7 @@ namespace BlinkBlink_EyeJoah
                 {
                     // 임시
                     _capture = new Capture();
-                    _faces = new HaarCascade("C:\\haarcascade_frontalface_default.xml");
+                    _faces = new HaarCascade(Application.StartupPath + "/haarcascade_frontalface_default.xml");
 
                     // 평균 Threadhold값 저장하는 list 생성
                     averageThresholdValue = new List<int>();
@@ -128,23 +128,35 @@ namespace BlinkBlink_EyeJoah
                 {
                     frame.Draw(face.rect, new Bgr(Color.Red), 2);
 
+                    Form1.buttonnnnnnnnn.Text = face.rect.Width.ToString();
                     if (face.rect.Width > checkdistance)
                     {
-                        if (checkDistanceAlertScreen == false)
-                        {
+                        if(checkDistanceAlertScreen == true)
                             distanceAlertScreen.Show();
-                        }
                         checkDistanceAlertScreen = true;
                     }
-
-                    else if (checkDistanceAlertScreen == true)
+                    else
                     {
-                        if (face.rect.Width <= checkdistance)
-                        {
-                            distanceAlertScreen.Hide();
-                        }
                         checkDistanceAlertScreen = false;
+                        distanceAlertScreen.Hide();
                     }
+                    //if (face.rect.Width > checkdistance)
+                    //{
+                    //    if (checkDistanceAlertScreen == false)
+                    //    {
+                    //        distanceAlertScreen.Show();
+                    //    }
+                    //    checkDistanceAlertScreen = true;
+                    //}
+
+                    //else if (checkDistanceAlertScreen == true)
+                    //{
+                    //    if (face.rect.Width <= checkdistance)
+                    //    {
+                    //        distanceAlertScreen.Hide();
+                    //    }
+                    //    checkDistanceAlertScreen = false;
+                    //}
                 }
 
                 // worker 쓰레드 실행

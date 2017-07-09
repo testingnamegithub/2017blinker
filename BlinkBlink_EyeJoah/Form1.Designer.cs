@@ -33,6 +33,7 @@
             this.sidebar = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.profilePanel = new System.Windows.Forms.Panel();
+            this.logOutText = new System.Windows.Forms.Label();
             this.tempProfile = new System.Windows.Forms.PictureBox();
             this.UserNameLabel = new System.Windows.Forms.Label();
             this.settingsPanel = new System.Windows.Forms.Panel();
@@ -68,7 +69,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.eyeBlinkText = new System.Windows.Forms.Label();
             this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
-            this.logOutText = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.profilePanel.SuspendLayout();
@@ -87,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_Home)).BeginInit();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).BeginInit();
+            this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leftEyeImageBox)).BeginInit();
             this.topPanel.SuspendLayout();
@@ -133,6 +135,20 @@
             this.profilePanel.Name = "profilePanel";
             this.profilePanel.Size = new System.Drawing.Size(180, 67);
             this.profilePanel.TabIndex = 50;
+            // 
+            // logOutText
+            // 
+            this.logOutText.AutoSize = true;
+            this.logOutText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutText.ForeColor = System.Drawing.Color.Black;
+            this.logOutText.Location = new System.Drawing.Point(133, 48);
+            this.logOutText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.logOutText.Name = "logOutText";
+            this.logOutText.Size = new System.Drawing.Size(45, 15);
+            this.logOutText.TabIndex = 2;
+            this.logOutText.Text = "Logout";
+            this.logOutText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.logOutText.Click += new System.EventHandler(this.logOutText_Click);
             // 
             // tempProfile
             // 
@@ -381,6 +397,7 @@
             // 
             this.panelContainer.AutoScroll = true;
             this.panelContainer.BackColor = System.Drawing.Color.Gray;
+            this.panelContainer.Controls.Add(this.button1);
             this.panelContainer.Location = new System.Drawing.Point(184, 40);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
@@ -498,19 +515,14 @@
             this.imageBoxCapturedFrame.TabIndex = 43;
             this.imageBoxCapturedFrame.TabStop = false;
             // 
-            // logOutText
+            // button1
             // 
-            this.logOutText.AutoSize = true;
-            this.logOutText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutText.ForeColor = System.Drawing.Color.Black;
-            this.logOutText.Location = new System.Drawing.Point(133, 48);
-            this.logOutText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.logOutText.Name = "logOutText";
-            this.logOutText.Size = new System.Drawing.Size(45, 15);
-            this.logOutText.TabIndex = 2;
-            this.logOutText.Text = "Logout";
-            this.logOutText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.logOutText.Click += new System.EventHandler(this.logOutText_Click);
+            this.button1.Location = new System.Drawing.Point(31, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -556,6 +568,7 @@
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).EndInit();
+            this.panelContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.leftEyeImageBox)).EndInit();
             this.topPanel.ResumeLayout(false);
@@ -609,6 +622,7 @@
         private Emgu.CV.UI.ImageBox rightEyeImageBox;
         private Emgu.CV.UI.ImageBox leftEyeImageBox;
         private System.Windows.Forms.Label logOutText;
+        private System.Windows.Forms.Button button1;
     }
 }
 
