@@ -128,7 +128,6 @@ namespace BlinkBlink_EyeJoah
                 {
                     frame.Draw(face.rect, new Bgr(Color.Red), 2);
 
-                    Form1.buttonnnnnnnnn.Text = face.rect.Width.ToString();
                     if (face.rect.Width > checkdistance)
                     {
                         if(checkDistanceAlertScreen == true)

@@ -29,14 +29,12 @@ namespace BlinkBlink_EyeJoah
         public static extern bool ReleaseCapture();
 
         public static Form1 mainForm;
-        public static Button buttonnnnnnnnn;
         public Form1()
         {
             InitializeComponent();
 
             Init_UI(Constant.USUALLOGIN);
             Start_Process();
-            buttonnnnnnnnn = button1;
         }
 
         public Form1(Form trainingFaceForm)

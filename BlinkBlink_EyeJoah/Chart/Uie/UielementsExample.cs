@@ -179,7 +179,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             cartesianChart1.AxisX.Add(new Axis
             {
                 FontWeight = FontWeights.Bold,
-                Labels = new[] { "9시", "10시", "11시", "12시", "13시","14시","15시","16시" } //마우스 가까이댔을때 뜨는 라벨
+                Labels = new[] { "7 minute ago", "6 minute ago", "5 minute ago", "4 minute ago", "3 minute ago", "2 minute ago", "1 minute ago","16시" } //마우스 가까이댔을때 뜨는 라벨
                
             });
             Panel.SetZIndex(barSeries, 0);

@@ -45,7 +45,7 @@
             // 
             // chartPanel1
             // 
-            this.chartPanel1.Location = new System.Drawing.Point(24, 87);
+            this.chartPanel1.Location = new System.Drawing.Point(24, 107);
             this.chartPanel1.Name = "chartPanel1";
             this.chartPanel1.Size = new System.Drawing.Size(270, 223);
             this.chartPanel1.TabIndex = 4;
