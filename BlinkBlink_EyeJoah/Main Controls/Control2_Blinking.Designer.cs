@@ -45,9 +45,9 @@
             // 
             // chartPanel1
             // 
-            this.chartPanel1.Location = new System.Drawing.Point(24, 85);
+            this.chartPanel1.Location = new System.Drawing.Point(24, 87);
             this.chartPanel1.Name = "chartPanel1";
-            this.chartPanel1.Size = new System.Drawing.Size(270, 245);
+            this.chartPanel1.Size = new System.Drawing.Size(270, 223);
             this.chartPanel1.TabIndex = 4;
             // 
             // chartPanel2
@@ -64,7 +64,7 @@
             this.label2.Location = new System.Drawing.Point(10, 10);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(382, 31);
+            this.label2.Size = new System.Drawing.Size(266, 21);
             this.label2.TabIndex = 26;
             this.label2.Text = "Blinking frequency in using PC";
             // 
@@ -72,9 +72,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label1.Location = new System.Drawing.Point(55, 330);
+            this.label1.Location = new System.Drawing.Point(52, 333);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 26);
+            this.label1.Size = new System.Drawing.Size(213, 18);
             this.label1.TabIndex = 27;
             this.label1.Text = "Average blinking times per hour";
             // 
@@ -84,7 +84,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label3.Location = new System.Drawing.Point(390, 330);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(192, 26);
+            this.label3.Size = new System.Drawing.Size(130, 18);
             this.label3.TabIndex = 28;
             this.label3.Text = "How well you blink";
             // 
@@ -96,7 +96,7 @@
             this.realtimeTxt.Location = new System.Drawing.Point(145, 50);
             this.realtimeTxt.Name = "realtimeTxt";
             this.realtimeTxt.ReadOnly = true;
-            this.realtimeTxt.Size = new System.Drawing.Size(340, 25);
+            this.realtimeTxt.Size = new System.Drawing.Size(340, 17);
             this.realtimeTxt.TabIndex = 32;
             this.realtimeTxt.Text = "March 1, 2017 (Wednesday)";
             this.realtimeTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

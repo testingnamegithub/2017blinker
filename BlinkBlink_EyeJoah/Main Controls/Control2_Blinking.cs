@@ -216,11 +216,40 @@ namespace BlinkBlink_EyeJoah
             //}
             //else //테이블 없으면
             //{
-            DoughnutExample.doughnut.updateBlinkPie(5, 3, 2);
-            UielementsExample.uiElement.updateBlinkBarValue(8, 12, 16, 15, 10);
-            //}
+            Random r = new Random();
+            List<double> AxisNum = new List<double>();
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
             
-        }
+            //good bad, normal 개수 새기
+            int goodNum = 0, normalNum = 0, badNum = 0;
+            foreach(var num in AxisNum)
+            {
+                if (num >= 14)
+                    goodNum++;
+                else if (num < 14 && num >= 10)
+                    normalNum++;
+                else
+                    badNum++;
+            }
 
+
+            // 소수점 둘째짜리 까지 표현해서 그래프에 넣기.
+            UielementsExample.uiElement.updateBlinkBarValue(
+                (Math.Round(AxisNum[0] / .01) * .01), (Math.Round(AxisNum[1] / .01) * .01), (Math.Round(AxisNum[2] / .01) * .01),
+                (Math.Round(AxisNum[3] / .01) * .01), (Math.Round(AxisNum[4] / .01) * .01), (Math.Round(AxisNum[5] / .01) * .01),
+                (Math.Round(AxisNum[6] / .01) * .01));
+
+            DoughnutExample.doughnut.updateBlinkPie(goodNum, normalNum, badNum);
+            //}
+
+        }
+        
     }
 }
