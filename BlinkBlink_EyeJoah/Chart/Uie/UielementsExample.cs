@@ -82,7 +82,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             });
             cartesianChart1.VisualElements.Add(new VisualElement
             {
-                X = 0.5,
+                X = 0.3,
                 Y = 14,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
@@ -91,7 +91,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     Text = "Good",
                     FontWeight = FontWeights.Bold,
                     FontSize = 16,
-                    Foreground = new SolidColorBrush(Color.FromRgb(133, 204, 208)),
+                    Foreground = new SolidColorBrush(Color.FromRgb(1, 85, 157)),
                 }
             });
             var uri = new Uri("Cartesian/UielementsExample/warning.png", UriKind.Relative);

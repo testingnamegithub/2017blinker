@@ -22,7 +22,7 @@ namespace BlinkBlink_EyeJoah
     {
         /* Form1 UI 함수 */
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame, leftEyeImageBox, rightEyeImageBox;
-        private Label eyeBlinkNumText, label1;
+        private Label eyeBlinkNumText;
         private TrainingData trainingData;
         private DistanceAlertScreencs distanceAlertScreen;
 
@@ -328,8 +328,11 @@ namespace BlinkBlink_EyeJoah
                     if (averageThresholdValue.Count < 3)
                         catchThreshold += 3;
                     else
+                    {
                         catchThreshold += 1;
+                    }
 
+                    // 이전 ThresholdValue는 현재 Threshold value 값으로 넣어주기.
                     prevThresholdValue = catchThreshold;
                     thresholdEffect(catchThreshold);
                 }
