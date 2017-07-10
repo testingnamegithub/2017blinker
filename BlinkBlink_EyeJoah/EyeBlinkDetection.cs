@@ -38,6 +38,7 @@ namespace BlinkBlink_EyeJoah
 
         private int thresholdValue = 10;        // Threshold 초기값 = 30
         private int prevThresholdValue = 0;
+        private int prevFaceRectWidthValue = 0;
         private int blinkNum = 0;               // 눈 깜빡임 횟수담는 변수
 
         private List<int> averageThresholdValue;
@@ -130,8 +131,11 @@ namespace BlinkBlink_EyeJoah
 
                     if (face.rect.Width > checkdistance)
                     {
-                        if(checkDistanceAlertScreen == true)
+                        // checkDistanceAlertScreen이 true고 이전 값도 270이 넘었을 경우
+                        if (checkDistanceAlertScreen == true && prevFaceRectWidthValue > checkdistance)
+                        {
                             distanceAlertScreen.Show();
+                        }                            
                         checkDistanceAlertScreen = true;
                     }
                     else
@@ -139,23 +143,8 @@ namespace BlinkBlink_EyeJoah
                         checkDistanceAlertScreen = false;
                         distanceAlertScreen.Hide();
                     }
-                    //if (face.rect.Width > checkdistance)
-                    //{
-                    //    if (checkDistanceAlertScreen == false)
-                    //    {
-                    //        distanceAlertScreen.Show();
-                    //    }
-                    //    checkDistanceAlertScreen = true;
-                    //}
+                    prevFaceRectWidthValue = face.rect.Width;
 
-                    //else if (checkDistanceAlertScreen == true)
-                    //{
-                    //    if (face.rect.Width <= checkdistance)
-                    //    {
-                    //        distanceAlertScreen.Hide();
-                    //    }
-                    //    checkDistanceAlertScreen = false;
-                    //}
                 }
 
                 // worker 쓰레드 실행

@@ -48,7 +48,7 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                     DataLabels = true,
                         Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(0,171,188))
                     //     Fill= new LinearGradientBrush
-                    //{
+                    //{ 
                     //    GradientStops = new GradientStopCollection
                     //    {
                     //         new GradientStop(System.Windows.Media.Color.FromRgb(255, 200, 55),0),
