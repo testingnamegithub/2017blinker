@@ -245,7 +245,8 @@ namespace BlinkBlink_EyeJoah
                 (Math.Round(AxisNum[3] / .01) * .01), (Math.Round(AxisNum[4] / .01) * .01), (Math.Round(AxisNum[5] / .01) * .01),
                 (Math.Round(AxisNum[6] / .01) * .01));
 
-            DoughnutExample.doughnut.updateBlinkPie(goodNum, normalNum, badNum);
+            DoughnutExample.doughnut.updateBlinkPie(Convert.ToDouble(goodNum),
+                Convert.ToDouble(normalNum), Convert.ToDouble(badNum));
             //}
 
         }
