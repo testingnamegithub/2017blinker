@@ -6,6 +6,7 @@ using LiveCharts.Wpf;
 using System.Drawing;
 using System.Windows.Media;
 using LiveCharts.Defaults;
+using System.Windows;
 
 namespace BlinkBlink_EyeJoah.Chart.PieChart
 {
@@ -18,18 +19,16 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
             doughnut = this;
             
             InitializeComponent();
-
+             
             //pieChart1.InnerRadius = 40; //내원 반지름
             pieChart1.LegendLocation = LegendLocation.Bottom; //슬라이스 설명 라벨 위치
-
-            pieChart1.InnerRadius = 50;
+            pieChart1.InnerRadius = 40;
             pieChart1.Series = new SeriesCollection
             {
                 new PieSeries
                 {
                     Title = "Great",
                     Values = new ChartValues<double> {0}, //값
-                   
                     //PushOut = 5, //pushout:: 슬라이스와 슬라이스 사이 간격
                     DataLabels = true,
                     Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(1,85,157)),
@@ -44,7 +43,7 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                 },
                 new PieSeries
                 {
-                    Title = "Bad",
+                    Title = "Warning",
                     Values = new ChartValues<double> {0},
                     //PushOut = 5,
                     DataLabels = true,
@@ -60,6 +59,9 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
             double greatArea = Math.Round(great/sum / .01) * .01;
             double normalArea = Math.Round(normal/sum / .01) * .01;
             double badArea = Math.Round(bad/sum / .01) * .01;
+
+            pieChart1.DefaultLegend.FontSize = 17;
+            pieChart1.DefaultLegend.FontWeight = FontWeights.Bold;
             pieChart1.Series = new SeriesCollection
             {
                 new PieSeries
@@ -71,7 +73,7 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                     },
                     DataLabels = true,
                     LabelPoint = point => point.Y + " %",
-                    FontSize = 15,
+                    FontSize = 16,
                     Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(1,85,157))
                     //PushOut = 5, // 슬라이스와 슬라이스 사이 간격
                 },
@@ -85,12 +87,12 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                     },
                     DataLabels = true,
                     LabelPoint = point => point.Y + " %",
-                    FontSize = 15,
+                    FontSize = 16,
                     Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(0,171,188))
                 },
                 new PieSeries
                 {
-                    Title = "Bad",
+                    Title = "Warning",
 
                     Values = new ChartValues<ObservableValue>
                     {
@@ -98,7 +100,7 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                     },
                     DataLabels = true,
                     LabelPoint = point => point.Y + " %",
-                    FontSize = 15,
+                    FontSize = 16,
                     Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(222,111,39))
                 },
             };

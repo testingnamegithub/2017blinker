@@ -35,10 +35,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.realtimeTxt = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.beforeDayBtn = new System.Windows.Forms.PictureBox();
             this.nextDayBtn = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.chartPanel1.SuspendLayout();
             this.chartPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -114,15 +114,6 @@
             this.monthCalendar1.Visible = false;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.eye_open;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(109, 83);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(70, 67);
-            this.panel1.TabIndex = 36;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
@@ -156,6 +147,15 @@
             this.nextDayBtn.TabIndex = 33;
             this.nextDayBtn.TabStop = false;
             this.nextDayBtn.Click += new System.EventHandler(this.nextDayBtn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.eye_open;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(113, 72);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(40, 44);
+            this.panel1.TabIndex = 36;
             // 
             // Control2_Blinking
             // 
