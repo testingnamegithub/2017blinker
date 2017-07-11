@@ -49,15 +49,15 @@
             // chartPanel1
             // 
             this.chartPanel1.Controls.Add(this.monthCalendar1);
-            this.chartPanel1.Location = new System.Drawing.Point(24, 107);
+            this.chartPanel1.Location = new System.Drawing.Point(27, 88);
             this.chartPanel1.Name = "chartPanel1";
-            this.chartPanel1.Size = new System.Drawing.Size(270, 223);
+            this.chartPanel1.Size = new System.Drawing.Size(270, 260);
             this.chartPanel1.TabIndex = 4;
             // 
             // chartPanel2
             // 
             this.chartPanel2.Controls.Add(this.panel1);
-            this.chartPanel2.Location = new System.Drawing.Point(320, 107);
+            this.chartPanel2.Location = new System.Drawing.Point(320, 113);
             this.chartPanel2.Name = "chartPanel2";
             this.chartPanel2.Size = new System.Drawing.Size(280, 223);
             this.chartPanel2.TabIndex = 0;
@@ -77,7 +77,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label1.Location = new System.Drawing.Point(52, 333);
+            this.label1.Location = new System.Drawing.Point(58, 342);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 18);
             this.label1.TabIndex = 27;
@@ -87,7 +87,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label3.Location = new System.Drawing.Point(390, 330);
+            this.label3.Location = new System.Drawing.Point(390, 341);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 18);
             this.label3.TabIndex = 28;
@@ -108,7 +108,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(32, 30);
+            this.monthCalendar1.Location = new System.Drawing.Point(50, 9);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 36;
             this.monthCalendar1.Visible = false;
@@ -152,7 +152,7 @@
             // 
             this.panel1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.eye_open;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(113, 72);
+            this.panel1.Location = new System.Drawing.Point(114, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(40, 44);
             this.panel1.TabIndex = 36;

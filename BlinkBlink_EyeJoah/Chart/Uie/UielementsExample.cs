@@ -24,14 +24,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             uiElement = this;
 
             InitializeComponent();
-
-            //var lineSeries = new LineSeries //꺾은선
-            //{
-            //    Values = new ChartValues<double> { 12, 10, 13, 9, 12 },
-            //    Fill = Brushes.Transparent,
-            //    StrokeThickness = 3,
-            //    PointGeometry = null
-            //};
+            
             barSeries = new ColumnSeries //막대그래프
             {
                 //Values = new ChartValues<double> { 5, 6, 9, 8, 10 },
@@ -41,8 +34,6 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                 MaxColumnWidth = 25,
                  
                 Stroke = new SolidColorBrush(Colors.AliceBlue), //가장자리 색상
-                //Stroke = new SolidColorBrush(Colors.Silver),
-                //Fill = new SolidColorBrush(Color.FromRgb(68,125,155)) //막대 내부 색상
                 Fill = new LinearGradientBrush
                 {
                     GradientStops = new GradientStopCollection
@@ -52,18 +43,8 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                                                                          new GradientStop(System.Windows.Media.Color.FromRgb(133,216,206),0)
                                                                     }
                 }
-                //Fill = new LinearGradientBrush
-                //{
-                //    GradientStops = new GradientStopCollection
-                //                                                    {
-                //                                                         new GradientStop(System.Windows.Media.Color.FromRgb(44,62,80),1),
-                //                                                         new GradientStop(System.Windows.Media.Color.FromRgb(47,105,146),.5),
-                //                                                         new GradientStop(System.Windows.Media.Color.FromRgb(52,152,219),0)
-                //                                                    }
-                //}
             };
 
-            //cartesianChart1.Series.Add(lineSeries);
             cartesianChart1.Series.Add(barSeries);
 
             cartesianChart1.VisualElements.Add(new VisualElement
@@ -178,12 +159,16 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             });
             cartesianChart1.AxisX.Add(new Axis
             {
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Step = 1,
+                    IsEnabled = false
+                },
                 FontWeight = FontWeights.Bold,
-                Labels = new[] { "7 minute ago", "6 minute ago", "5 minute ago", "4 minute ago", "3 minute ago", "2 minute ago", "1 minute ago","16시" } //마우스 가까이댔을때 뜨는 라벨
+                Labels = new[] { "7 ", "6 ", "5 ", "4 ", "3 ", "2 ", "1 " } //마우스 가까이댔을때 뜨는 라벨
                
             });
             Panel.SetZIndex(barSeries, 0);
-            //Panel.SetZIndex(lineSeries, 1);
         }
 
         public void updateBlinkBarValue(double aHour, double bHour, double cHour, double dHour, double eHour,
