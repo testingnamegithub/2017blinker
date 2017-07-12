@@ -79,13 +79,13 @@ namespace BlinkBlink_EyeJoah.Chart._360
 
         }
 
-        public void updateUsageValue(int usageTime)
+        public void updateUsageValue(double usageTime)
         {
             usageLabel.Text = usageTime + " min";
             solidGauge6.Value = usageTime;
         }
 
-        public void updateBreakValue(int breakTime)
+        public void updateBreakValue(double breakTime)
         {
             breakLabel.Text = breakTime + " min";
             solidGauge7.Value = breakTime;

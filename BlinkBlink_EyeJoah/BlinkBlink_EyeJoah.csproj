@@ -577,6 +577,7 @@
     <None Include="Resources\confirm_Enter.png" />
     <None Include="Resources\LoginSucceeded.png" />
     <None Include="Resources\eye-open.png" />
+    <None Include="Resources\Legend.png" />
     <Content Include="Resources\OpenCamera1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

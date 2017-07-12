@@ -49,7 +49,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
 
             cartesianChart1.VisualElements.Add(new VisualElement
             {
-                X = 0.8,
+                X = 0.9,
                 Y = 8.5,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
@@ -63,13 +63,13 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             });
             cartesianChart1.VisualElements.Add(new VisualElement
             {
-                X = 0.3,
+                X = 0.5,
                 Y = 14,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
                 UIElement = new TextBlock //notice this property must be a wpf control
                 {
-                    Text = "Good",
+                    Text = "GREAT",
                     FontWeight = FontWeights.Bold,
                     FontSize = 16,
                     Foreground = new SolidColorBrush(Color.FromRgb(1, 85, 157)),
@@ -95,7 +95,12 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             {
                 MinValue = 6,
                 MaxValue = 20,
-                FontWeight = FontWeights.Bold,
+                Foreground = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(1, 1, 1)),
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Step = 2,
+                    IsEnabled = false
+                },
                 Sections = new SectionsCollection
                 {
                     //warning 점선
@@ -164,18 +169,15 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     Step = 1,
                     IsEnabled = false
                 },
-                FontWeight = FontWeights.Bold,
-                Labels = new[] { "7 ", "6 ", "5 ", "4 ", "3 ", "2 ", "1 " } //마우스 가까이댔을때 뜨는 라벨
-               
+                Foreground = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(1, 1, 1)),
+                Labels = new[] { "10:30", "40", "50", "11:00", "10 ", "20", "11:30", "40", "50" } //마우스 가까이댔을때 뜨는 라벨
             });
             Panel.SetZIndex(barSeries, 0);
         }
 
-        public void updateBlinkBarValue(double aHour, double bHour, double cHour, double dHour, double eHour,
-            double fHour, double gHour)
+        public void updateBlinkBarValue(double a, double b, double c, double d, double e, double f, double g, double h, double i)
         {
-            barSeries.Values = new ChartValues<double> { aHour, bHour, cHour, dHour, eHour,
-            fHour, gHour};
+            barSeries.Values = new ChartValues<double> { a,b,c,d,e,f,g,h,i };
         }
 
     }

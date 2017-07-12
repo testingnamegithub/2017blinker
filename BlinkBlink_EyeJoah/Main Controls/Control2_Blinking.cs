@@ -28,7 +28,7 @@ namespace BlinkBlink_EyeJoah
             //update realtime text from datetimelabelsettings class
             updateRealtimeText(DateTime.Now);
             showDate = DateTime.Now;
-
+            
             //inserting data sm5duck
             //insertingDataToSm5duck();
 
@@ -225,7 +225,9 @@ namespace BlinkBlink_EyeJoah
             AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
             AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
             AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
-            
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+
             //good bad, normal 개수 새기
             int goodNum = 0, normalNum = 0, badNum = 0;
             foreach(var num in AxisNum)
@@ -243,11 +245,10 @@ namespace BlinkBlink_EyeJoah
             UielementsExample.uiElement.updateBlinkBarValue(
                 (Math.Round(AxisNum[0] / .01) * .01), (Math.Round(AxisNum[1] / .01) * .01), (Math.Round(AxisNum[2] / .01) * .01),
                 (Math.Round(AxisNum[3] / .01) * .01), (Math.Round(AxisNum[4] / .01) * .01), (Math.Round(AxisNum[5] / .01) * .01),
-                (Math.Round(AxisNum[6] / .01) * .01));
+                (Math.Round(AxisNum[6] / .01) * .01), (Math.Round(AxisNum[7] / .01) * .01), (Math.Round(AxisNum[8] / .01) * .01));
 
             DoughnutExample.doughnut.updateBlinkPie(Convert.ToDouble(goodNum),
                 Convert.ToDouble(normalNum), Convert.ToDouble(badNum));
-            //}
 
         }
         

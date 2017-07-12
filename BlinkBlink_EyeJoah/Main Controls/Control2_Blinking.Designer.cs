@@ -35,9 +35,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.realtimeTxt = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.beforeDayBtn = new System.Windows.Forms.PictureBox();
             this.nextDayBtn = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.chartPanel1.SuspendLayout();
             this.chartPanel2.SuspendLayout();
@@ -51,15 +54,15 @@
             this.chartPanel1.Controls.Add(this.monthCalendar1);
             this.chartPanel1.Location = new System.Drawing.Point(27, 88);
             this.chartPanel1.Name = "chartPanel1";
-            this.chartPanel1.Size = new System.Drawing.Size(270, 260);
+            this.chartPanel1.Size = new System.Drawing.Size(282, 260);
             this.chartPanel1.TabIndex = 4;
             // 
             // chartPanel2
             // 
             this.chartPanel2.Controls.Add(this.panel1);
-            this.chartPanel2.Location = new System.Drawing.Point(320, 113);
+            this.chartPanel2.Location = new System.Drawing.Point(320, 88);
             this.chartPanel2.Name = "chartPanel2";
-            this.chartPanel2.Size = new System.Drawing.Size(280, 223);
+            this.chartPanel2.Size = new System.Drawing.Size(280, 218);
             this.chartPanel2.TabIndex = 0;
             // 
             // label2
@@ -76,20 +79,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label1.Location = new System.Drawing.Point(58, 342);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
+            this.label1.Location = new System.Drawing.Point(64, 342);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 18);
+            this.label1.Size = new System.Drawing.Size(221, 17);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Average blinking times per hour";
+            this.label1.Text = "Average blinking times per minute";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label3.Location = new System.Drawing.Point(390, 341);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
+            this.label3.Location = new System.Drawing.Point(398, 341);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 18);
+            this.label3.Size = new System.Drawing.Size(122, 17);
             this.label3.TabIndex = 28;
             this.label3.Text = "How well you blink";
             // 
@@ -108,11 +111,33 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(50, 9);
+            this.monthCalendar1.Location = new System.Drawing.Point(53, 46);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 36;
             this.monthCalendar1.Visible = false;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(299, 322);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 15);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Min";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(14, 69);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 15);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Times";
             // 
             // pictureBox3
             // 
@@ -148,19 +173,31 @@
             this.nextDayBtn.TabStop = false;
             this.nextDayBtn.Click += new System.EventHandler(this.nextDayBtn_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.Legend;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(347, 309);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(233, 30);
+            this.panel2.TabIndex = 39;
+            // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.eye_open;
+            this.panel1.BackgroundImage = global::BlinkBlink_EyeJoah.Properties.Resources.blinkerLogo_gradient4;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(114, 70);
+            this.panel1.Location = new System.Drawing.Point(112, 83);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(40, 44);
+            this.panel1.Size = new System.Drawing.Size(44, 44);
             this.panel1.TabIndex = 36;
             // 
             // Control2_Blinking
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.beforeDayBtn);
             this.Controls.Add(this.nextDayBtn);
@@ -194,5 +231,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel2;
     }
 }

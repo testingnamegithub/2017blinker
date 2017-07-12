@@ -131,8 +131,12 @@ namespace BlinkBlink_EyeJoah
             }
             else //테이블 없으면
             {
-                Gauge360Example.gauge360example.updateUsageValue(0);
-                Gauge360Example.gauge360example.updateBreakValue(0);
+                Random r = new Random();
+                List<double> AxisNum = new List<double>();
+                AxisNum.Add(r.NextDouble() * ((60 - 20) + 20));
+
+                Gauge360Example.gauge360example.updateUsageValue(Math.Round(AxisNum[0] / .01) * .01);
+                Gauge360Example.gauge360example.updateBreakValue(60-Math.Round(AxisNum[0] / .01) * .01);
             }
         }
 
