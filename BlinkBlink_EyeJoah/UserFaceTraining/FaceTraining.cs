@@ -200,7 +200,7 @@ namespace BlinkBlink_EyeJoah
                 trainingData.saveTrainingData();
 
                 // 등록한 얼굴을 100X100형태로 imageBox1에 투영
-                captureBitmap = ResizeImage.adjust(captureBitmap, new Size(120, 120));
+                captureBitmap = ResizeImage.adjust(captureBitmap, new Size(100, 100));
                 pictureBox1.Image = captureBitmap;
 
                 MessageBox.Show(userInfo[1] + "´s face was detected and registered. :)", "Photo Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
