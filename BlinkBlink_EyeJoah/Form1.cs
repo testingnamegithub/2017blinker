@@ -98,8 +98,7 @@ namespace BlinkBlink_EyeJoah
             mainForm = this;
 
             /* Eye Blink Detection 감지하는 Class 생성 및 실행 */
-            eyeBlink = new EyeBlinkDetection(this.control1, this.imageBoxCapturedFrame, this.leftEyeImageBox,
-                                             this.rightEyeImageBox, this.eyeBlinkNumText);
+            eyeBlink = new EyeBlinkDetection(this.control1, this.imageBoxCapturedFrame, this.leftEyeImageBox, this.rightEyeImageBox);
             eyeBlink.start_EyeBlink();
         }
 

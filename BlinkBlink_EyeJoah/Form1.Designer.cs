@@ -59,7 +59,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.eyeBlinkNumText = new System.Windows.Forms.Label();
             this.rightEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.leftEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.topPanel = new System.Windows.Forms.Panel();
@@ -67,7 +66,6 @@
             this.minimizeBtn = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.eyeBlinkText = new System.Windows.Forms.Label();
             this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -401,19 +399,6 @@
             this.panelContainer.Size = new System.Drawing.Size(607, 367);
             this.panelContainer.TabIndex = 2;
             // 
-            // eyeBlinkNumText
-            // 
-            this.eyeBlinkNumText.AutoSize = true;
-            this.eyeBlinkNumText.BackColor = System.Drawing.Color.Black;
-            this.eyeBlinkNumText.Font = new System.Drawing.Font("넥슨 풋볼고딕 B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.eyeBlinkNumText.ForeColor = System.Drawing.Color.Red;
-            this.eyeBlinkNumText.Location = new System.Drawing.Point(546, 45);
-            this.eyeBlinkNumText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.eyeBlinkNumText.Name = "eyeBlinkNumText";
-            this.eyeBlinkNumText.Size = new System.Drawing.Size(28, 30);
-            this.eyeBlinkNumText.TabIndex = 47;
-            this.eyeBlinkNumText.Text = "0";
-            // 
             // rightEyeImageBox
             // 
             this.rightEyeImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -488,26 +473,13 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // eyeBlinkText
-            // 
-            this.eyeBlinkText.AutoSize = true;
-            this.eyeBlinkText.BackColor = System.Drawing.Color.Black;
-            this.eyeBlinkText.Font = new System.Drawing.Font("넥슨 풋볼고딕 B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.eyeBlinkText.ForeColor = System.Drawing.Color.Red;
-            this.eyeBlinkText.Location = new System.Drawing.Point(475, 211);
-            this.eyeBlinkText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.eyeBlinkText.Name = "eyeBlinkText";
-            this.eyeBlinkText.Size = new System.Drawing.Size(169, 30);
-            this.eyeBlinkText.TabIndex = 46;
-            this.eyeBlinkText.Text = "눈 깜빡임 횟수 ";
-            // 
             // imageBoxCapturedFrame
             // 
             this.imageBoxCapturedFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBoxCapturedFrame.Location = new System.Drawing.Point(298, 138);
+            this.imageBoxCapturedFrame.Location = new System.Drawing.Point(474, 217);
             this.imageBoxCapturedFrame.Margin = new System.Windows.Forms.Padding(2);
             this.imageBoxCapturedFrame.Name = "imageBoxCapturedFrame";
-            this.imageBoxCapturedFrame.Size = new System.Drawing.Size(353, 205);
+            this.imageBoxCapturedFrame.Size = new System.Drawing.Size(177, 126);
             this.imageBoxCapturedFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBoxCapturedFrame.TabIndex = 43;
             this.imageBoxCapturedFrame.TabStop = false;
@@ -521,8 +493,6 @@
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.rightEyeImageBox);
             this.Controls.Add(this.leftEyeImageBox);
-            this.Controls.Add(this.eyeBlinkText);
-            this.Controls.Add(this.eyeBlinkNumText);
             this.Controls.Add(this.imageBoxCapturedFrame);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.sidebar);
@@ -564,7 +534,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxCapturedFrame)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -584,7 +553,6 @@
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.PictureBox minimizeBtn;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Label eyeBlinkText;
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame;
         private System.Windows.Forms.Panel homePanel;
         private System.Windows.Forms.PictureBox picturebox_Home;
@@ -605,7 +573,6 @@
         private System.Windows.Forms.Panel pinkLine1;
         private System.Windows.Forms.Panel profilePanel;
         private System.Windows.Forms.Label thresholdValueText;
-        private System.Windows.Forms.Label eyeBlinkNumText;
         private Emgu.CV.UI.ImageBox rightEyeImageBox;
         private Emgu.CV.UI.ImageBox leftEyeImageBox;
         private System.Windows.Forms.Label logOutText;

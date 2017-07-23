@@ -22,7 +22,6 @@ namespace BlinkBlink_EyeJoah
     {
         /* Form1 UI 함수 */
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame, leftEyeImageBox, rightEyeImageBox;
-        private Label eyeBlinkNumText;
         private TrainingData trainingData;
         private DistanceAlertScreencs distanceAlertScreen;
 
@@ -58,13 +57,12 @@ namespace BlinkBlink_EyeJoah
         ScreenColorChange screenColorChange;
         /* constructor(생성자) */
         public EyeBlinkDetection(Control1_Home control1, Emgu.CV.UI.ImageBox imageBoxCapturedFrame,
-                        Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox, Label eyeBlinkNum)
+                        Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox)
         {
             this.control1 = control1;
             this.imageBoxCapturedFrame = imageBoxCapturedFrame;
             this.leftEyeImageBox = leftEyeImageBox;
             this.rightEyeImageBox = rightEyeImageBox;
-            this.eyeBlinkNumText = eyeBlinkNum;
         }
 
         public void start_EyeBlink()
@@ -127,7 +125,6 @@ namespace BlinkBlink_EyeJoah
                 // EventHandler 주기마다 Detect한 얼굴 사각형으로 그리기 + 모니터와 가까워지면 알림주기
                 if (!face.Equals(null))
                 {
-                    frame.Draw(face.rect, new Bgr(Color.Red), 2);
 
                     if (face.rect.Width > checkdistance)
                     {
@@ -159,7 +156,7 @@ namespace BlinkBlink_EyeJoah
                     try
                     {
                         rightEyeImageBox.Image = frame.Copy(possibleROI_rightEye).Convert<Bgr, byte>();
-                        leftEyeImageBox.Image = frame.Copy(possibleROI_leftEye).Convert<Bgr, byte>();
+                        //leftEyeImageBox.Image = frame.Copy(possibleROI_leftEye).Convert<Bgr, byte>();
 
                         // 실행하기전 눈 깜빡임을 판단하는 catchBlackPixel 값 false로 초기화
                         catchBlackPixel = false;
@@ -215,11 +212,6 @@ namespace BlinkBlink_EyeJoah
         // 작업 완료 - UI Thread
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            //eyeBlinkNumText.Text = blinkNum.ToString(); // UI 변화 지우면 렉 사그라들음
-            //eyeBlinkNumText.Text = TV.ToString();
-            //eyeBlinkNumText.Text = possibleROI_leftEye.Width.ToString();
-
-            eyeBlinkNumText.Text = blinkNum.ToString();
             // constantGraph에 현재 Threshold값 넘겨주기
             con.ShowThresholdValue(TV);
         }
