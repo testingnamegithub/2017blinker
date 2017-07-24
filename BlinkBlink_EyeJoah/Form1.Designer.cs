@@ -502,7 +502,6 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "                                     Blink Blink";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.profilePanel.ResumeLayout(false);

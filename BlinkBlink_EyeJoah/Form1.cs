@@ -30,6 +30,8 @@ namespace BlinkBlink_EyeJoah
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
+        private GlobalKeyboardHook gHook;
+
         public static Form1 mainForm;
         public Form1()
         {
@@ -99,12 +101,33 @@ namespace BlinkBlink_EyeJoah
         {
             mainForm = this;
             this.KeyPreview = true;
+            gHook = new GlobalKeyboardHook();
+            gHook.KeyDown += new KeyEventHandler(global_keyDown);
+            foreach (Keys key in Enum.GetValues(typeof(Keys)))
+                gHook.HookedKeys.Add(key);
+            gHook.hook();
 
             /* Eye Blink Detection 감지하는 Class 생성 및 실행 */
             eyeBlink = new EyeBlinkDetection(this.control1, this.imageBoxCapturedFrame, this.leftEyeImageBox, this.rightEyeImageBox);
             eyeBlink.start_EyeBlink();
         }
 
+        private void global_keyDown(object sender, KeyEventArgs e)
+        {
+
+            ScreenColorChange screenColorChange = ScreenColorChange.getInstance();
+            if ( e.KeyValue.Equals(32) && changeColor==false)
+            {
+                screenColorChange.changeScreenColor("color");
+                changeColor = true;
+            }
+            else
+            {
+                screenColorChange.changeScreenOriginal();
+                changeColor = false;
+            }
+
+        }
         private void bunifuFlatButton1_Click(object sender, MouseEventArgs e)
         {
             control1.Dock = DockStyle.Fill;
@@ -210,7 +233,7 @@ namespace BlinkBlink_EyeJoah
             this.Close();
             EyeBlinkDetection.stopIdle = true;
             this.loginForm.Show();
-        }
+        }     
         
 
         //프로그램 종료
@@ -268,21 +291,6 @@ namespace BlinkBlink_EyeJoah
         {
             return UserNameLabel.Text;
         }
-
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            ScreenColorChange screenColorChange = ScreenColorChange.getInstance();
-            if (e.KeyChar == ' ' && changeColor==false)
-            {
-                screenColorChange.changeScreenColor("color");
-                changeColor = true;
-            }
-            else
-            {
-                screenColorChange.changeScreenOriginal();
-                changeColor = false;
-            }
-        }
+        
     }
 }

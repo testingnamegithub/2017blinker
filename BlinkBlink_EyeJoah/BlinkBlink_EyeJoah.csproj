@@ -238,6 +238,7 @@
     <Compile Include="FacebookLogin\GetFacebookUserData.cs" />
     <Compile Include="FacebookLogin\MiniJson.cs" />
     <Compile Include="Database\LocalDatabase.cs" />
+    <Compile Include="GlobalKeyBoardHook.cs" />
     <Compile Include="Main Controls\ScreenColorChange.cs" />
     <Compile Include="Database\NicknameCheck.cs" />
     <Compile Include="Main Controls\DistanceAlertScreencs.cs">
