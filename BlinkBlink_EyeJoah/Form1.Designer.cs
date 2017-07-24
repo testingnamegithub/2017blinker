@@ -396,7 +396,7 @@
             this.panelContainer.Location = new System.Drawing.Point(184, 40);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(607, 367);
+            this.panelContainer.Size = new System.Drawing.Size(607, 369);
             this.panelContainer.TabIndex = 2;
             // 
             // rightEyeImageBox
@@ -502,6 +502,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "                                     Blink Blink";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.profilePanel.ResumeLayout(false);

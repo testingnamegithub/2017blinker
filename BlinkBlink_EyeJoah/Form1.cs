@@ -17,6 +17,8 @@ namespace BlinkBlink_EyeJoah
         private int thresholdValue = 0;
 
         private Control1_Home control1;
+        private bool changeColor = false;
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -96,6 +98,7 @@ namespace BlinkBlink_EyeJoah
         private void Start_Process()
         {
             mainForm = this;
+            this.KeyPreview = true;
 
             /* Eye Blink Detection 감지하는 Class 생성 및 실행 */
             eyeBlink = new EyeBlinkDetection(this.control1, this.imageBoxCapturedFrame, this.leftEyeImageBox, this.rightEyeImageBox);
@@ -208,6 +211,7 @@ namespace BlinkBlink_EyeJoah
             EyeBlinkDetection.stopIdle = true;
             this.loginForm.Show();
         }
+        
 
         //프로그램 종료
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -265,5 +269,20 @@ namespace BlinkBlink_EyeJoah
             return UserNameLabel.Text;
         }
 
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            ScreenColorChange screenColorChange = ScreenColorChange.getInstance();
+            if (e.KeyChar == ' ' && changeColor==false)
+            {
+                screenColorChange.changeScreenColor("color");
+                changeColor = true;
+            }
+            else
+            {
+                screenColorChange.changeScreenOriginal();
+                changeColor = false;
+            }
+        }
     }
 }

@@ -15,16 +15,6 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
         {
             InitializeComponent();
 
-            //To handle live data easily, in this case we built a specialized type
-            //the MeasureModel class, it only contains 2 properties
-            //DateTime and Value
-            //We need to configure LiveCharts to handle MeasureModel class
-            //The next code configures MEasureModel  globally, this means
-            //that livecharts learns to plot MeasureModel and will use this config every time
-            //a ChartValues instance uses this type.
-            //this code ideally should only run once, when application starts is reccomended.
-            //you can configure series in many ways, learn more at http://lvcharts.net/App/examples/v1/wpf/Types%20and%20Configuration
-
             var mapper = Mappers.Xy<MeasureModel>()
                 .X(model => model.DateTime.Ticks)   //use DateTime.Ticks as X
                 .Y(model => model.Value);           //use the value property as Y
@@ -45,9 +35,7 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
                     StrokeThickness = 4,
                     Stroke=new SolidColorBrush(Color.FromRgb(50, 208, 186)),
                     Fill=new SolidColorBrush(Color.FromArgb(200,218, 253, 247))
-                    //Fill=new SolidColorBrush(Color.FromRgb(240,240,240)),
-                    //Stroke=new SolidColorBrush(Color.FromRgb(50,208,186))
-        }
+                }
             };
             cartesianChart1.AxisX.Add(new Axis
             {
@@ -61,14 +49,6 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
 
             SetAxisLimits(System.DateTime.Now);
 
-            //The next code simulates data changes every 500 ms
-            //Timer = new Timer
-            //{
-            //    Interval = 500
-            //};
-            //Timer.Tick += TimerOnTick;
-            //R = new Random();
-            //Timer.Start();
         }
 
         public ChartValues<MeasureModel> ChartValues { get; set; }
@@ -96,20 +76,6 @@ namespace BlinkBlink_EyeJoah.Chart.ConstantChange
             //lets only use the last 30 values
             if (ChartValues.Count > 150) ChartValues.RemoveAt(0);
         }
-
-        private void TimerOnTick(object sender, EventArgs eventArgs)
-        {
-            var now = System.DateTime.Now;
-
-            ChartValues.Add(new MeasureModel
-            {
-                DateTime = now,
-                Value = R.Next(0, 10)
-            });
-            SetAxisLimits(now);
-
-            //lets only use the last 30 values
-            if (ChartValues.Count > 30) ChartValues.RemoveAt(0);
-        }
+        
     }
 }

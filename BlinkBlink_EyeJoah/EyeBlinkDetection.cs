@@ -55,6 +55,10 @@ namespace BlinkBlink_EyeJoah
         private ConstantChange con;
 
         ScreenColorChange screenColorChange;
+
+        public KeyEventHandler KeyDown { get; private set; }
+        public KeyPressEventHandler KeyPress { get; private set; }
+
         /* constructor(생성자) */
         public EyeBlinkDetection(Control1_Home control1, Emgu.CV.UI.ImageBox imageBoxCapturedFrame,
                         Emgu.CV.UI.ImageBox leftEyeImageBox, Emgu.CV.UI.ImageBox rightEyeImageBox)
@@ -95,8 +99,6 @@ namespace BlinkBlink_EyeJoah
                     worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
 
                     screenColorChange = ScreenColorChange.getInstance();
-                    Console.WriteLine("Press Enter to exit");
-                    Console.ReadLine();
                 }
                 catch (NullReferenceException excpt) { }
             }
@@ -109,6 +111,18 @@ namespace BlinkBlink_EyeJoah
             }
         }
 
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            MessageBox.Show(e.KeyChar.ToString());
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show(e.KeyValue.ToString());
+
+        }
         void FrameGrabber(object sender, EventArgs e)
         {
             if (!stopIdle)
@@ -200,6 +214,7 @@ namespace BlinkBlink_EyeJoah
                     possibleROI_leftEye = leftEyeArea;
                     possibleROI_rightEye = rightEyeArea;
                 }
+
                 #endregion
             }// if(faceDetect[0])
         }
