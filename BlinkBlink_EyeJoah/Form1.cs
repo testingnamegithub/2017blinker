@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.IO;
 using System.Drawing;
+using System.Collections.Generic;
+using Facebook;
 
 namespace BlinkBlink_EyeJoah
 {
@@ -10,11 +12,17 @@ namespace BlinkBlink_EyeJoah
     {
         /* 눈 깜빡임 기능을 담당하는 Class */
         private EyeBlinkDetection eyeBlink;
+        private Form loginForm;
+        private String accessToken;
         private int thresholdValue = 0;
 
         private Control1_Home control1;
+        private bool changeColor = false;
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
+
+        private List<String> facebookLoginUserData;
 
         //public static Label lb;
         [DllImportAttribute("user32.dll")]
@@ -22,28 +30,44 @@ namespace BlinkBlink_EyeJoah
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
+        private GlobalKeyboardHook gHook;
+
         public static Form1 mainForm;
         public Form1()
         {
             InitializeComponent();
 
-            init_UI();
+            Init_UI(Constant.USUALLOGIN);
+            Start_Process();
+        }
 
-            /* Main화면 띄우기 */
-            control1 = new Control1_Home();
-            control1.Dock = DockStyle.Fill;
-            panelContainer.Controls.Add(control1);
+        public Form1(Form trainingFaceForm)
+        {
+            InitializeComponent();
 
+<<<<<<< HEAD
             /* Eye Blink Detection 감지하는 Class 생성 및 실행 */
             eyeBlink = new EyeBlinkDetection(this.control1, this.imageBoxCapturedFrame, this.leftEyeImageBox,
                                              this.rightEyeImageBox, this.eyeBlinkNumText);
             eyeBlink.start_EyeBlink();
+=======
+            //this.trainingFaceForm = trainingFaceForm;
+>>>>>>> feature/ScreenColorChangeAlarm
 
-            homePanel.BackColor = Color.FromArgb(45, 187, 167); //기존 컬러
-            //back_home.BackColor = Color.FromArgb(39, 168, 150);
-            homeLabel.ForeColor = Color.White;
+            Init_UI(Constant.USUALLOGIN);
+            Start_Process();
+        }
 
-            mainForm = this;
+        // Facebook을 통해 Login한 경우
+        public Form1(Form loginForm, List<String> loginUserData, String _accessToken)
+        {
+            InitializeComponent();
+
+            this.facebookLoginUserData = loginUserData;
+            this.accessToken = _accessToken;
+            this.loginForm = loginForm;
+            Init_UI(Constant.FacebookLogin);
+            Start_Process();
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -57,33 +81,60 @@ namespace BlinkBlink_EyeJoah
             int nHeightEllipse // width of ellipse
          );
 
-        private void init_UI()
+        private void Init_UI(int Mode)
         {
-            //Bitmap homeImage = Properties.Resources.house_outline;
-            //homeImage = ResizeImage.adjust(homeImage, new Size(28, 25));
-            //picturebox_Home.Image = homeImage;
-            //picturebox_Home.SizeMode = PictureBoxSizeMode.CenterImage;
-
-            //picturebox_BlinkStaticis.Image = Properties.Resources.almond_eyed;
-            //picturebox_BlinkStaticis.SizeMode = PictureBoxSizeMode.CenterImage;
-
-            //Bitmap screenImage = Properties.Resources.screen;
-            //screenImage = ResizeImage.adjust(screenImage, new Size(26, 25));
-            //picturebox_Work.Image = screenImage;
-            //picturebox_Work.SizeMode = PictureBoxSizeMode.CenterImage;
-
-            //Bitmap settingImage = Properties.Resources.settings;
-            //settingImage = ResizeImage.adjust(settingImage, new Size(27, 27));
-            //picturebox_Setting.Image = settingImage;
-            //picturebox_Setting.SizeMode = PictureBoxSizeMode.CenterImage;
-
-
-            //this.label1.Text = File.ReadAllText(Application.StartupPath + "/TrainedFaces/UserName.txt");
+            // profile에 User Data 넣어주기 ( 사진 및 이름 )
+            if(Mode == Constant.FacebookLogin)
+            {
+                tempProfile.Load(facebookLoginUserData[2]);
+                UserNameLabel.Text = facebookLoginUserData[1];
+            }
             this.FormBorderStyle = FormBorderStyle.None;
             this.panelContainer.BringToFront();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+
+
+            homePanel.BackColor = Color.FromArgb(45, 187, 167); //기존 컬러
+            //back_home.BackColor = Color.FromArgb(39, 168, 150);
+            homeLabel.ForeColor = Color.White;
+
+            /* Main화면 띄우기 */
+            control1 = new Control1_Home();
+            control1.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(control1);
         }
 
+        private void Start_Process()
+        {
+            mainForm = this;
+            this.KeyPreview = true;
+            gHook = new GlobalKeyboardHook();
+            gHook.KeyDown += new KeyEventHandler(global_keyDown);
+            foreach (Keys key in Enum.GetValues(typeof(Keys)))
+                gHook.HookedKeys.Add(key);
+            gHook.hook();
+
+            /* Eye Blink Detection 감지하는 Class 생성 및 실행 */
+            eyeBlink = new EyeBlinkDetection(this.control1, this.imageBoxCapturedFrame, this.leftEyeImageBox, this.rightEyeImageBox);
+            eyeBlink.start_EyeBlink();
+        }
+
+        private void global_keyDown(object sender, KeyEventArgs e)
+        {
+
+            ScreenColorChange screenColorChange = ScreenColorChange.getInstance();
+            if ( e.KeyValue.Equals(32) && changeColor==false)
+            {
+                screenColorChange.changeScreenColor("color");
+                changeColor = true;
+            }
+            else
+            {
+                screenColorChange.changeScreenOriginal();
+                changeColor = false;
+            }
+
+        }
         private void bunifuFlatButton1_Click(object sender, MouseEventArgs e)
         {
             control1.Dock = DockStyle.Fill;
@@ -100,10 +151,6 @@ namespace BlinkBlink_EyeJoah
             blinkLabel.ForeColor = Color.Black;
             workLabel.ForeColor = Color.Black;
             settingsLabel.ForeColor = Color.Black;
-            //back_home.BackColor = Color.FromArgb(39, 168, 150);
-            //back_settings.BackColor = Color.FromArgb(46, 200, 178);
-            //back_work.BackColor = Color.FromArgb(46, 200, 178);
-            //back_blink.BackColor = Color.FromArgb(46, 200, 178);
         }
 
         private void bunifuFlatButton2_Click(object sender, MouseEventArgs e)
@@ -123,10 +170,6 @@ namespace BlinkBlink_EyeJoah
             settingsLabel.ForeColor = Color.Black;
             workLabel.ForeColor = Color.Black;
             homeLabel.ForeColor = Color.Black;
-            //back_blink.BackColor = Color.FromArgb(39, 168, 150);
-            //back_home.BackColor = Color.FromArgb(46, 200, 178);
-            //back_settings.BackColor = Color.FromArgb(46, 200, 178);
-            //back_work.BackColor = Color.FromArgb(46, 200, 178);
         }
 
         private void bunifuFlatButton3_Click(object sender, MouseEventArgs e)
@@ -148,10 +191,6 @@ namespace BlinkBlink_EyeJoah
             blinkLabel.ForeColor = Color.Black;
             homeLabel.ForeColor = Color.Black;
             settingsLabel.ForeColor = Color.Black;
-            //back_work.BackColor = Color.FromArgb(39, 168, 150);
-            //back_blink.BackColor = Color.FromArgb(46, 200, 178);
-            //back_home.BackColor = Color.FromArgb(46, 200, 178);
-            //back_settings.BackColor = Color.FromArgb(46, 200, 178);
         }
 
 
@@ -159,6 +198,7 @@ namespace BlinkBlink_EyeJoah
         {
             Control4_Settings control4 = new Control4_Settings();
 
+            Control1_Home.blinkTimer.Stop();
             EyeBlinkDetection.stopIdle = true;
             control4.Dock = DockStyle.Fill;
             panelContainer.Controls.RemoveAt(0);
@@ -172,10 +212,6 @@ namespace BlinkBlink_EyeJoah
             blinkLabel.ForeColor = Color.Black;
             workLabel.ForeColor = Color.Black;
             homeLabel.ForeColor = Color.Black;
-            //back_settings.BackColor = Color.FromArgb(39, 168, 150);
-            //back_blink.BackColor = Color.FromArgb(46, 200, 178);
-            //back_work.BackColor = Color.FromArgb(46, 200, 178);
-            //back_home.BackColor = Color.FromArgb(46, 200, 178);
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -186,6 +222,26 @@ namespace BlinkBlink_EyeJoah
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        // logout button 눌렀을 경우
+        private void logOutText_Click(object sender, EventArgs e)
+        {
+            // 인터넷 연결이 되어 있을 경우
+            CheckInternetConnection checkInternetConnection = CheckInternetConnection.GetInstance();
+            if (checkInternetConnection.CheckForConnection().Equals(true))
+            {
+                var webBrowser = new WebBrowser();
+                var fb = new FacebookClient();
+                var logouUrl = fb.GetLogoutUrl(new { access_token = accessToken, next = "https://www.facebook.com/connect/login_success.html" });
+                webBrowser.Navigate(logouUrl);
+            }
+
+            // 현재 MainForm 닫고 FaceTraining Form 다시 실행시키기
+            this.Close();
+            EyeBlinkDetection.stopIdle = true;
+            this.loginForm.Show();
+        }     
+        
 
         //프로그램 종료
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -205,16 +261,7 @@ namespace BlinkBlink_EyeJoah
             get { return thresholdValue; }
             set { thresholdValue = value; }
         }
-
-
-
-
-
-
-
-
-
-
+        
         // 왼쪽 메뉴바 panel, label, picturebox 위에 마우스가 올라갔을 시 해당 Panel 색상 변경 
         private void MouseHover(object sender, EventArgs e)
         {
@@ -230,26 +277,6 @@ namespace BlinkBlink_EyeJoah
                         case "settingsPanel": settingsPanel.BackColor = Color.FromArgb(50, 208, 186); break;
                     }
                     break;
-                    //case "PictureBox":
-                    //    PictureBox pictureboxName = (PictureBox)sender;
-                    //    switch (pictureboxName.Name)
-                    //    {
-                    //        case "picturebox_Home": homePanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                    //        case "picturebox_BlinkStaticis": blinkPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                    //        case "picturebox_Work": workPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                    //        case "picturebox_Setting": settingsPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                    //    }
-                    //    break;
-                    //case "Label":
-                    //    Label labelName = (Label)sender;
-                    //    switch (labelName.Name)
-                    //    {
-                    //        case "label2": homePanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                    //        case "label3": blinkPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                    //        case "label4": workPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                    //        case "label5": settingsPanel.BackColor = Color.FromArgb(29, 188, 170); break;
-                    //    }
-                    //    break;
             }
         }
 
@@ -271,5 +298,6 @@ namespace BlinkBlink_EyeJoah
         {
             return UserNameLabel.Text;
         }
+        
     }
 }

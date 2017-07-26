@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BlinkBlink_EyeJoah.Chart.ConstantChange;
 using System.Threading;
+using System.IO;
+using System.Reflection;
+using System.Media;
 
 namespace BlinkBlink_EyeJoah
 {
@@ -42,16 +45,11 @@ namespace BlinkBlink_EyeJoah
             get { return con; }
             set { con = value; }
         }
-
+        
         private void BlinkTimer_Tick(object sender, EventArgs e)
         {
             convertOriginalColor = true;
-
             colorChange.changeScreenColor("color");
-
-            //Thread.Sleep(3000);
-
-            //colorChange.changeScreenOriginal();
         }
     }
 }

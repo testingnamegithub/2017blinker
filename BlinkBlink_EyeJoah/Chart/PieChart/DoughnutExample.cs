@@ -5,6 +5,9 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using System.Drawing;
 using System.Windows.Media;
+using LiveCharts.Defaults;
+using System.Windows;
+using ZedGraph;
 
 namespace BlinkBlink_EyeJoah.Chart.PieChart
 {
@@ -15,12 +18,10 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
         public DoughnutExample()
         {
             doughnut = this;
-
+            
             InitializeComponent();
-
-            //pieChart1.InnerRadius = 40; //내원 반지름
-            pieChart1.LegendLocation = LegendLocation.Bottom; //슬라이스 설명 라벨 위치
-
+             
+            pieChart1.InnerRadius = 40;
             pieChart1.Series = new SeriesCollection
             {
                 new PieSeries
@@ -29,16 +30,7 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                     Values = new ChartValues<double> {0}, //값
                     //PushOut = 5, //pushout:: 슬라이스와 슬라이스 사이 간격
                     DataLabels = true,
-                    Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(1,85,157))
-                    //Fill= new LinearGradientBrush
-                    //{
-                    //    GradientStops = new GradientStopCollection
-                    //    {
-                    //         new GradientStop(System.Windows.Media.Color.FromRgb(163, 234, 228),0),
-                    //         new GradientStop(System.Windows.Media.Color.FromRgb(50, 208, 186),.5),
-                    //         new GradientStop(System.Windows.Media.Color.FromRgb(59, 188, 170),1)
-                    //    }
-                    //}
+                    Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(1,85,157)),
                 },
                 new PieSeries
                 {
@@ -47,64 +39,70 @@ namespace BlinkBlink_EyeJoah.Chart.PieChart
                     //PushOut = 5,
                     DataLabels = true,
                         Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(0,171,188))
-                    //     Fill= new LinearGradientBrush
-                    //{
-                    //    GradientStops = new GradientStopCollection
-                    //    {
-                    //         new GradientStop(System.Windows.Media.Color.FromRgb(255, 200, 55),0),
-                    //         new GradientStop(System.Windows.Media.Color.FromRgb(255, 161, 30),.5),
-                    //         new GradientStop(System.Windows.Media.Color.FromRgb(255, 128, 8),1)
-                    //    }
-                    //}
                 },
                 new PieSeries
                 {
-                    Title = "Bad",
+                    Title = "Warning",
                     Values = new ChartValues<double> {0},
                     //PushOut = 5,
                     DataLabels = true,
                       Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(222,111,39))
-                    //     Fill= new LinearGradientBrush
-                    //{
-                    //    GradientStops = new GradientStopCollection
-                    //    {
-                    //         new GradientStop(System.Windows.Media.Color.FromRgb(248, 80, 50),0),
-                    //         new GradientStop(System.Windows.Media.Color.FromRgb(240, 69, 186),.5),
-                    //         new GradientStop(System.Windows.Media.Color.FromRgb(231, 56, 39),1)
-                    //    }
-                    //}
                 },
             };
 
         }
 
-        public void updateBlinkPie(int great, int normal, int bad)
+        public void updateBlinkPie(double great, double normal, double bad)
         {
+            double sum = great + normal + bad;
+            double greatArea = Math.Round(great/sum / .01) * .01;
+            double normalArea = Math.Round(normal/sum / .01) * .01;
+            double badArea = Math.Round(bad/sum / .01) * .01;
+
+            pieChart1.DefaultLegend.Visibility = Visibility.Collapsed;
+            pieChart1.DefaultLegend.FontSize = 15;
+            pieChart1.DefaultLegend.FontWeight = FontWeights.Bold;
+            pieChart1.LegendLocation = LiveCharts.LegendLocation.Bottom;
+            //pieChart1.DefaultLegend.BorderThickness = new Thickness(2);
             pieChart1.Series = new SeriesCollection
             {
                 new PieSeries
                 {
                     Title = "Great",
-                    Values = new ChartValues<double> {great}, //값
-                    //PushOut = 5, //pushout:: 슬라이스와 슬라이스 사이 간격
+                    Values = new ChartValues<ObservableValue>
+                    {
+                        new ObservableValue(greatArea*100),
+                    },
                     DataLabels = true,
+                    LabelPoint = point => point.Y + "%",
+                    FontSize = 19,
                     Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(1,85,157))
+                    //PushOut = 5, // 슬라이스와 슬라이스 사이 간격
                 },
                 new PieSeries
                 {
                     Title = "Normal",
-                    Values = new ChartValues<double> {normal},
-                    //PushOut = 5,
+                    Values = new ChartValues<ObservableValue>
+                    {
+                        new ObservableValue(normalArea*100),
+                    },
                     DataLabels = true,
-                        Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(0,171,188))
+                    LabelPoint = point => point.Y + "%",
+                    FontSize = 19,
+                    Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(0,171,188))
                 },
                 new PieSeries
                 {
-                    Title = "Bad",
-                    Values = new ChartValues<double> {bad},
-                    //PushOut = 5,
+                    Title = "Warning",
+
+                    Values = new ChartValues<ObservableValue>
+                    {
+                        new ObservableValue(badArea*100),
+                    },
                     DataLabels = true,
-                      Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(222,111,39))
+                    LabelPoint = point => point.Y + "%",
+                    FontSize = 19,
+                    Fill=new SolidColorBrush(System.Windows.Media.Color.FromRgb(222,111,39))
                 },
             };
         }

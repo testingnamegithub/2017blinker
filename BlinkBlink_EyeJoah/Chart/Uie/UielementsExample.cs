@@ -18,30 +18,22 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
 
         ColumnSeries barSeries;
         ChartValues<double> Values;
-
+       
         public UielementsExample()
         {
             uiElement = this;
 
             InitializeComponent();
-
-            //var lineSeries = new LineSeries //꺾은선
-            //{
-            //    Values = new ChartValues<double> { 12, 10, 13, 9, 12 },
-            //    Fill = Brushes.Transparent,
-            //    StrokeThickness = 3,
-            //    PointGeometry = null
-            //};
+            
             barSeries = new ColumnSeries //막대그래프
             {
                 //Values = new ChartValues<double> { 5, 6, 9, 8, 10 },
                 Values = new ChartValues<double> { 0, 0, 0, 0, 0 },
                 StrokeThickness = 1.5,
                 PointGeometry = null,
-                MaxColumnWidth = 30,
+                MaxColumnWidth = 25,
+                 
                 Stroke = new SolidColorBrush(Colors.AliceBlue), //가장자리 색상
-                //Stroke = new SolidColorBrush(Colors.Silver),
-                //Fill = new SolidColorBrush(Color.FromRgb(68,125,155)) //막대 내부 색상
                 Fill = new LinearGradientBrush
                 {
                     GradientStops = new GradientStopCollection
@@ -51,24 +43,14 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                                                                          new GradientStop(System.Windows.Media.Color.FromRgb(133,216,206),0)
                                                                     }
                 }
-                //Fill = new LinearGradientBrush
-                //{
-                //    GradientStops = new GradientStopCollection
-                //                                                    {
-                //                                                         new GradientStop(System.Windows.Media.Color.FromRgb(44,62,80),1),
-                //                                                         new GradientStop(System.Windows.Media.Color.FromRgb(47,105,146),.5),
-                //                                                         new GradientStop(System.Windows.Media.Color.FromRgb(52,152,219),0)
-                //                                                    }
-                //}
             };
 
-            //cartesianChart1.Series.Add(lineSeries);
             cartesianChart1.Series.Add(barSeries);
 
             cartesianChart1.VisualElements.Add(new VisualElement
             {
-                X = 1,
-                Y = 8,
+                X = 0.9,
+                Y = 8.5,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
                 UIElement = new TextBlock //notice this property must be a wpf control
@@ -77,7 +59,20 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     FontWeight = FontWeights.Bold,
                     FontSize = 16,
                     Foreground = new SolidColorBrush(Color.FromRgb(208, 54, 0)),
-                    //Opacity = 0.6
+                }
+            });
+            cartesianChart1.VisualElements.Add(new VisualElement
+            {
+                X = 0.5,
+                Y = 14,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Top,
+                UIElement = new TextBlock //notice this property must be a wpf control
+                {
+                    Text = "GREAT",
+                    FontWeight = FontWeights.Bold,
+                    FontSize = 16,
+                    Foreground = new SolidColorBrush(Color.FromRgb(1, 85, 157)),
                 }
             });
             var uri = new Uri("Cartesian/UielementsExample/warning.png", UriKind.Relative);
@@ -98,29 +93,59 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             //good or bad 영역에 따른 색
             cartesianChart1.AxisY.Add(new Axis
             {
-                IsMerged = true,
+                MinValue = 6,
+                MaxValue = 20,
+                Foreground = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(1, 1, 1)),
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Step = 2,
+                    IsEnabled = false
+                },
                 Sections = new SectionsCollection
                 {
                     //warning 점선
                     new AxisSection
                     {
-                        Value = 8,
+                        Value = 10,
                         //Stroke = Brushes.Crimson,
                         Stroke=new SolidColorBrush(Color.FromRgb(222,111,39)),
                         StrokeThickness = 4,
-                        StrokeDashArray = new DoubleCollection(new [] {3d})
+                        StrokeDashArray = new DoubleCollection(new [] {2d})
+                    },
+                    //Goog 점선
+                    new AxisSection
+                    {
+                        Value = 14,
+                        //Stroke = Brushes.Crimson,
+                        Stroke=new SolidColorBrush(Color.FromRgb(1,85,157)),
+                        StrokeThickness = 4,
+                        StrokeDashArray = new DoubleCollection(new [] {2d})
                     },
                     //good 영역
                         new AxisSection
                     {
                         //Label = "Good",
-                        Value = 8,
-                        SectionWidth = 8,
+                        Value = 14,
+
+                        SectionWidth = 6,
                         Fill = new SolidColorBrush
                         {
                             //Color=Colors.White,
-                            Color = System.Windows.Media.Color.FromRgb(163, 234, 228),
-                            Opacity = .4
+                            Color = System.Windows.Media.Color.FromRgb(1,85,157),
+                            Opacity = .3
+                        }
+                    },
+                    // normal 영역
+                        new AxisSection
+                    {
+                        //Label = "Good",
+                        Value = 10,
+                        SectionWidth = 4,
+                        Fill = new SolidColorBrush
+                        {
+                            //Color=Colors.White,
+                            Color = System.Windows.Media.Color.FromRgb(0,171,188),
+                            Opacity = .2
                         }
                     },
                     //bad 영역
@@ -128,7 +153,7 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
                     {
                         //Label = "Bad",
                         Value = 0,
-                        SectionWidth = 8,
+                        SectionWidth = 10,
                         Fill = new SolidColorBrush
                         {
                             Color = System.Windows.Media.Color.FromRgb(234,168,101),
@@ -139,16 +164,20 @@ namespace BlinkBlink_EyeJoah.Chart.Uie
             });
             cartesianChart1.AxisX.Add(new Axis
             {
-                Labels = new[] { "9시", "10시", "11시", "12시", "13시" } //마우스 가까이댔을때 뜨는 라벨
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Step = 1,
+                    IsEnabled = false
+                },
+                Foreground = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(1, 1, 1)),
+                Labels = new[] { "10:30", "40", "50", "11:00", "10 ", "20", "11:30", "40", "50" } //마우스 가까이댔을때 뜨는 라벨
             });
-
             Panel.SetZIndex(barSeries, 0);
-            //Panel.SetZIndex(lineSeries, 1);
         }
 
-        public void updateBlinkBarValue(int aHour, int bHour, int cHour, int dHour, int eHour)
+        public void updateBlinkBarValue(double a, double b, double c, double d, double e, double f, double g, double h, double i)
         {
-            barSeries.Values = new ChartValues<double> { aHour, bHour, cHour, dHour, eHour };
+            barSeries.Values = new ChartValues<double> { a,b,c,d,e,f,g,h,i };
         }
 
     }

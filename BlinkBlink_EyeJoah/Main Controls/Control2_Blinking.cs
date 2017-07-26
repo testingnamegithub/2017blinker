@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BlinkBlink_EyeJoah.Chart.PieChart;
 using BlinkBlink_EyeJoah.Chart.Uie;
-using BlinkBlink_EyeJoah.Chart.Section;
 
 namespace BlinkBlink_EyeJoah
 {
@@ -24,14 +23,14 @@ namespace BlinkBlink_EyeJoah
             InitializeComponent();
             makeChart1();
             makeChart2();
-            localDB = LocalDatabase.getInstance();
+            //localDB = LocalDatabase.getInstance();
 
             //update realtime text from datetimelabelsettings class
             updateRealtimeText(DateTime.Now);
             showDate = DateTime.Now;
-
+            
             //inserting data sm5duck
-            insertingDataToSm5duck();
+            //insertingDataToSm5duck();
 
             updateBlinkChartByDate(showDate);
         }
@@ -75,6 +74,7 @@ namespace BlinkBlink_EyeJoah
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 12, 11);
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 13, 8);
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170513", 14, 9);
+<<<<<<< HEAD
 
                 //new
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 23, 6);
@@ -90,6 +90,8 @@ namespace BlinkBlink_EyeJoah
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 10, 9);
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 9, 11);
 
+=======
+>>>>>>> feature/ScreenColorChangeAlarm
                 //new
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170531", 15, 6);
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170531", 16, 8);
@@ -126,7 +128,22 @@ namespace BlinkBlink_EyeJoah
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170526", 12, 11);
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170526", 13, 8);
                 localDB.InsertDataBlinkTable("sm5duck", "blink20170526", 14, 9);
+<<<<<<< HEAD
 
+=======
+                //new june
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 17, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 18, 12);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 19, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 20, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170601", 21, 9);
+
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 9, 7);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 10, 10);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 11, 8);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 12, 11);
+                localDB.InsertDataBlinkTable("sm5duck", "blink20170602", 13, 9);
+>>>>>>> feature/ScreenColorChangeAlarm
             }
         }
 
@@ -197,35 +214,65 @@ namespace BlinkBlink_EyeJoah
 
         private void updateBlinkChartByDate(DateTime date)
         {
-            tableTypeName = "blink" + date.Year + date.Month.ToString("00") + date.Day.ToString("00");
+            //tableTypeName = "blink" + date.Year + date.Month.ToString("00") + date.Day.ToString("00");
 
-            int[,] blinkDataArray = new int [5,2];
-            int normal=0, bad=0, good = 0;
+            //int[,] blinkDataArray = new int [5,2];
+            //int normal=0, bad=0, good = 0;
 
-            if(localDB.TableExists(tableTypeName,Form1.mainForm.GetUserName())) //테이블 있으면
+            //if(localDB.TableExists(tableTypeName,Form1.mainForm.GetUserName())) //테이블 있으면
+            //{
+            //    localDB.ReadDataBlinkTable(ref blinkDataArray, Form1.mainForm.GetUserName(), tableTypeName);
+            //    for(int i=0;i<5;i++)
+            //    {
+            //        if (blinkDataArray[i, 1] > 8)
+            //            good++;
+            //        else if (blinkDataArray[i, 1] == 8)
+            //            normal++;
+            //        else
+            //            bad++;
+            //    }
+
+            //    DoughnutExample.doughnut.updateBlinkPie(good, normal, bad);
+            //    UielementsExample.uiElement.updateBlinkBarValue(blinkDataArray[0,1], blinkDataArray[1, 1],
+            //                             blinkDataArray[2, 1], blinkDataArray[3, 1], blinkDataArray[4, 1]);
+            //}
+            //else //테이블 없으면
+            //{
+            Random r = new Random();
+            List<double> AxisNum = new List<double>();
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+            AxisNum.Add(r.NextDouble() * (17 - 8) + 8);
+
+            //good bad, normal 개수 새기
+            int goodNum = 0, normalNum = 0, badNum = 0;
+            foreach(var num in AxisNum)
             {
-                localDB.ReadDataBlinkTable(ref blinkDataArray, Form1.mainForm.GetUserName(), tableTypeName);
-                for(int i=0;i<5;i++)
-                {
-                    if (blinkDataArray[i, 1] > 8)
-                        good++;
-                    else if (blinkDataArray[i, 1] == 8)
-                        normal++;
-                    else
-                        bad++;
-                }
+                if (num >= 14)
+                    goodNum++;
+                else if (num < 14 && num >= 10)
+                    normalNum++;
+                else
+                    badNum++;
+            }
 
-                DoughnutExample.doughnut.updateBlinkPie(good, normal, bad);
-                UielementsExample.uiElement.updateBlinkBarValue(blinkDataArray[0,1], blinkDataArray[1, 1],
-                                         blinkDataArray[2, 1], blinkDataArray[3, 1], blinkDataArray[4, 1]);
-            }
-            else //테이블 없으면
-            {
-                DoughnutExample.doughnut.updateBlinkPie(0, 0, 0);
-                UielementsExample.uiElement.updateBlinkBarValue(0, 0, 0, 0, 0);
-            }
-            
+
+            // 소수점 둘째짜리 까지 표현해서 그래프에 넣기.
+            UielementsExample.uiElement.updateBlinkBarValue(
+                (Math.Round(AxisNum[0] / .01) * .01), (Math.Round(AxisNum[1] / .01) * .01), (Math.Round(AxisNum[2] / .01) * .01),
+                (Math.Round(AxisNum[3] / .01) * .01), (Math.Round(AxisNum[4] / .01) * .01), (Math.Round(AxisNum[5] / .01) * .01),
+                (Math.Round(AxisNum[6] / .01) * .01), (Math.Round(AxisNum[7] / .01) * .01), (Math.Round(AxisNum[8] / .01) * .01));
+
+            DoughnutExample.doughnut.updateBlinkPie(Convert.ToDouble(goodNum),
+                Convert.ToDouble(normalNum), Convert.ToDouble(badNum));
+
         }
-
+        
     }
 }

@@ -10,9 +10,7 @@ using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
 using BlinkBlink_EyeJoah.Chart.PieChart;
-using BlinkBlink_EyeJoah.Chart.Section;
 using BlinkBlink_EyeJoah.Chart.Uie;
-using BlinkBlink_EyeJoah.Chart.Funnel_chart;
 using BlinkBlink_EyeJoah.Chart._360;
 
 namespace BlinkBlink_EyeJoah
@@ -48,19 +46,29 @@ namespace BlinkBlink_EyeJoah
             localDB.InsertDataWorkTable("sm5duck", "work20170511", 45, 15);
             localDB.InsertDataWorkTable("sm5duck", "work20170512", 137, 21);
             localDB.InsertDataWorkTable("sm5duck", "work20170513", 23, 15);
+<<<<<<< HEAD
 
             //new
             localDB.InsertDataWorkTable("sm5duck", "work20170602", 63, 28);
 
             localDB.InsertDataWorkTable("sm5duck", "work20170601", 148, 23);
 
+=======
+            //new
+>>>>>>> feature/ScreenColorChangeAlarm
             localDB.InsertDataWorkTable("sm5duck", "work20170531", 83, 17);
             localDB.InsertDataWorkTable("sm5duck", "work20170530", 110, 8);
             localDB.InsertDataWorkTable("sm5duck", "work20170529", 107, 22);
             localDB.InsertDataWorkTable("sm5duck", "work20170528", 45, 15);
             localDB.InsertDataWorkTable("sm5duck", "work20170527", 137, 21);
             localDB.InsertDataWorkTable("sm5duck", "work20170526", 23, 15);
+<<<<<<< HEAD
             
+=======
+            //june
+            localDB.InsertDataWorkTable("sm5duck", "work20170601", 147, 48);
+            localDB.InsertDataWorkTable("sm5duck", "work20170602", 153, 31);
+>>>>>>> feature/ScreenColorChangeAlarm
         }
 
         //update realtime text from datetimelabelsettings class
@@ -136,8 +144,12 @@ namespace BlinkBlink_EyeJoah
             }
             else //테이블 없으면
             {
-                Gauge360Example.gauge360example.updateUsageValue(0);
-                Gauge360Example.gauge360example.updateBreakValue(0);
+                Random r = new Random();
+                List<double> AxisNum = new List<double>();
+                AxisNum.Add(r.NextDouble() * ((60 - 20) + 20));
+
+                Gauge360Example.gauge360example.updateUsageValue(Math.Round(AxisNum[0] / .01) * .01);
+                Gauge360Example.gauge360example.updateBreakValue(60-Math.Round(AxisNum[0] / .01) * .01);
             }
         }
 

@@ -33,6 +33,7 @@
             this.sidebar = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.profilePanel = new System.Windows.Forms.Panel();
+            this.logOutText = new System.Windows.Forms.Label();
             this.tempProfile = new System.Windows.Forms.PictureBox();
             this.UserNameLabel = new System.Windows.Forms.Label();
             this.settingsPanel = new System.Windows.Forms.Panel();
@@ -58,14 +59,12 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.rightEyeImageBox = new Emgu.CV.UI.ImageBox();
+            this.leftEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.topPanel = new System.Windows.Forms.Panel();
             this.minimizeBtn = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.eyeBlinkText = new System.Windows.Forms.Label();
-            this.eyeBlinkNumText = new System.Windows.Forms.Label();
-            this.rightEyeImageBox = new Emgu.CV.UI.ImageBox();
-            this.leftEyeImageBox = new Emgu.CV.UI.ImageBox();
             this.imageBoxCapturedFrame = new Emgu.CV.UI.ImageBox();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -85,11 +84,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_Home)).BeginInit();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftEyeImageBox)).BeginInit();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leftEyeImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxCapturedFrame)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +125,7 @@
             // profilePanel
             // 
             this.profilePanel.BackColor = System.Drawing.Color.White;
+            this.profilePanel.Controls.Add(this.logOutText);
             this.profilePanel.Controls.Add(this.tempProfile);
             this.profilePanel.Controls.Add(this.UserNameLabel);
             this.profilePanel.Location = new System.Drawing.Point(0, 0);
@@ -133,6 +133,20 @@
             this.profilePanel.Name = "profilePanel";
             this.profilePanel.Size = new System.Drawing.Size(180, 67);
             this.profilePanel.TabIndex = 50;
+            // 
+            // logOutText
+            // 
+            this.logOutText.AutoSize = true;
+            this.logOutText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutText.ForeColor = System.Drawing.Color.Black;
+            this.logOutText.Location = new System.Drawing.Point(133, 48);
+            this.logOutText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.logOutText.Name = "logOutText";
+            this.logOutText.Size = new System.Drawing.Size(45, 15);
+            this.logOutText.TabIndex = 2;
+            this.logOutText.Text = "Logout";
+            this.logOutText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.logOutText.Click += new System.EventHandler(this.logOutText_Click);
             // 
             // tempProfile
             // 
@@ -148,12 +162,16 @@
             // UserNameLabel
             // 
             this.UserNameLabel.AutoSize = true;
-            this.UserNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.UserNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserNameLabel.ForeColor = System.Drawing.Color.Black;
             this.UserNameLabel.Location = new System.Drawing.Point(59, 27);
             this.UserNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UserNameLabel.Name = "UserNameLabel";
+<<<<<<< HEAD
             this.UserNameLabel.Size = new System.Drawing.Size(84, 18);
+=======
+            this.UserNameLabel.Size = new System.Drawing.Size(93, 18);
+>>>>>>> feature/ScreenColorChangeAlarm
             this.UserNameLabel.TabIndex = 1;
             this.UserNameLabel.Text = "User Name";
             this.UserNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -384,8 +402,32 @@
             this.panelContainer.Location = new System.Drawing.Point(184, 40);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
+<<<<<<< HEAD
             this.panelContainer.Size = new System.Drawing.Size(607, 367);
+=======
+            this.panelContainer.Size = new System.Drawing.Size(607, 369);
+>>>>>>> feature/ScreenColorChangeAlarm
             this.panelContainer.TabIndex = 2;
+            // 
+            // rightEyeImageBox
+            // 
+            this.rightEyeImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rightEyeImageBox.Location = new System.Drawing.Point(563, 72);
+            this.rightEyeImageBox.Name = "rightEyeImageBox";
+            this.rightEyeImageBox.Size = new System.Drawing.Size(88, 61);
+            this.rightEyeImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rightEyeImageBox.TabIndex = 45;
+            this.rightEyeImageBox.TabStop = false;
+            // 
+            // leftEyeImageBox
+            // 
+            this.leftEyeImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.leftEyeImageBox.Location = new System.Drawing.Point(474, 73);
+            this.leftEyeImageBox.Name = "leftEyeImageBox";
+            this.leftEyeImageBox.Size = new System.Drawing.Size(84, 61);
+            this.leftEyeImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.leftEyeImageBox.TabIndex = 44;
+            this.leftEyeImageBox.TabStop = false;
             // 
             // topPanel
             // 
@@ -399,6 +441,20 @@
             this.topPanel.TabIndex = 3;
             this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
+<<<<<<< HEAD
+=======
+            // thresholdValueText
+            // 
+            this.thresholdValueText.AutoSize = true;
+            this.thresholdValueText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
+            this.thresholdValueText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
+            this.thresholdValueText.Location = new System.Drawing.Point(323, 18);
+            this.thresholdValueText.Name = "thresholdValueText";
+            this.thresholdValueText.Size = new System.Drawing.Size(38, 12);
+            this.thresholdValueText.TabIndex = 48;
+            this.thresholdValueText.Text = "label4";
+            // 
+>>>>>>> feature/ScreenColorChangeAlarm
             // minimizeBtn
             // 
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
@@ -429,6 +485,7 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+<<<<<<< HEAD
             // eyeBlinkText
             // 
             this.eyeBlinkText.AutoSize = true;
@@ -482,6 +539,15 @@
             this.imageBoxCapturedFrame.Margin = new System.Windows.Forms.Padding(2);
             this.imageBoxCapturedFrame.Name = "imageBoxCapturedFrame";
             this.imageBoxCapturedFrame.Size = new System.Drawing.Size(353, 205);
+=======
+            // imageBoxCapturedFrame
+            // 
+            this.imageBoxCapturedFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageBoxCapturedFrame.Location = new System.Drawing.Point(474, 217);
+            this.imageBoxCapturedFrame.Margin = new System.Windows.Forms.Padding(2);
+            this.imageBoxCapturedFrame.Name = "imageBoxCapturedFrame";
+            this.imageBoxCapturedFrame.Size = new System.Drawing.Size(177, 126);
+>>>>>>> feature/ScreenColorChangeAlarm
             this.imageBoxCapturedFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBoxCapturedFrame.TabIndex = 43;
             this.imageBoxCapturedFrame.TabStop = false;
@@ -493,7 +559,12 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(793, 409);
             this.Controls.Add(this.panelContainer);
+<<<<<<< HEAD
             this.Controls.Add(this.eyeBlinkText);
+=======
+            this.Controls.Add(this.rightEyeImageBox);
+            this.Controls.Add(this.leftEyeImageBox);
+>>>>>>> feature/ScreenColorChangeAlarm
             this.Controls.Add(this.imageBoxCapturedFrame);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.sidebar);
@@ -528,14 +599,13 @@
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftEyeImageBox)).EndInit();
             this.topPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rightEyeImageBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leftEyeImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxCapturedFrame)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -555,10 +625,6 @@
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.PictureBox minimizeBtn;
         private System.Windows.Forms.ImageList imageList1;
-        private Emgu.CV.UI.ImageBox rightEyeImageBox;
-        private System.Windows.Forms.Label eyeBlinkText;
-        private Emgu.CV.UI.ImageBox leftEyeImageBox;
-        private System.Windows.Forms.Label eyeBlinkNumText;
         private Emgu.CV.UI.ImageBox imageBoxCapturedFrame;
         private System.Windows.Forms.Panel homePanel;
         private System.Windows.Forms.PictureBox picturebox_Home;
@@ -578,6 +644,13 @@
         private System.Windows.Forms.Label homeLabel;
         private System.Windows.Forms.Panel pinkLine1;
         private System.Windows.Forms.Panel profilePanel;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Label thresholdValueText;
+        private Emgu.CV.UI.ImageBox rightEyeImageBox;
+        private Emgu.CV.UI.ImageBox leftEyeImageBox;
+        private System.Windows.Forms.Label logOutText;
+>>>>>>> feature/ScreenColorChangeAlarm
     }
 }
 
