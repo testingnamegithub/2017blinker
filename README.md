@@ -11,3 +11,6 @@
 
 ### Blinker Main Page
 ![image](https://user-images.githubusercontent.com/18719563/32934804-843468ec-cbb0-11e7-870b-be929df08cac.png)
+
+### Blinker Data Visualation Page
+![image](https://user-images.githubusercontent.com/18719563/32934750-4cc265a8-cbb0-11e7-8465-e2356aca1b60.png)
