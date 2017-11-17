@@ -9,6 +9,9 @@
 #### 3. 사용자 설정한 시간마다 눈의 휴식을 도와주는 안구 운동 Event가 나타납니다.
 #### 4. 사용자의 컴퓨터 사용습관을 Data 시각화하여 보여줍니다.
 
+### Blinker 주요 Event 시연 영상
+https://youtu.be/8eniZmDnJb4
+
 ### Blinker Main Page
 ![image](https://user-images.githubusercontent.com/18719563/32934804-843468ec-cbb0-11e7-870b-be929df08cac.png)
 
